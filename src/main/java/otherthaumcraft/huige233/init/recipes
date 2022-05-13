@@ -7,11 +7,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.huige233.otherthaumcraft.OtherThaumcraft;
-import com.verdantartifice.thaumicwonders.common.blocks.BlocksTW;
-import com.verdantartifice.thaumicwonders.common.crafting.recipes.RecipeDisjunctionClothUse;
-import com.verdantartifice.thaumicwonders.common.crafting.recipes.RecipeFlyingCarpetDyes;
-import com.verdantartifice.thaumicwonders.common.fluids.FluidQuicksilver;
-import com.verdantartifice.thaumicwonders.common.items.ItemsTW;
+import com.huige233.otherthaumcraft.common.items.ItemsOT;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -42,7 +38,7 @@ import thaumcraft.api.crafting.Part;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
 
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "WARP_PAPER"), new ShapedArcaneRecipe(
+ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "warp_paper"), new ShapedArcaneRecipe(
                 defaultGroup,
                 "WARP_PAPER",
                 30,
@@ -51,5 +47,27 @@ import thaumcraft.api.items.ItemsTC;
                         "PSP",
                         Character.valueOf('P'), new ItemStack(Items.PAPER),
                         Character.valueOf('S'), "plateVoid"
+                }
+        ));
+        
+private static void initCrucibleRecipes() {
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(OtherThaumcraft.MODID, "taint_meat"), new CrucibleRecipe(
+                "TAINT_MEAT",
+                new ItemStack(ItemsOT.TAINT_MEAT),
+                new ItemStack(Items.CHICKEN),
+                new AspectList().add(Aspect.TAINT, 20).add(Aspect.PERMUTATIO, 10)
+        ));
+        
+ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "cleansing_amulet), new InfusionRecipe(
+                "CLEANSING_AMULET",
+                new ItemStack(ItemsOT.CLEANSING_AMULET),
+                8,
+                new AspectList().add(Aspect.MIND, 100).add(Aspect.ORDER, 75).add(Aspect.AURA, 50).add(Aspect.ENERGY, 50).add(Aspect.EXCHANGE, 30),
+                new ItemStack(ItemsTC.amulet_vis),
+                new Object[] {
+                        new ItemStack(ItemsTC.SANITY_SOAP),
+                        new ItemStack(ItemsTC.BATH_SALTS),
+                        new ItemStack(ItemsTC.BATH_SALTS),
+                        Ingredient.fromItem(ItemsTC.primordialPearl),
                 }
         ));
