@@ -8,9 +8,9 @@ import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@GameRegistry.ObjectHolder(ThaumicWonders.MODID)
-public class ItemsTW {
-    public static final Item DISJUNCTION_CLOTH = null;
-    public static final ItemSword PRIMAL_DESTROYER = null;
-    public static final Item FLYING_CARPET = null;
-}
+@GameRegistry.ObjectHolder(OtherThaumcraft.MODID)
+public class ItemOT {
+    public static final Item WARP_PAPAER = null;
+    public static final Item TAINT_MEAT = null;
+    public static final Item CLEANSING_AMULET =null;
+    }
