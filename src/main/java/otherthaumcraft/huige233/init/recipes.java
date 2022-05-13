@@ -58,7 +58,7 @@ private static void initCrucibleRecipes() {
                 new AspectList().add(Aspect.TAINT, 20).add(Aspect.PERMUTATIO, 10)
         ));
         
-ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "cleansing_amulet), new InfusionRecipe(
+ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "cleansing_amulet"), new InfusionRecipe(
                 "CLEANSING_AMULET",
                 new ItemStack(ItemsOT.CLEANSING_AMULET),
                 8,
