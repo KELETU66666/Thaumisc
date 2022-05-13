@@ -1,6 +1,6 @@
-package com.verdantartifice.thaumicwonders.common.items;
+package otherthaumcraft.huige233.common.items;
 
-import com.verdantartifice.thaumicwonders.ThaumicWonders;
+import otherthaumcarft.huige233.OtherThaumcraft;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
