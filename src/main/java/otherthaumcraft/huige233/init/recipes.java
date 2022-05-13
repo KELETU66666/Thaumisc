@@ -1,4 +1,4 @@
-package com.otherthaumcraft.huige233.init;
+package otherthaumcraft.huige233.init;
 
 import java.util.ArrayList;
 import java.util.List;
