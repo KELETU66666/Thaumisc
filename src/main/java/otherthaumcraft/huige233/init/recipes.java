@@ -42,11 +42,13 @@ ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID
                 defaultGroup,
                 "WARP_PAPER",
                 30,
-                ItemsOT.warp_paper,
+                new ItemStack(ItemsOT.warp_paper,1),
                 new Object[] {
                         "PSP",
+                        "   ",
+                        "   ",
                         Character.valueOf('P'), new ItemStack(Items.PAPER),
-                        Character.valueOf('S'), "plateVoid"
+                        Character.valueOf('S'), new ItemStack(ItemsTC.salisMundus),
                 }
         ));
         
