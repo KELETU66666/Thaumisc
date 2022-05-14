@@ -81,3 +81,4 @@ private static void initInfusionRecipes() {
                         Ingredient.fromItem(ItemsTC.primordialPearl),
                 }
         ));}
+}
