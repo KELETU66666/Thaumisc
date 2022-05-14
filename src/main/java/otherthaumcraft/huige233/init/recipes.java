@@ -9,7 +9,6 @@ import javax.annotation.Nullable;
 import com.huige233.otherthaumcraft.OtherThaumcraft;
 import com.huige233.otherthaumcraft.common.items.ItemsOT;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -33,6 +32,7 @@ import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 
+private static void initArcaneRecipes()
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.IronSpike"), new ShapedArcaneRecipe(
                 defaultGroup,
                 "WARP_PAPER",
@@ -46,6 +46,7 @@ import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
                         Character.valueOf('S'), new ItemStack(ItemsTC.salisMundus),
                 }
         ));
+}
         
 private static void initCrucibleRecipes() {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(OtherThaumcraft.MODID, "taint_meat"), new CrucibleRecipe(
@@ -53,9 +54,9 @@ private static void initCrucibleRecipes() {
                 new ItemStack(ItemsOT.TAINT_MEAT),
                 new ItemStack(Items.CHICKEN),
                 new AspectList().add(Aspect.TAINT, 20).add(Aspect.PERMUTATIO, 10)
-        ));
-        
-ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "cleansing_amulet"), new InfusionRecipe(
+        ));}
+private static void initInfusionRecipes() {
+      ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "cleansing_amulet"), new InfusionRecipe(
                 "CLEANSING_AMULET",
                 new ItemStack(ItemsOT.CLEANSING_AMULET),
                 8,
@@ -67,4 +68,4 @@ ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(OtherThaumcraft.MOD
                         new ItemStack(ItemsTC.BATH_SALTS),
                         Ingredient.fromItem(ItemsTC.primordialPearl),
                 }
-        ));
+        ));}
