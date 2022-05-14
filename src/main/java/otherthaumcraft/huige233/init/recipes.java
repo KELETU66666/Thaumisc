@@ -32,6 +32,18 @@ import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 
+public class InitRecipes {
+    private static ResourceLocation defaultGroup = new ResourceLocation("");
+    
+    public static void initRecipes(IForgeRegistry<IRecipe> forgeRegistry) {
+        initNormalRecipes(forgeRegistry);
+        initArcaneRecipes();
+        initCrucibleRecipes();
+        initInfusionRecipes();
+        initMultiblockRecipes();
+        initSmelting();
+    }
+  
 private static void initArcaneRecipes() {
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "warp_paper"), new ShapedArcaneRecipe(
                 defaultGroup,
