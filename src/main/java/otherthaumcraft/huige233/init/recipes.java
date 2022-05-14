@@ -32,7 +32,7 @@ import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 
-private static void initArcaneRecipes()
+private static void initArcaneRecipes() {
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.IronSpike"), new ShapedArcaneRecipe(
                 defaultGroup,
                 "WARP_PAPER",
