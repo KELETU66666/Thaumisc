@@ -1,20 +1,15 @@
 package otherthaumcraft.huige233.init;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import com.huige233.otherthaumcraft.OtherThaumcraft;
-import com.huige233.otherthaumcraft.common.items.ItemsOT;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.FluidUtil;
+import net.minecraftforge.registries.IForgeRegistry;
+import otherthaumcraft.huige233.OtherThaumcraft;
+import otherthaumcraft.huige233.common.ItemsOT;
+import otherthaumcraft.huige233.util.Reference;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
@@ -35,46 +30,44 @@ import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 public class InitRecipes {
     private static ResourceLocation defaultGroup = new ResourceLocation("");
     
-    public static void initRecipes(IForgeRegistry<IRecipe> forgeRegistry) {
+    public static void initRecipes() {
         initArcaneRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
     }
   
 private static void initArcaneRecipes() {
-                ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "warp_paper"), new ShapedArcaneRecipe(
+                ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "warp_paper"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "WARP_PAPER",
+                "",
                 30,
-                new ItemStack(ItemsOT.warp_paper,1),
-                new Object[] {
-                        "PSP",
-                        "   ",
-                        "   ",
-                        Character.valueOf('P'), new ItemStack(Items.PAPER),
-                        Character.valueOf('S'), new ItemStack(ItemsTC.salisMundus),
-                }
-        ));
+                new AspectList(),
+                new ItemStack(ItemsOT.WARP_PAPER),
+                    "PSP",
+                    "   ",
+                    "   ",
+                    'P', new ItemStack(Items.PAPER),
+                    'S', new ItemStack(ItemsTC.salisMundus)));
 }
         
 private static void initCrucibleRecipes() {
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(OtherThaumcraft.MODID, "taint_meat"), new CrucibleRecipe(
-                "TAINT_MEAT",
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "taint_meat"), new CrucibleRecipe(
+                "",
                 new ItemStack(ItemsOT.TAINT_MEAT),
                 new ItemStack(Items.CHICKEN),
-                new AspectList().add(Aspect.TAINT, 20).add(Aspect.PERMUTATIO, 10)
+                new AspectList().add(Aspect.FLUX, 20).add(Aspect.EXCHANGE, 10)
         ));}
 private static void initInfusionRecipes() {
-      ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(OtherThaumcraft.MODID, "cleansing_amulet"), new InfusionRecipe(
-                "CLEANSING_AMULET",
+      ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "cleansing_amulet"), new InfusionRecipe(
+                "",
                 new ItemStack(ItemsOT.CLEANSING_AMULET),
                 8,
                 new AspectList().add(Aspect.MIND, 100).add(Aspect.ORDER, 75).add(Aspect.AURA, 50).add(Aspect.ENERGY, 50).add(Aspect.EXCHANGE, 30),
-                new ItemStack(ItemsTC.amulet_vis),
+                new ItemStack(ItemsTC.amuletVis),
                 new Object[] {
-                        new ItemStack(ItemsTC.SANITY_SOAP),
-                        new ItemStack(ItemsTC.BATH_SALTS),
-                        new ItemStack(ItemsTC.BATH_SALTS),
+                        new ItemStack(ItemsTC.sanitySoap),
+                        new ItemStack(ItemsTC.bathSalts),
+                        new ItemStack(ItemsTC.bathSalts),
                         Ingredient.fromItem(ItemsTC.primordialPearl),
                 }
         ));}

@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import otherthaumcraft.huige233.init.InitRecipes;
 import otherthaumcraft.huige233.proxy.CommonProxy;
 import otherthaumcraft.huige233.util.Reference;
 
@@ -40,7 +41,7 @@ public class OtherThaumcraft {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
+        InitRecipes.initRecipes();
     }
 
     /**
