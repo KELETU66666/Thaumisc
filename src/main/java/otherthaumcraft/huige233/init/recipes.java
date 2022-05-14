@@ -36,12 +36,9 @@ public class InitRecipes {
     private static ResourceLocation defaultGroup = new ResourceLocation("");
     
     public static void initRecipes(IForgeRegistry<IRecipe> forgeRegistry) {
-        initNormalRecipes(forgeRegistry);
         initArcaneRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
-        initMultiblockRecipes();
-        initSmelting();
     }
   
 private static void initArcaneRecipes() {
