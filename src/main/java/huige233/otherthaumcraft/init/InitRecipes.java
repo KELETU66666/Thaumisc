@@ -42,7 +42,7 @@ private static void initArcaneRecipes() {
                 "WARP_PAPER",
                 30,
                 new AspectList(),
-                new ItemStack(ItemsOT.WARP_PAPER,3,0)
+                new ItemStack(ItemsOT.WARP_PAPER,3,0),
                     "PSP",
                     "   ",
                     "   ",
