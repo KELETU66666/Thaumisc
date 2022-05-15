@@ -61,7 +61,7 @@
           {
             "text": "otherthuamcraft.research.taintmeat.complete.text",
             "recipes": [
-                "otherthaumcraft:taint_meat1","otherthaumcraft:taint_meat2","otherthaumcraft:taint_meat","otherthaumcraft:taint_meat4","otherthaumcraft:taint_meat5"
+                "otherthaumcraft:taint_meat1","otherthaumcraft:taint_meat2","otherthaumcraft:taint_meat","otherthaumcraft:taint_meat4","otherthaumcraft:taint_meat5","otherthaumcraft:taint_meat6"
             ],
             "warp": 2
           }
