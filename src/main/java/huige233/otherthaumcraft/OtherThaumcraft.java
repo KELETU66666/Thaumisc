@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import huige233.otherthaumcraft.init.InitRecipes;
+import huige233.otherthaumcraft.init.InitResearch;
 import huige233.otherthaumcraft.proxy.CommonProxy;
 import huige233.otherthaumcraft.util.Reference;
 
@@ -42,6 +43,7 @@ public class OtherThaumcraft {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         InitRecipes.initRecipes();
+        InitResearch.registerResearch();
     }
 
     /**
