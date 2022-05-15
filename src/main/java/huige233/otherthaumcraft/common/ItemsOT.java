@@ -1,12 +1,12 @@
-package otherthaumcraft.huige233.common;
+package huige233.otherthaumcraft.common;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import otherthaumcraft.huige233.OtherThaumcraft;
-import otherthaumcraft.huige233.util.Reference;
+import huige233.otherthaumcraft.OtherThaumcraft;
+import huige233.otherthaumcraft.util.Reference;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ItemsOT {

@@ -1,13 +1,13 @@
-package otherthaumcraft.huige233.util;
+package huige233.otherthaumcraft.util;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import otherthaumcraft.huige233.items.Cleansingamulet;
-import otherthaumcraft.huige233.items.ModItems;
-import otherthaumcraft.huige233.items.warppaper;
+import huige233.otherthaumcraft.items.Cleansingamulet;
+import huige233.otherthaumcraft.items.ModItems;
+import huige233.otherthaumcraft.items.warppaper;
 
 @Mod.EventBusSubscriber
 

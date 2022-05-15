@@ -1,4 +1,4 @@
-package otherthaumcraft.huige233.items;
+package huige233.otherthaumcraft.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

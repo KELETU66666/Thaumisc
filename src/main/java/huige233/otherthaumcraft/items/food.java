@@ -1,12 +1,12 @@
-package otherthaumcraft.huige233.items;
+package huige233.otherthaumcraft.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import otherthaumcraft.huige233.OtherThaumcraft;
-import otherthaumcraft.huige233.util.IHasModel;
+import huige233.otherthaumcraft.OtherThaumcraft;
+import huige233.otherthaumcraft.util.IHasModel;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType;
 

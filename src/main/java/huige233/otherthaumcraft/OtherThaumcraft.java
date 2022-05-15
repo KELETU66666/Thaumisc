@@ -1,4 +1,4 @@
-package otherthaumcraft.huige233;
+package huige233.otherthaumcraft;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -10,9 +10,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import otherthaumcraft.huige233.init.InitRecipes;
-import otherthaumcraft.huige233.proxy.CommonProxy;
-import otherthaumcraft.huige233.util.Reference;
+import huige233.otherthaumcraft.init.InitRecipes;
+import huige233.otherthaumcraft.proxy.CommonProxy;
+import huige233.otherthaumcraft.util.Reference;
 
 @Mod(
         modid = Reference.MOD_ID,

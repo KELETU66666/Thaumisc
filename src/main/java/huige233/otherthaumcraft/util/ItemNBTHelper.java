@@ -1,4 +1,4 @@
-package otherthaumcraft.huige233.util;
+package huige233.otherthaumcraft.util;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;

@@ -1,4 +1,4 @@
-package otherthaumcraft.huige233.init;
+package huige233.otherthaumcraft.init;
 
 
 import net.minecraft.init.Items;
@@ -7,9 +7,9 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.IForgeRegistry;
-import otherthaumcraft.huige233.OtherThaumcraft;
-import otherthaumcraft.huige233.common.ItemsOT;
-import otherthaumcraft.huige233.util.Reference;
+import huige233.otherthaumcraft.OtherThaumcraft;
+import huige233.otherthaumcraft.common.ItemsOT;
+import huige233.otherthaumcraft.util.Reference;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;

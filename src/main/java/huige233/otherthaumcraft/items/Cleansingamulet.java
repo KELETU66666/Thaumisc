@@ -1,4 +1,4 @@
-package otherthaumcraft.huige233.items;
+package huige233.otherthaumcraft.items;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
@@ -8,7 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.NonNullList;
-import otherthaumcraft.huige233.util.ItemNBTHelper;
+import huige233.otherthaumcraft.util.ItemNBTHelper;
 import thaumcraft.Thaumcraft;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;

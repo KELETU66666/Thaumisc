@@ -1,4 +1,4 @@
-package otherthaumcraft.huige233.proxy;
+package huige233.otherthaumcraft.proxy;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

@@ -1,4 +1,4 @@
-package otherthaumcraft.huige233.proxy;
+package huige233.otherthaumcraft.proxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

@@ -1,9 +1,9 @@
-package otherthaumcraft.huige233.items;
+package huige233.otherthaumcraft.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import otherthaumcraft.huige233.OtherThaumcraft;
-import otherthaumcraft.huige233.util.IHasModel;
+import huige233.otherthaumcraft.OtherThaumcraft;
+import huige233.otherthaumcraft.util.IHasModel;
 
 public class ItemBase extends Item implements IHasModel {
     public ItemBase(String name, CreativeTabs tab) {
