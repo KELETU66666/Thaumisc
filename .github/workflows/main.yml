@@ -24,7 +24,7 @@ jobs:
       - name: build
         run: |
           sh ./gradlew build -Dfile.encoding=UTF-8 --info
-          cp -rf ./build/lib /opt/build
+          cp -rf ./build/libs /opt/build
       - name: upload
         uses: actions/upload-artifact@v3
         with:
