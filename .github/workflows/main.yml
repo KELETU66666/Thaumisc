@@ -29,3 +29,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: testbuild
+          path: /opt/build
