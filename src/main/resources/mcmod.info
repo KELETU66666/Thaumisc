@@ -1,7 +1,7 @@
 [
     {
-        "modid": "otherThaumcraft",
-        "name": "Main",
+        "modid": "keletupack",
+        "name": "keletupack",
         "description": "",
         "version": "${version}",
         "mcversion": "${mcversion}",
