@@ -26,7 +26,7 @@ public class InitRecipes {
   
 private static void initArcaneRecipes() {
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "warp_paper"), new ShapedArcaneRecipe(
-                defaultGroup,
+                        defaultGroup,
                 "WARP_PAPER",
                 30,
                 new AspectList(),
@@ -36,6 +36,30 @@ private static void initArcaneRecipes() {
                     "   ",
                     'P', new ItemStack(Items.PAPER),
                     'S', new ItemStack(ItemsTC.salisMundus)));
+                ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_cloth"), new ShapedArcaneRecipe(
+                        defaultGroup,
+            "ICHOR_CLOTH",
+            750,
+            new AspectList().add(Aspect.AIR, 10).add(Aspect.WATER, 10).add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.FIRE, 10).add(Aspect.ENTROPY, 10),
+            new ItemStack(ItemsOT.ICHOR_CLOTH,3,0),
+            "CCC",
+            "III",
+            "DDD",
+            'C', new ItemStack(ItemsTC.fabric),
+            'I', new ItemStack(ItemsOT.ICHOR),
+            'D', new ItemStack(Items.DIAMOND)));
+                ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHOR_INGOT",
+            500,
+            new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.ENTROPY, 5),
+            new ItemStack(ItemsOT.ICHOR_INGOT),
+            " T ",
+            "IDI",
+            " I ",
+            'T', new ItemStack(ItemsTC.ingots, 1, 0),
+            'I', new ItemStack(ItemsOT.ICHOR),
+            'D', new ItemStack(Items.DIAMOND)));
 }
         
 private static void initCrucibleRecipes() {
@@ -88,5 +112,18 @@ private static void initInfusionRecipes() {
                         new ItemStack(ItemsTC.bathSalts),
                         Ingredient.fromItem(ItemsTC.primordialPearl),
                 }
-        ));}
+        ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_block"), new InfusionRecipe(
+            "ICHOR",
+            new ItemStack(ItemsOT.ICHOR),
+            8,
+            new AspectList().add(Aspect.LIGHT, 125).add(Aspect.MAN, 125).add(Aspect.SOUL, 250),
+            new ItemStack(Items.NETHER_STAR),
+            new Object[] {
+                    new ItemStack(ItemsOT.SHARD_NETHER),
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsOT.SHARD_END),
+                    new ItemStack(Items.ENDER_EYE),
+            }
+    ));}
 }

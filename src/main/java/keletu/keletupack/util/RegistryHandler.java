@@ -20,6 +20,11 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new coin_adventure());
         event.getRegistry().registerAll(new coin_bleed());
         event.getRegistry().registerAll(new coin_magic());
+        event.getRegistry().registerAll(new EnderShard());
+        event.getRegistry().registerAll(new NetherShard());
+        event.getRegistry().registerAll(new Ichor());
+        event.getRegistry().registerAll(new IchorCloth());
+        event.getRegistry().registerAll(new IchorIngot());
     }
 
 
