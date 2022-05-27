@@ -14,5 +14,12 @@ public class ItemsOT {
     public static final Item ICHOR_INGOT = null;
     public static final Item SHARD_NETHER =null;
     public static final Item SHARD_END = null;
-
+    public static final Item ICHORIUM_SWORD =null;
+    public static final Item ICHORIUM_AXE = null;
+    public static final Item ICHORIUM_PICK =null;
+    public static final Item ICHORIUM_SHOVEL = null;
+    public static final Item ICHOR_HELM =null;
+    public static final Item ICHOR_CHEST = null;
+    public static final Item ICHOR_LEGS =null;
+    public static final Item ICHOR_BOOTS =null;
 }

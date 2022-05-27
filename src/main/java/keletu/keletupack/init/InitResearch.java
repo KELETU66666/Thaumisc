@@ -5,8 +5,8 @@ import thaumcraft.api.ThaumcraftApi;
 
 public class InitResearch {
 
-	public static void registerResearch() {
-		ThaumcraftApi.registerResearchLocation(new ResourceLocation("research/research.json"));
-    
-  }
+    public static void registerResearch() {
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation("research/research.json"));
+
+    }
 }

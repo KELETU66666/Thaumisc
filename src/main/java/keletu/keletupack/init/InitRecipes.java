@@ -49,17 +49,101 @@ private static void initArcaneRecipes() {
             'I', new ItemStack(ItemsOT.ICHOR),
             'D', new ItemStack(Items.DIAMOND)));
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
+                  defaultGroup,
+                  "ICHOR_INGOT",
+                    500,
+                  new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.ENTROPY, 5),
+                   new ItemStack(ItemsOT.ICHOR_INGOT),
+                        " T ",
+                        "IDI",
+                        " I ",
+                        'T', new ItemStack(ItemsTC.ingots, 1, 0),
+                        'I', new ItemStack(ItemsOT.ICHOR),
+                        'D', new ItemStack(Items.DIAMOND)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_sword"), new ShapedArcaneRecipe(
             defaultGroup,
-            "ICHOR_INGOT",
-            500,
-            new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.ENTROPY, 5),
-            new ItemStack(ItemsOT.ICHOR_INGOT),
-            " T ",
-            "IDI",
+            "ICHORIUMTOOLS",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHORIUM_SWORD),
             " I ",
-            'T', new ItemStack(ItemsTC.ingots, 1, 0),
-            'I', new ItemStack(ItemsOT.ICHOR),
-            'D', new ItemStack(Items.DIAMOND)));
+            " I ",
+            " S ",
+            'I', new ItemStack(ItemsOT.ICHOR_INGOT),
+            'S', new ItemStack(Items.STICK)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_pickaxe"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHORIUMTOOLS",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHORIUM_PICK),
+            "III",
+            " S ",
+            " S ",
+            'I', new ItemStack(ItemsOT.ICHOR_INGOT),
+            'S', new ItemStack(Items.STICK)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_shovel"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHORIUMTOOLS",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHORIUM_SHOVEL),
+            " I ",
+            " S ",
+            " S ",
+            'I', new ItemStack(ItemsOT.ICHOR_INGOT),
+            'S', new ItemStack(Items.STICK)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_axe"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHORIUMTOOLS",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHORIUM_AXE),
+            "II ",
+            "IS ",
+            " S ",
+            'I', new ItemStack(ItemsOT.ICHOR_INGOT),
+            'S', new ItemStack(Items.STICK)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHORIUMARMOR",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHOR_HELM),
+            "CCC",
+            "C C",
+            "   ",
+            'C', new ItemStack(ItemsOT.ICHOR_CLOTH)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_chest"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHORIUMARMOR",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHOR_CHEST),
+            "C C",
+            "CCC",
+            "CCC",
+            'C', new ItemStack(ItemsOT.ICHOR_CLOTH)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_legs"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHORIUMARMOR",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHOR_LEGS),
+            "CCC",
+            "C C",
+            "C C",
+            'C', new ItemStack(ItemsOT.ICHOR_CLOTH)));
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_boots"), new ShapedArcaneRecipe(
+            defaultGroup,
+            "ICHORIUMARMOR",
+            150,
+            new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
+            new ItemStack(ItemsOT.ICHOR_BOOTS),
+            "C C",
+            "C C",
+            "   ",
+            'C', new ItemStack(ItemsOT.ICHOR_CLOTH)));
 }
         
 private static void initCrucibleRecipes() {
