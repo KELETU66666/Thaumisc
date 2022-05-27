@@ -42,7 +42,7 @@ public class RegistryHandler {
             }
         }
         //新加入对于block的信息注册
-        for (net.minecraft.block.Block block: ModBlocks.BLOCKS) {
+        for (Block block: ModBlocks.BLOCKS) {
             if (block instanceof IHasModel) {
                 ((IHasModel)block).registerModels();
             }

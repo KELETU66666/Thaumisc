@@ -106,7 +106,7 @@ private static void initArcaneRecipes() {
             " S ",
             'I', new ItemStack(ItemsOT.ICHOR_INGOT),
             'S', new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_helm"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMARMOR",
             150,
