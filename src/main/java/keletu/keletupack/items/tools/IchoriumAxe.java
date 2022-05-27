@@ -10,7 +10,7 @@ import net.minecraft.item.ItemSword;
 public class IchoriumAxe extends ItemAxe implements IHasModel{
     public IchoriumAxe(String name, CreativeTabs tab, ToolMaterial material) {
 
-        super(material,10.0F,-1.5F);
+        super(material,10.0F,0.0F);
         setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);

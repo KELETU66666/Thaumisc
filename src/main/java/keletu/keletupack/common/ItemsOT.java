@@ -22,4 +22,5 @@ public class ItemsOT {
     public static final Item ICHOR_CHEST = null;
     public static final Item ICHOR_LEGS =null;
     public static final Item ICHOR_BOOTS =null;
+    public static final Item ICHORBUCKET =null;
 }

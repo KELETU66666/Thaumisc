@@ -1,5 +1,6 @@
 package keletu.keletupack;
 
+import keletu.keletupack.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -93,9 +94,6 @@ public class keletupack {
        /** Listen for the register event for creating custom blocks */
        @SubscribeEvent
        public static void addBlocks(RegistryEvent.Register<Block> event) {
-           /*
-             event.getRegistry().register(new MySpecialBlock().setRegistryName(MOD_ID, "mySpecialBlock"));
-            */
        }
     }
     /* EXAMPLE ITEM AND BLOCK - you probably want these in separate files

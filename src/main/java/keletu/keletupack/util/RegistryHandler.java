@@ -1,6 +1,10 @@
 package keletu.keletupack.util;
 
+import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.items.*;
+import keletu.keletupack.keletupack;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -25,9 +29,8 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new Ichor());
         event.getRegistry().registerAll(new IchorCloth());
         event.getRegistry().registerAll(new IchorIngot());
+        event.getRegistry().registerAll(new IchorBucket());
     }
-
-
     @SubscribeEvent
     public static void onModelRegister( ModelRegistryEvent event )
     {
@@ -38,5 +41,18 @@ public class RegistryHandler {
                 ( (IHasModel) item).registerModels();
             }
         }
+        //新加入对于block的信息注册
+        for (net.minecraft.block.Block block: ModBlocks.BLOCKS) {
+            if (block instanceof IHasModel) {
+                ((IHasModel)block).registerModels();
+            }
+        }
+
+    }
+    //新加入对物品的注册事件
+    @SubscribeEvent
+    public static void onBlockRegister(RegistryEvent.Register<Block> event)
+    {
+        event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
     }
 }

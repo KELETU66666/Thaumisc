@@ -17,3 +17,6 @@ item.ichor_boots.name=灵布靴子
 item.ichor.name=灵液
 item.ichor_cloth.name=灵布
 item.ichor_ingot.name=灵宝
+item.shard_nether.name=下界残片
+item.shard_end.name=末影裂痕
+item.ichor_bucket.name=装满灵液的桶

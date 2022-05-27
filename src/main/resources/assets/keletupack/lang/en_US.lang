@@ -17,3 +17,6 @@ item.ichor_boots.name=Ichorcloth Boots
 item.ichor.name=Ichor
 item.ichor_cloth.name=Ichor Cloth
 item.ichor_ingot.name=Ichorium Ingot
+item.shard_nether.name=Nether Shard
+item.shard_end.name=Ender Shard
+item.ichor_bucket.name=Ichor Bucket

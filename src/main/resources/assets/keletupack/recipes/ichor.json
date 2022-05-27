@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "keletupack:ichor_block"
+    }
+  ],
+  "result": {
+    "item": "keletupack:ichor",
+    "count": 8,
+    "data": 0
+  }
+}

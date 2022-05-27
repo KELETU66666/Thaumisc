@@ -1,6 +1,7 @@
 package keletu.keletupack.init;
 
 
+import keletu.keletupack.common.BlocksOT;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -10,6 +11,7 @@ import keletu.keletupack.util.Reference;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
@@ -70,7 +72,7 @@ private static void initArcaneRecipes() {
             " I ",
             " S ",
             'I', new ItemStack(ItemsOT.ICHOR_INGOT),
-            'S', new ItemStack(Items.STICK)));
+            'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_pickaxe"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMTOOLS",
@@ -81,7 +83,7 @@ private static void initArcaneRecipes() {
             " S ",
             " S ",
             'I', new ItemStack(ItemsOT.ICHOR_INGOT),
-            'S', new ItemStack(Items.STICK)));
+            'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_shovel"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMTOOLS",
@@ -92,7 +94,7 @@ private static void initArcaneRecipes() {
             " S ",
             " S ",
             'I', new ItemStack(ItemsOT.ICHOR_INGOT),
-            'S', new ItemStack(Items.STICK)));
+            'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_axe"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMTOOLS",
@@ -103,7 +105,7 @@ private static void initArcaneRecipes() {
             "IS ",
             " S ",
             'I', new ItemStack(ItemsOT.ICHOR_INGOT),
-            'S', new ItemStack(Items.STICK)));
+            'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMARMOR",
@@ -199,7 +201,7 @@ private static void initInfusionRecipes() {
         ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_block"), new InfusionRecipe(
             "ICHOR",
-            new ItemStack(ItemsOT.ICHOR),
+            new ItemStack(BlocksOT.ICHOR_BLOCK),
             8,
             new AspectList().add(Aspect.LIGHT, 125).add(Aspect.MAN, 125).add(Aspect.SOUL, 250),
             new ItemStack(Items.NETHER_STAR),
