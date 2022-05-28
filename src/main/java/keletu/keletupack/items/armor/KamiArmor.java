@@ -1,13 +1,13 @@
 package keletu.keletupack.items.armor;
 
-import keletu.keletupack.items.ModItems;
+import keletu.keletupack.init.ModItems;
+import keletu.keletupack.keletupack;
 import keletu.keletupack.util.Reference;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -20,8 +20,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.items.IGoggles;
 import thaumcraft.api.items.IVisDiscountGear;
-
-import javax.print.attribute.HashAttributeSet;
 
 public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
     public static final ArmorMaterial ICHORADV = EnumHelper.addArmorMaterial("ICHORADV", "ichoradv", 0, new int[]{
@@ -74,6 +72,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
             break;
 
             case CHEST: {
+                mp.capabilities.allowFlying = true;
             }
             break;
             case LEGS: {
@@ -82,6 +81,10 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
                     mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 200, 0, true, false));
                     mp.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 20, 1, true, false));
                     mp.extinguish();
+                }
+                if(mp.isInLava())
+                {
+                    mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 200, 0, true, false));
                 }
 
             }
@@ -135,7 +138,9 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
         {
             return null;
         }
-
+         public void registerModels() {
+         keletupack.proxy.registerItemRenderer(this, 0, "inventory");
+    }
         @Override
         public int getVisDiscount(ItemStack stack, EntityPlayer player)
         {

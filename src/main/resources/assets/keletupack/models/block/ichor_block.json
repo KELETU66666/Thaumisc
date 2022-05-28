@@ -1,5 +1,6 @@
 {
-  "variants": {
-    "normal": { "model": "keletupack:ichor_block" }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "keletupack:blocks/ichor_block"
   }
 }

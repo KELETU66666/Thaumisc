@@ -1,5 +1,6 @@
-package keletu.keletupack.items;
+package keletu.keletupack.init;
 
+import keletu.keletupack.items.food;
 import keletu.keletupack.items.tools.*;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.armor.IchorArmor;

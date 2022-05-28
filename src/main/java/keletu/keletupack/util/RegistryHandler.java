@@ -1,10 +1,9 @@
 package keletu.keletupack.util;
 
 import keletu.keletupack.init.ModBlocks;
+import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.*;
-import keletu.keletupack.keletupack;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -47,8 +46,10 @@ public class RegistryHandler {
             }
         }
         //新加入对于block的信息注册
-        for (Block block: ModBlocks.BLOCKS) {
-            if (block instanceof IHasModel) {
+        for (Block block: ModBlocks.BLOCKS)
+        {
+            if (block instanceof IHasModel)
+            {
                 ((IHasModel)block).registerModels();
             }
         }

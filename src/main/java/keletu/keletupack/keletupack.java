@@ -1,6 +1,5 @@
 package keletu.keletupack;
 
-import keletu.keletupack.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;

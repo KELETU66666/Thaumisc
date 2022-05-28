@@ -1,5 +1,6 @@
 package keletu.keletupack.items;
 
+import keletu.keletupack.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;

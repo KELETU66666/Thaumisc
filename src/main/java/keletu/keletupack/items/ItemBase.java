@@ -1,5 +1,6 @@
 package keletu.keletupack.items;
 
+import keletu.keletupack.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import keletu.keletupack.keletupack;
