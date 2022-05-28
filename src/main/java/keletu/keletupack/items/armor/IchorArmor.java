@@ -15,7 +15,6 @@ public class IchorArmor extends ItemArmor implements IHasModel, IVisDiscountGear
 
     public IchorArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, CreativeTabs tab) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
-        // TODO 自动生成的构造函数存根
         setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);

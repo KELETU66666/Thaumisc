@@ -6,5 +6,5 @@ import net.minecraft.world.storage.loot.LootTableList;
 
 public class LootTableHandler {
 
-    public static final ResourceLocation RA3 = LootTableList.register(new ResourceLocation(Reference.MOD_ID ,"ra3"));
+    public static final ResourceLocation RA3 = LootTableList.register(new ResourceLocation(Reference.MOD_ID ,"enderman"));
 }

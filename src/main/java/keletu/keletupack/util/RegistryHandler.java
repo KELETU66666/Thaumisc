@@ -32,6 +32,11 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new IchorBucket());
     }
     @SubscribeEvent
+    public static void onBlockRegister(RegistryEvent.Register<Block> event) {
+        event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
+    }
+
+    @SubscribeEvent
     public static void onModelRegister( ModelRegistryEvent event )
     {
         for ( Item item : ModItems.ITEMS )
@@ -48,11 +53,5 @@ public class RegistryHandler {
             }
         }
 
-    }
-    //新加入对物品的注册事件
-    @SubscribeEvent
-    public static void onBlockRegister(RegistryEvent.Register<Block> event)
-    {
-        event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
     }
 }
