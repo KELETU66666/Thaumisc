@@ -2,6 +2,7 @@ package keletu.keletupack.items.armor;
 
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
+import keletu.keletupack.util.IHasModel;
 import keletu.keletupack.util.Reference;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.creativetab.CreativeTabs;
@@ -21,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.items.IGoggles;
 import thaumcraft.api.items.IVisDiscountGear;
 
-public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
+public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, IHasModel {
     public static final ArmorMaterial ICHORADV = EnumHelper.addArmorMaterial("ICHORADV", "ichoradv", 0, new int[]{
             3,
             8,
@@ -45,6 +46,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
 
         ModItems.ITEMS.add(this);
     }
+
     @Override
     public boolean isEnchantable(ItemStack stack) {
         return true;
@@ -76,14 +78,12 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
             }
             break;
             case LEGS: {
-                if(mp.isBurning())
-                {
+                if (mp.isBurning()) {
                     mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 200, 0, true, false));
                     mp.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 20, 1, true, false));
                     mp.extinguish();
                 }
-                if(mp.isInLava())
-                {
+                if (mp.isInLava()) {
                     mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 200, 0, true, false));
                 }
 
@@ -92,21 +92,17 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
 
             case FEET: {
                 {
-                    if(!mp.capabilities.isFlying && mp.moveForward > 0.0f)
-                    {
-                        if(mp.world.isRemote && !mp.isSneaking())
-                        {
+                    if (!mp.capabilities.isFlying && mp.moveForward > 0.0f) {
+                        if (mp.world.isRemote && !mp.isSneaking()) {
                             mp.stepHeight = 1.0f;
                         }
-                        if(mp.onGround)
-                        {
+                        if (mp.onGround) {
                             float bonus = 0.06f;
-                            if(mp.isInWater())
+                            if (mp.isInWater())
                                 bonus /= 2.0f;
                             mp.moveRelative(0.0f, 0.0f, bonus, 1.0f);
-                        } else
-                        {
-                            if(mp.isInWater())
+                        } else {
+                            if (mp.isInWater())
                                 mp.moveRelative(0.0f, 0.0f, 0.03f, 1.0f);
                             mp.jumpMovementFactor = 0.05f;
                         }
@@ -120,38 +116,35 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles {
 
         }
     }
-        @Override
-        public KamiArmor setTranslationKey(String key)
-        {
-            return (KamiArmor) super.setTranslationKey(key);
-        }
 
-        @Override
-        public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type)
-        {
-            return Reference.MOD_ID + ":textures/models/armor/kami_layer_" + (slot == EntityEquipmentSlot.LEGS ? "2" : "1") + ".png";
-        }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default)
-        {
-            return null;
-        }
-         public void registerModels() {
-         keletupack.proxy.registerItemRenderer(this, 0, "inventory");
+    @Override
+    public KamiArmor setTranslationKey(String key) {
+        return (KamiArmor) super.setTranslationKey(key);
     }
-        @Override
-        public int getVisDiscount(ItemStack stack, EntityPlayer player)
-        {
-            return discounts[armorType.ordinal()];
-        }
 
-        @Override
-        public boolean showIngamePopups(ItemStack stack, EntityLivingBase owner)
-        {
-            return armorType == EntityEquipmentSlot.HEAD;
-        }
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
+        return Reference.MOD_ID + ":textures/models/armor/kami_layer_" + (slot == EntityEquipmentSlot.LEGS ? "2" : "1") + ".png";
+    }
 
+    @Override
+    @SideOnly(Side.CLIENT)
+    public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default) {
+        return null;
+    }
+    @Override
+    public int getVisDiscount(ItemStack stack, EntityPlayer player) {
+        return discounts[armorType.ordinal()];
+    }
+
+    @Override
+    public void registerModels() {
+        keletupack.proxy.registerItemRenderer(this, 0, "inventory");
+    }
+
+    @Override
+    public boolean showIngamePopups(ItemStack stack, EntityLivingBase owner) {
+        return armorType == EntityEquipmentSlot.HEAD;
+    }
 
 }
