@@ -205,7 +205,7 @@ private static void initInfusionRecipes() {
             8,
             new AspectList().add(Aspect.LIGHT, 125).add(Aspect.MAN, 125).add(Aspect.SOUL, 250),
             new ItemStack(Items.NETHER_STAR),
-            new Object[] {
+            new Object[]{
                     new ItemStack(ItemsKP.SHARD_NETHER),
                     new ItemStack(Items.DIAMOND),
                     new ItemStack(ItemsKP.SHARD_END),
