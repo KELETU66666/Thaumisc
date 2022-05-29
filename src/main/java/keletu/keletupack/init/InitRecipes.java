@@ -2,12 +2,17 @@ package keletu.keletupack.init;
 
 
 import keletu.keletupack.common.BlocksKP;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.potion.PotionType;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.util.Reference;
+import net.minecraftforge.client.event.RenderTooltipEvent;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -40,7 +45,7 @@ private static void initArcaneRecipes() {
                     'S', new ItemStack(ItemsTC.salisMundus)));
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_cloth"), new ShapedArcaneRecipe(
                         defaultGroup,
-            "ICHOR_CLOTH",
+            "ICHORARMOR",
             750,
             new AspectList().add(Aspect.AIR, 10).add(Aspect.WATER, 10).add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.FIRE, 10).add(Aspect.ENTROPY, 10),
             new ItemStack(ItemsKP.ICHOR_CLOTH,3,0),
@@ -52,7 +57,7 @@ private static void initArcaneRecipes() {
             'D', new ItemStack(Items.DIAMOND)));
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
                   defaultGroup,
-                  "ICHOR_INGOT",
+                  "ICHORIUMTOOLS",
                     500,
                   new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.ENTROPY, 5),
                    new ItemStack(ItemsKP.ICHOR_INGOT),
@@ -73,7 +78,7 @@ private static void initArcaneRecipes() {
             " S ",
             'I', new ItemStack(ItemsKP.ICHOR_INGOT),
             'S', new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_pickaxe"), new ShapedArcaneRecipe(
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_pick"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMTOOLS",
             150,
@@ -84,7 +89,7 @@ private static void initArcaneRecipes() {
             " S ",
             'I', new ItemStack(ItemsKP.ICHOR_INGOT),
             'S', new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_shovel"), new ShapedArcaneRecipe(
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_shovel"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMTOOLS",
             150,
@@ -95,7 +100,7 @@ private static void initArcaneRecipes() {
             " S ",
             'I', new ItemStack(ItemsKP.ICHOR_INGOT),
             'S', new ItemStack(BlocksTC.logSilverwood)));
-    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_axe"), new ShapedArcaneRecipe(
+    ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_axe"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORIUMTOOLS",
             150,
@@ -211,5 +216,90 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsKP.SHARD_END),
                     new ItemStack(Items.ENDER_EYE),
             }
-    ));}
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "kami_helm"), new InfusionRecipe(
+            "KAMIHELM",
+            new ItemStack(ItemsKP.KAMI_HELM),
+            40,
+            new AspectList().add(Aspect.WATER, 150).add(Aspect.AURA, 125).add(Aspect.MIND, 60).add(Aspect.LIFE, 60).add(Aspect.LIGHT, 250).add(Aspect.PROTECT, 125),
+                    new ItemStack(ItemsKP.ICHOR_HELM),
+            new Object[]{
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsTC.thaumonomicon),
+                    new ItemStack(Items.CHORUS_FRUIT_POPPED),
+                    new ItemStack(Items.GOLDEN_HELMET),
+                    PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.NIGHT_VISION),
+                    new ItemStack(ItemsTC.goggles),
+                    new ItemStack(Items.GHAST_TEAR),
+                    new ItemStack(Items.FISH),
+                    new ItemStack(Items.CAKE),
+                    new ItemStack(Items.ENDER_EYE)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "kami_chest"), new InfusionRecipe(
+            "KAMICHEST",
+            new ItemStack(ItemsKP.KAMI_CHEST),
+            40,
+            new AspectList().add(Aspect.AIR, 150).add(Aspect.PROTECT, 125).add(Aspect.FLIGHT, 125).add(Aspect.ORDER, 125).add(Aspect.LIGHT, 250).add(Aspect.ELDRITCH, 60),
+            new ItemStack(ItemsKP.ICHOR_CHEST),
+            new Object[]{
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsTC.thaumonomicon),
+                    new ItemStack(Items.CHORUS_FRUIT_POPPED),
+                    new ItemStack(Items.GOLDEN_CHESTPLATE),
+                    new ItemStack(ItemsTC.ringCloud),
+                    new ItemStack(ItemsTC.grappleGun),
+                    new ItemStack(Items.SHIELD),
+                    new ItemStack(Items.FEATHER),
+                    new ItemStack(Items.GHAST_TEAR),
+                    new ItemStack(Items.ARROW)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "kami_legs"), new InfusionRecipe(
+            "KAMILEGS",
+            new ItemStack(ItemsKP.KAMI_LEGS),
+            40,
+            new AspectList().add(Aspect.AIR, 150).add(Aspect.PROTECT, 125).add(Aspect.FLIGHT, 125).add(Aspect.ORDER, 125).add(Aspect.LIGHT, 250).add(Aspect.ELDRITCH, 60),
+            new ItemStack(ItemsKP.ICHOR_LEGS),
+            new Object[]{
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsTC.thaumonomicon),
+                    new ItemStack(Items.CHORUS_FRUIT_POPPED),
+                    new ItemStack(Items.GOLDEN_CHESTPLATE),
+                    PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.FIRE_RESISTANCE),
+                    new ItemStack(ItemsTC.modules,1 ,1),
+                    new ItemStack(BlocksTC.lampArcane),
+                    new ItemStack(Items.LAVA_BUCKET),
+                    new ItemStack(Items.FIRE_CHARGE),
+                    new ItemStack(Items.BLAZE_ROD)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "kami_boots"), new InfusionRecipe(
+            "KAMIBOOTS",
+            new ItemStack(ItemsKP.KAMI_BOOTS),
+            40,
+            new AspectList().add(Aspect.EARTH, 150).add(Aspect.PROTECT, 125).add(Aspect.TOOL, 125).add(Aspect.MOTION, 125).add(Aspect.LIGHT, 250).add(Aspect.PLANT, 60).add(Aspect.FLIGHT, 60),
+            new ItemStack(ItemsKP.ICHOR_BOOTS),
+            new Object[]{
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsTC.thaumonomicon),
+                    new ItemStack(Items.CHORUS_FRUIT_POPPED),
+                    new ItemStack(Items.GOLDEN_BOOTS),
+                    new ItemStack(BlocksTC.grassAmbient),
+                    new ItemStack(Items.WHEAT_SEEDS),
+                    new ItemStack(BlocksTC.lampGrowth),
+                    new ItemStack(ItemsTC.turretPlacer,1, 2),
+                    new ItemStack(Blocks.WOOL),
+                    new ItemStack(Items.LEAD)
+            }
+    ));
+    }
 }

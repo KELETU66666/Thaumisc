@@ -26,6 +26,9 @@ public class ItemsKP {
     public static final Item ICHOR_CHEST = null;
     public static final Item ICHOR_LEGS =null;
     public static final Item ICHOR_BOOTS =null;
-
+    public static final Item KAMI_HELM =null;
+    public static final Item KAMI_CHEST = null;
+    public static final Item KAMI_LEGS =null;
+    public static final Item KAMI_BOOTS =null;
 
 }

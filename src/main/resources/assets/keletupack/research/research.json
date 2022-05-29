@@ -75,29 +75,268 @@
           "keletupack:cleansing_amulet"
         ],
         "parents": [
-          "BASEINFUSION", "SANESOAP"
+          "BASEINFUSION",
+          "SANESOAP"
         ],
         "location": [
-          -2,-2
-        ],"meta":["HIDDEN"],
+          -2,
+          -2
+        ],
+        "meta": [
+          "HIDDEN"
+        ],
         "stages": [
           {
             "text": "keletupack.research.cleansingamulet.stage.1.text",
             "required_item": [
               "thaumcraft:sanity_soap"
             ],
-            "required_craft":["thaumcraft:amulet_vis;1;1"],
+            "required_craft": [
+              "thaumcraft:amulet_vis;1;1"
+            ],
             "required_knowledge": [
-                "OBSERVATION;BASICS;1",
-                "OBSERVATION;INFUSION;1",
-                "THEORY;INFUSION;1"
+              "OBSERVATION;BASICS;1",
+              "OBSERVATION;INFUSION;1",
+              "THEORY;INFUSION;1"
             ]
           },
           {
             "text": "otherthuamcraft.research.cleansingamulet.complete.text",
             "recipes": [
-                "keletupack:cleansing_amulet"
+              "keletupack:cleansing_amulet"
             ]
+          }
+        ]
+      },
+      {
+        "key": "DIMENSIONALSHARD",
+        "name": "keletupack.research.dimensionalshard.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:shard_nether",
+          "keletupack:shard_end"
+        ],
+        "parents": [
+          ""
+        ],"meta":["ROUND","HIDDEN"],
+        "location": [
+          -6,
+          4
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.dimensionalshard.text",
+            "required_item": [
+              "keletupack:shard_nether",
+              "keletupack:shard_end"
+            ],
+            "required_knowledge": [
+              "THEORY;BASICS;2","THEORY;ARTIFICE;1","THEORY;ALCHEMY;1","THEORY;INFUSION;1","THEORY;AUROMANCY;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.dimensionalshard.complete.text"
+          }
+        ]
+      },
+      {
+        "key": "ICHOR",
+        "name": "keletupack.research.ichor.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:ichor"
+        ],
+        "parents": [
+          "DIMENSIONALSHARD"
+        ],"meta":["ROUND","HIDDEN"],
+        "location": [
+          -7,
+          5
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.ichor.text",
+            "required_knowledge": [
+              "THEORY;BASICS;3","THEORY;ARTIFICE;2","THEORY;INFUSION;2"
+            ]
+          },
+          {
+            "text": "keletupack.research.ichor.text",
+            "required_knowledge": [
+              "THEORY;ATIFICE;2","THEORY;INFUSION;1"
+            ],
+            "required_craft":["keletupack:ichor"],
+            "recipes":["keletupack:ichor_block","keletupack_ichor"]
+          },
+          {
+            "text": "keletupack.research.ichor.complete.text",
+            "recipes":["keletupack:ichor_block","keletupack:ichor","keletupack:ichor_cloth", "keletupack:ichor_ingot"]
+          }
+        ]
+      },
+      {
+        "key": "ICHORIUMTOOLS",
+        "name": "keletupack.research.ichoriumtools.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:ichor_ingot"
+        ],
+        "parents": [
+          "ICHOR"
+        ],"meta":["HIDDEN"],
+        "location": [
+          -8,
+          4
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.ichoriumtools.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2"
+            ],
+            "required_item":["keletupack:ichor_ingot"],
+            "recipes":["keletupack:ichor_ingot"]
+          },
+          {
+            "text": "keletupack.research.ichoriumtools.complete.text",
+            "recipes":["keletupack:ichor_ingot","keletupack:ichorium_sword","keletupack:ichorium_pick","keletupack:ichorium_shovel","keletupack:ichorium_axe"]
+          }
+        ]
+      },
+      {
+        "key": "ICHORARMOR",
+        "name": "keletupack.research.ichorarmor.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:ichor_cloth"
+        ],
+        "parents": [
+          "ICHOR"
+        ],"meta":["HIDDEN"],
+        "location": [
+          -6,
+          6
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.ichorarmor.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2"
+            ],
+            "required_item":["keletupack:ichor_cloth"],
+            "recipes":["keletupack:ichor_cloth"]
+          },
+          {
+            "text": "keletupack.research.ichorarmor.complete.text",
+            "recipes":["keletupack:ichor_cloth","keletupack:ichor_helm","keletupack:ichor_chest","keletupack:ichor_legs","keletupack:ichor_boots"]
+          }
+        ]
+      },
+      {
+        "key": "KAMIHELM",
+        "name": "keletupack.research.kamilegs.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:kami_helm"
+        ],
+        "parents": [
+          "ICHORARMOR"
+        ],"meta":["HIDDEN"],
+        "location": [
+          -9,
+          8
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.kamilegs.text",
+            "required_knowledge":[              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"],
+            "required_craft":["keletupack:ichor_helm"]
+          },
+          {
+            "text": "keletupack.research.kamilegs.complete.text",
+            "recipes":["keletupack:kami_helm"]
+          }
+        ]
+      },
+      {"key": "KAMICHEST",
+        "name": "keletupack.research.kamichest.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:kami_chest"
+        ],
+        "parents": [
+          "ICHORARMOR"
+        ],"meta":["HIDDEN"],
+        "location": [-7,
+          8
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.kamichest.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"
+            ],
+            "required_craft":["keletupack:ichor_chest"]
+          },
+          {
+            "text": "keletupack.research.kamichest.complete.text",
+            "recipes":["keletupack:kami_chest"]
+          }
+        ]
+      },
+      {
+        "key": "KAMILEGS",
+        "name": "keletupack.research.kamilegs.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:kami_legs"
+        ],
+        "parents": [
+          "ICHORARMOR"
+        ],"meta":["HIDDEN"],
+        "location": [
+          -5,
+          8
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.kamilegs.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"
+            ],
+            "required_craft":["keletupack:ichor_legs"]
+          },
+          {
+            "text": "keletupack.research.kamilegs.complete.text",
+            "recipes":["keletupack:kami_legs"]
+          }
+        ]
+      },
+      {
+        "key": "KAMIBOOTS",
+        "name": "keletupack.research.kamiboots.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:kami_boots"
+        ],
+        "parents": [
+          "ICHORARMOR"
+        ],"meta":["HIDDEN"],
+        "location": [
+          -3,
+          8
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.kamiboots.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"
+            ],
+            "required_craft":["keletupack:ichor_boots"]
+          },
+          {
+            "text": "keletupack.research.kamiboots.complete.text",
+            "recipes":["keletupack:kami_boots"]
           }
         ]
       }
