@@ -1,5 +1,6 @@
 package keletu.keletupack;
 
+import keletu.keletupack.init.ModItems;
 import keletu.keletupack.loot.LootTableHandler;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -87,6 +88,7 @@ public class keletupack {
        /** Listen for the register event for creating custom items */
        @SubscribeEvent
        public static void addItems(RegistryEvent.Register<Item> event) {
+
            /*
              event.getRegistry().register(new ItemBlock(Blocks.myBlock).setRegistryName(MOD_ID, "myBlock"));
              event.getRegistry().register(new MySpecialItem().setRegistryName(MOD_ID, "mySpecialItem"));
@@ -97,6 +99,7 @@ public class keletupack {
        public static void addBlocks(RegistryEvent.Register<Block> event) {
        }
     }
+    }
     /* EXAMPLE ITEM AND BLOCK - you probably want these in separate files
     public static class MySpecialItem extends Item {
 
@@ -106,4 +109,3 @@ public class keletupack {
 
     }
     */
-}

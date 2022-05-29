@@ -6,7 +6,7 @@ import thaumcraft.api.ThaumcraftApi;
 public class InitResearch {
 
     public static void registerResearch() {
-        ThaumcraftApi.registerResearchLocation(new ResourceLocation("research/research.json"));
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation("keletupack", "research/research.json"));
 
     }
 }
