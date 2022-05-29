@@ -85,7 +85,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             break;
             case LEGS: {
                 if (mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE) == null || mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 1) {
-                    mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 200, 0, false, false));
+                    mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 1, 0, false, false));
                     if (mp.isBurning()) {
                         mp.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 20, 1, true, false));
                         mp.extinguish();
