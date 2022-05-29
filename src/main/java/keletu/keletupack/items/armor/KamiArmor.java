@@ -1,5 +1,6 @@
 package keletu.keletupack.items.armor;
 
+import com.google.common.collect.Multimap;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
@@ -8,6 +9,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -17,10 +19,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.items.IGoggles;
 import thaumcraft.api.items.IVisDiscountGear;
+
+import java.util.UUID;
 
 public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, IHasModel {
     public static final ArmorMaterial ICHORADV = EnumHelper.addArmorMaterial("ICHORADV", "ichoradv", 0, new int[]{
@@ -74,7 +80,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             break;
 
             case CHEST: {
-                mp.capabilities.allowFlying = true;
+                mp.getEntityData().setBoolean("can_fly", true);
             }
             break;
             case LEGS: {
@@ -114,6 +120,21 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
         }
     }
+    @Override
+    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack)
+    {
+        Multimap<String, AttributeModifier> map = super.getAttributeModifiers(slot, stack);
+        if(slot == armorType)
+        {
+            if(slot == EntityEquipmentSlot.LEGS)
+            {
+            } else if(slot == EntityEquipmentSlot.FEET)
+            {
+
+            }
+        }
+        return map;
+    }
 
     @Override
     public KamiArmor setTranslationKey(String key) {
@@ -144,5 +165,4 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
     public boolean showIngamePopups(ItemStack stack, EntityLivingBase owner) {
         return armorType == EntityEquipmentSlot.HEAD;
     }
-
 }

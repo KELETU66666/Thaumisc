@@ -1,5 +1,6 @@
 package keletu.keletupack.proxy;
 
+import keletu.keletupack.event.LivingEvent;
 import keletu.keletupack.event.LootTableEvent;
 import keletu.keletupack.util.handler.EventHandler;
 import net.minecraft.item.Item;
@@ -17,6 +18,7 @@ public class CommonProxy {
     public void preInit( FMLPreInitializationEvent event )
     {
         LootTableList.register(new ResourceLocation("modid", "loot_table_name"));
+        LivingEvent.register(new ResourceLocation("modid", "can_fly"));
         EventHandler.registerEvents();
     }
 
