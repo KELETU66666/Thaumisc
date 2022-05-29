@@ -45,7 +45,7 @@ private static void initArcaneRecipes() {
                     'S', new ItemStack(ItemsTC.salisMundus)));
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_cloth"), new ShapedArcaneRecipe(
                         defaultGroup,
-            "ICHORARMOR",
+            "ICHOR",
             750,
             new AspectList().add(Aspect.AIR, 10).add(Aspect.WATER, 10).add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.FIRE, 10).add(Aspect.ENTROPY, 10),
             new ItemStack(ItemsKP.ICHOR_CLOTH,3,0),
@@ -57,7 +57,7 @@ private static void initArcaneRecipes() {
             'D', new ItemStack(Items.DIAMOND)));
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
                   defaultGroup,
-                  "ICHORIUMTOOLS",
+                  "ICHOR",
                     500,
                   new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.ENTROPY, 5),
                    new ItemStack(ItemsKP.ICHOR_INGOT),
@@ -113,7 +113,7 @@ private static void initArcaneRecipes() {
             'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_helm"), new ShapedArcaneRecipe(
             defaultGroup,
-            "ICHORIUMARMOR",
+            "ICHORARMOR",
             150,
             new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
             new ItemStack(ItemsKP.ICHOR_HELM),
@@ -123,7 +123,7 @@ private static void initArcaneRecipes() {
             'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_chest"), new ShapedArcaneRecipe(
             defaultGroup,
-            "ICHORIUMARMOR",
+            "ICHORARMOR",
             150,
             new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
             new ItemStack(ItemsKP.ICHOR_CHEST),
@@ -133,7 +133,7 @@ private static void initArcaneRecipes() {
             'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_legs"), new ShapedArcaneRecipe(
             defaultGroup,
-            "ICHORIUMARMOR",
+            "ICHORARMOR",
             150,
             new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
             new ItemStack(ItemsKP.ICHOR_LEGS),
@@ -143,7 +143,7 @@ private static void initArcaneRecipes() {
             'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_boots"), new ShapedArcaneRecipe(
             defaultGroup,
-            "ICHORIUMARMOR",
+            "ICHORARMOR",
             150,
             new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
             new ItemStack(ItemsKP.ICHOR_BOOTS),
@@ -205,7 +205,7 @@ private static void initInfusionRecipes() {
                 }
         ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_block"), new InfusionRecipe(
-            "ICHOR",
+            "ICHOR@1",
             new ItemStack(BlocksKP.ICHOR_BLOCK),
             8,
             new AspectList().add(Aspect.LIGHT, 125).add(Aspect.MAN, 125).add(Aspect.SOUL, 250),
