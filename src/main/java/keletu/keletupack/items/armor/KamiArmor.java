@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.items.IGoggles;
 import thaumcraft.api.items.IVisDiscountGear;
+import thaumcraft.common.lib.events.PlayerEvents;
 
 import java.util.UUID;
 
@@ -96,40 +97,39 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
             case FEET: {
                 {
-                    if (!mp.capabilities.isFlying && mp.moveForward > 0.0f) {
+                    if (!mp.capabilities.isFlying && mp.moveForward > 0.0F) {
                         if (mp.world.isRemote && !mp.isSneaking()) {
-                            mp.stepHeight = 1.0f;
+                            if (!PlayerEvents.prevStep.containsKey(Integer.valueOf(mp.getEntityId())))
+                                PlayerEvents.prevStep.put(Integer.valueOf(mp.getEntityId()), Float.valueOf(mp.stepHeight));
+                            mp.stepHeight = 1.0F;
                         }
                         if (mp.onGround) {
-                            float bonus = 0.06f;
+                            float bonus = 0.05F;
                             if (mp.isInWater())
-                                bonus /= 2.0f;
-                            mp.moveRelative(0.0f, 0.0f, bonus, 1.0f);
+                                bonus /= 4.0F;
+                            mp.moveRelative(0.0F, 0.0F, bonus, 1.0F);
                         } else {
                             if (mp.isInWater())
-                                mp.moveRelative(0.0f, 0.0f, 0.03f, 1.0f);
-                            mp.jumpMovementFactor = 0.05f;
+                                mp.moveRelative(0.0F, 0.0F, 0.025F, 1.0F);
+                            mp.jumpMovementFactor = 0.05F;
                         }
                     }
-                }
-                if (mp.getActivePotionEffect(MobEffects.HASTE) == null || mp.getActivePotionEffect(MobEffects.HASTE).getDuration() <= 1) {
-                    mp.addPotionEffect(new PotionEffect(MobEffects.HASTE, 200, 1, false, false));
+                    if (mp.getActivePotionEffect(MobEffects.HASTE) == null || mp.getActivePotionEffect(MobEffects.HASTE).getDuration() <= 1) {
+                        mp.addPotionEffect(new PotionEffect(MobEffects.HASTE, 200, 1, false, false));
+                    }
                 }
             }
             break;
 
         }
     }
+
     @Override
-    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack)
-    {
+    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
         Multimap<String, AttributeModifier> map = super.getAttributeModifiers(slot, stack);
-        if(slot == armorType)
-        {
-            if(slot == EntityEquipmentSlot.LEGS)
-            {
-            } else if(slot == EntityEquipmentSlot.FEET)
-            {
+        if (slot == armorType) {
+            if (slot == EntityEquipmentSlot.LEGS) {
+            } else if (slot == EntityEquipmentSlot.FEET) {
 
             }
         }
@@ -148,11 +148,13 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
     @Override
     @SideOnly(Side.CLIENT)
-    public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default) {
+    public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot
+            armorSlot, ModelBiped _default) {
         return null;
     }
+
     @Override
-    public int getVisDiscount(ItemStack stack, EntityPlayer player) {
+    public int getVisDiscount(ItemStack stack, EntityPlayer mp) {
         return discounts[armorType.ordinal()];
     }
 
