@@ -15,7 +15,7 @@ apply plugin: "net.minecraftforge.gradle.forge"
 
 group = 'otherthaumcraft'
 version = '1.0'
-archivesBaseName = 'huige233'
+archivesBaseName = 'keletupack'
 
 minecraft {
     version = project.forgeVersion
