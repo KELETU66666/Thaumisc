@@ -252,7 +252,7 @@ private static void initInfusionRecipes() {
                     new ItemStack(Items.CHORUS_FRUIT_POPPED),
                     new ItemStack(Items.GOLDEN_CHESTPLATE),
                     new ItemStack(ItemsTC.ringCloud),
-                    new ItemStack(ItemsTC.grappleGun),
+                    new ItemStack(Items.ELYTRA),
                     new ItemStack(Items.SHIELD),
                     new ItemStack(Items.FEATHER),
                     new ItemStack(Items.GHAST_TEAR),

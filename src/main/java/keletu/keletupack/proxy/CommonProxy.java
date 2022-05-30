@@ -1,7 +1,6 @@
 package keletu.keletupack.proxy;
 
 import keletu.keletupack.event.LivingEvent;
-import keletu.keletupack.event.LootTableEvent;
 import keletu.keletupack.util.handler.EventHandler;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
