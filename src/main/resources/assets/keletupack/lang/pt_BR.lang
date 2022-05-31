@@ -1,3 +1,5 @@
+#Items
+
 item.taint_meat.name=Carne de Mácula
 item.cleansing_amulet.name=Amuleto Removedor de Warp
 item.warp_paper.name=Papel Tornassol Arcano
@@ -24,6 +26,9 @@ item.kami_chest.name=Vestes da Estratosfera
 item.kami_legs.name=Calças do Manto Ardente
 item.kami_boots.name=Botas do Escudo Horizontal
 tile.ichor_block.name=Bloco de Icor
+
+#Research
+
 keletupack.research.warppaper.title=Detector de Warp
 keletupack.research.taintmeat.title=Carne de Mácula
 keletupack.research.cleansingamulet.title=Amuleto Limpador
