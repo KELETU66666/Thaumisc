@@ -17,6 +17,7 @@ item.ichor_chest.name=灵布法袍
 item.ichor_legs.name=灵布护腿
 item.ichor_boots.name=灵布靴子
 item.ichor.name=灵液
+item.ichor_bucket.name灵液桶 (删除)
 item.ichor_cloth.name=灵布
 item.ichor_ingot.name=灵宝
 item.shard_nether.name=下界残片
