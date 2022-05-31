@@ -3,7 +3,7 @@
  [![Build](https://github.com/KELETU66666/keletupack/actions/workflows/main.yml/badge.svg?branch=backport)](https://github.com/KELETU66666/keletupack/actions/workflows/main.yml)
 
 
-## 下载
+## 下载 (DOWNLOAD)
 由于现在是开发阶段，下载请从action中的build中下载。如果有错误欢迎提交issue
 
 ## dev to-do
