@@ -6,6 +6,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 ## 下载 (DOWNLOAD)
 由于现在是开发阶段，下载请从action中的build中下载。如果有错误欢迎提交issue
+
 (Since it's now in Dev version, please download it from the actual build. If there're any errors, please submit an issue)
 
 ## dev to-do
