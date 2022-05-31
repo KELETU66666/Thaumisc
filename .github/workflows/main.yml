@@ -16,9 +16,17 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
           java-package: jdk
+      - uses: actions/cache@v3
+        with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
       - name: build
         run: |
-          sh ./gradlew build --refresh-dependencies -Dfile.encoding=UTF-8 --info
+          sh ./gradlew build -Dfile.encoding=UTF-8 --info
           cp -rf ./build/libs /opt/build
       - name: upload
         uses: actions/upload-artifact@v3
