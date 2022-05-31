@@ -26,7 +26,7 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: build
         run: |
-          sh ./gradlew build -Dfile.encoding=UTF-8 --info
+          sh ./gradlew build --build-cache -Dfile.encoding=UTF-8 --info
           cp -rf ./build/libs /opt/build
       - name: upload
         uses: actions/upload-artifact@v3
