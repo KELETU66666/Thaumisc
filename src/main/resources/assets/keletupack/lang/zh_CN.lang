@@ -1,3 +1,5 @@
+#Items
+
 item.taint_meat.name=腐化肉块
 item.cleansing_amulet.name=扭曲清除坠饰
 item.warp_paper.name=奥术石蕊试纸
@@ -24,6 +26,9 @@ item.kami_chest.name=云霄塔法袍
 item.kami_legs.name=熔岩地幔护腿
 item.kami_boots.name=地平线盾牌之靴
 tile.ichor_block.name=灵液块
+
+#Research
+
 keletupack.research.warppaper.title=扭曲检测
 keletupack.research.taintmeat.title=腐化肉块
 keletupack.research.cleansingamulet.title=根治扭曲
