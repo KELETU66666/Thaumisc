@@ -1,16 +1,21 @@
 [
     {
         "modid": "keletupack",
-        "name": "keletupack",
-        "description": "",
-        "version": "${version}",
-        "mcversion": "${mcversion}",
-        "url": "",
+        "name": "Keletu Pack Mod",
+        "description": "A public personal addon by KELETU66666 for Thaumcraft 6, bringing back Ichor items and a little more",
+        "version": "1.12.2-1.1",
+        "mcversion": "1.12.2",
+        "url": "https://github.com/KELETU66666/keletupack",
         "updateUrl": "",
-        "authorList": [],
-        "credits": "",
+        "authorList": [KELETU66666],
+        "credits": "
+            Azanor > Thaumcraft creator
+            KingLemming and The CoFH Team > Thaumcraft maintainers
+            KELETU66666 > Keletu Pack author and owner
+            pizeroLOL/huige233/LupusParsec(aka Uris Herialos) > Contributors",
         "logoFile": "",
         "screenshots": [],
+        "requiredMods": ["thaumcraft@[6.1.BETA26,)"],
         "dependencies": []
     }
 ]
