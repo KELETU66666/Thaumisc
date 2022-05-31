@@ -239,7 +239,7 @@
       },
       {
         "key": "KAMIHELM",
-        "name": "keletupack.research.kamilegs.title",
+        "name": "keletupack.research.kamihelm.title",
         "category": "ARTIFICE",
         "icons": [
           "keletupack:kami_helm"
@@ -253,12 +253,12 @@
         ],
         "stages": [
           {
-            "text": "keletupack.research.kamilegs.text",
+            "text": "keletupack.research.kamihelm.text",
             "required_knowledge":[              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"],
             "required_craft":["keletupack:ichor_helm"]
           },
           {
-            "text": "keletupack.research.kamilegs.complete.text",
+            "text": "keletupack.research.kamihelm.complete.text",
             "recipes":["keletupack:kami_helm"]
           }
         ]
