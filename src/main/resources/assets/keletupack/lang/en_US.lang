@@ -1,5 +1,7 @@
-item.taint_meat.name=taint meat
-item.cleansing_amulet.name=Warp cleaning charm
+#Items
+
+item.taint_meat.name=Taint Meat
+item.cleansing_amulet.name=Warp Cleaning Charm
 item.warp_paper.name=Arcane Litmus Paper
 warp.paper=Now Warp is:
 item.coin_adventure.name=Adventure's Coin
@@ -24,6 +26,9 @@ item.kami_chest.name=Robes of the Stratosphere
 item.kami_legs.name=Leggings of the Burning Mantle
 item.kami_boots.name=Boots of the Horizontal Shield
 tile.ichor_block.name=Ichor Block
+
+#Research
+
 keletupack.research.warppaper.title=Warp Detector
 keletupack.research.taintmeat.title=Taint Meat
 keletupack.research.cleansingamulet.title=Cleansing Amulet
