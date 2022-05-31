@@ -17,6 +17,7 @@ item.ichor_chest.name=Vestes de Tecido de Icor
 item.ichor_legs.name=Calças de Tecido de Icor
 item.ichor_boots.name=Botas de Tecido de Icor
 item.ichor.name=Icor
+item.ichor_bucket.name=Balde de Icor (será removido)
 item.ichor_cloth.name=Tecido de Icor
 item.ichor_ingot.name=Barra de Icório
 item.shard_nether.name=Fragmento do Nether
