@@ -17,7 +17,6 @@ item.ichor_chest.name=Vestes de Tecido de Icor
 item.ichor_legs.name=Calças de Tecido de Icor
 item.ichor_boots.name=Botas de Tecido de Icor
 item.ichor.name=Icor
-item.ichor_bucket.name=Balde de Icor (será removido)
 item.ichor_cloth.name=Tecido de Icor
 item.ichor_ingot.name=Barra de Icório
 item.shard_nether.name=Fragmento do Nether
@@ -26,6 +25,8 @@ item.kami_helm.name=Capuz das Profundezas Abissais
 item.kami_chest.name=Vestes da Estratosfera
 item.kami_legs.name=Calças do Manto Ardente
 item.kami_boots.name=Botas do Escudo do Horizonte
+item.nether_cake.name=Nether Cake
+item.nether_swart.name=Nether Swart
 tile.ichor_block.name=Bloco de Icor
 
 #Research

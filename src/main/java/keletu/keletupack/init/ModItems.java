@@ -1,6 +1,8 @@
 package keletu.keletupack.init;
 
+import keletu.keletupack.items.NetherCake;
 import keletu.keletupack.items.food;
+import keletu.keletupack.items.warpfood;
 import keletu.keletupack.items.tools.*;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.armor.IchorArmor;
@@ -14,11 +16,11 @@ import net.minecraftforge.common.util.EnumHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import static keletu.keletupack.items.armor.KamiArmor.ICHORADV;
-
 public class ModItems {
     public static final List<Item> ITEMS = new ArrayList<Item>();
-    public static final ItemFood TAINT_MEAT = new food("taint_meat", 0, 0.0F, false, CreativeTabs.FOOD);
+    public static final ItemFood TAINT_MEAT = new warpfood("taint_meat", 0, 0.0F, false, CreativeTabs.FOOD);
+    public static final ItemFood NetherCake = new NetherCake("nether_cake", 0, 0.0F, false, CreativeTabs.FOOD);
+    public static final ItemFood NrtherSwart  = new food("nether_swart", 2, 0.4F, false, CreativeTabs.FOOD);
     static final Item.ToolMaterial MATERIAL_ICHORIUM = EnumHelper.addToolMaterial("ichorium", 10, -1, 5.0F, 4.0F, 22);
     public static final ItemArmor.ArmorMaterial MATERIAL_ICHOR = EnumHelper.addArmorMaterial("ichor", Reference.MOD_ID + ":ichor", -1, new int[]{3, 6, 8, 3}, 22, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
     public static final ItemSword IchoriumSword = new IchoriumSword("ichorium_sword", CreativeTabs.COMBAT, MATERIAL_ICHORIUM);

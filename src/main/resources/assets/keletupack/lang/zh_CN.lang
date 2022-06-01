@@ -17,7 +17,6 @@ item.ichor_chest.name=灵布法袍
 item.ichor_legs.name=灵布护腿
 item.ichor_boots.name=灵布靴子
 item.ichor.name=灵液
-item.ichor_bucket.name灵液桶（待删除）
 item.ichor_cloth.name=灵布
 item.ichor_ingot.name=灵宝
 item.shard_nether.name=下界残片
@@ -26,21 +25,23 @@ item.kami_helm.name=无尽深渊之帽
 item.kami_chest.name=云霄塔法袍
 item.kami_legs.name=熔岩地幔护腿
 item.kami_boots.name=地平线盾牌之靴
+item.nether_cake.name=地狱蛋糕
+item.nether_swart.name=糖渍地狱疣
 tile.ichor_block.name=灵液块
 
 #Research
 
 keletupack.research.warppaper.title=扭曲检测
-keletupack.research.warppaper.text=
-keletupack.research.warppaper.complete.text=
+keletupack.research.warppaper.text=TEST
+keletupack.research.warppaper.complete.text=你已经决定, 你需要更精确的东西来衡量你体内负面魔法能量的积累, 而不是统计你周围发生了什么扭曲反应.<BR>通过将世界盐与水之源质注入纸张中, 你制造出一种能精确读取你自己究竟暴露在多高的危险之中的试纸.
 keletupack.research.taintmeat.title=腐化肉块
-keletupack.research.taintmeat.stage.1.text=
-otherthuamcraft.research.taintmeat.complete.text=
+keletupack.research.taintmeat.stage.1.text=TEST
+otherthuamcraft.research.taintmeat.complete.text=TEST
 keletupack.research.cleansingamulet.title=根治扭曲
 keletupack.research.cleansingamulet.stage.1.text=
 otherthuamcraft.research.cleansingamulet.complete.text=
-keletupack.research.dimensionalshard.title=
-keletupack.research.dimensionalshard.text=
+keletupack.research.dimensionalshard.title=次元裂痕
+keletupack.research.dimensionalshard.text=我在世界的探索中，发现了几个不太一样的魔力水晶碎片...它们似乎要从来自异域的生物身上获得...
 keletupack.research.dimensionalshard.complete.text=
 keletupack.research.ichor.title=
 keletupack.research.ichor.text=
