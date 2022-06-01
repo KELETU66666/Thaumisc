@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "NNN",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "cropWheat"
+    },
+    "N": {
+      "item": "keletupack:nether_swart"
+    }
+  },
+  "result": {
+    "item": "keletupack:nether_cake",
+    "data": 0
+  }
+}
