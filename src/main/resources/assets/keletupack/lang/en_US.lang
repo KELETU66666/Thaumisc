@@ -1,5 +1,7 @@
-item.taint_meat.name=taint meat
-item.cleansing_amulet.name=Warp cleaning charm
+#Items
+
+item.taint_meat.name=Taint Meat
+item.cleansing_amulet.name=Warp Cleaning Charm
 item.warp_paper.name=Arcane Litmus Paper
 warp.paper=Now Warp is:
 item.coin_adventure.name=Adventure's Coin
@@ -15,6 +17,7 @@ item.ichor_chest.name=Ichorcloth Robe
 item.ichor_legs.name=Ichorcloth Leggings
 item.ichor_boots.name=Ichorcloth Boots
 item.ichor.name=Ichor
+item.ichor_bucket.name=Ichor Bucket (will be removed)
 item.ichor_cloth.name=Ichor Cloth
 item.ichor_ingot.name=Ichorium Ingot
 item.shard_nether.name=Nether Shard
@@ -22,8 +25,41 @@ item.shard_end.name=Ender Shard
 item.kami_helm.name=Cowl of the Abyssal Depths
 item.kami_chest.name=Robes of the Stratosphere
 item.kami_legs.name=Leggings of the Burning Mantle
-item.kami_boots.name=Boots of the Horizontal Shield
+item.kami_boots.name=Boots of the Horizon Shield
 tile.ichor_block.name=Ichor Block
+
+#Research
+
 keletupack.research.warppaper.title=Warp Detector
+keletupack.research.warppaper.text=
+keletupack.research.warppaper.complete.text=
 keletupack.research.taintmeat.title=Taint Meat
+keletupack.research.taintmeat.stage.1.text=
+otherthuamcraft.research.taintmeat.complete.text=
 keletupack.research.cleansingamulet.title=Cleansing Amulet
+keletupack.research.cleansingamulet.stage.1.text=
+otherthuamcraft.research.cleansingamulet.complete.text=
+keletupack.research.dimensionalshard.title=Dimensional Shard
+keletupack.research.dimensionalshard.text=
+keletupack.research.dimensionalshard.complete.text=
+keletupack.research.ichor.title=
+keletupack.research.ichor.text=
+keletupack.research.ichor.complete.text=
+keletupack.research.ichoriumtools.title=
+keletupack.research.ichoriumtools.text=
+keletupack.research.ichoriumtools.complete.text=
+keletupack.research.ichorarmor.title=
+keletupack.research.ichorarmor.text=
+keletupack.research.ichorarmor.complete.text=
+keletupack.research.kamihelm.title=
+keletupack.research.kamihelm.text=
+keletupack.research.kamihelm.complete.text=
+keletupack.research.kamichest.title=
+keletupack.research.kamichest.text=
+keletupack.research.kamichest.complete.text=
+keletupack.research.kamilegs.title=
+keletupack.research.kamilegs.text=
+keletupack.research.kamilegs.complete.text=
+keletupack.research.kamiboots.title=
+keletupack.research.kamiboots.text=
+keletupack.research.kamiboots.complete.text=
