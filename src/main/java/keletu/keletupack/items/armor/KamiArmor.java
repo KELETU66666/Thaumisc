@@ -11,23 +11,30 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.projectile.EntityLargeFireball;
+import net.minecraft.entity.projectile.EntitySmallFireball;
+import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.items.IGoggles;
 import thaumcraft.api.items.IVisDiscountGear;
 import thaumcraft.common.lib.events.PlayerEvents;
 
-import java.util.UUID;
+import java.util.List;
 
 public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, IHasModel {
     public static final ArmorMaterial ICHORADV = EnumHelper.addArmorMaterial("ICHORADV", "ichoradv", 0, new int[]{
@@ -82,6 +89,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
             case CHEST: {
                 mp.getEntityData().setBoolean("can_fly", true);
+                doProjectileEffect(mp);
             }
             break;
             case LEGS: {
@@ -166,5 +174,28 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
     @Override
     public boolean showIngamePopups(ItemStack stack, EntityLivingBase owner) {
         return armorType == EntityEquipmentSlot.HEAD;
+    }
+
+    private void doProjectileEffect(EntityPlayer mp) {
+        if (!mp.isSneaking()) {
+            List<EntityLargeFireball> ghastFireballs = mp.world.getEntitiesWithinAABB(EntityLargeFireball.class, new AxisAlignedBB(mp.posX - 5, mp.posY - 5, mp.posZ - 5, mp.posX + 5, mp.posY + 5, mp.posZ + 5));
+            for (EntityLargeFireball fireball : ghastFireballs) {
+                if (mp.getDistance(fireball) < 1.5) {
+                    fireball.setDead();
+                }
+                fireball.attackEntityFrom(DamageSource.causePlayerDamage(mp), 1);
+                mp.world.playSound(fireball.posX, fireball.posY, fireball.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
+            }
+            List<EntitySmallFireball> blazeFireballs = mp.world.getEntitiesWithinAABB(EntitySmallFireball.class, new AxisAlignedBB(mp.posX - 1.5, mp.posY - 1.5, mp.posZ - 1.5, mp.posX + 1.5, mp.posY + 1.5, mp.posZ + 1.5));
+            for (EntitySmallFireball fireball : blazeFireballs) {
+                mp.world.playSound(fireball.posX, fireball.posY, fireball.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
+                fireball.setDead();
+            }
+            List<EntityArrow> entityArrows = mp.world.getEntitiesWithinAABB(EntityArrow.class, new AxisAlignedBB(mp.posX - 1.5, mp.posY - 1.5, mp.posZ - 1.5, mp.posX + 1.5, mp.posY + 1.5, mp.posZ + 1.5));
+            for (EntityArrow arrow : entityArrows) {
+                mp.world.playSound(arrow.posX, arrow.posY, arrow.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
+                arrow.setDead();
+            }
+        }
     }
 }

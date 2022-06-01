@@ -37,14 +37,11 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onModelRegister( ModelRegistryEvent event )
     {
-        for ( Item item : ModItems.ITEMS )
-        {
-            if ( item instanceof IHasModel )
-            {
-                ( (IHasModel) item).registerModels();
+        for ( Item item : ModItems.ITEMS ) {
+            if (item instanceof IHasModel) {
+                ((IHasModel) item).registerModels();
             }
         }
-        //新加入对于block的信息注册
         for (Block block: ModBlocks.BLOCKS)
         {
             if (block instanceof IHasModel)
