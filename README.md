@@ -56,5 +56,6 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 22. 灵液 (Ichor)
 23. 灵布 (Ichor Cloth)
 24. 灵宝 (Ichorium Ingot)
-25. 灵液桶（待删除）(Ichor Bucket (will be removed))
-26. 扭曲清除坠饰 (Warp Cleaning Charm)
+25. 扭曲清除坠饰 (Warp Cleaning Charm)
+26. 糖渍地狱疣
+27. 地狱疣蛋糕
