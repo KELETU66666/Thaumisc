@@ -13,7 +13,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 1. - [ ] 删除灵液桶 (Remove Ichor Bucket)
 2. - [ ] 添加云霄塔法袍3D效果 (Add a 3D effect to Robes of the Stratosphere)
-3. - [ ] 添加魔导手册文案 (Add a Thaumonomicon copy)
+3. - [ ] 添加魔导手册文案 (Add a Thaumonomicon copy/Add Thaumonomicon Entries (I didn't get what is really being said here))
 4. - [ ] 添加法袍抵挡弹射物效果 (Add Projectile Protection to Robes)
 5. - [ ] 添加护腿发光效果 (Add leggings a Glow effect)
 6. - [ ] 添加靴子绿化效果 (Add a Green(?) effect to Boots)
