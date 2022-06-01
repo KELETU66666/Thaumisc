@@ -180,18 +180,18 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
         if (!mp.isSneaking()) {
             List<EntityLargeFireball> ghastFireballs = mp.world.getEntitiesWithinAABB(EntityLargeFireball.class, new AxisAlignedBB(mp.posX - 5, mp.posY - 5, mp.posZ - 5, mp.posX + 5, mp.posY + 5, mp.posZ + 5));
             for (EntityLargeFireball fireball : ghastFireballs) {
-                if (mp.getDistance(fireball) < 1.5) {
+                if (mp.getDistance(fireball) < 3) {
                     fireball.setDead();
                 }
                 fireball.attackEntityFrom(DamageSource.causePlayerDamage(mp), 1);
                 mp.world.playSound(fireball.posX, fireball.posY, fireball.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
             }
-            List<EntitySmallFireball> blazeFireballs = mp.world.getEntitiesWithinAABB(EntitySmallFireball.class, new AxisAlignedBB(mp.posX - 1.5, mp.posY - 1.5, mp.posZ - 1.5, mp.posX + 1.5, mp.posY + 1.5, mp.posZ + 1.5));
+            List<EntitySmallFireball> blazeFireballs = mp.world.getEntitiesWithinAABB(EntitySmallFireball.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
             for (EntitySmallFireball fireball : blazeFireballs) {
                 mp.world.playSound(fireball.posX, fireball.posY, fireball.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
                 fireball.setDead();
             }
-            List<EntityArrow> entityArrows = mp.world.getEntitiesWithinAABB(EntityArrow.class, new AxisAlignedBB(mp.posX - 1.5, mp.posY - 1.5, mp.posZ - 1.5, mp.posX + 1.5, mp.posY + 1.5, mp.posZ + 1.5));
+            List<EntityArrow> entityArrows = mp.world.getEntitiesWithinAABB(EntityArrow.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
             for (EntityArrow arrow : entityArrows) {
                 mp.world.playSound(arrow.posX, arrow.posY, arrow.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
                 arrow.setDead();
