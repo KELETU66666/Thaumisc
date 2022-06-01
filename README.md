@@ -48,7 +48,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 14. 地平线盾牌之靴 (Boots of the Horizon Shield)
 15. 奥术石蕊试纸 (Arcane Litmus Paper)
 16. 巫师币 (Wizard's Coin)
-17. 探险家币 (Adventures's Coin)
+17. 探险家币 (Adventure's Coin)
 18. 血渍斑斑的金币 (Bloodstained Coin)
 19. 魔法使币 (Magic Coin)
 20. 末影裂痕 (Ender Fragment)
