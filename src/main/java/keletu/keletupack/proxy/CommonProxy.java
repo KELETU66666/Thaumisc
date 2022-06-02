@@ -25,4 +25,7 @@ public class CommonProxy {
     public void init( FMLInitializationEvent event )
     {
     }
+
+    public void sparkle(float posX, float posY, float posZ, int i) {
+    }
 }

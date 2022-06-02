@@ -10,11 +10,10 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.entity.projectile.EntityLargeFireball;
-import net.minecraft.entity.projectile.EntitySmallFireball;
+import net.minecraft.entity.projectile.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -28,11 +27,13 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.items.IGoggles;
 import thaumcraft.api.items.IVisDiscountGear;
+import thaumcraft.codechicken.lib.vec.Vector3;
 import thaumcraft.common.lib.events.PlayerEvents;
 
 import java.util.List;
@@ -184,27 +185,41 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
     private void doProjectileEffect(EntityPlayer mp) {
         if (!mp.isSneaking()) {
-            List<EntityLargeFireball> ghastFireballs = mp.world.getEntitiesWithinAABB(EntityLargeFireball.class, new AxisAlignedBB(mp.posX - 5, mp.posY - 5, mp.posZ - 5, mp.posX + 5, mp.posY + 5, mp.posZ + 5));
-            for (EntityLargeFireball fireball : ghastFireballs) {
-                if (mp.getDistance(fireball) < 3) {
-                    fireball.setDead();
-                }
-                fireball.attackEntityFrom(DamageSource.causePlayerDamage(mp), 1);
-                mp.world.playSound(fireball.posX, fireball.posY, fireball.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
+            List<EntityPotion> entityPotionList = mp.world.getEntitiesWithinAABB(EntityPotion.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
+            for (EntityPotion potion : entityPotionList) {
+                Vector3 motionVec = new Vector3(potion.motionX, potion.motionY, potion.motionZ).normalize().multiply(Math.sqrt((potion.posX - mp.posX) * (potion.posX - mp.posX) + (potion.posY - mp.posY) * (potion.posY - mp.posY) + (potion.posZ - mp.posZ) * (potion.posZ - mp.posZ)) * 2);
+
+                for (int i = 0; i < 6; i++)
+                    keletupack.proxy.sparkle((float) potion.posX, (float) potion.posY, (float) potion.posZ, 6);
+
+                potion.posX += motionVec.x;
+                potion.posY += motionVec.y;
+                potion.posZ += motionVec.z;
             }
-            List<EntitySmallFireball> blazeFireballs = mp.world.getEntitiesWithinAABB(EntitySmallFireball.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
-            for (EntitySmallFireball fireball : blazeFireballs) {
-                mp.world.playSound(fireball.posX, fireball.posY, fireball.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
-                fireball.setDead();
+            List<EntitySnowball> entitySnowballs = mp.world.getEntitiesWithinAABB(EntitySnowball.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
+            for (EntitySnowball snowball : entitySnowballs) {
+                Vector3 motionVec = new Vector3(snowball.motionX, snowball.motionY, snowball.motionZ).normalize().multiply(Math.sqrt((snowball.posX - mp.posX) * (snowball.posX - mp.posX) + (snowball.posY - mp.posY) * (snowball.posY - mp.posY) + (snowball.posZ - mp.posZ) * (snowball.posZ - mp.posZ)) * 2);
+
+                for (int i = 0; i < 6; i++)
+                    keletupack.proxy.sparkle((float) snowball.posX, (float) snowball.posY, (float) snowball.posZ, 6);
+
+                snowball.posX += motionVec.x;
+                snowball.posY += motionVec.y;
+                snowball.posZ += motionVec.z;
             }
             List<EntityArrow> entityArrows = mp.world.getEntitiesWithinAABB(EntityArrow.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
-            for (EntityArrow arrow : entityArrows) {
-                mp.world.playSound(arrow.posX, arrow.posY, arrow.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
-                arrow.setDead();
+            for (Entity arrow : entityArrows) {
+                Vector3 motionVec = new Vector3(arrow.motionX, arrow.motionY, arrow.motionZ).normalize().multiply(Math.sqrt((arrow.posX - mp.posX) * (arrow.posX - mp.posX) + (arrow.posY - mp.posY) * (arrow.posY - mp.posY) + (arrow.posZ - mp.posZ) * (arrow.posZ - mp.posZ)) * 2);
+
+                for (int i = 0; i < 6; i++)
+                    keletupack.proxy.sparkle((float) arrow.posX, (float) arrow.posY, (float) arrow.posZ, 6);
+
+                arrow.posX += motionVec.x;
+                arrow.posY += motionVec.y;
+                arrow.posZ += motionVec.z;
             }
         }
     }
-
     public void performEffect(EntityLivingBase entity, int p_76394_2_) {
         if (!entity.getEntityWorld().isRemote && entity.onGround && entity.getEntityWorld().isAirBlock(entity.getPosition()) && entity.getEntityWorld().getBlockState(entity.getPosition().down()).isNormalCube()) {
             entity.getEntityWorld().setBlockState(entity.getPosition(), Blocks.DIRT.getDefaultState(), 0);
