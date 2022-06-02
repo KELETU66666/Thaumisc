@@ -27,7 +27,7 @@
           {
             "text": "keletupack.research.warppaper.complete.text",
             "recipes": [
-              "keletupack:warppaper"
+              "keletupack:warp_paper"
             ]
           }
         ]
