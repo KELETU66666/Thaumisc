@@ -16,7 +16,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 3. - [ ] 添加魔导手册文案 (Add a Thaumonomicon copy/Add Thaumonomicon Entries (I didn't get what is really being said here))
 4. [√] 添加法袍抵挡弹射物效果 (Add Projectile Protection to Robes)
 5. - [ ] 添加护腿发光效果 (Add leggings a Glow effect)
-6. [√] 添加靴子绿化效果 (Add a Green(?) effect to Boots)
+6. [√] 添加靴子绿化效果 (Add a effect to grow grass for Boots)
 7. - [ ] 添加工具觉醒效果 (Add a Awakening effect for Tools)
 8. - [ ] 更改包名 (Change mod's name)
 
@@ -57,5 +57,5 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 23. 灵布 (Ichor Cloth)
 24. 灵宝 (Ichorium Ingot)
 25. 扭曲清除坠饰 (Warp Cleaning Charm)
-26. 糖渍地狱疣
-27. 地狱疣蛋糕
+26. 糖渍地狱疣 (*not translated yet...*)
+27. 地狱疣蛋糕 (*not translated yet...*)
