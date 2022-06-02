@@ -11,12 +11,12 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 ## dev to-do
 
-1. - [√] 删除灵液桶 (Remove Ichor Bucket)
+1. [√] 删除灵液桶 (Remove Ichor Bucket)
 2. - [ ] 添加云霄塔法袍3D效果 (Add a 3D effect to Robes of the Stratosphere)
 3. - [ ] 添加魔导手册文案 (Add a Thaumonomicon copy/Add Thaumonomicon Entries (I didn't get what is really being said here))
-4. - [√] 添加法袍抵挡弹射物效果 (Add Projectile Protection to Robes)
+4. [√] 添加法袍抵挡弹射物效果 (Add Projectile Protection to Robes)
 5. - [ ] 添加护腿发光效果 (Add leggings a Glow effect)
-6. - [ ] 添加靴子绿化效果 (Add a Green(?) effect to Boots)
+6. [√] 添加靴子绿化效果 (Add a Green(?) effect to Boots)
 7. - [ ] 添加工具觉醒效果 (Add a Awakening effect for Tools)
 8. - [ ] 更改包名 (Change mod's name)
 
@@ -32,7 +32,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 ### 物品 (Items)
 
-1. 灵液快 (Ichor Block)
+1. 灵液块 (Ichor Block)
 2. 腐化肉块 (Taint Meat)
 3. 灵宝剑 (Ichorium Sword)
 4. 灵宝斧 (Ichorium Axe)
