@@ -5,6 +5,7 @@ import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
 import keletu.keletupack.util.Reference;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -14,7 +15,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.entity.projectile.EntitySmallFireball;
-import net.minecraft.init.Items;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -22,14 +23,14 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.items.IGoggles;
 import thaumcraft.api.items.IVisDiscountGear;
 import thaumcraft.common.lib.events.PlayerEvents;
@@ -126,6 +127,11 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
                         mp.addPotionEffect(new PotionEffect(MobEffects.HASTE, 200, 1, false, false));
                     }
                 }
+                BlockPos posBelow = mp.getPosition().down();
+                IBlockState blockStateBelow = mp.world.getBlockState(posBelow);
+                if (blockStateBelow.getBlock() == Blocks.DIRT) {
+                    mp.getEntityWorld().setBlockState(mp.getPosition().down(), Blocks.GRASS.getDefaultState(), 0);
+                }
             }
             break;
 
@@ -196,6 +202,12 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
                 mp.world.playSound(arrow.posX, arrow.posY, arrow.posZ, SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.NEUTRAL, 0.5F, 2.6F + (mp.world.rand.nextFloat() - mp.world.rand.nextFloat()) * 0.8F, false);
                 arrow.setDead();
             }
+        }
+    }
+
+    public void performEffect(EntityLivingBase entity, int p_76394_2_) {
+        if (!entity.getEntityWorld().isRemote && entity.onGround && entity.getEntityWorld().isAirBlock(entity.getPosition()) && entity.getEntityWorld().getBlockState(entity.getPosition().down()).isNormalCube()) {
+            entity.getEntityWorld().setBlockState(entity.getPosition(), Blocks.DIRT.getDefaultState(), 0);
         }
     }
 }
