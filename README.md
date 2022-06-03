@@ -57,5 +57,5 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 23. 灵布 (Ichor Cloth)
 24. 灵宝 (Ichorium Ingot)
 25. 扭曲清除坠饰 (Warp Cleaning Charm)
-26. 糖渍地狱疣 (*not translated yet...*)
-27. 地狱疣蛋糕 (*not translated yet...*)
+26. 糖渍地狱疣 (Nether Swart)
+27. 地狱疣蛋糕 (Nether Cake)
