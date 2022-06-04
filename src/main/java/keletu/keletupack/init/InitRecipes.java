@@ -2,6 +2,7 @@ package keletu.keletupack.init;
 
 
 import keletu.keletupack.common.BlocksKP;
+import keletu.keletupack.keletupack;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
@@ -299,6 +300,27 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsTC.turretPlacer,1, 2),
                     new ItemStack(Blocks.WOOL),
                     new ItemStack(Items.LEAD)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_pick_adv"), new InfusionRecipe(
+            "ICHOR_PICK_ADV",
+            new ItemStack(ItemsKP.ICHORIUM_PICK_ADV),
+            32,
+            new AspectList().add(Aspect.FIRE, 150).add(Aspect.DESIRE, 60).add(Aspect.METAL, 125).add(Aspect.TOOL, 250).add(Aspect.SENSES, 60).add(Aspect.EARTH, 125),
+            new ItemStack(ItemsKP.ICHORIUM_PICK),
+            new Object[]{
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.ICHOR_INGOT),
+                    new ItemStack(ItemsTC.elementalPick),
+                    new ItemStack(ItemsTC.morphicResonator),
+                    new ItemStack(Blocks.TNT),
+                    new ItemStack(ItemsTC.clusters, 1, 6),
+                    new ItemStack(ItemsTC.clusters, 1, 0),
+                    new ItemStack(ItemsTC.clusters, 1, 1),
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsTC.visResonator),
+                    new ItemStack(ItemsTC.elementalPick),
+                    new ItemStack(ItemsKP.ICHOR_CLOTH)
             }
     ));
     }

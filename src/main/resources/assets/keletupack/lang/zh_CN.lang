@@ -27,6 +27,7 @@ item.kami_legs.name=熔岩地幔护腿
 item.kami_boots.name=地平线盾牌之靴
 item.nether_cake.name=地狱蛋糕
 item.nether_swart.name=糖渍地狱疣
+item.ichorium_pick_adv.name=觉醒灵宝镐
 tile.ichor_block.name=灵液块
 
 #Research
@@ -42,7 +43,7 @@ keletupack.research.cleansingamulet.stage.1.text=我已经受够了扭曲的折�
 otherthuamcraft.research.cleansingamulet.complete.text=我按照残卷上的方法解决了问题，使用净化浴盐和驱邪肥皂的力量制作了一个新的护身符，它能缓慢的将自己那些不可扭转的扭曲--转移到...自己身上！<BR> 这听起来虽然很荒谬，但是转移到自身的扭曲似乎不再是那么不可磨灭的...也许这也算是神秘使的一种突破吧！
 keletupack.research.dimensionalshard.title=次元裂痕
 keletupack.research.dimensionalshard.text=“山重水复疑无路，柳暗花明又一村” <BR> 当我做完了全部的研究，感觉走到了世界的尽头时，魔导手册仿佛奇迹般地多出了一页...这个神秘页面的出现也就意味着又一条新的道路为我开放...<BR> 魔导手册指引我，要去地狱和末地逛一逛，也许我能发现一些不太一样的魔力水晶碎片？先要想办法凑齐它们...
-keletupack.research.dimensionalshard.complete.text=正如书上所写，下界与末地有一些...无法从主世界得到的水晶碎片，它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用，我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG>
+keletupack.research.dimensionalshard.complete.text=正如书上所写，下界与末地有一些...无法从主世界得到的水晶碎片，它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用，我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_nether.png:0:0:128:128:10</IMG><IMG>keletupack:textures/items/shard_end.png:0:0:128:128:10</IMG>
 keletupack.research.ichor.title=灵宝
 keletupack.research.ichor.text=未完成
 keletupack.research.ichor.complete.text=未完成
@@ -64,3 +65,4 @@ keletupack.research.kamilegs.complete.text=未完成
 keletupack.research.kamiboots.title=地平线盾牌之靴
 keletupack.research.kamiboots.text=未完成
 keletupack.research.kamiboots.complete.text=未完成
+

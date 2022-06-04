@@ -28,6 +28,7 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new Ichor());
         event.getRegistry().registerAll(new IchorCloth());
         event.getRegistry().registerAll(new IchorIngot());
+        event.getRegistry().registerAll(new IchorPouch());
     }
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
