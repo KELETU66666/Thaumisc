@@ -344,6 +344,36 @@
             "recipes":["keletupack:kami_boots"]
           }
         ]
+      },
+      {
+        "key": "ICHOR_PICK_ADV",
+        "name": "keletupack.research.ichor_pick_adv.title",
+        "category": "ARTIFICE",
+        "icons": [
+          "keletupack:ichorium_pick_adv"
+        ],
+        "parents": [
+          "ICHORIUMTOOLS"
+        ],"meta":["HIDDEN"],
+        "location": [
+          -10,
+          3
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.ichorium_pick_adv.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"
+            ],
+            "required_craft": [
+              "keletupack:inchorium_pick"
+            ]
+          },
+          {
+            "text": "keletupack.research.ichorium_pick_adv.complete.text",
+            "recipes":["keletupack:ichorium_pick_adv"]
+          }
+        ]
       }
     ]
   }

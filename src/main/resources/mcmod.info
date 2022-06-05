@@ -8,11 +8,8 @@
         "url": "https://github.com/KELETU66666/keletupack",
         "updateUrl": "",
         "authorList": ["KELETU66666"],
-        "credits":[
-            "Azanor > Thaumcraft creator",
-            "KingLemming and The CoFH Team > Thaumcraft maintainers",
-            "KELETU66666 > Keletu's Pack author and owner",
-            "pizeroLOL/huige233/LupusParsec(aka Uris Herialos) > Contributors"],
+        "credits":
+            "Azanor > Thaumcraft creator , KingLemming and The CoFH Team > Thaumcraft maintainers, KELETU66666 > Keletu‘s Pack author and owner, pizeroLOL/huige233/LupusParsec(aka Uris Herialos) > Contributors",
         "logoFile": "",
         "screenshots": [],
         "dependencies": []
