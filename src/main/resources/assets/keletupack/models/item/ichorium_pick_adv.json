@@ -2,5 +2,19 @@
   "parent": "item/handheld",
   "textures": {
     "layer0": "keletupack:items/ichorium_pick_adv"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "ichoriumpickadv:awaken": 1
+      },
+      "model": "keletupack:item/ichorium_pick_adv1"
+    },
+    {
+      "predicate": {
+        "ichoriumpickadv:awaken": 2
+      },
+      "model": "keletupack:item/ichorium_pick_adv2"
+    }
+  ]
 }

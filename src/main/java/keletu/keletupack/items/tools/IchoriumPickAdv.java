@@ -12,24 +12,25 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import scala.Int;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
 {
@@ -39,6 +40,19 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         setTranslationKey(name);
         setRegistryName(name);
         setCreativeTab(tab);
+        this.addPropertyOverride(new ResourceLocation("ichoriumpickadv:awaken"), new IItemPropertyGetter() {
+            @Override
+            @SideOnly(Side.CLIENT)
+            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
+                if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") != 0) {
+                    if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 2) {
+                        return 2.0F;
+                    }
+                    return 1.0F;
+                }
+                return 0.0F;
+            }
+        });
 
         ModItems.ITEMS.add(this);
     }
