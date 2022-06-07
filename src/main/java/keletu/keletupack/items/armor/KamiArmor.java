@@ -78,8 +78,9 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
         switch (armorType) {
             case HEAD: {
-                if (mp.isInWater() && mp.ticksExisted % 10 == 0)
+                if (mp.isInWater() && mp.ticksExisted % 10 == 0){
                     mp.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
+                    mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, true, false));}
                 if (mp.isInLava() && mp.ticksExisted % 10 == 0)
                     mp.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 31, 0, true, false));
                 int food = mp.getFoodStats().getFoodLevel();
@@ -114,13 +115,13 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
                             mp.stepHeight = 1.0F;
                         }
                         if (mp.onGround) {
-                            float bonus = 0.05F;
+                            float bonus = 0.1F;
                             if (mp.isInWater())
                                 bonus /= 4.0F;
                             mp.moveRelative(0.0F, 0.0F, bonus, 1.0F);
                         } else {
                             if (mp.isInWater())
-                                mp.moveRelative(0.0F, 0.0F, 0.025F, 1.0F);
+                                mp.moveRelative(0.0F, 0.0F, 0.15F, 1.0F);
                             mp.jumpMovementFactor = 0.05F;
                         }
                     }

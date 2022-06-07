@@ -36,4 +36,5 @@ public class ModItems {
     public static final Item IchorLegsAdv = new KamiArmor("kami_legs", MATERIAL_ICHOR, 2, EntityEquipmentSlot.LEGS, CreativeTabs.COMBAT);
     public static final Item IchorBootsAdv = new KamiArmor("kami_boots", MATERIAL_ICHOR, 1, EntityEquipmentSlot.FEET, CreativeTabs.COMBAT);
     public static final ItemPickaxe IchoriumPickAdv = new IchoriumPickAdv("ichorium_pick_adv", CreativeTabs.TOOLS, MATERIAL_ICHORIUM);
+    public static final ItemAxe IchoriumAxeAdv = new IchoriumAxeAdv("ichorium_axe_adv", CreativeTabs.TOOLS, MATERIAL_ICHORIUM);
 }
