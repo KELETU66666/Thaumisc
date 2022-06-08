@@ -28,6 +28,7 @@ item.kami_boots.name=地平线盾牌之靴
 item.nether_cake.name=地狱蛋糕
 item.nether_swart.name=糖渍地狱疣
 item.ichorium_pick_adv.name=觉醒灵宝镐
+item.ichorium_shovel_adv.name=觉醒灵宝铲
 tile.ichor_block.name=灵液块
 
 #Research

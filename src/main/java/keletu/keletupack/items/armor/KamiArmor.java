@@ -80,7 +80,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             case HEAD: {
                 if (mp.isInWater() && mp.ticksExisted % 10 == 0){
                     mp.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
-                    mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 201, 0, true, false));}
+                    mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));}
                 if (mp.isInLava() && mp.ticksExisted % 10 == 0)
                     mp.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 31, 0, true, false));
                 int food = mp.getFoodStats().getFoodLevel();

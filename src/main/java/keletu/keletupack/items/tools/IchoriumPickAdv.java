@@ -145,7 +145,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         boolean z = facing == EnumFacing.NORTH;
         boolean w = facing == EnumFacing.SOUTH;
         boolean r = facing == EnumFacing.WEST;
-        for (int k = 0; k <= 4 && !stack.isEmpty(); ++k) {
+        for (int k = 0; k <= 9 && !stack.isEmpty(); ++k) {
                 if (k == 0) {
                     continue;
                 }

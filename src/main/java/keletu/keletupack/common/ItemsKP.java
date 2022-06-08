@@ -30,6 +30,6 @@ public class ItemsKP {
     public static final Item KAMI_CHEST = null;
     public static final Item KAMI_LEGS =null;
     public static final Item KAMI_BOOTS =null;
-    public static final Item ICHOR_POUCH =null;
     public static final Item ICHORIUM_PICK_ADV = null;
+    public static final Item ICHORIUM_SHOVEL_ADV = null;
 }

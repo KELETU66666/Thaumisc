@@ -27,7 +27,8 @@ item.kami_legs.name=Leggings of the Burning Mantle
 item.kami_boots.name=Boots of the Horizon Shield
 item.nether_cake.name=Nether Cake
 item.nether_swart.name=Nether Swart
-item.ichorium_pick_adv。name=Ichorium Pick Awakened
+item.ichorium_pick_adv.name=Ichorium Pick Awakened
+item.ichorium_shovel_adv.name=Ichorium Shovel Awakened
 tile.ichor_block.name=Ichor Block
 
 #Research
