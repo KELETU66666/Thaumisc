@@ -5,6 +5,8 @@ import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
 import keletu.keletupack.util.Reference;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.creativetab.CreativeTabs;
@@ -78,10 +80,10 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
         switch (armorType) {
             case HEAD: {
-                if (mp.isInWater() && mp.ticksExisted % 10 == 0){
+                if (mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.WATER || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_WATER) {
                     mp.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
                     mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));}
-                if (mp.isInLava() && mp.ticksExisted % 10 == 0)
+                if ( (mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.LAVA || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_LAVA) && mp.ticksExisted % 10 == 0)
                     mp.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 31, 0, true, false));
                 int food = mp.getFoodStats().getFoodLevel();
                 if (food > 0 && food < 18 && mp.shouldHeal()
@@ -221,7 +223,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             }
         }
     }
-    public void performEffect(EntityLivingBase entity, int p_76394_2_) {
+    public void performEffect(EntityLivingBase entity) {
         if (!entity.getEntityWorld().isRemote && entity.onGround && entity.getEntityWorld().isAirBlock(entity.getPosition()) && entity.getEntityWorld().getBlockState(entity.getPosition().down()).isNormalCube()) {
             entity.getEntityWorld().setBlockState(entity.getPosition(), Blocks.DIRT.getDefaultState(), 0);
         }
