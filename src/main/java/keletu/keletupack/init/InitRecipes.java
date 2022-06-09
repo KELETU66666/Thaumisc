@@ -401,5 +401,18 @@ private static void initInfusionRecipes() {
                     new ItemStack(BlocksTC.logSilverwood)
             }
     ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "distortion_pick"), new InfusionRecipe(
+            "DISTORTION_PICK",
+            new ItemStack(ItemsKP.DISTORTION_PICK),
+            1,
+            new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.TOOL, 30).add(Aspect.FLUX, 45),
+            new ItemStack(ItemsTC.thaumiumSword),
+            new Object[]{
+                    new ItemStack(ItemsTC.nuggets,1 ,10),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
+                    new ItemStack(BlocksTC.logGreatwood)
+            }
+    ));
     }
 }

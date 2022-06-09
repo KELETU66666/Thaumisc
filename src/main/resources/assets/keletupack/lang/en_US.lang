@@ -33,6 +33,7 @@ item.morph_sword.name=Morph Sword
 item.morph_pick.name=Morph Pickaxe
 item.morph_axe.name=Morph Axe
 item.morph_shovel.name=Morph Shovel
+item.distortion_pick.name=Pickaxe of Distortion
 tile.ichor_block.name=Ichor Block
 
 #Research
@@ -70,3 +71,6 @@ keletupack.research.kamilegs.complete.text=TEST
 keletupack.research.kamiboots.title=TEST
 keletupack.research.kamiboots.text=TEST
 keletupack.research.kamiboots.complete.text=TEST
+
+#tab
+itemGroup.item_tab_kp=Thaumisc

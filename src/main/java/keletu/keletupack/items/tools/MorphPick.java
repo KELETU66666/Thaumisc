@@ -17,6 +17,7 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import thaumcraft.api.items.ItemsTC;
 
 import javax.annotation.Nullable;
 
@@ -85,6 +86,11 @@ public class MorphPick extends ItemPickaxe implements IHasModel {
             player.world.playSound(player.posX, player.posY, player.posZ, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.NEUTRAL, 0.5F, 2.6F + (player.world.rand.nextFloat() - player.world.rand.nextFloat()) * 0.8F, false);
         }
         return new ActionResult<>(EnumActionResult.PASS, itemstack);
+    }
+
+    @Override
+    public boolean getIsRepairable(ItemStack stack, ItemStack stack2) {
+        return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) ? true : super.getIsRepairable(stack, stack2);
     }
 
     @Override

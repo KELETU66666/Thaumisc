@@ -20,6 +20,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -140,6 +141,11 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             break;
 
         }
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.EPIC;
     }
 
     @Override

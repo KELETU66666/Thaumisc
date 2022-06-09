@@ -12,6 +12,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
@@ -55,6 +56,11 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         });
 
         ModItems.ITEMS.add(this);
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.EPIC;
     }
 
 @Override

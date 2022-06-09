@@ -1,6 +1,7 @@
 package keletu.keletupack.items;
 
 import keletu.keletupack.inventory.ExtendPlayerInventory;
+import keletu.keletupack.keletupack;
 import keletu.keletupack.util.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +18,7 @@ public class IchorPouch extends ItemBase
 {
     public IchorPouch()
     {
-        super("ichor_pouch", CreativeTabs.MISC);
+        super("ichor_pouch", keletupack.ITEM_TAB);
         setMaxStackSize(1);
     }
 

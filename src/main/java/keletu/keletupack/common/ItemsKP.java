@@ -36,4 +36,6 @@ public class ItemsKP {
     public static final Item MORPH_AXE = null;
     public static final Item MORPH_PICK =null;
     public static final Item MORPH_SHOVEL = null;
+    public static final Item COIN_ADVENTURE = null;
+    public static final Item DISTORTION_PICK = null;
 }

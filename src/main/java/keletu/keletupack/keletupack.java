@@ -3,6 +3,7 @@ package keletu.keletupack;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.loot.LootTableHandler;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -25,6 +26,7 @@ import keletu.keletupack.util.Reference;
 )
 public class keletupack {
 
+    public static CreativeTabs ITEM_TAB = new ItemTabKP();
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
     /** This is the instance of your mod as created by Forge. It will never be null. */

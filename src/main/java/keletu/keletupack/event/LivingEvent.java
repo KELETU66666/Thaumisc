@@ -2,17 +2,25 @@ package keletu.keletupack.event;
 
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.armor.KamiArmor;
+import keletu.keletupack.items.tools.DistortionPick;
+import keletu.keletupack.util.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.util.Collections;
 
+@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class LivingEvent {
     public static void register(ResourceLocation resourceLocation) {
     }
@@ -51,6 +59,28 @@ public class LivingEvent {
         {
             e.setDamageMultiplier(0);
             e.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerBreaking(PlayerEvent.BreakSpeed event) {
+        BlockPos pos = event.getPos();
+        if (event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND) != null) {
+            ItemStack stack = event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND);
+            if (stack.getItem() instanceof DistortionPick) {
+                World world = event.getEntityPlayer().world;
+                BlockPos pos1;
+                pos1 = pos.add(0, 0, 0);
+                float hardness = world.getBlockState(pos1).getBlockHardness(world, pos1);
+                if (hardness == 0.0F)
+                    event.setNewSpeed(0.0F);
+                else if (hardness < 5.0F)
+                    event.setNewSpeed(0.1F);
+                else if (hardness < 20.0F)
+                    event.setNewSpeed(hardness / 2.0F);
+                else
+                    event.setNewSpeed(5.0F + hardness);
+            }
         }
     }
 

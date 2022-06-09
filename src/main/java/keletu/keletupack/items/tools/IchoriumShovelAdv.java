@@ -71,67 +71,9 @@ public class IchoriumShovelAdv extends ItemSpade implements IHasModel {
         ModItems.ITEMS.add(this);
     }
 
-    final static Set<Material> materials = Sets.newHashSet(Material.GRASS, Material.GROUND, Material.SAND, Material.SNOW, Material.CRAFTED_SNOW, Material.CLAY);
-    public static Material[] materialsShovel = new Material[]{Material.GRASS, Material.GROUND, Material.SAND, Material.SNOW, Material.CRAFTED_SNOW, Material.CLAY};
-
-    public static boolean isRightMaterial(Material material, Material[] materialsListing) {
-        //if(material.isToolNotRequired())
-        //	return true;
-        for (Material mat : materialsListing)
-            if (material == mat)
-                return true;
-
-        return false;
-    }
-
-    //test
-    public static List<BlockPos> rectHollow(final BlockPos pos, int radiusX, int radiusZ) {
-        List<BlockPos> shape = new ArrayList<BlockPos>();
-        // search in a cube
-        int xMin = pos.getX() - radiusX;
-        int xMax = pos.getX() + radiusX;
-        int zMin = pos.getZ() - radiusZ;
-        int zMax = pos.getZ() + radiusZ;
-        int y = pos.getY();
-        for (int x = xMin; x <= xMax; x++) {
-            shape.add(new BlockPos(x, y, zMin));
-            shape.add(new BlockPos(x, y, zMax));
-        }
-        //corners are done so offset
-        for (int z = zMin + 1; z < zMax; z++) {
-            shape.add(new BlockPos(xMin, y, z));
-            shape.add(new BlockPos(xMax, y, z));
-        }
-        return shape;
-    }
-
-    public static @NotNull List<BlockPos> fanweipohuai(final BlockPos pos, ItemStack stack, EntityPlayer player) {
-        List<BlockPos> fangkuai = new ArrayList<BlockPos>();
-        EnumFacing facing = player.getHorizontalFacing();
-        if (player.rotationPitch < -45.0F) {
-            facing = EnumFacing.UP;
-        } else if (player.rotationPitch > 45.0F) {
-            facing = EnumFacing.DOWN;
-        }
-        boolean yAxis = facing.getAxis() == EnumFacing.Axis.Y;
-        boolean xAxis = facing.getAxis() == EnumFacing.Axis.X;
-
-        for (int i = -2; i <= 2; ++i) {
-            for (int j = -2; j <= 2 && !stack.isEmpty(); ++j) {
-                if (i == 0 && j == 0) {
-                    continue;
-                }
-                BlockPos pos1;
-                if (yAxis) {
-                    pos1 = pos.add(i, 0, j);
-                } else if (xAxis) {
-                    pos1 = pos.add(0, i, j);
-                } else {
-                    pos1 = pos.add(i, j, 0);
-                }
-            }
-        }
-        return fangkuai;
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.EPIC;
     }
 
     @Override

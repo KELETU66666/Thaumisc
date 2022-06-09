@@ -33,6 +33,7 @@ item.morph_sword.name=避役剑
 item.morph_pick.name=避役镐
 item.morph_axe.name=避役斧
 item.morph_shovel.name=避役锹
+item.distortion_pick.name=畸变镐
 tile.ichor_block.name=灵液块
 
 #Research
@@ -70,4 +71,7 @@ keletupack.research.kamilegs.complete.text=未完成
 keletupack.research.kamiboots.title=地平线盾牌之靴
 keletupack.research.kamiboots.text=未完成
 keletupack.research.kamiboots.complete.text=未完成
+
+#tab
+itemGroup.item_tab_kp=神秘杂项学
 

@@ -2,6 +2,7 @@ package keletu.keletupack.items;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
+import keletu.keletupack.keletupack;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,7 +14,7 @@ import thaumcraft.api.capabilities.IPlayerWarp;
 
 public class Cleansingamulet extends ItemBase implements IBauble {
     public Cleansingamulet() {
-        super("cleansing_amulet", CreativeTabs.TOOLS);
+        super("cleansing_amulet", keletupack.ITEM_TAB);
         this.maxStackSize=1;
     }
     @Override
@@ -37,7 +38,7 @@ public class Cleansingamulet extends ItemBase implements IBauble {
     }
 
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
-        if (tab == CreativeTabs.TOOLS) {
+        if (tab == keletupack.ITEM_TAB) {
             ItemStack item = new ItemStack(this);
             ItemNBTHelper.setInt(item, "time", 12000);
             items.add(item);

@@ -1,5 +1,6 @@
 package keletu.keletupack.items;
 
+import keletu.keletupack.keletupack;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -12,7 +13,7 @@ import thaumcraft.api.ThaumcraftApi;
 
 public class warppaper extends ItemBase{
     public warppaper() {
-        super("warp_paper", CreativeTabs.BREWING);
+        super("warp_paper", keletupack.ITEM_TAB);
     }
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
