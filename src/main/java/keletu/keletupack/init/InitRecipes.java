@@ -15,6 +15,7 @@ import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.util.Reference;
 import net.minecraftforge.client.event.RenderTooltipEvent;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
@@ -342,6 +343,62 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsTC.visResonator),
                     new ItemStack(ItemsTC.elementalShovel),
                     new ItemStack(ItemsKP.ICHOR_CLOTH)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(
+            "MORPH_TOOLS",
+            new ItemStack(ItemsKP.MORPH_SHOVEL),
+            32,
+            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30),
+            new ItemStack(ItemsTC.thaumiumShovel),
+            new Object[]{
+                    new ItemStack(ItemsTC.quicksilver),
+                    new ItemStack(ItemsTC.nuggets, 1, 10),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    new ItemStack(BlocksTC.logSilverwood)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_axe"), new InfusionRecipe(
+            "MORPH_TOOLS",
+            new ItemStack(ItemsKP.MORPH_AXE),
+            32,
+            new AspectList().add(Aspect.TOOL, 15).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30).add(Aspect.AVERSION, 15),
+            new ItemStack(ItemsTC.thaumiumAxe),
+            new Object[]{
+                    new ItemStack(ItemsTC.quicksilver),
+                    new ItemStack(ItemsTC.nuggets, 1, 10),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    new ItemStack(BlocksTC.logSilverwood)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_pick"), new InfusionRecipe(
+            "MORPH_TOOLS",
+            new ItemStack(ItemsKP.MORPH_PICK),
+            32,
+            new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30),
+            new ItemStack(ItemsTC.thaumiumPick),
+            new Object[]{
+                    new ItemStack(ItemsTC.quicksilver),
+                    new ItemStack(ItemsTC.nuggets, 1, 10),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    new ItemStack(BlocksTC.logSilverwood)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_sword"), new InfusionRecipe(
+            "MORPH_TOOLS",
+            new ItemStack(ItemsKP.MORPH_SWORD),
+            32,
+            new AspectList().add(Aspect.AVERSION, 30).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30),
+            new ItemStack(ItemsTC.thaumiumSword),
+            new Object[]{
+                    new ItemStack(ItemsTC.quicksilver),
+                    new ItemStack(ItemsTC.nuggets, 1, 10),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EXCHANGE),
+                    new ItemStack(BlocksTC.logSilverwood)
             }
     ));
     }

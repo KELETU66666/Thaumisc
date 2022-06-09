@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "keletupack:items/morph_shovel"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "morphshovel": 1
+      },
+      "model": "keletupack:item/morph_shovel1"
+    },
+    {
+      "predicate": {
+        "morphshovel": 2
+      },
+      "model": "keletupack:item/morph_shovel2"
+    }
+  ]
+}

@@ -29,6 +29,10 @@ item.nether_cake.name=地狱蛋糕
 item.nether_swart.name=糖渍地狱疣
 item.ichorium_pick_adv.name=觉醒灵宝镐
 item.ichorium_shovel_adv.name=觉醒灵宝铲
+item.morph_sword.name=避役剑
+item.morph_pick.name=避役镐
+item.morph_axe.name=避役斧
+item.morph_shovel.name=避役锹
 tile.ichor_block.name=灵液块
 
 #Research

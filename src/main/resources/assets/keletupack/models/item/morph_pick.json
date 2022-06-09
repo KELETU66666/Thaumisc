@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "keletupack:items/morph_pick"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "morphpick": 1
+      },
+      "model": "keletupack:item/morph_pick1"
+    },
+    {
+      "predicate": {
+        "morphpick": 2
+      },
+      "model": "keletupack:item/morph_pick2"
+    }
+  ]
+}

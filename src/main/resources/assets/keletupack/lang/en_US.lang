@@ -29,6 +29,10 @@ item.nether_cake.name=Nether Cake
 item.nether_swart.name=Nether Swart
 item.ichorium_pick_adv.name=Ichorium Pick Awakened
 item.ichorium_shovel_adv.name=Ichorium Shovel Awakened
+item.morph_sword.name=Morph Sword
+item.morph_pick.name=Morph Pickaxe
+item.morph_axe.name=Morph Axe
+item.morph_shovel.name=Morph Shovel
 tile.ichor_block.name=Ichor Block
 
 #Research
