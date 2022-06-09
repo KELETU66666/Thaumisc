@@ -348,7 +348,7 @@ private static void initInfusionRecipes() {
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ItemsKP.MORPH_SHOVEL),
-            32,
+            1,
             new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30),
             new ItemStack(ItemsTC.thaumiumShovel),
             new Object[]{
@@ -362,7 +362,7 @@ private static void initInfusionRecipes() {
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_axe"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ItemsKP.MORPH_AXE),
-            32,
+            1,
             new AspectList().add(Aspect.TOOL, 15).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30).add(Aspect.AVERSION, 15),
             new ItemStack(ItemsTC.thaumiumAxe),
             new Object[]{
@@ -376,7 +376,7 @@ private static void initInfusionRecipes() {
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_pick"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ItemsKP.MORPH_PICK),
-            32,
+            1,
             new AspectList().add(Aspect.TOOL, 30).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30),
             new ItemStack(ItemsTC.thaumiumPick),
             new Object[]{
@@ -390,7 +390,7 @@ private static void initInfusionRecipes() {
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_sword"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ItemsKP.MORPH_SWORD),
-            32,
+            1,
             new AspectList().add(Aspect.AVERSION, 30).add(Aspect.SENSES, 30).add(Aspect.EXCHANGE, 30),
             new ItemStack(ItemsTC.thaumiumSword),
             new Object[]{
