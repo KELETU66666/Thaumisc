@@ -6,14 +6,17 @@ import keletu.keletupack.keletupack;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionType;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.util.Reference;
 import net.minecraftforge.client.event.RenderTooltipEvent;
+import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
@@ -22,17 +25,25 @@ import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
+import thaumcraft.api.items.ItemGenericEssentiaContainer;
 import thaumcraft.api.items.ItemsTC;
+import thaumcraft.common.items.resources.ItemCrystalEssence;
 
 public class InitRecipes {
     private static ResourceLocation defaultGroup = new ResourceLocation("");
-    
+
     public static void initRecipes() {
         initArcaneRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
     }
-  
+
+    public static ItemStack getCrystal(Aspect asp, int quantity){
+        ItemStack crystal = new ItemStack(ItemsTC.crystalEssence, quantity);
+        ((ItemCrystalEssence) ItemsTC.crystalEssence).setAspects(crystal, new AspectList().add(asp, 100));
+        return crystal;
+    }
+
 private static void initArcaneRecipes() {
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "warp_paper"), new ShapedArcaneRecipe(
                         defaultGroup,
@@ -406,10 +417,10 @@ private static void initInfusionRecipes() {
             new ItemStack(ItemsKP.DISTORTION_PICK),
             1,
             new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.TOOL, 30).add(Aspect.FLUX, 45),
-            new ItemStack(ItemsTC.thaumiumSword),
+            new ItemStack(ItemsTC.thaumiumPick),
             new Object[]{
                     new ItemStack(ItemsTC.nuggets,1 ,10),
-                    ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
+                    getCrystal(Aspect.FLUX, 1),
                     ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
                     new ItemStack(BlocksTC.logGreatwood)
             }

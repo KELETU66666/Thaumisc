@@ -7,10 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.IItemPropertyGetter;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemSpade;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.*;
@@ -90,9 +87,12 @@ public class MorphShovel extends ItemSpade implements IHasModel {
 
 @Override
     public boolean getIsRepairable(ItemStack stack, ItemStack stack2) {
-        return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) ? true : super.getIsRepairable(stack, stack2);
+    return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) ? true : super.getIsRepairable(stack, stack2);
+}
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.RARE;
     }
-
     @Override
     public void registerModels() {
         keletupack.proxy.registerItemRenderer(this, 0, "inventory");

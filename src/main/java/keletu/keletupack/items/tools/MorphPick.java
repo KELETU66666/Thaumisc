@@ -7,10 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.IItemPropertyGetter;
-import net.minecraft.item.ItemPickaxe;
-import net.minecraft.item.ItemSpade;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.*;
@@ -49,11 +46,10 @@ public class MorphPick extends ItemPickaxe implements IHasModel {
         if (player.isSneaking() && itemstack.hasTagCompound() && getMaxDamage(itemstack) - itemstack.getItemDamage() > 5) {
             NBTTagCompound tags = itemstack.getTagCompound();
             byte phase = tags.getByte("phase");
-            if(tags.hasKey("ench")){
+            if (tags.hasKey("ench")) {
                 NBTTagList enchants = itemstack.getEnchantmentTagList();
                 tags.setTag("enchants" + phase, enchants);
-            }
-            else
+            } else
                 tags.removeTag("enchants" + phase);
 
             if (tags.hasKey("display")) {
@@ -66,11 +62,10 @@ public class MorphPick extends ItemPickaxe implements IHasModel {
             if (++phase > 2)
                 phase = 0;
             tags.setByte("phase", phase);
-            if(tags.hasKey("enchants" + phase)) {
+            if (tags.hasKey("enchants" + phase)) {
                 NBTTagList enchants = (NBTTagList) (tags.getTag("enchants" + phase));
                 tags.setTag("ench", enchants);
-            }
-            else
+            } else
                 tags.removeTag("ench");
 
             if (tags.hasKey("display")) {
@@ -87,12 +82,14 @@ public class MorphPick extends ItemPickaxe implements IHasModel {
         }
         return new ActionResult<>(EnumActionResult.PASS, itemstack);
     }
-
     @Override
     public boolean getIsRepairable(ItemStack stack, ItemStack stack2) {
         return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) ? true : super.getIsRepairable(stack, stack2);
     }
-
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.RARE;
+    }
     @Override
     public void registerModels() {
         keletupack.proxy.registerItemRenderer(this, 0, "inventory");
