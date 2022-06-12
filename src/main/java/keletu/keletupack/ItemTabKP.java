@@ -1,7 +1,6 @@
 package keletu.keletupack;
 
 import keletu.keletupack.common.ItemsKP;
-import keletu.keletupack.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 

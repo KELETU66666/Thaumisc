@@ -3,12 +3,12 @@ package keletu.keletupack.items;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import keletu.keletupack.keletupack;
+import keletu.keletupack.util.ItemNBTHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import keletu.keletupack.util.ItemNBTHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;
 

@@ -1,6 +1,5 @@
 package keletu.keletupack.event;
 
-import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.tools.DistortionPick;
 import keletu.keletupack.util.Reference;
@@ -17,8 +16,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-
-import java.util.Collections;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class LivingEvent {

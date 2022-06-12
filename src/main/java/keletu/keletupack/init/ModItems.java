@@ -1,16 +1,13 @@
 package keletu.keletupack.init;
 
-import keletu.keletupack.ItemTabKP;
 import keletu.keletupack.items.NetherCake;
-import keletu.keletupack.items.food;
-import keletu.keletupack.items.warpfood;
-import keletu.keletupack.items.tools.*;
-import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.armor.IchorArmor;
+import keletu.keletupack.items.armor.KamiArmor;
+import keletu.keletupack.items.food;
+import keletu.keletupack.items.tools.*;
+import keletu.keletupack.items.warpfood;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.Reference;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;

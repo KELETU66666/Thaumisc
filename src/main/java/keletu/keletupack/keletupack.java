@@ -1,23 +1,22 @@
 package keletu.keletupack;
 
-import keletu.keletupack.init.ModItems;
+import keletu.keletupack.init.InitRecipes;
+import keletu.keletupack.init.InitResearch;
 import keletu.keletupack.loot.LootTableHandler;
+import keletu.keletupack.proxy.CommonProxy;
+import keletu.keletupack.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import keletu.keletupack.init.InitRecipes;
-import keletu.keletupack.init.InitResearch;
-import keletu.keletupack.proxy.CommonProxy;
-import keletu.keletupack.util.Reference;
 
 @Mod(
         modid = Reference.MOD_ID,

@@ -3,10 +3,9 @@ package keletu.keletupack.common;
 import keletu.keletupack.items.EnderShard;
 import keletu.keletupack.items.NetherShard;
 import keletu.keletupack.items.warppaper;
-import keletu.keletupack.keletupack;
+import keletu.keletupack.util.Reference;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import keletu.keletupack.util.Reference;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ItemsKP {

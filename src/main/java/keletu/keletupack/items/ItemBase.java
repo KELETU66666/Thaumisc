@@ -1,10 +1,10 @@
 package keletu.keletupack.items;
 
 import keletu.keletupack.init.ModItems;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
 public class ItemBase extends Item implements IHasModel {
     public ItemBase(String name, CreativeTabs tab) {

@@ -2,8 +2,6 @@ package keletu.keletupack.loot;
 
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.util.Reference;
-import net.minecraft.init.Items;
-import net.minecraft.world.DimensionType;
 import net.minecraft.world.storage.loot.*;
 import net.minecraft.world.storage.loot.conditions.KilledByPlayer;
 import net.minecraft.world.storage.loot.conditions.LootCondition;

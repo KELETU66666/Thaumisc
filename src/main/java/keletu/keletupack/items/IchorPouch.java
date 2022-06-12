@@ -2,16 +2,12 @@ package keletu.keletupack.items;
 
 import keletu.keletupack.inventory.ExtendPlayerInventory;
 import keletu.keletupack.keletupack;
-import keletu.keletupack.util.Reference;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class IchorPouch extends ItemBase

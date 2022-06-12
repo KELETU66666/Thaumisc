@@ -1,13 +1,13 @@
 package keletu.keletupack.items;
 
 import keletu.keletupack.init.ModItems;
+import keletu.keletupack.keletupack;
+import keletu.keletupack.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import keletu.keletupack.keletupack;
-import keletu.keletupack.util.IHasModel;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType;
 
