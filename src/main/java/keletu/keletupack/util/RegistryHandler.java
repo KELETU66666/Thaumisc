@@ -34,6 +34,8 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicGirdle());
         event.getRegistry().registerAll(new RunicAmulet());
         event.getRegistry().registerAll(new RunicRingWater());
+        event.getRegistry().registerAll(new RunicGirdleAir());
+        event.getRegistry().registerAll(new RunicAmuletEarth());
     }
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
