@@ -1,7 +1,8 @@
-package keletu.keletupack.items;
+package keletu.keletupack.items.baubles;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
+import keletu.keletupack.items.ItemBase;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.ItemNBTHelper;
 import net.minecraft.creativetab.CreativeTabs;

@@ -3,6 +3,7 @@ package keletu.keletupack.util;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.*;
+import keletu.keletupack.items.baubles.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -29,6 +30,10 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new IchorCloth());
         event.getRegistry().registerAll(new IchorIngot());
         event.getRegistry().registerAll(new IchorPouch());
+        event.getRegistry().registerAll(new RunicRing());
+        event.getRegistry().registerAll(new RunicGirdle());
+        event.getRegistry().registerAll(new RunicAmulet());
+        event.getRegistry().registerAll(new RunicRingWater());
     }
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
