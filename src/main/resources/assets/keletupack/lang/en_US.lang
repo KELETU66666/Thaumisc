@@ -34,6 +34,7 @@ item.morph_pick.name=Morph Pickaxe
 item.morph_axe.name=Morph Axe
 item.morph_shovel.name=Morph Shovel
 item.distortion_pick.name=Pickaxe of Distortion
+item.riding_crop.name=Riding Crop
 tile.ichor_block.name=Ichor Block
 
 #Research

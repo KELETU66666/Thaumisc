@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "L",
+    "W",
+    "W"
+  ],
+  "key": {
+    "L": {
+      "type": "forge:ore_dict",
+      "ore": "leather"
+    },
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+    "result": {
+      "item": "keletupack:riding_crop",
+      "data": 0
+    }
+}

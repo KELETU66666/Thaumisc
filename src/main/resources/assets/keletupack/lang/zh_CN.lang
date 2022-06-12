@@ -34,6 +34,7 @@ item.morph_pick.name=避役镐
 item.morph_axe.name=避役斧
 item.morph_shovel.name=避役锹
 item.distortion_pick.name=畸变镐
+item.riding_crop.name=马鞭
 tile.ichor_block.name=灵液块
 
 #Research
