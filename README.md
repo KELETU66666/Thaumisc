@@ -11,7 +11,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 ## dev to-do
 
-1. - [√] 删除灵液桶 (Remove Ichor Bucket)
+1. - [x] 删除灵液桶 (Remove Ichor Bucket)
 2. - [ ] 添加云霄塔法袍3D效果 (Add a 3D effect to Robes of the Stratosphere)
 3. - [ ] 添加魔导手册文案 (Add a Thaumonomicon copy/Add Thaumonomicon Entries (I didn't get what is really being said here))
 4. - [x] 添加法袍抵挡弹射物效果 (Add Projectile Protection to Robes)
