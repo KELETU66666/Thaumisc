@@ -1,4 +1,4 @@
-# Keletu's Pack Mod
+# 神秘杂项 (Thaumisc)
 
  [![Build](https://github.com/KELETU66666/keletupack/actions/workflows/main.yml/badge.svg?branch=backport)](https://github.com/KELETU66666/keletupack/actions/workflows/main.yml)
 
@@ -19,6 +19,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 6. - [x] 添加靴子绿化效果 (Add a effect to grow grass for Boots)
 7. - [ ] 添加工具觉醒效果 (Add a Awakening effect for Tools)
 8. - [ ] 更改包名 (Change mod's name)
+9. - [ ] 把英文扔到专门的readme去
 
 ## 依赖 (Dependencies)
 
