@@ -1,5 +1,6 @@
 package keletu.keletupack;
 
+import keletu.keletupack.dim.OreClusterGenerator;
 import keletu.keletupack.init.InitRecipes;
 import keletu.keletupack.init.InitResearch;
 import keletu.keletupack.loot.LootTableHandler;
@@ -39,6 +40,7 @@ public class keletupack {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
+        GameRegistry.registerWorldGenerator(new OreClusterGenerator(), 3);
     }
 
     /**
