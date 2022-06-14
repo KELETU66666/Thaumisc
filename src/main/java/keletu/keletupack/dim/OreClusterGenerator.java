@@ -1,7 +1,6 @@
 package keletu.keletupack.dim;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
@@ -15,15 +14,13 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
-import static net.minecraft.block.Block.getBlockFromItem;
-
 public class OreClusterGenerator implements IWorldGenerator {
 
     public static int density;
     public static String[] blacklist = new String[]{"oreFirestone"};
 
     @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator iChunkGenerator, IChunkProvider chunkProvider) {
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 
         if (world.provider instanceof TestWorldProvider) {
             for (int k = 0; k < density; k++) {
@@ -34,9 +31,10 @@ public class OreClusterGenerator implements IWorldGenerator {
                     int firstBlockYCoord = random.nextInt(245) + 6;
                     BlockPos pos = new BlockPos(firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
                     IBlockState state = world.getBlockState(pos);
-                    WorldGenMinable mineable = new WorldGenMinable(state, random.nextInt(20), BlockMatcher.forBlock(Blocks.BEDROCK));
-                    state.equals(getBlockFromItem(itemStack.getItem()));
-                    mineable.generate(world, random, pos);
+                    if (state.getBlock().equals(Block.getBlockFromItem(itemStack.getItem()))) {
+                        WorldGenMinable mineable = new WorldGenMinable(state, random.nextInt(20), BlockMatcher.forBlock(Blocks.BEDROCK));
+                        mineable.generate(world, random, pos);
+                    }
                 }
             }
         }

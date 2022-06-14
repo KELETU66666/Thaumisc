@@ -7,10 +7,12 @@ import keletu.keletupack.util.Reference;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.RenderTooltipEvent;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
@@ -418,5 +420,97 @@ private static void initInfusionRecipes() {
                     new ItemStack(BlocksTC.logGreatwood)
             }
     ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_ring"), new InfusionRecipe(
+            "RUNIC_BAUBLES",
+            new ItemStack(ItemsKP.RUNIC_RING),
+            2,
+            new AspectList().add(Aspect.ENERGY, 40).add(Aspect.MAGIC, 40).add(Aspect.PROTECT, 20),
+            new ItemStack(ItemsTC.baubles, 1, 1),
+            new Object[]{
+                    new ItemStack(ItemsTC.scribingTools),
+                    new ItemStack(ItemsTC.amber),
+                    new ItemStack(ItemsTC.morphicResonator),
+                    new ItemStack(ItemsTC.visResonator),
+                    new ItemStack(ItemsTC.salisMundus)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_amulet"), new InfusionRecipe(
+            "RUNIC_BAUBLES",
+            new ItemStack(ItemsKP.RUNIC_AMULET),
+            3,
+            new AspectList().add(Aspect.ENERGY, 50).add(Aspect.MAGIC, 45).add(Aspect.PROTECT, 25),
+            new ItemStack(ItemsTC.baubles, 1, 0),
+            new Object[]{
+                    new ItemStack(ItemsTC.scribingTools),
+                    new ItemStack(ItemsTC.amber),
+                    new ItemStack(ItemsTC.amber),
+                    new ItemStack(ItemsTC.morphicResonator),
+                    new ItemStack(ItemsTC.visResonator),
+                    new ItemStack(ItemsTC.salisMundus)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_girdle"), new InfusionRecipe(
+            "RUNIC_BAUBLES",
+            new ItemStack(ItemsKP.RUNIC_GIRDLE),
+            4,
+            new AspectList().add(Aspect.ENERGY, 60).add(Aspect.MAGIC, 50).add(Aspect.PROTECT, 30),
+            new ItemStack(ItemsTC.baubles, 1, 2),
+            new Object[]{
+                    new ItemStack(ItemsTC.scribingTools),
+                    new ItemStack(ItemsTC.amber),
+                    new ItemStack(ItemsTC.amber),
+                    new ItemStack(ItemsTC.amber),
+                    new ItemStack(ItemsTC.morphicResonator),
+                    new ItemStack(ItemsTC.fabric),
+                    new ItemStack(ItemsTC.visResonator),
+                    new ItemStack(ItemsTC.salisMundus)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_ring_water"), new InfusionRecipe(
+            "RUNIC_BAUBLES_AQUA",
+            new ItemStack(ItemsKP.RUNIC_RING_WATER),
+            4,
+            new AspectList().add(Aspect.WATER, 75).add(Aspect.MAGIC, 45).add(Aspect.LIFE, 70).add(Aspect.PROTECT, 30),
+            new ItemStack(ItemsKP.RUNIC_RING),
+            new Object[]{
+                    getCrystal(Aspect.WATER, 1),
+                    getCrystal(Aspect.WATER, 1),
+                    new ItemStack(ItemsTC.visResonator),
+                    getCrystal(Aspect.WATER, 1),
+                    getCrystal(Aspect.WATER, 1),
+                    PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.LONG_REGENERATION)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_amulet_earth"), new InfusionRecipe(
+            "RUNIC_BAUBLES_TERRA",
+            new ItemStack(ItemsKP.RUNIC_AMULET_EARTH),
+            5,
+            new AspectList().add(Aspect.WATER, 45).add(Aspect.MAGIC, 70).add(Aspect.VOID, 70).add(Aspect.PROTECT, 35),
+            new ItemStack(ItemsKP.RUNIC_AMULET),
+            new Object[]{
+                    getCrystal(Aspect.EARTH, 1),
+                    getCrystal(Aspect.EARTH, 1),
+                    new ItemStack(ItemsTC.visResonator),
+                    getCrystal(Aspect.EARTH, 1),
+                    getCrystal(Aspect.EARTH, 1),
+                    PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.STRONG_STRENGTH)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_girdle_air"), new InfusionRecipe(
+            "RUNIC_BAUBLES_AER",
+            new ItemStack(ItemsKP.RUNIC_GIRDLE_AIR),
+            6,
+            new AspectList().add(Aspect.AIR, 125).add(Aspect.MAGIC, 125).add(Aspect.PROTECT, 50),
+            new ItemStack(ItemsKP.RUNIC_GIRDLE),
+            new Object[]{
+                    getCrystal(Aspect.AIR, 1),
+                    getCrystal(Aspect.AIR, 1),
+                    new ItemStack(ItemsTC.visResonator),
+                    getCrystal(Aspect.AIR, 1),
+                    getCrystal(Aspect.AIR, 1),
+                    PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION), PotionTypes.STRONG_HARMING)
+            }
+    ));
     }
+
 }

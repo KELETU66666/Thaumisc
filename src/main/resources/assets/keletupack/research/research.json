@@ -1,18 +1,308 @@
 {
     "entries": [
       {
+        "key": "THAUMISC",
+        "name": "keletupack.research.thaumisc.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:coin_adventure"
+        ],"meta":["ROUND"],
+        "parents": [
+         "UNLOCKINFUSION"
+        ],
+        "location": [
+          0,
+          0
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.thaumisc.text",
+            "required_knowledge": [
+              "OBSERVATION;BASICS;1", "OBSERVATION;INFUSION;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.thaumisc.complete.text",
+            "recipes": ["keletupack:riding_crop", "keletupack:nether_swart", "keletupack:nether_cake"]
+          }
+        ]
+      },
+      {
+        "key": "THAUMISC_WARPTHEORY",
+        "name": "keletupack.research.thaumisc_warptheory.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:coin_witchery"
+        ],"meta":["ROUND", "REVERSE"],
+        "parents": [
+         "THAUMISC", "INFUSION", "WARP"
+        ],
+        "location": [
+          -1,
+          -1
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.thaumisc_warptheory.text",
+            "required_knowledge": [
+              "OBSERVATION;ELDRITCH;1"
+            ],"warp" : "1"
+          },
+          {
+            "text": "keletupack.research.thaumisc_warptheory.complete.text"
+          }
+        ]
+      },
+      {
+        "key": "THAUMISC_FORBIDDENMAGIC",
+        "name": "keletupack.research.thaumisc_forbiddenmagic.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:coin_bleed"
+        ],"meta":["ROUND"],
+        "parents": [
+         "THAUMISC", "INFUSION"
+        ],
+        "location": [
+          0,
+          2
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.thaumisc_forbiddenmagic.text",
+            "required_knowledge": [
+              "OBSERVATION;INFUSION;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.thaumisc_forbiddenmagic.complete.text"
+          }
+        ]
+      },
+      {
+        "key": "MORPH_TOOLS",
+        "name": "keletupack.research.morph_tools.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:morph_sword", "keletupack:morph_pick", "keletupack:morph_axe", "keletupack:morph_shovel"
+        ],
+        "parents": [
+         "THAUMISC_FORBIDDENMAGIC", "INFUSION", "ELEMENTALTOOLS"
+        ],
+        "location": [
+          -1,
+        4
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.morph_tools.text",
+            "required_knowledge": [
+              "THEORY;BASICS;1",
+              "THEORY;INFUSION;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.morph_tools.complete.text",
+            "recipes": ["keletupack:morph_sword", "keletupack:morph_pick", "keletupack:morph_axe", "keletupack:morph_shovel"]
+          }
+        ]
+      },
+      {
+        "key": "DISTORTION_PICK",
+        "name": "keletupack.research.distortionpick.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:distortion_pick"
+        ],
+        "parents": [
+         "THAUMISC_FORBIDDENMAGIC", "INFUSION", "ELEMENTALTOOLS"
+        ],
+        "location": [
+          1,
+        4
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.distortionpick.text",
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ],
+            "required_item":["minecraft:obsidian"]
+          },
+          {
+            "text": "keletupack.research.distortionpick.complete.text",
+            "recipes": ["keletupack:distortion_pick"]
+          }
+        ]
+      },
+      {
+        "key": "THAUMISC_TC4",
+        "name": "keletupack.research.thaumisc_tc4.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:coin_adventure"
+        ],"meta":["ROUND"],
+        "parents": [
+         "THAUMISC", "INFUSION", "RUNICSHIELDING"
+        ],
+        "location": [
+          2,
+          0
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.thaumisc_tc4.text",
+            "required_knowledge": [
+              "OBSERVATION;ELDRITCH;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.thaumisc_tc4.complete.text"
+          }
+        ]
+      },
+      {
+        "key": "RUNIC_BAUBLES",
+        "name": "keletupack.research.runic_baubles.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:runic_ring", "keletupack:runic_girdle", "keletupack:runic_amulet"
+        ],
+        "parents": [
+         "THAUMISC_TC4", "INFUSION", "RUNICSHIELDING"
+        ],
+        "location": [
+          4,
+          -2
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.runic_baubles.text",
+            "required_item": [
+              "thaumcraft:baubles;1;5", "thaumcraft:amber"
+            ],
+            "required_knowledge": [
+              "THEORY;INFUSION;2"
+            ]
+          },
+          {
+            "text": "keletupack.research.runic_baubles.complete.text",
+            "recipes": ["keletupack:runic_ring", "keletupack:runic_girdle", "keletupack:runic_amulet"]
+          }
+        ]
+      },
+      {
+        "key": "RUNIC_BAUBLES_AQUA",
+        "name": "keletupack.research.runic_baubles_aqua.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:runic_ring_water"
+        ],
+        "parents": [
+         "RUNIC_BAUBLES"
+        ],
+        "location": [
+          6,
+          -2
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.runic_baubles_aqua.text",
+            "required_item": [
+              "minecraft:golden_apple", "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'aqua'}]}"
+            ],
+            "required_craft": [
+              "keletupack:runic_ring"
+            ],
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.runic_baubles_aqua.complete.text",
+            "recipes": ["keletupack:runic_ring_water"]
+          }
+        ]
+      },
+      {
+        "key": "RUNIC_BAUBLES_TERRA",
+        "name": "keletupack.research.runic_baubles_terra.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:runic_amulet_earth"
+        ],
+        "parents": [
+         "RUNIC_BAUBLES"
+        ],
+        "location": [
+          2,
+          -2
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.runic_baubles_terra.text",
+            "required_item": [
+              "thaumcraft:quicksilver", "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'terra'}]}"
+            ],
+            "required_craft": [
+              "keletupack:runic_amulet"
+            ],
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.runic_baubles_terra.complete.text",
+            "recipes": ["keletupack:runic_amulet_earth"]
+          }
+        ]
+      },
+      {
+        "key": "RUNIC_BAUBLES_AER",
+        "name": "keletupack.research.runic_baubles_aer.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:runic_girdle_air"
+        ],
+        "parents": [
+         "RUNIC_BAUBLES"
+        ],
+        "location": [
+          4,
+          -4
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.runic_baubles_aer.text",
+            "required_item": [
+              "minecraft:shield", "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'aer'}]}"
+            ],
+            "required_craft": [
+              "keletupack:runic_girdle"
+            ],
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.runic_baubles_aer.complete.text",
+            "recipes": ["keletupack:runic_girdle_air"]
+          }
+        ]
+      },
+      {
         "key": "WARP_PAPER",
         "name": "keletupack.research.warppaper.title",
-        "category": "BASICS",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:warp_paper"
         ],
         "parents": [
-          "WARP"
-        ],"meta":["ROUND"],
+          "WARP", "THAUMISC_WARPTHEORY"
+        ],"meta":["ROUND", "REVERSE"],
         "location": [
-          -5,
-          -1
+          -2,
+          -2
         ],
         "stages": [
           {
@@ -35,16 +325,16 @@
       {
         "key": "TAINT_MEAT",
         "name": "keletupack.research.taintmeat.title",
-        "category": "BASICS",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:taint_meat"
-        ],"meta":["ROUND"],
+        ],"meta":["ROUND", "REVERSE"],
         "parents": [
-          "WARP","~BASEALCHEMY"
+          "WARP", "~BASEALCHEMY", "THAUMISC_WARPTHEORY"
         ],
         "location": [
-          -5,
-          -3
+          -2,
+          0
         ],
         "stages": [
           {
@@ -59,7 +349,7 @@
             ]
           },
           {
-            "text": "otherthuamcraft.research.taintmeat.complete.text",
+            "text": "keletupack.research.taintmeat.complete.text",
             "recipes": [
                 "keletupack:taint_meat1","keletupack:taint_meat2","keletupack:taint_meat","keletupack:taint_meat4","keletupack:taint_meat5","keletupack:taint_meat6"
             ],
@@ -70,17 +360,19 @@
       {
         "key": "CLEANSING_AMULET",
         "name": "keletupack.research.cleansingamulet.title",
-        "category": "INFUSION",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:cleansing_amulet"
         ],
         "parents": [
           "BASEINFUSION",
-          "SANESOAP"
+          "SANESOAP",
+          "TAINT_MEAT",
+          "WARP_PAPER"
         ],
         "location": [
-          -2,
-          -2
+          -3,
+          -1
         ],
         "meta": [
           "HIDDEN"
@@ -101,7 +393,7 @@
             ]
           },
           {
-            "text": "otherthuamcraft.research.cleansingamulet.complete.text",
+            "text": "keletupack.research.cleansingamulet.complete.text",
             "recipes": [
               "keletupack:cleansing_amulet"
             ]
@@ -111,7 +403,7 @@
       {
         "key": "DIMENSIONALSHARD",
         "name": "keletupack.research.dimensionalshard.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:shard_nether",
           "keletupack:shard_end"
@@ -122,11 +414,12 @@
           "INFUSIONBOOST", "RUNICSHIELDING", "FORTRESSMASK", "CHARMUNDYING", "VERDANTCHARMS", "CURIOSITYBAND", "PAVINGSTONES",
           "JARBRAIN", "GOLEMLOGISTICS", "GOLEMVISION", "GOLEMFLYER", "GOLEMCOMBATADV", "SEALLUMBER", "SEALHARVEST", "SEALBUTCHER","SEALSTORE",
           "FLUXCLEANUP", "RIFTCLOSER",
-          "~LEVITATOR", "~BELLOWS", "~MIRRORHAND", "~MIRRORESSENTIA", "~LAMPGROWTH",  "~LAMPFERTILITY", "~ARCANEPATTERNCRAFTER", "~ARCANEBORE", "~ADVANCEDTURRET", "~GRAPPLEGUN", "~VISGENERATOR"
+          "~LEVITATOR", "~BELLOWS", "~MIRRORHAND", "~MIRRORESSENTIA", "~LAMPGROWTH",  "~LAMPFERTILITY", "~ARCANEPATTERNCRAFTER", "~ARCANEBORE", "~ADVANCEDTURRET", "~GRAPPLEGUN", "~VISGENERATOR",
+          "~THAUMISC"
         ],"meta":["ROUND","HIDDEN"],
         "location": [
-          -6,
-          4
+          -2,
+          2
         ],
         "stages": [
           {
@@ -147,7 +440,7 @@
       {
         "key": "ICHOR",
         "name": "keletupack.research.ichor.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:ichor"
         ],
@@ -155,8 +448,8 @@
           "DIMENSIONALSHARD"
         ],"meta":["ROUND","HIDDEN"],
         "location": [
-          -7,
-          5
+          -4,
+          2
         ],
         "stages": [
           {
@@ -182,7 +475,7 @@
       {
         "key": "ICHORIUMTOOLS",
         "name": "keletupack.research.ichoriumtools.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:ichor_ingot"
         ],
@@ -190,8 +483,8 @@
           "ICHOR"
         ],"meta":["HIDDEN"],
         "location": [
-          -8,
-          4
+          -6,
+          2
         ],
         "stages": [
           {
@@ -211,7 +504,7 @@
       {
         "key": "ICHORARMOR",
         "name": "keletupack.research.ichorarmor.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:ichor_cloth"
         ],
@@ -219,8 +512,8 @@
           "ICHOR"
         ],"meta":["HIDDEN"],
         "location": [
-          -6,
-          6
+          -4,
+          4
         ],
         "stages": [
           {
@@ -240,7 +533,7 @@
       {
         "key": "KAMIHELM",
         "name": "keletupack.research.kamihelm.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:kami_helm"
         ],
@@ -248,13 +541,13 @@
           "ICHORARMOR"
         ],"meta":["HIDDEN"],
         "location": [
-          -9,
-          8
+          -7,
+          6
         ],
         "stages": [
           {
             "text": "keletupack.research.kamihelm.text",
-            "required_knowledge":[              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"],
+            "required_knowledge":["THEORY;ARTIFICE;2","THEORY;INFUSION;1"],
             "required_craft":["keletupack:ichor_helm"]
           },
           {
@@ -265,15 +558,14 @@
       },
       {"key": "KAMICHEST",
         "name": "keletupack.research.kamichest.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:kami_chest"
         ],
         "parents": [
           "ICHORARMOR"
         ],"meta":["HIDDEN"],
-        "location": [-7,
-          8
+        "location": [-5,6
         ],
         "stages": [
           {
@@ -292,7 +584,7 @@
       {
         "key": "KAMILEGS",
         "name": "keletupack.research.kamilegs.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:kami_legs"
         ],
@@ -300,8 +592,8 @@
           "ICHORARMOR"
         ],"meta":["HIDDEN"],
         "location": [
-          -5,
-          8
+          -3,
+          6
         ],
         "stages": [
           {
@@ -320,7 +612,7 @@
       {
         "key": "KAMIBOOTS",
         "name": "keletupack.research.kamiboots.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:kami_boots"
         ],
@@ -328,8 +620,8 @@
           "ICHORARMOR"
         ],"meta":["HIDDEN"],
         "location": [
-          -3,
-          8
+          -1,
+          6
         ],
         "stages": [
           {
@@ -348,7 +640,7 @@
       {
         "key": "ICHOR_PICK_ADV",
         "name": "keletupack.research.ichor_pick_adv.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:ichorium_pick_adv"
         ],
@@ -356,8 +648,8 @@
           "ICHORIUMTOOLS"
         ],"meta":["HIDDEN", "REVERSE"],
         "location": [
-          -10,
-          3
+          -8,
+          1
         ],
         "stages": [
           {
@@ -378,7 +670,7 @@
       {
         "key": "ICHOR_SHOVEL_ADV",
         "name": "keletupack.research.ichor_shovel_adv.title",
-        "category": "ARTIFICE",
+        "category": "THAUMISC",
         "icons": [
           "keletupack:ichorium_shovel_adv"
         ],
@@ -386,8 +678,8 @@
           "ICHORIUMTOOLS"
         ],"meta":["HIDDEN", "REVERSE"],
         "location": [
-          -10,
-          5
+          -8,
+        3
         ],
         "stages": [
           {

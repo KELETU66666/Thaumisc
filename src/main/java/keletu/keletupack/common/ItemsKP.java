@@ -37,4 +37,10 @@ public class ItemsKP {
     public static final Item MORPH_SHOVEL = null;
     public static final Item COIN_ADVENTURE = null;
     public static final Item DISTORTION_PICK = null;
+    public static final Item RUNIC_RING = null;
+    public static final Item RUNIC_GIRDLE = null;
+    public static final Item RUNIC_AMULET = null;
+    public static final Item RUNIC_RING_WATER = null;
+    public static final Item RUNIC_GIRDLE_AIR = null;
+    public static final Item RUNIC_AMULET_EARTH = null;
 }
