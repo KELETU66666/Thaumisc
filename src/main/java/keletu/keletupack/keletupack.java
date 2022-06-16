@@ -1,6 +1,7 @@
 package keletu.keletupack;
 
 import keletu.keletupack.dim.OreClusterGenerator;
+import keletu.keletupack.init.InitRecipeCompat;
 import keletu.keletupack.init.InitRecipes;
 import keletu.keletupack.init.InitResearch;
 import keletu.keletupack.loot.LootTableHandler;
@@ -11,6 +12,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -50,7 +52,10 @@ public class keletupack {
     public void init(FMLInitializationEvent event) {
         InitRecipes.initRecipes();
         InitResearch.registerResearch();
-        MinecraftForge.EVENT_BUS.register(LootTableHandler.class);    }
+        MinecraftForge.EVENT_BUS.register(LootTableHandler.class);
+        if(Loader.isModLoaded("thaumicwonders")) {
+            InitRecipeCompat.InitRecipeCompat();
+        }}
 
     /**
      * This is the final initialization event. Register actions from other mods here

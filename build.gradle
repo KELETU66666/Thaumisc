@@ -83,6 +83,7 @@ dependencies {
     implementation 'org.jetbrains:annotations:20.1.0'
     deobfCompile "curse.maven:thaumcraft-${thaumcraft_version}"
     deobfCompile "curse.maven:baubles-${baubles_version}"
+    implementation "curse.maven:thaumic-wonders-316704:2787954"
 }
 
 processResources {
