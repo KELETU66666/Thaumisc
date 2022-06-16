@@ -29,7 +29,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 ### 任务 (Research)
 
-![添加的任务](./doc/zh_cn/image/任务图片.jpg)
+![添加的任务](./doc/zh_cn/image/任务图片.png)
 
 ### 物品 (Items)
 
