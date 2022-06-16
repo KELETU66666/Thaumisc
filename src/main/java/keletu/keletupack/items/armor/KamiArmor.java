@@ -1,6 +1,7 @@
 package keletu.keletupack.items.armor;
 
 import com.google.common.collect.Multimap;
+import keletu.keletupack.clinet.ModelWings;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
@@ -169,8 +170,11 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
     @SideOnly(Side.CLIENT)
     public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot
             armorSlot, ModelBiped _default) {
-        return null;
+        if (armorType == EntityEquipmentSlot.CHEST) {
+            return new ModelWings();
+        }return null;
     }
+
 
     @Override
     public int getVisDiscount(ItemStack stack, EntityPlayer mp) {
