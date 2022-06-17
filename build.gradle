@@ -84,6 +84,8 @@ dependencies {
     deobfCompile "curse.maven:thaumcraft-${thaumcraft_version}"
     deobfCompile "curse.maven:baubles-${baubles_version}"
     implementation "curse.maven:thaumic-wonders-316704:2787954"
+    implementation "curse.maven:forestry-59751:2684780"
+    implementation "curse.maven:magic-bees-65764:2855061"
 }
 
 processResources {

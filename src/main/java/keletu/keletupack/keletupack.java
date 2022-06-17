@@ -1,9 +1,7 @@
 package keletu.keletupack;
 
 import keletu.keletupack.dim.OreClusterGenerator;
-import keletu.keletupack.init.InitRecipeCompat;
-import keletu.keletupack.init.InitRecipes;
-import keletu.keletupack.init.InitResearch;
+import keletu.keletupack.init.*;
 import keletu.keletupack.loot.LootTableHandler;
 import keletu.keletupack.proxy.CommonProxy;
 import keletu.keletupack.util.Reference;
@@ -54,7 +52,11 @@ public class keletupack {
         InitResearch.registerResearch();
         MinecraftForge.EVENT_BUS.register(LootTableHandler.class);
         if(Loader.isModLoaded("thaumicwonders")) {
-            InitRecipeCompat.InitRecipeCompat();
+            InitRecipeCompatTW.InitRecipeCompat();
+        }
+        if(Loader.isModLoaded("magicbees")) {
+            InitRecipeCompatMB.InitRecipeCompat();
+            InitResearchMB.registerResearchMB();
         }}
 
     /**

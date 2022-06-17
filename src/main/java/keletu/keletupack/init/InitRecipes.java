@@ -512,5 +512,4 @@ private static void initInfusionRecipes() {
             }
     ));
     }
-
 }

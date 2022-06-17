@@ -11,7 +11,7 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.CrucibleRecipe;
 
-public class InitRecipeCompat{
+public class InitRecipeCompatTW {
     private static ResourceLocation defaultGroup = new ResourceLocation("");
 
     public static void InitRecipeCompat() {

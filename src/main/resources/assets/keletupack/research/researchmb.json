@@ -1,0 +1,269 @@
+{
+"entries" :[        {
+            "key": "MB_Root",
+            "name": "tc.research_name.MB_Root",
+            "icons": [
+                "magicbees:beecomb"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "FIRSTSTEPS", "UNLOCKARTIFICE"
+                ],        "meta": ["ROUND", "HIDDEN"],
+            "location": [
+                0,
+                0
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_text.MB_Root", "required_item":["magicbees:beecomb"]
+               },
+                {
+                    "text": "tc.research_page.MB_Root.1"
+               }
+            ]
+        },
+        {
+            "key": "MB_LoreFragment",
+            "name": "tc.research_name.MB_LoreFragment",
+            "icons": [
+                "magicbees:resource"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_Root"
+                ],
+            "location": [
+                0,
+                -2
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_page.MB_LoreFragment.1",
+                    "recipes": [
+"magicbees:lore_fragment"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "MB_FrameMagic",
+            "name": "tc.research_name.MB_FrameMagic",
+            "icons": [
+                "magicbees:frames.magic"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_Root"
+                ],
+            "location": [
+                0,
+                3
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_page.MB_FrameMagic.1",
+                    "required_knowledge": [
+"OBSERVATION;ALCHEMY;1","OBSERVATION;ARTIFICE;1","THEORY;ARTIFICE;1"],
+                     "required_craft":["forestry:frame_untreated", "thaumcraft:fabric"]
+                },
+                {
+                    "text": "tc.research_page.MB_FrameMagic.1, tc.research_page.MB_FrameMagic.2",
+                    "recipes": [
+                        "thaumcraft:magicframe"
+                    ]
+                }
+            ]
+        },        {
+            "key": "MB_DimensionalSingularity",
+            "name": "tc.research_name.MB_DimensionalSingularity",
+            "icons": [
+                "magicbees:resource;1;13"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+           "MB_Root", "FOCUSRIFT"
+                ],"meta":["SPIKY"],
+            "location": [
+                -3,
+                1
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_text.MB_DimensionalSingularity",
+                    "required_knowledge":["OBSERVATION;INFUSION;1" , 
+                        "THEORY;INFUSION;1"],
+                    "required_research":["m_endoftheworld","m_hellandback"]
+                },
+                {
+                    "text": "tc.research_page.MB_DimensionalSingularity.1",
+                    "recipes": [
+                        "keletupack:dimensional_singularity"
+                    ]
+                }
+            ]
+        },        {
+            "key": "MB_EssenceOblivion",
+            "name": "tc.research_name.MB_EssenceOblivion",
+            "icons": [
+            "magicbees:resource;1;11"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_DimensionalSingularity", "MB_FrameMagic"
+                ],"meta":["HIDDEN"], 
+            "location": [
+                -2,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_text.MB_EssenceOblivion",
+                    "required_knowledge":["OBSERVATION;ARTIFICE;1",
+                        "THEORY;ARTIFICE;1"],
+                    "required_item": ["minecraft:skull;1;5"]
+                },
+                {
+                    "text": "tc.research_page.MB_EssenceOblivion.1",
+                    "recipes": [
+                     "keletupack:essence_oblivion","magicbees:oblivionframe"
+                    ]
+                }
+            ]
+        },        {
+            "key": "MB_EssenceLife",
+            "name": "tc.research_name.MB_EssenceLife",
+            "icons": [
+                "magicbees:resource;1;7"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_FrameMagic"
+                ],
+            "location": [
+                2,
+                2
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_text.MB_EssenceLife",
+                    "required_knowledge":[
+                        "THEORY;ALCHEMY;1"], "required_item":["minecraft:red_flower"]
+                },
+                {
+                    "text": "tc.research_page.MB_EssenceLife.1",
+                    "recipes": [
+                        "keletupack:essence_life","magicbees:gentleframe"
+                    ]
+                }
+            ]
+        },{
+            "key": "MB_EssenceDeath",
+            "name": "tc.research_name.MB_EssenceDeath",
+            "icons": [
+                "magicbees:resource;1;8"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_FrameMagic"
+                ],
+            "location": [
+                2,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "tc.reseacrh_page.MB_EssenceDeath.1",
+                    "required_knowledge":[
+                        "THEORY;ALCHEMY;1"], "required_item":["minecraft:rotten_flesh"]
+                },
+                {
+                    "text": "tc.reseacrh_page.MB_EssenceDeath.1",
+                    "recipes": [
+                        "keletupack:essence_death", "magicbees:necrotictframe"
+                    ]
+                }
+            ]
+        },{
+            "key": "MB_EssenceArmor",
+            "name": "tc.research_name.MB_EssenceArmor",
+            "icons": [
+                "magicbees:resource;1;10"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_FrameMagic"
+                ],
+            "location": [
+                4,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_text.MB_EssenceArmor",
+                    "required_knowledge":[
+                        "THEORY;ALCHEMY;1"], "required_item":["minecraft:iron_block"]
+                },
+                {
+                    "text": "tc.research_page.MB_EssenceArmor.1",
+                    "recipes": [
+                        "keletupack:essence_armor","magicbees:ressilientframe"
+                    ]
+                }
+            ]
+        }, {
+            "key": "MB_EssenceTime",
+            "name": "tc.research_name.MB_EssenceTime",
+            "icons": [
+                "magicbees:resource;1;9"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_FrameMagic"
+                ],
+            "location": [
+                4,
+                2
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_text.MB_EssenceTime",
+                    "required_knowledge":[
+                        "THEORY;ALCHEMY;1"], "required_item":["minecraft:clock"]
+                },
+                {
+                    "text": "tc.research_page.MB_EssenceTime.1",
+                    "recipes": [
+                        "keletupack:essence_time","magicbees:temporalframe"
+                    ]
+                }
+            ]
+        },{
+            "key": "MB_EssenceUnstable",
+            "name": "tc.research_name.MB_EssenceUnstable",
+            "icons": [
+                "magicbees:resource;1;12"
+            ],
+            "category": "MAGICBEES",
+            "parents": [
+                "MB_FrameMagic"
+                ],
+            "location": [
+                6,
+                1
+            ],
+            "stages": [
+                {
+                    "text": "tc.research_text.MB_EssenceUnstable",
+                    "required_knowledge":[
+                        "THEORY;ALCHEMY;2"], "required_item":["minecraft:netherrack"]
+                },
+                {
+                    "text": "tc.research_page.MB_EssenceUnstable.1",
+                    "recipes": [
+                        "keletupack:essence_unstable", "thaumcraft:exchange", "magicbees:metabolicframe"
+                    ]
+                }
+            ]
+        }
+  ]  
+}
