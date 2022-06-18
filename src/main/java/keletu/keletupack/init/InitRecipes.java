@@ -47,8 +47,6 @@ private static void initArcaneRecipes() {
                 new AspectList(),
                 new ItemStack(ItemsKP.WARP_PAPER,3,0),
                     "PSP",
-                    "   ",
-                    "   ",
                     'P', new ItemStack(Items.PAPER),
                     'S', new ItemStack(ItemsTC.salisMundus)));
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_cloth"), new ShapedArcaneRecipe(
@@ -127,7 +125,6 @@ private static void initArcaneRecipes() {
             new ItemStack(ItemsKP.ICHOR_HELM),
             "CCC",
             "C C",
-            "   ",
             'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_chest"), new ShapedArcaneRecipe(
             defaultGroup,
@@ -157,7 +154,6 @@ private static void initArcaneRecipes() {
             new ItemStack(ItemsKP.ICHOR_BOOTS),
             "C C",
             "C C",
-            "   ",
             'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
 }
         

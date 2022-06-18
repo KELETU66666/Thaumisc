@@ -64,6 +64,15 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         return blockIn.getBlock().equals(Blocks.BEDROCK) || super.canHarvestBlock(blockIn);
     }
 
+    public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, EntityPlayer player) {
+        World world = player.world;
+        IBlockState state = world.getBlockState(pos);
+
+        if (state.getBlock().equals(Blocks.BEDROCK) && player.dimension == 31871) {
+            world.setBlockToAir(pos);
+        }return false;
+    }
+
     @Override
     public EnumRarity getRarity(ItemStack itemstack) {
         return EnumRarity.EPIC;
@@ -107,7 +116,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
                 //:Replicate logic of PlayerInteractionManager.tryHarvestBlock(pos1)
                 IBlockState state1 = worldIn.getBlockState(pos1);
                 float f = state1.getBlockHardness(worldIn, pos1);
-                if (f >= 0F) {
+                if (f >= 0F|| (f>=-1F && player.dimension ==31871)) {
                     BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
                     MinecraftForge.EVENT_BUS.post(event);
                     if (!event.isCanceled()) {
@@ -178,7 +187,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
 
                 IBlockState state1 = worldIn.getBlockState(pos1);
                 float f = state1.getBlockHardness(worldIn, pos1);
-                if (f >= 0F) {
+                if (f >= 0F|| (f>=-1F && player.dimension ==31871)) {
                     BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
                     MinecraftForge.EVENT_BUS.post(event);
                     if (!event.isCanceled()) {
