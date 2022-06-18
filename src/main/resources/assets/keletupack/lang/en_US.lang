@@ -1,3 +1,9 @@
+#Language
+
+language.name=English
+language.region=US
+language.code=en_US
+
 #Tabs
 
 itemGroup.item_tab_kp=Thaumisc
