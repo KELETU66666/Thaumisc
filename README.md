@@ -5,8 +5,8 @@
 ## 语言 Language
 > 请自行维护自己所需的语言，各语言由于翻译问题可能不会同步。
 
-[中文简体](./README.md)
-[English](./doc/en_us/README.md)
+- [中文简体](./README.md)
+- [English](./doc/en_us/README.md)
 
 ## 下载 (DOWNLOAD)
 由于现在是开发阶段，下载请从action中的build中下载。如果有错误欢迎提交issue
