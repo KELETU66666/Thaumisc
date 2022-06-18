@@ -40,7 +40,6 @@ public class keletupack {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
-        GameRegistry.registerWorldGenerator(new OreClusterGenerator(), 3);
     }
 
     /**

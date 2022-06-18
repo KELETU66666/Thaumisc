@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class OreClusterGenerator implements IWorldGenerator {
 
-    public static int density;
+    public static int density = 5;
     public static String[] blacklist = new String[]{"oreFirestone"};
 
     @Override
@@ -31,10 +31,11 @@ public class OreClusterGenerator implements IWorldGenerator {
                     int firstBlockYCoord = random.nextInt(245) + 6;
                     BlockPos pos = new BlockPos(firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
                     IBlockState state = world.getBlockState(pos);
-                    if (state.getBlock().equals(Block.getBlockFromItem(itemStack.getItem()))) {
-                        WorldGenMinable mineable = new WorldGenMinable(state, random.nextInt(20), BlockMatcher.forBlock(Blocks.BEDROCK));
+//                    if (state.getBlock().equals(Block.getBlockFromItem(itemStack.getItem()))) {
+//                        WorldGenMinable mineable = new WorldGenMinable(state, random.nextInt(20), BlockMatcher.forBlock(Blocks.BEDROCK));
+                        WorldGenMinable mineable = new WorldGenMinable(Block.getBlockFromItem(itemStack.getItem()).getDefaultState(), random.nextInt(20), BlockMatcher.forBlock(Blocks.BEDROCK));
                         mineable.generate(world, random, pos);
-                    }
+//                    }
                 }
             }
         }
