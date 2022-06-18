@@ -2,7 +2,11 @@
 
  [![Build](https://github.com/KELETU66666/keletupack/actions/workflows/main.yml/badge.svg?branch=backport)](https://github.com/KELETU66666/keletupack/actions/workflows/main.yml)
 
-WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
+## 语言 Language
+> 请自行维护自己所需的语言，各语言由于翻译问题可能不会同步。
+
+[中文简体](./README.md)
+[English](./doc/en_us/README.md)
 
 ## 下载 (DOWNLOAD)
 由于现在是开发阶段，下载请从action中的build中下载。如果有错误欢迎提交issue
@@ -19,7 +23,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 6. - [x] 添加靴子绿化效果 (Add a effect to grow grass for Boots)
 7. - [ ] 添加工具觉醒效果 (Add a Awakening effect for Tools)
 8. - [ ] 更改包名 (Change mod's name)
-9. - [ ] 把英文扔到专门的readme去
+9. - [x] 把英文扔到专门的readme去
 
 ## 依赖 (Dependencies)
 
