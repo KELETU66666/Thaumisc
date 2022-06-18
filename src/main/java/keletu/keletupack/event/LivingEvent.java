@@ -2,8 +2,10 @@ package keletu.keletupack.event;
 
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.tools.DistortionPick;
+import keletu.keletupack.items.tools.IchoriumPickAdv;
 import keletu.keletupack.util.Reference;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -13,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -77,6 +80,18 @@ public class LivingEvent {
                     event.setNewSpeed(hardness / 2.0F);
                 else
                     event.setNewSpeed(5.0F + hardness);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerInteractEvent(PlayerInteractEvent event) {
+        if (event.getHand() == EnumHand.MAIN_HAND) {
+            ItemStack stack = event.getEntityPlayer().getHeldItemMainhand();
+            if (event.getEntityPlayer().world.getBlockState(event.getPos()).getBlock().equals(Blocks.BEDROCK)) {
+                if (stack != null && stack.getItem() instanceof IchoriumPickAdv) {
+                    stack.getItem().onBlockStartBreak(stack, event.getPos(), event.getEntityPlayer());
+                }
             }
         }
     }

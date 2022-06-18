@@ -11,6 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemPickaxe;
@@ -51,6 +52,16 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         });
 
         ModItems.ITEMS.add(this);
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, IBlockState state) {
+        return state.getBlock().equals(Blocks.BEDROCK) ? Float.MAX_VALUE : super.getDestroySpeed(stack, state);
+    }
+
+    @Override
+    public boolean canHarvestBlock(IBlockState blockIn) {
+        return blockIn.getBlock().equals(Blocks.BEDROCK) || super.canHarvestBlock(blockIn);
     }
 
     @Override
