@@ -61,7 +61,7 @@ public class ChunkGeneratorMining implements IChunkGenerator {
     }
 
     public void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
-        int height = 160;
+        int height = 256;
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
                 for (int y = 0; y < height; y++)

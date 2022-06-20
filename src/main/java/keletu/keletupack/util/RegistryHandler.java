@@ -1,5 +1,6 @@
 package keletu.keletupack.util;
 
+import keletu.keletupack.blocks.tiles.TileBedrockPortal;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.*;
@@ -40,6 +41,7 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
+        TileBedrockPortal.register("bedrock_portal", TileBedrockPortal.class);
     }
 
     @SubscribeEvent

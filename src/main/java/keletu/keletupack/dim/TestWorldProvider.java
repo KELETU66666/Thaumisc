@@ -2,6 +2,7 @@ package keletu.keletupack.dim;
 
 
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 
 public class TestWorldProvider extends WorldProvider {
@@ -19,5 +20,20 @@ public class TestWorldProvider extends WorldProvider {
     @Override
     public ChunkGeneratorMining createChunkGenerator() {
         return new ChunkGeneratorMining(world, getSeed());
+    }
+
+    protected void generateLightBrightnessTable() {
+        float f = 12.0F;
+        for (int i = 0; i <= 15; i++) {
+            float f1 = 12.0F - i / 15.0F;
+            this.lightBrightnessTable[i] = ((1.0F - f1) / (f1 * 3.0F + 1.0F) * (1.0F - f) + f);
+        }
+    }
+    public boolean renderClouds() {
+        return false;
+    }
+
+    public float setSunSize() {
+        return 10.0F;
     }
 }
