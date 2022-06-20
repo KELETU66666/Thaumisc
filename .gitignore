@@ -26,3 +26,6 @@ replay_pid*
 # 工作区配置文件夹
 .vscode/*
 .idea/*
+
+#上传会报错的文件
+.gradle/4.10.3/fileHashes/fileHashes.lock
