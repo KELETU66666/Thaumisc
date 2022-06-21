@@ -12,7 +12,7 @@ public class IchoriumSword extends ItemSword implements IHasModel {
     public IchoriumSword(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
 

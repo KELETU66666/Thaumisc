@@ -12,7 +12,7 @@ public class IchoriumShovel extends ItemSpade implements IHasModel {
     public IchoriumShovel(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
 

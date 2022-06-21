@@ -9,7 +9,7 @@ import net.minecraft.item.ItemFood;
 public class food extends ItemFood implements IHasModel {
     public food(String name, int amount, float saturation, boolean isWolfFood, CreativeTabs tab) {
         super(amount, saturation, isWolfFood);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
         setAlwaysEdible();

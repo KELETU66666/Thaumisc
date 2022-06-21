@@ -55,7 +55,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
     public KamiArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, CreativeTabs tab) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
 
@@ -157,8 +157,8 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
     }
 
     @Override
-    public KamiArmor setTranslationKey(String key) {
-        return (KamiArmor) super.setTranslationKey(key);
+    public KamiArmor setUnlocalizedName(String key) {
+        return (KamiArmor) super.setUnlocalizedName(key);
     }
 
     @Override

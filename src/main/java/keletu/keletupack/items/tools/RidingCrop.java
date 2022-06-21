@@ -27,7 +27,7 @@ public class RidingCrop extends ItemSword implements IHasModel {
 
     public RidingCrop(String name, CreativeTabs tab, ToolMaterial material) {
         super(material);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
 

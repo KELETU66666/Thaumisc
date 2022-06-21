@@ -34,7 +34,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
     public IchoriumPickAdv(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
         this.addPropertyOverride(new ResourceLocation("ichoriumpickadv:awaken"), new IItemPropertyGetter() {

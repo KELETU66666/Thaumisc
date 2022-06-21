@@ -13,7 +13,7 @@ public class DistortionPick extends ItemPickaxe implements IHasModel {
     public DistortionPick(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
 

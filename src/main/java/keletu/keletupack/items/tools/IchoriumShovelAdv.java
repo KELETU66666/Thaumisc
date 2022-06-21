@@ -34,7 +34,7 @@ public class IchoriumShovelAdv extends ItemSpade implements IHasModel {
     public IchoriumShovelAdv(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
         this.addPropertyOverride(new ResourceLocation("ichoriumshoveladv:awaken"), new IItemPropertyGetter() {

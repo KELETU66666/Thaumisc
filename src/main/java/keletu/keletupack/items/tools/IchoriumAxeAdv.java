@@ -37,7 +37,7 @@ public class IchoriumAxeAdv extends ItemAxe implements IHasModel {
     public IchoriumAxeAdv(String name, CreativeTabs tab, ToolMaterial material) {
 
         super(material, 11.0F, -3.0F);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
         this.addPropertyOverride(new ResourceLocation("ichoriumaxeadv:awaken"), new IItemPropertyGetter() {
@@ -71,13 +71,13 @@ public class IchoriumAxeAdv extends ItemAxe implements IHasModel {
 
             if (block.removedByPlayer(blockState, world, breakPos, pl, true)) {
                 toolStack.onBlockDestroyed(world, blockState, breakPos, pl);
-                block.onPlayerDestroy(world, breakPos, blockState);
+                block.onBlockDestroyedByPlayer(world, breakPos, blockState);
                 block.harvestBlock(world, pl, breakPos, blockState, world.getTileEntity(breakPos), toolStack);
                 ((EntityPlayerMP) pl).connection.sendPacket(new SPacketBlockChange(world, breakPos));
             }
         } else {
             if (block.removedByPlayer(blockState, world, breakPos, pl, true)) {
-                block.onPlayerDestroy(world, breakPos, blockState);
+                block.onBlockDestroyedByPlayer(world, breakPos, blockState);
                 toolStack.onBlockDestroyed(world, blockState, breakPos, pl);
 
                 if (toolStack.getCount() <= 0 && toolStack == pl.getHeldItemMainhand()) {

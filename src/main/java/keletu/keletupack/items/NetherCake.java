@@ -11,7 +11,7 @@ import net.minecraft.potion.PotionEffect;
 public class NetherCake extends ItemFood implements IHasModel {
     public NetherCake(String name, int amount, float saturation, boolean isWolfFood, CreativeTabs tab) {
         super(amount, saturation, isWolfFood);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
         setPotionEffect(new PotionEffect(MobEffects.SATURATION, 1, 5), 1F);

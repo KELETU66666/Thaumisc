@@ -18,6 +18,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.command.CommandTP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -37,6 +38,9 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.gen.ChunkGeneratorOverworld;
 import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+
+import static net.minecraft.command.CommandBase.getEntity;
 
 public class BlockBedrockPortal extends BlockContainer
 {
@@ -44,7 +48,7 @@ public class BlockBedrockPortal extends BlockContainer
     public BlockBedrockPortal(String name, Material materialIn)
     {
         super(materialIn);
-        setTranslationKey(name).setRegistryName(name).setCreativeTab(keletupack.ITEM_TAB);
+        setUnlocalizedName(name).setRegistryName(name).setCreativeTab(keletupack.ITEM_TAB);
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
@@ -78,13 +82,14 @@ public class BlockBedrockPortal extends BlockContainer
         return 0;
     }
 
+
+
     @Override
-    public void onEntityCollision(World par1World, BlockPos pos, IBlockState state, Entity entity) {
-        super.onEntityCollision(par1World, pos, state, entity);
+    public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+        super.onEntityCollidedWithBlock(world, pos, state, entity);
 
-        if (entity.world.provider.isSurfaceWorld() && entity.dimension != 31871) {
-
-            if (entity instanceof EntityPlayer && !par1World.isRemote) {
+        if (entity instanceof EntityPlayer && !world.isRemote) {
+            if (entity.dimension != 31871) {
 
                 int x = pos.getX();
                 int y = 250;
@@ -95,46 +100,37 @@ public class BlockBedrockPortal extends BlockContainer
                 BlockPos pos4 = pos.add(x, y + 3, z);
                 BlockPos pos5 = pos.add(x, y + 4, z);
 
-                IBlockState state1 = par1World.getBlockState(pos);
-                IBlockState state2 = par1World.getBlockState(pos);
+                IBlockState state1 = world.getBlockState(pos);
+                IBlockState state2 = world.getBlockState(pos);
 
                 state1.getBlock().equals(Blocks.AIR);
                 state2.getBlock().equals(this);
 
-                Objects.requireNonNull(entity.getServer()).getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 31871, new TeleporterBedrock((WorldServer) par1World));
-                    if (entity.world.getBlockState(pos1).getBlock() == Blocks.BEDROCK) {
-                        entity.world.setBlockToAir(pos1);
-                    }
-                    if (entity.world.getBlockState(pos2) == Blocks.BEDROCK) {
-                        entity.world.setBlockToAir(pos2);
-                    }
-                    if (entity.world.getBlockState(pos3) == Blocks.BEDROCK) {
-                        entity.world.setBlockToAir(pos3);
-                    }
-                    if (entity.world.getBlockState(pos4) == Blocks.BEDROCK) {
-                        entity.world.setBlockToAir(pos4);
-                    }
-                    if (entity.world.getBlockState(pos5) == Blocks.BEDROCK && state2.getBlock().equals(this)) {
-                        entity.world.setBlockState(pos5, state2);
-                    }
-                    ((EntityPlayerMP) entity).connection.setPlayerLocation(x + 0.5, 251, z + 0.5, 0, 0);
+                Objects.requireNonNull(entity.getServer()).getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 31871, new TeleporterBedrock((WorldServer) world));
+                ((EntityPlayerMP) entity).connection.setPlayerLocation(x + 0.5, 251, z + 0.5, 0, 0);
+
+                if (entity.world.getBlockState(pos1).getBlock() == Blocks.BEDROCK) {
+                    entity.world.setBlockToAir(pos1);
                 }
-        }
-        else if (entity.dimension == 31871) {
-            if (entity instanceof EntityPlayer && !par1World.isRemote) {
+                if (entity.world.getBlockState(pos2) == Blocks.BEDROCK) {
+                    entity.world.setBlockToAir(pos2);
+                }
+                if (entity.world.getBlockState(pos3) == Blocks.BEDROCK) {
+                    entity.world.setBlockToAir(pos3);
+                }
+                if (entity.world.getBlockState(pos4) == Blocks.BEDROCK) {
+                    entity.world.setBlockToAir(pos4);
+                }
+                if (entity.world.getBlockState(pos5) == Blocks.BEDROCK && state2.getBlock().equals(this)) {
+                    entity.world.setBlockState(pos5, state2);
+                }
+            } else{
 
-                entity.getServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 0, new TeleporterBedrock((WorldServer) par1World));
-
-                int x = par1World.getSpawnPoint().getX();
-                int y = par1World.getSpawnPoint().getY();
-                int z = par1World.getSpawnPoint().getZ();
-
-                ((EntityPlayerMP) entity).connection.setPlayerLocation(x + 0.5, y + 3, z + 0.5, 0, 0);
+                entity.getServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 0, new TeleporterBedrock((WorldServer) world));
+                ((EntityPlayerMP) entity).connection.setPlayerLocation(world.getSpawnPoint().getX(), world.getSpawnPoint().getY() + 3, world.getSpawnPoint().getZ(), 0, 0);
             }
         }
-
     }
-
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
         return ItemStack.EMPTY;

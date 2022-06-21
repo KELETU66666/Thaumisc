@@ -14,7 +14,7 @@ import thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType;
 public class warpfood extends ItemFood implements IHasModel {
     public warpfood(String name, int amount, float saturation, boolean isWolfFood, CreativeTabs tab) {
         super(amount, saturation, isWolfFood);
-        setTranslationKey(name);
+        setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
         setAlwaysEdible();
