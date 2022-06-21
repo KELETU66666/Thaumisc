@@ -1,5 +1,6 @@
 package keletu.keletupack.items.tools;
 
+import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
@@ -66,11 +67,19 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
 
     public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, EntityPlayer player) {
         World world = player.world;
+        int y = pos.getY();
+
         IBlockState state = world.getBlockState(pos);
 
-        if (state.getBlock().equals(Blocks.BEDROCK) && player.dimension == 31871) {
+        if (y <= 253 && state.getBlock().equals(Blocks.BEDROCK) && player.dimension == 31871) {
             world.setBlockToAir(pos);
-        }return false;
+        }
+        if ((( y > 253 && player.dimension == 31871) || (player.dimension == 0 && y <= 4)) && state.getBlock().equals(Blocks.BEDROCK)) {
+            IBlockState state1 = world.getBlockState(pos);
+            state1.getBlock().equals(ModBlocks.BEDROCK_PORTAL);
+            world.setBlockState(pos, state1);
+        }
+        return false;
     }
 
     @Override

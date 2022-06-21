@@ -18,6 +18,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandTP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,6 +26,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -92,13 +94,14 @@ public class BlockBedrockPortal extends BlockContainer
             if (entity.dimension != 31871) {
 
                 int x = pos.getX();
-                int y = 250;
+                int y = pos.getY();
                 int z = pos.getZ();
-                BlockPos pos1 = pos.add(x, y, z);
-                BlockPos pos2 = pos.add(x, y + 1, z);
-                BlockPos pos3 = pos.add(x, y + 2, z);
-                BlockPos pos4 = pos.add(x, y + 3, z);
-                BlockPos pos5 = pos.add(x, y + 4, z);
+
+                BlockPos pos1 = pos.add(0, 251 - y, 0);
+                BlockPos pos2 = pos.add(0, 252 - y, 0);
+                BlockPos pos3 = pos.add(0, 253 - y, 0);
+                BlockPos pos4 = pos.add(0, 254 - y, 0);
+                BlockPos pos5 = pos.add(0, 255 - y, 0);
 
                 IBlockState state1 = world.getBlockState(pos);
                 IBlockState state2 = world.getBlockState(pos);
@@ -107,27 +110,27 @@ public class BlockBedrockPortal extends BlockContainer
                 state2.getBlock().equals(this);
 
                 Objects.requireNonNull(entity.getServer()).getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 31871, new TeleporterBedrock((WorldServer) world));
-                ((EntityPlayerMP) entity).connection.setPlayerLocation(x + 0.5, 251, z + 0.5, 0, 0);
+                ((EntityPlayerMP) entity).connection.player.setPositionAndUpdate(x + 0.5, 251, z + 0.5);
 
                 if (entity.world.getBlockState(pos1).getBlock() == Blocks.BEDROCK) {
                     entity.world.setBlockToAir(pos1);
                 }
-                if (entity.world.getBlockState(pos2) == Blocks.BEDROCK) {
+                if (entity.world.getBlockState(pos2).getBlock() == Blocks.BEDROCK) {
                     entity.world.setBlockToAir(pos2);
                 }
-                if (entity.world.getBlockState(pos3) == Blocks.BEDROCK) {
+                if (entity.world.getBlockState(pos3).getBlock() == Blocks.BEDROCK) {
                     entity.world.setBlockToAir(pos3);
                 }
-                if (entity.world.getBlockState(pos4) == Blocks.BEDROCK) {
+                if (entity.world.getBlockState(pos4).getBlock() == Blocks.BEDROCK) {
                     entity.world.setBlockToAir(pos4);
                 }
-                if (entity.world.getBlockState(pos5) == Blocks.BEDROCK && state2.getBlock().equals(this)) {
+                if (entity.world.getBlockState(pos5).getBlock() == Blocks.BEDROCK && state2.getBlock().equals(this)) {
                     entity.world.setBlockState(pos5, state2);
                 }
             } else{
 
                 entity.getServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 0, new TeleporterBedrock((WorldServer) world));
-                ((EntityPlayerMP) entity).connection.setPlayerLocation(world.getSpawnPoint().getX(), world.getSpawnPoint().getY() + 3, world.getSpawnPoint().getZ(), 0, 0);
+                ((EntityPlayerMP) entity).connection.player.setPositionAndUpdate(world.getSpawnPoint().getX(), world.getSpawnPoint().getY() + 3, world.getSpawnPoint().getZ());
             }
         }
     }
