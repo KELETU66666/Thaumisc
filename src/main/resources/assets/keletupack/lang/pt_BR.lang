@@ -4,6 +4,11 @@ language.name=Português (Brasil)
 language.region=BR
 language.code=pt_BR
 
+#Tabs
+
+itemGroup.item_tab_kp=Thaumisc
+tc.research_category.THAUMISC=Thaumisc
+
 #Items
 
 item.taint_meat.name=Carne de Mácula
