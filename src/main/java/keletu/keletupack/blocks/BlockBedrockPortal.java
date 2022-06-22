@@ -1,14 +1,6 @@
 package keletu.keletupack.blocks;
 
-import java.awt.*;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
-import javax.annotation.Nullable;
-
-import jdk.nashorn.internal.ir.BlockStatement;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
-import keletu.keletupack.dim.TestWorldProvider;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
@@ -17,34 +9,24 @@ import keletu.keletupack.util.TeleporterBedrock;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
-import net.minecraft.command.CommandTP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
-import net.minecraft.world.gen.ChunkGeneratorOverworld;
-import net.minecraftforge.common.util.ITeleporter;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
-import static net.minecraft.command.CommandBase.getEntity;
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 
 public class BlockBedrockPortal extends BlockContainer implements IHasModel
 {

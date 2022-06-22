@@ -12,12 +12,6 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.NonNullList;
-import thaumcraft.Thaumcraft;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.ThaumcraftApiHelper;
-import thaumcraft.api.ThaumcraftInvHelper;
-import thaumcraft.api.capabilities.IPlayerWarp;
-import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 
 public class RunicRingWater extends ItemBase implements IBauble {
     public RunicRingWater() {

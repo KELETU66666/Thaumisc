@@ -2,26 +2,14 @@ package keletu.keletupack.init;
 
 
 import com.google.common.collect.Maps;
-import com.verdantartifice.thaumicwonders.common.items.ItemsTW;
-import forestry.core.items.ItemForestry;
-import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.util.Reference;
-import magicbees.MagicBees;
-import magicbees.api.module.MagicBeesModule;
 import magicbees.bees.EnumBeeModifiers;
-import magicbees.elec332.corerepack.item.IEnumItem;
-import magicbees.elec332.corerepack.item.ItemEnumBased;
 import magicbees.item.ItemMagicBeesFrame;
 import magicbees.item.types.EnumResourceType;
-import net.minecraft.block.BlockStoneSlabNew;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.items.ItemStackHandler;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;

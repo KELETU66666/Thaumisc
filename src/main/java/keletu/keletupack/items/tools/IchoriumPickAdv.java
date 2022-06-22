@@ -1,13 +1,11 @@
 package keletu.keletupack.items.tools;
 
-import keletu.keletupack.dim.TestWorldProvider;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCommandBlock;
-import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockStructure;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;

@@ -1,24 +1,14 @@
 package keletu.keletupack.dim;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-import java.util.function.BooleanSupplier;
-
-import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.Tuple;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
@@ -28,11 +18,14 @@ import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenStronghold;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.MapGenVillage;
-import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import net.minecraftforge.event.terraingen.WorldTypeEvent;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.function.BooleanSupplier;
 
 public class ChunkGeneratorMining implements IChunkGenerator {
     private static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();

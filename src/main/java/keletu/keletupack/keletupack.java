@@ -1,6 +1,5 @@
 package keletu.keletupack;
 
-import keletu.keletupack.dim.OreClusterGenerator;
 import keletu.keletupack.init.*;
 import keletu.keletupack.loot.LootTableHandler;
 import keletu.keletupack.proxy.CommonProxy;

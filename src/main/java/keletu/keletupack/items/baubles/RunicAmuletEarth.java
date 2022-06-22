@@ -8,16 +8,8 @@ import keletu.keletupack.util.ItemNBTHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.NonNullList;
-import thaumcraft.Thaumcraft;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.ThaumcraftApiHelper;
-import thaumcraft.api.ThaumcraftInvHelper;
-import thaumcraft.api.capabilities.IPlayerWarp;
-import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 
 public class RunicAmuletEarth extends ItemBase implements IBauble {
     public RunicAmuletEarth() {

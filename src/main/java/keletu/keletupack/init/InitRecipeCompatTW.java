@@ -5,7 +5,6 @@ import com.verdantartifice.thaumicwonders.common.items.ItemsTW;
 import keletu.keletupack.util.Reference;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.Optional;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;

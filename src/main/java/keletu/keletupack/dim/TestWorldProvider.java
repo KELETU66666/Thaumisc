@@ -2,7 +2,6 @@ package keletu.keletupack.dim;
 
 
 import net.minecraft.world.DimensionType;
-import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 
 public class TestWorldProvider extends WorldProvider {

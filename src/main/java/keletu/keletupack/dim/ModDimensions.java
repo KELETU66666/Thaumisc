@@ -3,7 +3,6 @@ package keletu.keletupack.dim;
 import keletu.keletupack.util.Reference;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ModDimensions {
 
