@@ -12,6 +12,7 @@ import keletu.keletupack.dim.TestWorldProvider;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
+import keletu.keletupack.util.IHasModel;
 import keletu.keletupack.util.TeleporterBedrock;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.MapColor;
@@ -24,6 +25,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.NetworkManager;
@@ -44,13 +46,15 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 import static net.minecraft.command.CommandBase.getEntity;
 
-public class BlockBedrockPortal extends BlockContainer
+public class BlockBedrockPortal extends BlockContainer implements IHasModel
 {
 
     public BlockBedrockPortal(String name, Material materialIn)
     {
         super(materialIn);
         setUnlocalizedName(name).setRegistryName(name).setCreativeTab(keletupack.ITEM_TAB);
+        setResistance(6000000.0F);
+        setHardness(-2.0F);
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
@@ -60,23 +64,8 @@ public class BlockBedrockPortal extends BlockContainer
         return new TileBedrockPortal();
     }
 
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
-    {
-        return side == EnumFacing.DOWN ? super.shouldSideBeRendered(blockState, blockAccess, pos, side) : false;
-    }
-
     public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
     {
-    }
-
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
-    }
-
-    public boolean isFullCube(IBlockState state)
-    {
-        return false;
     }
 
     public int quantityDropped(Random random)
@@ -134,18 +123,14 @@ public class BlockBedrockPortal extends BlockContainer
             }
         }
     }
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
-    {
-        return ItemStack.EMPTY;
-    }
 
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
         return MapColor.BLACK;
     }
 
-    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
-    {
-        return BlockFaceShape.UNDEFINED;
+    @Override
+    public void registerModels() {
+        keletupack.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "keletupack:blocks/bedrock_portal"
+  }
+}

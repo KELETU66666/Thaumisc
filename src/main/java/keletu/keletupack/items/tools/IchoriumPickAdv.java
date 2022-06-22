@@ -1,11 +1,13 @@
 package keletu.keletupack.items.tools;
 
+import keletu.keletupack.dim.TestWorldProvider;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCommandBlock;
+import net.minecraft.block.BlockDirt;
 import net.minecraft.block.BlockStructure;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -70,16 +72,15 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         int y = pos.getY();
 
         IBlockState state = world.getBlockState(pos);
+        state.getBlock().equals(ModBlocks.BEDROCK_PORTAL);
 
-        if (y <= 253 && state.getBlock().equals(Blocks.BEDROCK) && player.dimension == 31871) {
+        if (y <= 253 && world.getBlockState(pos).getBlock().equals(Blocks.BEDROCK) && player.dimension == 31871) {
             world.setBlockToAir(pos);
         }
-        if ((( y > 253 && player.dimension == 31871) || (player.dimension == 0 && y <= 4)) && state.getBlock().equals(Blocks.BEDROCK)) {
-            IBlockState state1 = world.getBlockState(pos);
-            state1.getBlock().equals(ModBlocks.BEDROCK_PORTAL);
-            world.setBlockState(pos, state1);
-        }
-        return false;
+        if (world.getBlockState(pos).getBlock() == Blocks.BEDROCK && ((player.dimension == 0 && y < 3) || (y > 253 && player.dimension == 31871)))
+        {
+            world.setBlockState(pos, ModBlocks.BEDROCK_PORTAL.getDefaultState());
+        }return false;
     }
 
     @Override
