@@ -1,6 +1,7 @@
 package keletu.keletupack.blocks;
 
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
+import keletu.keletupack.dim.TestWorldProvider;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
@@ -17,6 +18,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -74,14 +76,8 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
                 BlockPos pos4 = pos.add(0, 254 - y, 0);
                 BlockPos pos5 = pos.add(0, 255 - y, 0);
 
-                IBlockState state1 = world.getBlockState(pos);
-                IBlockState state2 = world.getBlockState(pos);
-
-                state1.getBlock().equals(Blocks.AIR);
-                state2.getBlock().equals(this);
-
                 Objects.requireNonNull(entity.getServer()).getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 31871, new TeleporterBedrock((WorldServer) world));
-                ((EntityPlayerMP) entity).connection.player.setPositionAndUpdate(x + 0.5, 251, z + 0.5);
+                    ((EntityPlayerMP) entity).connection.player.setPositionAndUpdate(x + 0.5, 251, z + 0.5);
 
                 if (entity.world.getBlockState(pos1).getBlock() == Blocks.BEDROCK) {
                     entity.world.setBlockToAir(pos1);
@@ -95,8 +91,8 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
                 if (entity.world.getBlockState(pos4).getBlock() == Blocks.BEDROCK) {
                     entity.world.setBlockToAir(pos4);
                 }
-                if (entity.world.getBlockState(pos5).getBlock() == Blocks.BEDROCK && state2.getBlock().equals(this)) {
-                    entity.world.setBlockState(pos5, state2);
+                if (entity.world.getBlockState(pos5).getBlock() == Blocks.BEDROCK) {
+                    entity.world.setBlockState(pos5, ModBlocks.BEDROCK_PORTAL.getDefaultState());
                 }
             } else{
 
@@ -111,8 +107,14 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
         return MapColor.BLACK;
     }
 
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
+    }
+
     @Override
     public void registerModels() {
         keletupack.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
+
 }

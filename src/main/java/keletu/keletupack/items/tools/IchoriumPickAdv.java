@@ -86,95 +86,95 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         return EnumRarity.EPIC;
     }
 
-@Override
+    @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
-    boolean ret = super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
-    if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 1) {
-        if (!(entityLiving instanceof EntityPlayer) || worldIn.isRemote) {
-            return ret;
-        }
+        boolean ret = super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
+        if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 1) {
+            if (!(entityLiving instanceof EntityPlayer) || worldIn.isRemote) {
+                return ret;
+            }
 
-        EntityPlayer player = (EntityPlayer) entityLiving;
-        EnumFacing facing = entityLiving.getHorizontalFacing();
+            EntityPlayer player = (EntityPlayer) entityLiving;
+            EnumFacing facing = entityLiving.getHorizontalFacing();
 
-        if (entityLiving.rotationPitch < -45.0F) {
-            facing = EnumFacing.UP;
-        } else if (entityLiving.rotationPitch > 45.0F) {
-            facing = EnumFacing.DOWN;
-        }
+            if (entityLiving.rotationPitch < -45.0F) {
+                facing = EnumFacing.UP;
+            } else if (entityLiving.rotationPitch > 45.0F) {
+                facing = EnumFacing.DOWN;
+            }
 
-        boolean yAxis = facing.getAxis() == EnumFacing.Axis.Y;
-        boolean xAxis = facing.getAxis() == EnumFacing.Axis.X;
+            boolean yAxis = facing.getAxis() == EnumFacing.Axis.Y;
+            boolean xAxis = facing.getAxis() == EnumFacing.Axis.X;
 
-        for (int i = -2; i <= 2; ++i) {
-            for (int j = -2; j <= 2 && !stack.isEmpty(); ++j) {
-                if (i == 0 && j == 0) {
-                    continue;
-                }
+            for (int i = -2; i <= 2; ++i) {
+                for (int j = -2; j <= 2 && !stack.isEmpty(); ++j) {
+                    if (i == 0 && j == 0) {
+                        continue;
+                    }
 
-                BlockPos pos1;
-                if (yAxis) {
-                    pos1 = pos.add(i, 0, j);
-                } else if (xAxis) {
-                    pos1 = pos.add(0, i, j);
-                } else {
-                    pos1 = pos.add(i, j, 0);
-                }
+                    BlockPos pos1;
+                    if (yAxis) {
+                        pos1 = pos.add(i, 0, j);
+                    } else if (xAxis) {
+                        pos1 = pos.add(0, i, j);
+                    } else {
+                        pos1 = pos.add(i, j, 0);
+                    }
 
-                //:Replicate logic of PlayerInteractionManager.tryHarvestBlock(pos1)
-                IBlockState state1 = worldIn.getBlockState(pos1);
-                float f = state1.getBlockHardness(worldIn, pos1);
-                if (f >= 0F|| (f>=-1F && player.dimension ==31871)) {
-                    BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
-                    MinecraftForge.EVENT_BUS.post(event);
-                    if (!event.isCanceled()) {
-                        Block block = state1.getBlock();
-                        if ((block instanceof BlockCommandBlock || block instanceof BlockStructure) && !player.canUseCommandBlock()) {
-                            worldIn.notifyBlockUpdate(pos1, state1, state1, 3);
-                            continue;
-                        }
-                        TileEntity tileentity = worldIn.getTileEntity(pos1);
-                        if (tileentity != null) {
-                            Packet<?> pkt = tileentity.getUpdatePacket();
-                            if (pkt != null) {
-                                ((EntityPlayerMP) player).connection.sendPacket(pkt);
+                    //:Replicate logic of PlayerInteractionManager.tryHarvestBlock(pos1)
+                    IBlockState state1 = worldIn.getBlockState(pos1);
+                    float f = state1.getBlockHardness(worldIn, pos1);
+                    if (f >= 0F|| (f>=-1F && player.dimension ==31871)) {
+                        BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
+                        MinecraftForge.EVENT_BUS.post(event);
+                        if (!event.isCanceled()) {
+                            Block block = state1.getBlock();
+                            if ((block instanceof BlockCommandBlock || block instanceof BlockStructure) && !player.canUseCommandBlock()) {
+                                worldIn.notifyBlockUpdate(pos1, state1, state1, 3);
+                                continue;
                             }
-                        }
+                            TileEntity tileentity = worldIn.getTileEntity(pos1);
+                            if (tileentity != null) {
+                                Packet<?> pkt = tileentity.getUpdatePacket();
+                                if (pkt != null) {
+                                    ((EntityPlayerMP) player).connection.sendPacket(pkt);
+                                }
+                            }
 
-                        boolean canHarvest = block.canHarvestBlock(worldIn, pos1, player);
-                        boolean destroyed = block.removedByPlayer(state1, worldIn, pos1, player, canHarvest);
-                        if (destroyed) {
-                            block.breakBlock(worldIn, pos1, state1);
-                        }
-                        if (canHarvest && destroyed) {
-                            block.harvestBlock(worldIn, player, pos1, state1, tileentity, stack);
-                            stack.damageItem(1, player);
+                            boolean canHarvest = block.canHarvestBlock(worldIn, pos1, player);
+                            boolean destroyed = block.removedByPlayer(state1, worldIn, pos1, player, canHarvest);
+                            if (destroyed) {
+                                block.breakBlock(worldIn, pos1, state1);
+                            }
+                            if (canHarvest && destroyed) {
+                                block.harvestBlock(worldIn, player, pos1, state1, tileentity, stack);
+                                stack.damageItem(1, player);
+                            }
                         }
                     }
                 }
             }
         }
-    }
-    else if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 2) {
-        if (!(entityLiving instanceof EntityPlayer) || worldIn.isRemote) {
-            return ret;
-        }
+        else if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 2) {
+            if (!(entityLiving instanceof EntityPlayer) || worldIn.isRemote) {
+                return ret;
+            }
 
-        EntityPlayer player = (EntityPlayer) entityLiving;
-        EnumFacing facing = entityLiving.getHorizontalFacing();
+            EntityPlayer player = (EntityPlayer) entityLiving;
+            EnumFacing facing = entityLiving.getHorizontalFacing();
 
-        if (entityLiving.rotationPitch < -45.0F) {
-            facing = EnumFacing.UP;
-        } else if (entityLiving.rotationPitch > 45.0F) {
-            facing = EnumFacing.DOWN;
-        }
+            if (entityLiving.rotationPitch < -45.0F) {
+                facing = EnumFacing.UP;
+            } else if (entityLiving.rotationPitch > 45.0F) {
+                facing = EnumFacing.DOWN;
+            }
 
-        boolean x = facing == EnumFacing.UP;
-        boolean y = facing == EnumFacing.DOWN;
-        boolean z = facing == EnumFacing.NORTH;
-        boolean w = facing == EnumFacing.SOUTH;
-        boolean r = facing == EnumFacing.WEST;
-        for (int k = 0; k <= 9 && !stack.isEmpty(); ++k) {
+            boolean x = facing == EnumFacing.UP;
+            boolean y = facing == EnumFacing.DOWN;
+            boolean z = facing == EnumFacing.NORTH;
+            boolean w = facing == EnumFacing.SOUTH;
+            boolean r = facing == EnumFacing.WEST;
+            for (int k = 0; k <= 9 && !stack.isEmpty(); ++k) {
                 if (k == 0) {
                     continue;
                 }
@@ -225,8 +225,8 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
                 }
             }
         }
-    return ret;
-}
+        return ret;
+    }
 
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         ItemStack stack = player.getHeldItem(hand);
