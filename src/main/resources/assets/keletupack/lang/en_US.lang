@@ -14,41 +14,52 @@ tc.research_category.THAUMISC=Thaumisc
 item.taint_meat.name=Taint Meat
 item.nether_cake.name=Nether Cake
 item.nether_swart.name=Nether Swart
+
 item.ichorium_sword.name=Ichorium Sword
 item.ichorium_pick.name=Ichorium Pickaxe
 item.ichorium_axe.name=Ichorium Axe
 item.ichorium_shovel.name=Ichorium Shovel
+
 item.ichor_helm.name=Ichorcloth Cowl
 item.ichor_chest.name=Ichorcloth Robe
 item.ichor_legs.name=Ichorcloth Leggings
 item.ichor_boots.name=Ichorcloth Boots
+
 item.kami_helm.name=Cowl of the Abyssal Depths
 item.kami_chest.name=Robes of the Stratosphere
 item.kami_legs.name=Leggings of the Burning Mantle
 item.kami_boots.name=Boots of the Horizon Shield
+
 item.ichorium_pick_adv.name=Ichorium Pick Awakened
 item.ichorium_axe_adv.name=Ichorium Axe Awakened
 item.ichorium_shovel_adv.name=Ichorium Shovel Awakened
+
 item.morph_shovel.name=Morph Shovel
 item.morph_sword.name=Morph Sword
 item.morph_pick.name=Morph Pickaxe
 item.morph_axe.name=Morph Axe
+
 item.distortion_pick.name=Pickaxe of Distortion
 item.riding_crop.name=Riding Crop
 tile.ichor_block.name=Ichor Block
 item.warp_paper.name=Arcane Litmus Paper
 warp.paper=Now your Warp is: 
+
 item.coin_witchery.name=Wizard's Coin
 item.coin_adventure.name=Adventure's Coin
 item.coin_bleed.name=Bloodstained Coin
 item.coin_magic.name=Magic Coin
+
 item.shard_end.name=Ender Shard
 item.shard_nether.name=Nether Shard
+
 item.ichor.name=Ichor
 item.ichor_cloth.name=Ichor Cloth
 item.ichor_ingot.name=Ichorium Ingot
 item.ichor_pouch.name=Ichorcloth Pouch
+
 item.cleansing_amulet.name=Warp Cleaning Charm
+
 item.runic_ring.name=Runic Ring
 item.runic_girdle.name=Runic Girdle
 item.runic_amulet.name=Runic Amulet
@@ -61,33 +72,43 @@ item.runic_amulet_earth.name=Runic Earth Amulet
 keletupack.research.thaumisc.title=Thaumic Miscellaneous
 keletupack.research.thaumisc.text=Well, I see that there're some things that will need parallel research for themselves...
 keletupack.research.thaumisc.complete.text=I'm calling this group as Thaumic Miscellaneous or Thaumisc for short.
+
 keletupack.research.dimensionalshard.title=Dimensional Shard
 keletupack.research.dimensionalshard.text=(waiting english translation...)
 keletupack.research.dimensionalshard.complete.text=(waiting english translation...)
+
 keletupack.research.ichor.title=The Forbidden Substance - Ichor
 keletupack.research.ichor.text=I'm taking note of this just because a lot of thaumaturgists mentioned this along their researches. The idea of some substance almost miraculous. Some of them even said that really did it.<BR>I've heard so much about this substance, but I don't believe it. Is something so optimistic but such a failure at the same time. If someone maneged to created Ichor somehow, then why they didn't take that secret for themselves?<BR>You know what? Challenge accepted. I gonna try it. I'm going to recreate every experiment I can from the old manuscripts. Let's see where these studies are going to lead me. Something with so many effort invested on, may give some useful knowledge at least.
 keletupack.research.ichor.complete.text=Now I understand their optimism. After studying everything about different dimensions' natures, I was surprised by thaumaturgy once more. I doubted that such a thing was possible.<BR>It was just a mith for me for a long time but it seems the thing called Ichor can be created after all. This brings me hope about my future plans. I wasn't expecting to actually perform such a feat, but here I have it now: The Ichor.
+
 keletupack.research.ichoriumtools.title=Ichorium Tools
 keletupack.research.ichoriumtools.text=TEST
 keletupack.research.ichoriumtools.complete.text=TEST
+
 keletupack.research.ichor_pick_adv.title=The Ichorium Miner
 keletupack.research.ichor_pick_adv.text=TEST
 keletupack.research.ichor_pick_adv.complete.text=TEST
+
 keletupack.research.ichor_shovel_adv.title=The Ichorium Digger
 keletupack.research.ichor_shovel_adv.text=TEST
 keletupack.research.ichor_shovel_adv.complete.text=TEST
+
 keletupack.research.ichorarmor.title=Ichor Armor
 keletupack.research.ichorarmor.text=TEST
 keletupack.research.ichorarmor.complete.text=TEST
+
 keletupack.research.kamihelm.title=Divine Cowl
 keletupack.research.kamihelm.text=TEST
 keletupack.research.kamihelm.complete.text=TEST
+
 keletupack.research.kamichest.title=Divine Robes
 keletupack.research.kamichest.text=TEST
 keletupack.research.kamichest.complete.text=TEST
+
 keletupack.research.kamilegs.title=Divine Leggings
 keletupack.research.kamilegs.text=TEST
 keletupack.research.kamilegs.complete.text=TEST
+
 keletupack.research.kamiboots.title=Divine Boots
 keletupack.research.kamiboots.text=TEST
 keletupack.research.kamiboots.complete.text=TEST
@@ -96,15 +117,19 @@ keletupack.research.kamiboots.complete.text=TEST
 keletupack.research.thaumisc_tc4.title=Antique Miscellanea
 keletupack.research.thaumisc_tc4.text=TEST
 keletupack.research.thaumisc_tc4.complete.text=TEST
+
 keletupack.research.runic_baubles.title=Runic Baubles
 keletupack.research.runic_baubles.text=TEST
 keletupack.research.runic_baubles.complete.text=TEST
+
 keletupack.research.runic_baubles_terra.title=Terra Baubles
 keletupack.research.runic_baubles_terra.text=TEST
 keletupack.research.runic_baubles_terra.complete.text=TEST
+
 keletupack.research.runic_baubles_aer.title=Aer Baubles
 keletupack.research.runic_baubles_aer.text=TEST
 keletupack.research.runic_baubles_aer.complete.text=TEST
+
 keletupack.research.runic_baubles_aqua.title=Aqua Baubles
 keletupack.research.runic_baubles_aqua.text=TEST
 keletupack.research.runic_baubles_aqua.complete.text=TEST
@@ -113,14 +138,17 @@ keletupack.research.runic_baubles_aqua.complete.text=TEST
 keletupack.research.thaumisc_warptheory.title=Warp Studies
 keletupack.research.thaumisc_warptheory.text=TEST
 keletupack.research.thaumisc_warptheory.complete.text=TEST
+
 keletupack.research.warppaper.title=Warp Revealer
 keletupack.research.warppaper.text=(waiting english translation...)
 //PERSONAL SUGGESTION >>> At fist, I wasn't a big deal, but now it's serious business. This Warp makes me get sick over and over again. As I continue to study thaumaturgy, sometimes I can feel the Warp inside me, almost like a parasite draining me completely.<BR>Or worse. I've the feeling of being tortured by this. It's good that some of it goes away as time passes and not so terrible that I can bathe myself hardly with some Sanitizing Soap to get rid of it. It sucks sometimes.<BR>I think is better to find a way to know how much Warp I have, then I can take care of myself to don't let Warp get up to critical levels. Let's see what I can do, because I can't handle this anymore.
 keletupack.research.warppaper.complete.text=(waiting english translation...)
 //PERSONAL SUGGESTION >>> What a smart piece of paper! Salis Mundus itself was enough to make this possible. I just take some paper and Salis Mundus together and... BAHDAHM! I have something that allows me to see exactly how much Warp is concentrated in my body.<BR>All I need to do is rub the Arcane Litmus Paper against my skin. Strange how Warp flow through my body but most of the time, just my mind or my vision are affected. This makes me thing that Warp really tends to concentrate more in the head. Maybe I should rub this new paper against my face to be more efficient.<BR>The paper gets stained when is used and analysing the stain I can tell how bad the things are going to be for me, but it can't be used again because of how fast it turns to ashes. Even if it didn't, it wouldn't help. Knowing how much Warp I have that helps.<BR>It would help too if I can avoid those Eldritch Guardians. They can give Warp so easily that they can turn all my efforts useless. As I said, it's like some entity is mad with me and brings those Eldritch Guardians to me. This is the most disturbing thing about Warp.<BR>I fear no man... but that thing... it scares me.
+
 keletupack.research.taintmeat.title=Taint Meat
 keletupack.research.taintmeat.stage.1.text=TEST
 keletupack.research.taintmeat.complete.text=TEST
+
 keletupack.research.cleansingamulet.title=Cleansing Amulet
 keletupack.research.cleansingamulet.stage.1.text=(waiting english translation...)
 keletupack.research.cleansingamulet.complete.text=(waiting english translation...)
@@ -129,9 +157,11 @@ keletupack.research.cleansingamulet.complete.text=(waiting english translation..
 keletupack.research.thaumisc_forbiddenmagic.title=Magic from Forbidden Knowledge
 keletupack.research.thaumisc_forbiddenmagic.text=TEST
 keletupack.research.thaumisc_forbiddenmagic.complete.text=TEST
+
 keletupack.research.morph_tools.title=Morphic Tools
 keletupack.research.morph_tools.text=TEST
 keletupack.research.morph_tools.complete.text=TEST
+
 keletupack.research.distortionpick.title=Distortion Pick
 keletupack.research.distortionpick.text=TEST
 keletupack.research.distortionpick.complete.text=TEST
