@@ -34,10 +34,10 @@ item.ichorium_pick_adv.name=Ichorium Pick Awakened
 item.ichorium_axe_adv.name=Ichorium Axe Awakened
 item.ichorium_shovel_adv.name=Ichorium Shovel Awakened
 
-item.morph_shovel.name=Morph Shovel
 item.morph_sword.name=Morph Sword
 item.morph_pick.name=Morph Pickaxe
 item.morph_axe.name=Morph Axe
+item.morph_shovel.name=Morph Shovel
 
 item.distortion_pick.name=Pickaxe of Distortion
 item.riding_crop.name=Riding Crop
