@@ -313,13 +313,13 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsKP.ICHOR),
                     new ItemStack(ItemsKP.ICHOR_INGOT),
                     new ItemStack(ItemsTC.elementalPick),
-                    new ItemStack(ItemsTC.morphicResonator),
+                    new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(Blocks.TNT),
                     new ItemStack(ItemsTC.clusters, 1, 6),
                     new ItemStack(ItemsTC.clusters, 1, 0),
                     new ItemStack(ItemsTC.clusters, 1, 1),
                     new ItemStack(Items.DIAMOND),
-                    new ItemStack(ItemsTC.visResonator),
+                    new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(ItemsTC.elementalPick),
                     new ItemStack(ItemsKP.ICHOR_CLOTH)
             }
@@ -334,13 +334,13 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsKP.ICHOR),
                     new ItemStack(ItemsKP.ICHOR_INGOT),
                     new ItemStack(ItemsTC.elementalShovel),
-                    new ItemStack(ItemsTC.morphicResonator),
+                    new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(Blocks.TNT),
                     new ItemStack(ItemsTC.clusters, 1, 6),
                     new ItemStack(ItemsTC.clusters, 1, 0),
                     new ItemStack(ItemsTC.clusters, 1, 1),
                     new ItemStack(Items.DIAMOND),
-                    new ItemStack(ItemsTC.visResonator),
+                    new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(ItemsTC.elementalShovel),
                     new ItemStack(ItemsKP.ICHOR_CLOTH)
             }
