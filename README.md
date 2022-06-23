@@ -19,11 +19,15 @@
 2. - [x] 添加云霄塔法袍3D效果 (Add a 3D effect to Robes of the Stratosphere)
 3. - [ ] 添加魔导手册文案 (Add a Thaumonomicon copy/Add Thaumonomicon Entries (I didn't get what is really being said here))
 4. - [x] 添加法袍抵挡弹射物效果 (Add Projectile Protection to Robes)
-5. - [ ] 添加护腿发光效果 (Add leggings a Glow effect)
+5. - [x] 添加护腿发光效果 (Add leggings a Glow effect)
 6. - [x] 添加靴子绿化效果 (Add a effect to grow grass for Boots)
 7. - [x] 添加工具觉醒效果 (Add a Awakening effect for Tools)
 8. - [x] 更改包名 (Change mod's name)
 9. - [x] 把英文扔到专门的readme去
+10. - [ ] 觉醒灵宝斧和剑
+11. - [ ] 基岩世界矿物产量调整
+12. - [ ] 下界残片，末影裂痕的所含要素
+13. - [ ] 神秘领域与神秘奇境的联动：晶化腐肉，击败腐化之尸掉落，可以用来更好的制作精金与秘金材料 
 
 ## 依赖 (Dependencies)
 
@@ -64,3 +68,13 @@
 25. 扭曲清除坠饰 (Warp Cleaning Charm)
 26. 糖渍地狱疣 (Nether Swart)
 27. 地狱疣蛋糕 (Nether Cake)
+28. 避役镐
+29. 避役剑
+30. 避役铲
+31. 避役斧
+32. 畸变镐
+33. 马鞭
+
+### 维度 (Dimensions)
+
+基岩世界：一个充满基岩与矿物的世界，可以通过觉醒灵宝镐敲击世界最底层的基岩进入！内部的基岩只有觉醒灵宝镐才能挖掘。
