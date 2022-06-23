@@ -24,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.util.ITeleporter;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -76,8 +77,9 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
                 BlockPos pos4 = pos.add(0, 254 - y, 0);
                 BlockPos pos5 = pos.add(0, 255 - y, 0);
 
-                Objects.requireNonNull(entity.getServer()).getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 31871, new TeleporterBedrock((WorldServer) world));
-                    ((EntityPlayerMP) entity).connection.player.setPositionAndUpdate(x + 0.5, 251, z + 0.5);
+                entity.changeDimension(31871, new TeleporterBedrock((WorldServer) world));
+                entity.setPositionAndUpdate(x + 0.5, 251, z + 0.5);
+
 
                 if (entity.world.getBlockState(pos1).getBlock() == Blocks.BEDROCK) {
                     entity.world.setBlockToAir(pos1);
@@ -96,8 +98,8 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
                 }
             } else{
 
-                entity.getServer().getPlayerList().transferPlayerToDimension((EntityPlayerMP) entity, 0, new TeleporterBedrock((WorldServer) world));
-                ((EntityPlayerMP) entity).connection.player.setPositionAndUpdate(world.getSpawnPoint().getX(), world.getSpawnPoint().getY() + 3, world.getSpawnPoint().getZ());
+                entity.changeDimension(0, new TeleporterBedrock((WorldServer) world));
+                entity.setPositionAndUpdate(world.getSpawnPoint().getX(), world.getSpawnPoint().getY() + 3, world.getSpawnPoint().getZ());
             }
         }
     }
