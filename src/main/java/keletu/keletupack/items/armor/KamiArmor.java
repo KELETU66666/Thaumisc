@@ -2,6 +2,8 @@ package keletu.keletupack.items.armor;
 
 import com.google.common.collect.Multimap;
 import keletu.keletupack.clinet.ModelWings;
+import keletu.keletupack.event.LivingEvent;
+import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
@@ -79,8 +81,9 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             case HEAD: {
                 if (mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.WATER || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_WATER) {
                     mp.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
-                    mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));}
-                if ( (mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.LAVA || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_LAVA) && mp.ticksExisted % 10 == 0)
+                    mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));
+                }
+                if ((mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.LAVA || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_LAVA) && mp.ticksExisted % 10 == 0)
                     mp.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 31, 0, true, false));
                 int food = mp.getFoodStats().getFoodLevel();
                 if (food > 0 && food < 18 && mp.shouldHeal()
@@ -172,7 +175,8 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             armorSlot, ModelBiped _default) {
         if (armorType == EntityEquipmentSlot.CHEST) {
             return new ModelWings();
-        }return null;
+        }
+        return null;
     }
 
 
@@ -228,9 +232,24 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             }
         }
     }
+
     public void performEffect(EntityLivingBase entity) {
         if (!entity.getEntityWorld().isRemote && entity.onGround && entity.getEntityWorld().isAirBlock(entity.getPosition()) && entity.getEntityWorld().getBlockState(entity.getPosition().down()).isNormalCube()) {
             entity.getEntityWorld().setBlockState(entity.getPosition(), Blocks.DIRT.getDefaultState(), 0);
+        }
+    }
+
+    public void setBlock(BlockPos pos, World world, EntityPlayer player) {
+        if ((world.isAirBlock(pos) || world.getBlockState(pos).equals(ModBlocks.NITOR_VAPOR)) && !world.isRemote && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() instanceof KamiArmor) {
+            world.setBlockState(pos, ModBlocks.NITOR_VAPOR.getDefaultState());
+        }
+    }
+
+    @Override
+    public void onUpdate(ItemStack par1ItemStack, World world, Entity entity, int par4, boolean par5) {
+        if (entity instanceof EntityPlayer) {
+            BlockPos pos = new BlockPos(entity.posX, entity.posY, entity.posZ).up();
+            setBlock(pos, world, (EntityPlayer) entity);
         }
     }
 }
