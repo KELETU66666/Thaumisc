@@ -51,7 +51,7 @@
 8. 灵宝法袍 (Ichorcloth Robe)
 9. 灵宝护腿 (Ichorcloth Leggings)
 10. 灵宝靴子 (Ichorcloth Boots)
-11. 无尽深渊之帽子 (Cowl of the Abyssal Depths)
+11. 无尽深渊之帽 (Cowl of the Abyssal Depths)
 12. 云霄塔法袍 (Robes of the Stratosphere)
 13. 熔岩地幔护腿 (Leggings of the Burning Mantle)
 14. 地平线盾牌之靴 (Boots of the Horizon Shield)
@@ -68,12 +68,22 @@
 25. 扭曲清除坠饰 (Warp Cleaning Charm)
 26. 糖渍地狱疣 (Nether Swart)
 27. 地狱疣蛋糕 (Nether Cake)
-28. 避役镐
-29. 避役剑
-30. 避役铲
-31. 避役斧
-32. 畸变镐
-33. 马鞭
+28. 觉醒灵宝镐
+29. 觉醒灵宝铲
+30. 避役镐
+31. 避役剑
+32. 避役铲
+33. 避役斧
+34. 畸变镐
+35. 马鞭
+36. 符文护盾戒指
+37. 符文护盾护身符
+38. 符文护盾腰带
+39. 再充能符文护盾戒指
+40. 应急符文护盾护身符
+41. 冲击符文护盾腰带
+42. 无底袋（未完成）
+43. 觉醒灵宝斧（未完成）
 
 ### 维度 (Dimensions)
 
