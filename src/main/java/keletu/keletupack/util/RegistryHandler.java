@@ -1,16 +1,22 @@
 package keletu.keletupack.util;
 
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
+import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.*;
 import keletu.keletupack.items.baubles.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectEventProxy;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.aspects.AspectRegistryEvent;
 
 @Mod.EventBusSubscriber
 
@@ -60,5 +66,12 @@ public class RegistryHandler {
             }
         }
 
+    }
+
+    @SubscribeEvent
+    public static void registerAspects(AspectRegistryEvent event) {
+        AspectEventProxy proxy = event.register;
+        proxy.registerComplexObjectTag(new ItemStack(ItemsKP.SHARD_NETHER), new AspectList().add(Aspect.FIRE, 2).add(Aspect.UNDEAD, 2).add(Aspect.DEATH, 2));
+        proxy.registerComplexObjectTag(new ItemStack(ItemsKP.SHARD_END), new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.DESIRE, 2).add(Aspect.DARKNESS, 2));
     }
 }
