@@ -42,7 +42,7 @@ item.morph_axe.name=Machado Mórfico
 item.distortion_pick.name=Picareta da Distorção
 item.riding_crop.name=Chibata
 tile.ichor_block.name=Bloco de Icor
-tile.bedrock_portal.name=Portal da Rocha Matriz
+tile.bedrock_portal.name=Portal do Mundo Bedrock
 item.warp_paper.name=Papel Tornassol Arcano
 warp.paper=Agora seu Warp é de: 
 
@@ -90,13 +90,13 @@ keletupack.research.ichor_pick_adv.title=A Mineradora de Icório
 keletupack.research.ichor_pick_adv.text=TEST
 keletupack.research.ichor_pick_adv.complete.text=TEST
 
-keletupack.research.ichor_shovel_adv.title=A Escavadora de Icório
-keletupack.research.ichor_shovel_adv.text=TEST
-keletupack.research.ichor_shovel_adv.complete.text=TEST
-
 keletupack.research.ichor_axe_adv.title=O Cortador de Icório
 keletupack.research.ichorium_axe_adv.text=TEST
 keletupack.research.ichorium_axe_adv.complete.text=TEST
+
+keletupack.research.ichor_shovel_adv.title=A Escavadora de Icório
+keletupack.research.ichor_shovel_adv.text=TEST
+keletupack.research.ichor_shovel_adv.complete.text=TEST
 
 keletupack.research.ichorarmor.title=Armadura de Icor
 keletupack.research.ichorarmor.text=TEST
@@ -163,10 +163,10 @@ keletupack.research.thaumisc_forbiddenmagic.title=Magia do Conhecimento Proibido
 keletupack.research.thaumisc_forbiddenmagic.text=TEST
 keletupack.research.thaumisc_forbiddenmagic.complete.text=TEST
 
-keletupack.research.morph_tools.title=Morphic Tools
+keletupack.research.morph_tools.title=Ferramentas Mórficas
 keletupack.research.morph_tools.text=TEST
 keletupack.research.morph_tools.complete.text=TEST
 
-keletupack.research.distortionpick.title=Distortion Pick
+keletupack.research.distortionpick.title=Picareta da Distorção
 keletupack.research.distortionpick.text=TEST
 keletupack.research.distortionpick.complete.text=TEST
