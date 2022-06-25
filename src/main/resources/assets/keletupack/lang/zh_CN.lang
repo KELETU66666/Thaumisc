@@ -42,7 +42,7 @@ item.morph_shovel.name=避役锹
 item.distortion_pick.name=畸变镐
 item.riding_crop.name=马鞭
 tile.ichor_block.name=灵液块
-tile.bedrock_portal.name=Bedrock Portal
+tile.bedrock_portal.name=Bedrock World Portal
 item.warp_paper.name=奥术石蕊试纸
 warp.paper=当前扭曲为: 
 
