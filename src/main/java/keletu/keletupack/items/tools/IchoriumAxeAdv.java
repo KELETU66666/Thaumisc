@@ -4,30 +4,38 @@ import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockCommandBlock;
+import net.minecraft.block.BlockStructure;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SPacketBlockChange;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 import thaumcraft.common.lib.utils.BlockUtils;
+import thaumcraft.common.lib.utils.Utils;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -57,67 +65,99 @@ public class IchoriumAxeAdv extends ItemAxe implements IHasModel {
         ModItems.ITEMS.add(this);
     }
 
-    public static boolean harvestAdditionalBlock(World world, EntityPlayer pl, ItemStack toolStack, BlockPos originPos, BlockPos breakPos) {
-        IBlockState blockState = world.getBlockState(breakPos);
-        Block block = blockState.getBlock();
-
-        if (block.isAir(blockState, world, breakPos))
-            return false;
-
-        if (ForgeHooks.blockStrength(world.getBlockState(originPos), pl, world, originPos) / ForgeHooks.blockStrength(blockState, pl, world, breakPos) > 10f)
-            return false;
-
-        if (!world.isRemote) {
-
-            if (block.removedByPlayer(blockState, world, breakPos, pl, true)) {
-                toolStack.onBlockDestroyed(world, blockState, breakPos, pl);
-                block.onBlockDestroyedByPlayer(world, breakPos, blockState);
-                block.harvestBlock(world, pl, breakPos, blockState, world.getTileEntity(breakPos), toolStack);
-                ((EntityPlayerMP) pl).connection.sendPacket(new SPacketBlockChange(world, breakPos));
+    @Override
+    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
+        boolean ret = super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
+        if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 1) {
+            if (!(entityLiving instanceof EntityPlayer) || worldIn.isRemote) {
+                return ret;
             }
-        } else {
-            if (block.removedByPlayer(blockState, world, breakPos, pl, true)) {
-                block.onBlockDestroyedByPlayer(world, breakPos, blockState);
-                toolStack.onBlockDestroyed(world, blockState, breakPos, pl);
 
-                if (toolStack.getCount() <= 0 && toolStack == pl.getHeldItemMainhand()) {
-                    ForgeEventFactory.onPlayerDestroyItem(pl, toolStack, EnumHand.MAIN_HAND);
-                    pl.setHeldItem(EnumHand.MAIN_HAND, ItemStack.EMPTY);
+            EntityPlayer player = (EntityPlayer) entityLiving;
+            EnumFacing facing = entityLiving.getHorizontalFacing();
+
+            if (entityLiving.rotationPitch < -45.0F) {
+                facing = EnumFacing.UP;
+            } else if (entityLiving.rotationPitch > 45.0F) {
+                facing = EnumFacing.DOWN;
+            }
+
+            boolean yAxis = facing.getAxis() == EnumFacing.Axis.Y;
+            boolean xAxis = facing.getAxis() == EnumFacing.Axis.X;
+
+            for (int i = -2; i <= 2; ++i) {
+                for (int j = -2; j <= 2 && !stack.isEmpty(); ++j) {
+                    if (i == 0 && j == 0) {
+                        continue;
+                    }
+
+                    BlockPos pos1;
+                    if (yAxis) {
+                        pos1 = pos.add(i, 0, j);
+                    } else if (xAxis) {
+                        pos1 = pos.add(0, i, j);
+                    } else {
+                        pos1 = pos.add(i, j, 0);
+                    }
+
+                    //:Replicate logic of PlayerInteractionManager.tryHarvestBlock(pos1)
+                    IBlockState state1 = worldIn.getBlockState(pos1);
+                    float f = state1.getBlockHardness(worldIn, pos1);
+                    if (f >= 0F && (state1.getMaterial().equals(Material.WOOD) || state1.getMaterial().equals(Material.CORAL) || state1.getMaterial().equals(Material.LEAVES) || state1.getMaterial().equals(Material.PLANTS))) {
+                        BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
+                        MinecraftForge.EVENT_BUS.post(event);
+                        if (!event.isCanceled()) {
+                            Block block = state1.getBlock();
+                            if ((block instanceof BlockCommandBlock || block instanceof BlockStructure) && !player.canUseCommandBlock()) {
+                                worldIn.notifyBlockUpdate(pos1, state1, state1, 3);
+                                continue;
+                            }
+                            TileEntity tileentity = worldIn.getTileEntity(pos1);
+                            if (tileentity != null) {
+                                Packet<?> pkt = tileentity.getUpdatePacket();
+                                if (pkt != null) {
+                                    ((EntityPlayerMP) player).connection.sendPacket(pkt);
+                                }
+                            }
+
+                            boolean canHarvest = block.canHarvestBlock(worldIn, pos1, player);
+                            boolean destroyed = block.removedByPlayer(state1, worldIn, pos1, player, canHarvest);
+                            if (destroyed) {
+                                block.breakBlock(worldIn, pos1, state1);
+                            }
+                            if (canHarvest && destroyed) {
+                                block.harvestBlock(worldIn, player, pos1, state1, tileentity, stack);
+                                stack.damageItem(1, player);
+                            }
+                        }
+                    }
+                }
+            }
+        }return ret;
+    }
+    public boolean onBlockStartBreak(ItemStack stack, BlockPos pos, EntityPlayer player){
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
+        World world = player.getEntityWorld();
+        if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 2) {
+            IBlockState block = world.getBlockState(pos);
+            if (Utils.isWoodLog(world, pos)) {
+                if(block.getBlock() != Blocks.AIR) {
+                    BlockUtils.breakFurthestBlock(world, pos, block, player);
+                    block = world.getBlockState(pos);
+                    while(BlockUtils.breakFurthestBlock(world, pos, block, player)){
+                        BlockUtils.breakFurthestBlock(world, pos, block, player);
+                    }
+                }
+                List<EntityItem> items = world.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(x - 5, y - 1, z - 5, x + 5, y + 64, z + 5));
+                for (EntityItem item : items) {
+                    item.setPosition(x + 0.5, y + 0.5, z + 0.5);
+                    item.ticksExisted += 20;
                 }
             }
         }
-
-        return true;
-    }
-
-    public static void breakBlockEvent(BlockEvent.BreakEvent event) {
-        if (!(event.getWorld()).isRemote && event.getPlayer() != null) {
-            ItemStack heldItem = event.getPlayer().getHeldItem(event.getPlayer().getActiveHand());
-            if (heldItem != null) {
-                List<EnumInfusionEnchantment> list = EnumInfusionEnchantment.getInfusionEnchantments(heldItem);
-                if (ForgeHooks.isToolEffective((IBlockAccess)event.getWorld(), event.getPos(), heldItem))
-                    if (!event.getPlayer().isSneaking()) {
-                        event.setCanceled(true);
-                        if (!event.getPlayer().getName().equals("FakeThaumcraftBore"))
-                            heldItem.damageItem(1, (EntityLivingBase)event.getPlayer());
-                        BlockUtils.breakFurthestBlock(event.getWorld(), event.getPos(), event.getState(), event.getPlayer());
-                    }
-            }
-        }
-    }
-
-
-    @Override
-    public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos, EntityLivingBase entity) {
-        if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 2) {
-            BlockPos breakPos = pos;
-
-            while (world.getBlockState(breakPos = breakPos.up()).getBlock().isWood(world, breakPos)) {
-                harvestAdditionalBlock(world, (EntityPlayer) entity, stack, pos, breakPos);
-
-            }
-        }
-        return super.onBlockDestroyed(stack, world, state, pos, entity);
+            return false;
     }
 
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
@@ -134,6 +174,11 @@ public class IchoriumAxeAdv extends ItemAxe implements IHasModel {
             return new ActionResult<>(EnumActionResult.SUCCESS, stack);
         }
         return new ActionResult<>(EnumActionResult.PASS, stack);
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.EPIC;
     }
 
     @Override

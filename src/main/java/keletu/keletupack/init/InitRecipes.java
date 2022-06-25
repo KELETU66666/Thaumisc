@@ -345,6 +345,27 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsKP.ICHOR_CLOTH)
             }
     ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_axe_adv"), new InfusionRecipe(
+            "ICHOR_AXE_ADV",
+            new ItemStack(ItemsKP.ICHORIUM_AXE_ADV),
+            32,
+            new AspectList().add(Aspect.WATER, 150).add(Aspect.PLANT, 125).add(Aspect.TOOL, 250).add(Aspect.SENSES, 60),
+            new ItemStack(ItemsKP.ICHORIUM_AXE),
+            new Object[]{
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.ICHOR_INGOT),
+                    new ItemStack(ItemsTC.elementalAxe),
+                    new ItemStack(ItemsTC.mechanismComplex),
+                    new ItemStack(Blocks.TNT),
+                    new ItemStack(ItemsTC.clusters, 1, 6),
+                    new ItemStack(ItemsTC.clusters, 1, 0),
+                    new ItemStack(ItemsTC.clusters, 1, 1),
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsTC.mechanismComplex),
+                    new ItemStack(ItemsTC.elementalAxe),
+                    new ItemStack(ItemsKP.ICHOR_CLOTH)
+            }
+    ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ItemsKP.MORPH_SHOVEL),

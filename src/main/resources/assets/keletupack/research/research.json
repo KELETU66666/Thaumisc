@@ -696,6 +696,36 @@
             "recipes":["keletupack:ichorium_shovel_adv"]
           }
         ]
+      },
+      {
+        "key": "ICHOR_AXE_ADV",
+        "name": "keletupack.research.ichor_axe_adv.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:ichorium_axe_adv"
+        ],
+        "parents": [
+          "ICHORIUMTOOLS"
+        ],"meta":["HIDDEN", "REVERSE"],
+        "location": [
+          -8,
+          1
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.ichorium_axe_adv.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"
+            ],
+            "required_craft": [
+              "keletupack:ichorium_axe"
+            ]
+          },
+          {
+            "text": "keletupack.research.ichorium_axe_adv.complete.text",
+            "recipes":["keletupack:ichorium_axe_adv"]
+          }
+        ]
       }
     ]
   }
