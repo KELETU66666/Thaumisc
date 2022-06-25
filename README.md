@@ -20,8 +20,8 @@
 3. - [ ] 添加魔导手册文案 (Add a Thaumonomicon copy/Add Thaumonomicon Entries (I didn't get what is really being said here))
 4. - [x] 添加法袍抵挡弹射物效果 (Add Projectile Protection to Robes)
 5. - [x] 添加护腿发光效果 (Add leggings a Glow effect)
-6. - [x] 添加靴子绿化效果 (Add a effect to grow grass for Boots)
-7. - [x] 添加工具觉醒效果 (Add a Awakening effect for Tools)
+6. - [x] 添加靴子绿化效果 (Add an effect to grow grass for Boots)
+7. - [x] 添加工具觉醒效果 (Add the Awakening Tools)
 8. - [x] 更改包名 (Change mod's name)
 9. - [x] 把英文扔到专门的readme去
 10. - [ ] 觉醒灵宝斧和剑
@@ -68,23 +68,25 @@
 25. 扭曲清除坠饰 (Warp Cleaning Charm)
 26. 糖渍地狱疣 (Nether Swart)
 27. 地狱疣蛋糕 (Nether Cake)
-28. 觉醒灵宝镐
-29. 觉醒灵宝铲
-30. 觉醒灵宝斧
-31. 避役镐
-32. 避役剑
-33. 避役铲
-34. 避役斧
-35. 畸变镐
-36. 马鞭
-37. 符文护盾戒指
-38. 符文护盾护身符
-39. 符文护盾腰带
-40. 再充能符文护盾戒指
-41. 应急符文护盾护身符
-42. 冲击符文护盾腰带
-43. 无底袋（未完成）
+28. 觉醒灵宝镐 (Awakened Ichorium Pickaxe)
+29. 觉醒灵宝铲 (Awakened Ichorium Shovel)
+30. 觉醒灵宝斧 (Awakened Ichorium Axe)
+31. 避役镐 (Morph Pickaxe)
+32. 避役剑 (Morph Sword)
+33. 避役铲 (Morph Shovel)
+34. 避役斧 (Morph Axe)
+35. 畸变镐 (Distortion Pickaxe)
+36. 马鞭 (Riding Crop)
+37. 符文护盾戒指 (Runic Ring)
+38. 符文护盾护身符 (Runic Amulet)
+39. 符文护盾腰带 (Runic Girdle)
+40. 再充能符文护盾戒指 (Runic Water Ring)
+41. 应急符文护盾护身符 (Runic Earth Amulet)
+42. 冲击符文护盾腰带 (Runic Air Girdle)
+43. 无底袋（未完成）(Ichorcloth Pouch) (unfinished)
 
 ### 维度 (Dimensions)
 
 基岩世界：一个充满基岩与矿物的世界，可以通过觉醒灵宝镐敲击世界最底层的基岩进入！内部的基岩只有觉醒灵宝镐才能挖掘。
+
+(The Bedrock World: A world full of Bedrock and Minerals, accessible only by left-clicking the lowest bedrock layer in Overworld with a Awakened Ichorium Pickaxe! Only the Awakened Ichorium Pickaxe can mine bedrock in that dimension.)
