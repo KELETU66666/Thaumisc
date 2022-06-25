@@ -42,7 +42,7 @@ item.morph_shovel.name=Morph Shovel
 item.distortion_pick.name=Pickaxe of Distortion
 item.riding_crop.name=Riding Crop
 tile.ichor_block.name=Ichor Block
-tile.bedrock_portal.name=Bedrock Portal
+tile.bedrock_portal.name=Bedrock World Portal
 item.warp_paper.name=Arcane Litmus Paper
 warp.paper=Now your Warp is: 
 
