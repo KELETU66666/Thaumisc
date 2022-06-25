@@ -90,13 +90,13 @@ keletupack.research.ichor_pick_adv.title=The Ichorium Miner
 keletupack.research.ichor_pick_adv.text=TEST
 keletupack.research.ichor_pick_adv.complete.text=TEST
 
-keletupack.research.ichor_shovel_adv.title=The Ichorium Digger
-keletupack.research.ichor_shovel_adv.text=TEST
-keletupack.research.ichor_shovel_adv.complete.text=TEST
-
 keletupack.research.ichor_axe_adv.title=The Ichorium Chopper
 keletupack.research.ichorium_axe_adv.text=TEST
 keletupack.research.ichorium_axe_adv.complete.text=TEST
+
+keletupack.research.ichor_shovel_adv.title=The Ichorium Digger
+keletupack.research.ichor_shovel_adv.text=TEST
+keletupack.research.ichor_shovel_adv.complete.text=TEST
 
 keletupack.research.ichorarmor.title=Ichor Armor
 keletupack.research.ichorarmor.text=TEST
