@@ -39,7 +39,7 @@ This mod requires Thaumcraft 6
 
 ### Research
 
-![添加的任务](./doc/zh_cn/image/任务图片.png)
+![Research](./image/Research.png)
 
 ### Items
 
