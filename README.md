@@ -24,7 +24,7 @@
 7. - [x] 添加工具觉醒效果 (Add the Awakening Tools)
 8. - [x] 更改包名 (Change mod's name)
 9. - [x] 把英文扔到专门的readme去 (Create an english version for the README.md file)
-10. - [ ] 觉醒灵宝斧和剑 (Add the Awakening Axe and Awekening Sword)
+10. - [x] 觉醒灵宝斧和剑 (Add the Awakening Axe and Awekening Sword)
 11. - [ ] 基岩世界矿物产量调整 (Adjustments for ore generation in The Bedrock World)
 12. - [x] 下界残片，末影裂痕的所含要素 (Adjustments for ore generation in The Bedrock World)
 13. - [ ] 神秘领域与神秘奇境的联动：晶化腐肉，击败腐化之尸掉落，可以用来更好的制作精金与秘金材料 (*translating...*)
