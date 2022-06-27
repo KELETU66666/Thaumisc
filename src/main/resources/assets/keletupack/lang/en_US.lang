@@ -42,6 +42,7 @@ item.morph_shovel.name=Morph Shovel
 item.distortion_pick.name=Pickaxe of Distortion
 item.riding_crop.name=Riding Crop
 tile.ichor_block.name=Ichor Block
+tile.bedrock_portal.name=Bedrock World Portal
 item.warp_paper.name=Arcane Litmus Paper
 warp.paper=Now your Warp is: 
 
@@ -88,6 +89,10 @@ keletupack.research.ichoriumtools.complete.text=TEST
 keletupack.research.ichor_pick_adv.title=The Ichorium Miner
 keletupack.research.ichor_pick_adv.text=TEST
 keletupack.research.ichor_pick_adv.complete.text=TEST
+
+keletupack.research.ichor_axe_adv.title=The Ichorium Chopper
+keletupack.research.ichorium_axe_adv.text=TEST
+keletupack.research.ichorium_axe_adv.complete.text=TEST
 
 keletupack.research.ichor_shovel_adv.title=The Ichorium Digger
 keletupack.research.ichor_shovel_adv.text=TEST
