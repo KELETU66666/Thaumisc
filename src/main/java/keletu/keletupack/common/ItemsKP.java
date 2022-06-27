@@ -32,6 +32,7 @@ public class ItemsKP {
     public static final Item ICHORIUM_PICK_ADV = null;
     public static final Item ICHORIUM_SHOVEL_ADV = null;
     public static final Item ICHORIUM_AXE_ADV = null;
+    public static final Item ICHORIUM_SWORD_ADV = null;
     public static final Item MORPH_SWORD =null;
     public static final Item MORPH_AXE = null;
     public static final Item MORPH_PICK =null;

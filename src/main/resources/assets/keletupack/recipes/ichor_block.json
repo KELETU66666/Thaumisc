@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "III",
+    "I I",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "keletupack:ichor"
+    }
+  },
+  "result": {
+    "item": "keletupack:ichor_block",
+    "data": 0
+  }
+}

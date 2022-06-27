@@ -366,6 +366,27 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsKP.ICHOR_CLOTH)
             }
     ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_sword_adv"), new InfusionRecipe(
+            "ICHOR_SWORD_ADV",
+            new ItemStack(ItemsKP.ICHORIUM_SWORD_ADV),
+            32,
+            new AspectList().add(Aspect.AIR, 150).add(Aspect.DESIRE, 250).add(Aspect.ORDER, 60).add(Aspect.ENERGY, 125).add(Aspect.CRYSTAL, 60).add(Aspect.SOUL, 125).add(Aspect.AVERSION, 125),
+            new ItemStack(ItemsKP.ICHORIUM_SWORD),
+            new Object[]{
+                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.ICHOR_INGOT),
+                    new ItemStack(ItemsTC.elementalSword),
+                    new ItemStack(ItemsTC.mechanismComplex),
+                    new ItemStack(Blocks.CACTUS),
+                    new ItemStack(ItemsTC.clusters, 1, 6),
+                    new ItemStack(ItemsTC.clusters, 1, 0),
+                    new ItemStack(ItemsTC.clusters, 1, 1),
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(ItemsTC.mechanismComplex),
+                    new ItemStack(ItemsTC.elementalSword),
+                    new ItemStack(ItemsKP.ICHOR_CLOTH)
+            }
+    ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(
             "MORPH_TOOLS",
             new ItemStack(ItemsKP.MORPH_SHOVEL),

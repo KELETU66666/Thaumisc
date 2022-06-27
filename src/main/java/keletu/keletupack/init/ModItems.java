@@ -41,6 +41,7 @@ public class ModItems {
     public static final ItemPickaxe IchoriumPickAdv = new IchoriumPickAdv("ichorium_pick_adv", keletupack.ITEM_TAB, MATERIAL_ICHORIUM_AWAKENED);
     public static final ItemAxe IchoriumAxeAdv = new IchoriumAxeAdv("ichorium_axe_adv", keletupack.ITEM_TAB, MATERIAL_ICHORIUM_AWAKENED);
     public static final ItemSpade IchoriumShovelAdv = new IchoriumShovelAdv("ichorium_shovel_adv", keletupack.ITEM_TAB, MATERIAL_ICHORIUM_AWAKENED);
+    public static final Item IchoriumSwordAdv = new IchoriumSwordAdv("ichorium_sword_adv", keletupack.ITEM_TAB, MATERIAL_ICHORIUM_AWAKENED);
     public static final ItemSpade MorphShovel = new MorphShovel("morph_shovel", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemSword MorphSword = new MorphSword("morph_sword", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemPickaxe MorphPickaxe = new MorphPick("morph_pick", keletupack.ITEM_TAB, MATERIAL_MORPH);
