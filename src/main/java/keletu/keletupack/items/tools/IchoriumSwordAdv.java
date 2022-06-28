@@ -147,9 +147,15 @@ public class IchoriumSwordAdv extends Item implements IHasModel
     }
 
     @Override
+    public int getItemEnchantability()
+    {
+        return 22;
+    }
+
+    @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, net.minecraft.enchantment.Enchantment enchantment)
     {
-        return !enchantment.equals(Enchantments.SWEEPING) && (enchantment.type == EnumEnchantmentType.WEAPON || enchantment.isTreasureEnchantment());
+        return !enchantment.equals(Enchantments.SWEEPING) && (enchantment.type == EnumEnchantmentType.WEAPON);
     }
 
     @Override
