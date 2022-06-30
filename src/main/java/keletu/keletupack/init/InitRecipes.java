@@ -155,7 +155,7 @@ private static void initArcaneRecipes() {
             "C C",
             'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
 }
-        
+
 private static void initCrucibleRecipes() {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "taint_meat1"), new CrucibleRecipe(
                 "TAINT_MEAT",
@@ -474,7 +474,7 @@ private static void initInfusionRecipes() {
             }
     ));
     ItemStack isRA = new ItemStack(ItemsKP.RUNIC_AMULET);
-    ItemNBTHelper.setByte(isRA, "TC.RUNIC", (byte) 10);
+    ItemNBTHelper.setByte(isRA, "TC.RUNIC", (byte) 8);
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_amulet"), new InfusionRecipe(
             "RUNIC_BAUBLES",
             isRA,
