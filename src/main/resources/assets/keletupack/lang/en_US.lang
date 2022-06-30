@@ -87,17 +87,17 @@ keletupack.research.ichoriumtools.title=Ichorium Tools
 keletupack.research.ichoriumtools.text=TEST
 keletupack.research.ichoriumtools.complete.text=TEST
 
-keletupack.research.ichor_pick_adv.title=The Ichorium Miner
-keletupack.research.ichor_pick_adv.text=TEST
-keletupack.research.ichor_pick_adv.complete.text=TEST
+keletupack.research.ichorium_pick_adv.title=The Ichorium Miner
+keletupack.research.ichorium_pick_adv.text=TEST
+keletupack.research.ichorium_pick_adv.complete.text=TEST
 
-keletupack.research.ichor_axe_adv.title=The Ichorium Chopper
+keletupack.research.ichorium_axe_adv.title=The Ichorium Chopper
 keletupack.research.ichorium_axe_adv.text=TEST
 keletupack.research.ichorium_axe_adv.complete.text=TEST
 
-keletupack.research.ichor_shovel_adv.title=The Ichorium Digger
-keletupack.research.ichor_shovel_adv.text=TEST
-keletupack.research.ichor_shovel_adv.complete.text=TEST
+keletupack.research.ichorium_shovel_adv.title=The Ichorium Digger
+keletupack.research.ichorium_shovel_adv.text=TEST
+keletupack.research.ichorium_shovel_adv.complete.text=TEST
 
 keletupack.research.ichorarmor.title=Ichor Armor
 keletupack.research.ichorarmor.text=TEST
@@ -146,10 +146,8 @@ keletupack.research.thaumisc_warptheory.text=TEST
 keletupack.research.thaumisc_warptheory.complete.text=TEST
 
 keletupack.research.warppaper.title=Warp Revealer
-keletupack.research.warppaper.text=(waiting english translation...)
-//PERSONAL SUGGESTION >>> At fist, I wasn't a big deal, but now it's serious business. This Warp makes me get sick over and over again. As I continue to study thaumaturgy, sometimes I can feel the Warp inside me, almost like a parasite draining me completely.<BR>Or worse. I've the feeling of being tortured by this. It's good that some of it goes away as time passes and not so terrible that I can bathe myself hardly with some Sanitizing Soap to get rid of it. It sucks sometimes.<BR>I think is better to find a way to know how much Warp I have, then I can take care of myself to don't let Warp get up to critical levels. Let's see what I can do, because I can't handle this anymore.
-keletupack.research.warppaper.complete.text=(waiting english translation...)
-//PERSONAL SUGGESTION >>> What a smart piece of paper! Salis Mundus itself was enough to make this possible. I just take some paper and Salis Mundus together and... BAHDAHM! I have something that allows me to see exactly how much Warp is concentrated in my body.<BR>All I need to do is rub the Arcane Litmus Paper against my skin. Strange how Warp flow through my body but most of the time, just my mind or my vision are affected. This makes me thing that Warp really tends to concentrate more in the head. Maybe I should rub this new paper against my face to be more efficient.<BR>The paper gets stained when is used and analysing the stain I can tell how bad the things are going to be for me, but it can't be used again because of how fast it turns to ashes. Even if it didn't, it wouldn't help. Knowing how much Warp I have that helps.<BR>It would help too if I can avoid those Eldritch Guardians. They can give Warp so easily that they can turn all my efforts useless. As I said, it's like some entity is mad with me and brings those Eldritch Guardians to me. This is the most disturbing thing about Warp.<BR>I fear no man... but that thing... it scares me.
+keletupack.research.warppaper.text=At fist, I wasn't a big deal, but now it's serious business. This Warp makes me get sick over and over again. As I continue to study thaumaturgy, sometimes I can feel the Warp inside me, almost like a parasite draining me completely.<BR>Or worse. I've the feeling of being tortured by this. It's good that some of it goes away as time passes and not so terrible that I can bathe myself hardly with some Sanitizing Soap to get rid of it. It sucks sometimes.<BR>I think is better to find a way to know how much Warp I have, then I can take care of myself to don't let Warp get up to critical levels. Let's see what I can do, because I can't handle this anymore.
+keletupack.research.warppaper.complete.text=What a smart piece of paper! Salis Mundus itself was enough to make this possible. I just take some paper and Salis Mundus together and... BAHDAHM! I have something that allows me to see exactly how much Warp is concentrated in my body.<BR>All I need to do is rub the Arcane Litmus Paper against my skin. Strange how Warp flow through my body but most of the time, just my mind or my vision are affected. This makes me thing that Warp really tends to concentrate more in the head. Maybe I should rub this new paper against my face to be more efficient.<BR>The paper gets stained when is used and analysing the stain I can tell how bad the things are going to be for me, but it can't be used again because of how fast it turns to ashes. Even if it didn't, it wouldn't help. Knowing how much Warp I have that helps.<BR>It would help too if I can avoid those Eldritch Guardians. They can give Warp so easily that they can turn all my efforts useless. As I said, it's like some entity is mad with me and brings those Eldritch Guardians to me. This is the most disturbing thing about Warp.<BR>I fear no man... but that thing... it scares me.
 
 keletupack.research.taintmeat.title=Taint Meat
 keletupack.research.taintmeat.stage.1.text=TEST

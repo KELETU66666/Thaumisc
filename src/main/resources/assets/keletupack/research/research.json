@@ -639,7 +639,7 @@
       },
       {
         "key": "ICHOR_PICK_ADV",
-        "name": "keletupack.research.ichor_pick_adv.title",
+        "name": "keletupack.research.ichorium_pick_adv.title",
         "category": "THAUMISC",
         "icons": [
           "keletupack:ichorium_pick_adv"
@@ -669,7 +669,7 @@
       },
       {
         "key": "ICHOR_SHOVEL_ADV",
-        "name": "keletupack.research.ichor_shovel_adv.title",
+        "name": "keletupack.research.ichorium_shovel_adv.title",
         "category": "THAUMISC",
         "icons": [
           "keletupack:ichorium_shovel_adv"
@@ -699,7 +699,7 @@
       },
       {
         "key": "ICHOR_AXE_ADV",
-        "name": "keletupack.research.ichor_axe_adv.title",
+        "name": "keletupack.research.ichorium_axe_adv.title",
         "category": "THAUMISC",
         "icons": [
           "keletupack:ichorium_axe_adv"
@@ -753,7 +753,7 @@
           },
           {
             "text": "keletupack.research.ichorium_sword_adv.complete.text",
-            "recipes":["keletupack:ichorium_axe_adv"]
+            "recipes":["keletupack:ichorium_sword_adv"]
           }
         ]
       }
