@@ -3,6 +3,7 @@ package keletu.keletupack.init;
 
 import keletu.keletupack.common.BlocksKP;
 import keletu.keletupack.common.ItemsKP;
+import keletu.keletupack.util.ItemNBTHelper;
 import keletu.keletupack.util.Reference;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -456,9 +457,11 @@ private static void initInfusionRecipes() {
                     new ItemStack(BlocksTC.logGreatwood)
             }
     ));
+    ItemStack isRR = new ItemStack(ItemsKP.RUNIC_RING);
+    ItemNBTHelper.setByte(isRR, "TC.RUNIC", (byte) 5);
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_ring"), new InfusionRecipe(
             "RUNIC_BAUBLES",
-            new ItemStack(ItemsKP.RUNIC_RING),
+            isRR,
             2,
             new AspectList().add(Aspect.ENERGY, 40).add(Aspect.MAGIC, 40).add(Aspect.PROTECT, 20),
             new ItemStack(ItemsTC.baubles, 1, 1),
@@ -470,9 +473,11 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsTC.salisMundus)
             }
     ));
+    ItemStack isRA = new ItemStack(ItemsKP.RUNIC_AMULET);
+    ItemNBTHelper.setByte(isRA, "TC.RUNIC", (byte) 10);
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_amulet"), new InfusionRecipe(
             "RUNIC_BAUBLES",
-            new ItemStack(ItemsKP.RUNIC_AMULET),
+            isRA,
             3,
             new AspectList().add(Aspect.ENERGY, 50).add(Aspect.MAGIC, 45).add(Aspect.PROTECT, 25),
             new ItemStack(ItemsTC.baubles, 1, 0),
@@ -485,9 +490,11 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsTC.salisMundus)
             }
     ));
+    ItemStack isRG = new ItemStack(ItemsKP.RUNIC_GIRDLE);
+    ItemNBTHelper.setByte(isRG, "TC.RUNIC", (byte) 10);
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_girdle"), new InfusionRecipe(
             "RUNIC_BAUBLES",
-            new ItemStack(ItemsKP.RUNIC_GIRDLE),
+            isRG,
             4,
             new AspectList().add(Aspect.ENERGY, 60).add(Aspect.MAGIC, 50).add(Aspect.PROTECT, 30),
             new ItemStack(ItemsTC.baubles, 1, 2),
@@ -502,9 +509,11 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsTC.salisMundus)
             }
     ));
+    ItemStack isRRA = new ItemStack(ItemsKP.RUNIC_RING_WATER);
+    ItemNBTHelper.setByte(isRRA, "TC.RUNIC", (byte) 4);
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_ring_water"), new InfusionRecipe(
             "RUNIC_BAUBLES_AQUA",
-            new ItemStack(ItemsKP.RUNIC_RING_WATER),
+            isRRA,
             4,
             new AspectList().add(Aspect.WATER, 75).add(Aspect.MAGIC, 45).add(Aspect.LIFE, 70).add(Aspect.PROTECT, 30),
             new ItemStack(ItemsKP.RUNIC_RING),
@@ -517,9 +526,11 @@ private static void initInfusionRecipes() {
                     PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.LONG_REGENERATION)
             }
     ));
+    ItemStack isRAE = new ItemStack(ItemsKP.RUNIC_AMULET_EARTH);
+    ItemNBTHelper.setByte(isRAE, "TC.RUNIC", (byte) 7);
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_amulet_earth"), new InfusionRecipe(
             "RUNIC_BAUBLES_TERRA",
-            new ItemStack(ItemsKP.RUNIC_AMULET_EARTH),
+            isRAE,
             5,
             new AspectList().add(Aspect.WATER, 45).add(Aspect.MAGIC, 70).add(Aspect.VOID, 70).add(Aspect.PROTECT, 35),
             new ItemStack(ItemsKP.RUNIC_AMULET),
@@ -532,9 +543,11 @@ private static void initInfusionRecipes() {
                     PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.STRONG_STRENGTH)
             }
     ));
+    ItemStack isRGA = new ItemStack(ItemsKP.RUNIC_GIRDLE_AIR);
+    ItemNBTHelper.setByte(isRGA, "TC.RUNIC", (byte) 9);
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "runic_girdle_air"), new InfusionRecipe(
             "RUNIC_BAUBLES_AER",
-            new ItemStack(ItemsKP.RUNIC_GIRDLE_AIR),
+            isRGA,
             6,
             new AspectList().add(Aspect.AIR, 125).add(Aspect.MAGIC, 125).add(Aspect.PROTECT, 50),
             new ItemStack(ItemsKP.RUNIC_GIRDLE),
