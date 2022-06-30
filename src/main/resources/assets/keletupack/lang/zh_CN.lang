@@ -78,7 +78,7 @@ keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神�
 
 keletupack.research.dimensionalshard.title=次元裂痕
 keletupack.research.dimensionalshard.text=“山重水复疑无路,柳暗花明又一村”<BR>当我做完了全部的研究,感觉走到了世界的尽头时,魔导手册仿佛奇迹般地多出了一页...这个神秘页面的出现也就意味着又一条新的道路为我开放...<BR> 魔导手册指引我,要去地狱和末地逛一逛,也许我能发现一些不太一样的魔力水晶碎片?先要想办法凑齐它们...
-keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR>IMGkeletupacktexturesitemsshard_nether.png0012812810IMGIMGkeletupacktexturesitemsshard_end.png0012812810IMG
+keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG>  
 
 keletupack.research.ichor.title=灵宝
 keletupack.research.ichor.text=这些碎片无疑蕴含着古老而强大的力量.将万亿众生的灵魂力量与亘古存在的无尽虚空结合,会产生什么呢?我隐约感觉我将会触碰到神的领域.
@@ -88,17 +88,21 @@ keletupack.research.ichoriumtools.title=灵宝工具
 keletupack.research.ichoriumtools.text=通过多次实验,灵液与世间常见的凡俗材料似乎有着天然的排斥性.神之血既然有着那么惊人的魔法传导性,我何不将其与神秘锭结合试试看会发现什么呢?
 keletupack.research.ichoriumtools.complete.text=实验获得空前成功!<BR>哈,我又不缺那点钻石!使用钻石作为引导材料,以大量魔力灌注至神秘锭,可以将其短暂地变成激发态,再用灵液浸润神秘锭.获得了新的一种合金!<BR>这种合金强度极高,韧性极佳,魔法传导性极强,凡俗的材料从未达到过如此卓绝的指标.用它做的工具,就是用到下辈子也不会有一点磨损.<BR>嗯,可以留给子孙用了.
 
-keletupack.research.ichor_pick_adv.title=觉醒灵宝镐
-keletupack.research.ichor_pick_adv.text=这种合金强度极高,挖穿地球也没有问题.但我真的要一块一块的挖下去了?这其中一定有隐藏的潜力亟待开发.
-keletupack.research.ichor_pick_adv.complete.text=太美妙啦!这就是我的终极挖掘机,用它我甚至可以挖开基岩!这个镐子不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>它共有三种模式:普通挖掘模式,线型模式,范围模式.几乎可以满足我的任何采矿需求.<BR><BR>吝啬的神明一定将丰富的矿藏埋藏到基岩之下,不然的话为什么不让我们下去呢?如果使用这把神镐挖穿基岩,等待我们的又将会是什么呢?
+keletupack.research.ichorium_pick_adv.title=觉醒灵宝镐
+keletupack.research.ichorium_pick_adv.text=这种合金强度极高,挖穿地球也没有问题.但我真的要一块一块的挖下去?这其中一定有隐藏的潜力亟待开发.
+keletupack.research.ichorium_pick_adv.complete.text=太美妙啦!这就是我的终极挖掘机,用它我甚至可以挖开基岩!这个镐子不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>它共有三种模式:普通挖掘模式,线型模式,范围模式.几乎可以满足我的任何采矿需求.<BR><BR>吝啬的神明一定将丰富的矿藏埋藏到基岩之下,不然的话为什么不让我们下去呢?如果使用这把神镐挖穿基岩,等待我们的又将会是什么呢?
 
 keletupack.research.ichor_axe_adv.title=觉醒灵宝斧
 keletupack.research.ichorium_axe_adv.text=这种合金强度极高,砍断世界树也没有问题.但我面对着高大茂盛的宏伟之木,久久不能平息.这其中一定有隐藏的潜力亟待开发.
 keletupack.research.ichorium_axe_adv.complete.text=这把斧头非常适合用来收割植物的生命.同样的,这个斧头不仅不会磨损,而且还能通过潜行右键来变换砍伐模式!<BR>这个斧头有三种模式:普通砍伐模式,正方模式和连锁模式.几乎可以满足我的任何砍伐需求.
 
-keletupack.research.ichor_shovel_adv.title=觉醒灵宝铲
-keletupack.research.ichor_shovel_adv.text=这种合金强度极高,挖平沙漠也没有问题.但我真的要一块一块的挖下去了?这其中一定有隐藏的潜力亟待开发.
-keletupack.research.ichor_shovel_adv.complete.text=这个铲子不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>这个铲子有三种模式:普通挖掘模式,正方模式和柱形模式.几乎可以满足我的任何砍伐需求.
+keletupack.research.ichorium_shovel_adv.title=觉醒灵宝铲
+keletupack.research.ichorium_shovel_adv.text=这种合金强度极高,挖平沙漠也没有问题.但我真的要一块一块的挖下去?这其中一定有隐藏的潜力亟待开发.
+keletupack.research.ichorium_shovel_adv.complete.text=这个铲子不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>这个铲子有三种模式:普通挖掘模式,正方模式和柱形模式.几乎可以满足我的任何砍伐需求.
+
+keletupack.research.ichorium_sword_adv.title=觉醒灵宝剑
+keletupack.research.ichorium_sword_adv.text=这种合金强度极高,杀遍天下也没有问题.但我真的要一个一个的砍下去?这其中一定有隐藏的潜力亟待开发.
+keletupack.research.ichorium_sword_adv.complete.text=这把剑不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>这把剑在绿色的正常击杀模式下它按正常方式进行攻击。<BR>在红色的区域模式下它将会伤害到被击中目标3x3范围内的所有生物。<BR>在蓝色的猎魂模式下它的威力将会略微减小，但是每攻击一次就会使持剑者增加一颗类似符文护盾的血量，相当于一次性的生命值，它们可以代替玩家承受伤害，而它们受到伤害后又会随之消失。
 
 keletupack.research.ichorarmor.title=灵宝装备
 keletupack.research.ichorarmor.text=魔力布匹,轻如蝉翼,薄如宣纸,平如水镜,细如罗绢.这种材料既有着良好的附魔能力又能降低Vis消耗.但是太容易磨损了,我又不是像那群老古董们在家能玩一天的连连看.诶?!为什么不试试灵液呢!
