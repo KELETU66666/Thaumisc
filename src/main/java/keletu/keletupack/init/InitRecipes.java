@@ -516,7 +516,7 @@ private static void initInfusionRecipes() {
             isRRA,
             4,
             new AspectList().add(Aspect.WATER, 75).add(Aspect.MAGIC, 45).add(Aspect.LIFE, 70).add(Aspect.PROTECT, 30),
-            new ItemStack(ItemsKP.RUNIC_RING),
+            isRR,
             new Object[]{
                     getCrystal(Aspect.WATER, 1),
                     getCrystal(Aspect.WATER, 1),
@@ -533,7 +533,7 @@ private static void initInfusionRecipes() {
             isRAE,
             5,
             new AspectList().add(Aspect.WATER, 45).add(Aspect.MAGIC, 70).add(Aspect.VOID, 70).add(Aspect.PROTECT, 35),
-            new ItemStack(ItemsKP.RUNIC_AMULET),
+            isRA,
             new Object[]{
                     getCrystal(Aspect.EARTH, 1),
                     getCrystal(Aspect.EARTH, 1),
@@ -550,7 +550,7 @@ private static void initInfusionRecipes() {
             isRGA,
             6,
             new AspectList().add(Aspect.AIR, 125).add(Aspect.MAGIC, 125).add(Aspect.PROTECT, 50),
-            new ItemStack(ItemsKP.RUNIC_GIRDLE),
+            isRG,
             new Object[]{
                     getCrystal(Aspect.AIR, 1),
                     getCrystal(Aspect.AIR, 1),
