@@ -729,7 +729,7 @@
       },
       {
         "key": "ICHOR_SWORD_ADV",
-        "name": "keletupack.research.ichor_swoed_adv.title",
+        "name": "keletupack.research.ichorium_sword_adv.title",
         "category": "THAUMISC",
         "icons": [
           "keletupack:ichorium_sword_adv"
