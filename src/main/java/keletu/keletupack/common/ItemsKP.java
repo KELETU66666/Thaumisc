@@ -4,7 +4,7 @@ import keletu.keletupack.items.EnderShard;
 import keletu.keletupack.items.NetherShard;
 import keletu.keletupack.items.warppaper;
 import keletu.keletupack.util.Reference;
-keletu.keletupack.items.baubles.*;
+import keletu.keletupack.items.baubles.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
