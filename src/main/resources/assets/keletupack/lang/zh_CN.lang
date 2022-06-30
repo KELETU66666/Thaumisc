@@ -44,7 +44,7 @@ item.morph_shovel.name=避役锹
 item.distortion_pick.name=畸变镐
 item.riding_crop.name=马鞭
 tile.ichor_block.name=灵液块
-tile.bedrock_portal.name=Bedrock World Portal
+tile.bedrock_portal.name=基岩世界传送门
 item.warp_paper.name=奥术石蕊试纸
 warp.paper=当前扭曲为: 
 
@@ -59,46 +59,50 @@ item.shard_nether.name=下界残片
 item.ichor.name=灵液
 item.ichor_cloth.name=灵布
 item.ichor_ingot.name=灵宝
-item.ichor_pouch.name=Ichorcloth Pouch
+item.ichor_pouch.name=无底袋
 
-item.cleansing_amulet.name=扭曲清除坠饰
+item.cleansing_amulet.name=净化护身符
 
-item.runic_ring.name=Runic Ring
-item.runic_girdle.name=Runic Girdle
-item.runic_amulet.name=Runic Amulet
-item.runic_ring_water.name=Runic Water Ring
-item.runic_girdle_air.name=Runic Air Girdle
-item.runic_amulet_earth.name=Runic Earth Amulet
+item.runic_ring.name=符文戒指
+item.runic_girdle.name=符文腰带
+item.runic_amulet.name=符文护身符
+item.runic_ring_water.name=再生符文护盾指环
+item.runic_girdle_air.name=冲击符文护盾腰带
+item.runic_amulet_earth.name=应急护盾护身符
 
 #Research
 
-keletupack.research.thaumisc.title=Thaumic Miscellaneous
-keletupack.research.thaumisc.text=Well, I see that there're some things that will need parallel research for themselves...
-keletupack.research.thaumisc.complete.text=I'm calling this group as Thaumic Miscellaneous or Thaumisc for short.
+keletupack.research.thaumisc.title=神秘杂项学
+keletupack.research.thaumisc.text=在翻阅遗迹之下的古老书籍之时,偶然间瞥见上面描绘着一些奇怪的物品.似乎这正是操纵节点的那群老家伙们念念不忘的工具?<BR>是时候进行一些平行研究了.
+keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神秘杂项学.或者简称为"杂项学"
 
 keletupack.research.dimensionalshard.title=次元裂痕
 keletupack.research.dimensionalshard.text=“山重水复疑无路,柳暗花明又一村”<BR>当我做完了全部的研究,感觉走到了世界的尽头时,魔导手册仿佛奇迹般地多出了一页...这个神秘页面的出现也就意味着又一条新的道路为我开放...<BR> 魔导手册指引我,要去地狱和末地逛一逛,也许我能发现一些不太一样的魔力水晶碎片?先要想办法凑齐它们...
-keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR>IMGkeletupacktexturesitemsshard_nether.png0012812810IMGIMGkeletupacktexturesitemsshard_end.png0012812810IMG
+keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG>  
 
 keletupack.research.ichor.title=灵宝
 keletupack.research.ichor.text=这些碎片无疑蕴含着古老而强大的力量.将万亿众生的灵魂力量与亘古存在的无尽虚空结合,会产生什么呢?我隐约感觉我将会触碰到神的领域.
 keletupack.research.ichor.complete.text=是的!这就是神之血!<BR>我还原了那群拿着法杖过时的老家伙们提起的神之血!<BR>这种液体有着惊人的魔法传导性,内部蕴含着觉醒之力,它将会被广泛应用于不计其数的设备. 
 
-keletupack.research.ichoriumtools.title=灵宝工具（未完成）
+keletupack.research.ichoriumtools.title=灵宝工具
 keletupack.research.ichoriumtools.text=通过多次实验,灵液与世间常见的凡俗材料似乎有着天然的排斥性.神之血既然有着那么惊人的魔法传导性,我何不将其与神秘锭结合试试看会发现什么呢?
 keletupack.research.ichoriumtools.complete.text=实验获得空前成功!<BR>哈,我又不缺那点钻石!使用钻石作为引导材料,以大量魔力灌注至神秘锭,可以将其短暂地变成激发态,再用灵液浸润神秘锭.获得了新的一种合金!<BR>这种合金强度极高,韧性极佳,魔法传导性极强,凡俗的材料从未达到过如此卓绝的指标.用它做的工具,就是用到下辈子也不会有一点磨损.<BR>嗯,可以留给子孙用了.
 
-keletupack.research.ichor_pick_adv.title=The Ichorium Miner
-keletupack.research.ichor_pick_adv.text=TEST
-keletupack.research.ichor_pick_adv.complete.text=TEST
+keletupack.research.ichorium_pick_adv.title=觉醒灵宝镐
+keletupack.research.ichorium_pick_adv.text=这种合金强度极高,挖穿地球也没有问题.但我真的要一块一块的挖下去?这其中一定有隐藏的潜力亟待开发.
+keletupack.research.ichorium_pick_adv.complete.text=太美妙啦!这就是我的终极挖掘机,用它我甚至可以挖开基岩!这个镐子不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>它共有三种模式:普通挖掘模式,线型模式,范围模式.几乎可以满足我的任何采矿需求.<BR><BR>吝啬的神明一定将丰富的矿藏埋藏到基岩之下,不然的话为什么不让我们下去呢?如果使用这把神镐挖穿基岩,等待我们的又将会是什么呢?
 
-keletupack.research.ichor_axe_adv.title=The Ichorium Chopper
-keletupack.research.ichorium_axe_adv.text=TEST
-keletupack.research.ichorium_axe_adv.complete.text=TEST
+keletupack.research.ichor_axe_adv.title=觉醒灵宝斧
+keletupack.research.ichorium_axe_adv.text=这种合金强度极高,砍断世界树也没有问题.但我面对着高大茂盛的宏伟之木,久久不能平息.这其中一定有隐藏的潜力亟待开发.
+keletupack.research.ichorium_axe_adv.complete.text=这把斧头非常适合用来收割植物的生命.同样的,这个斧头不仅不会磨损,而且还能通过潜行右键来变换砍伐模式!<BR>这个斧头有三种模式:普通砍伐模式,正方模式和连锁模式.几乎可以满足我的任何砍伐需求.
 
-keletupack.research.ichor_shovel_adv.title=The Ichorium Digger
-keletupack.research.ichor_shovel_adv.text=TEST
-keletupack.research.ichor_shovel_adv.complete.text=TEST
+keletupack.research.ichorium_shovel_adv.title=觉醒灵宝铲
+keletupack.research.ichorium_shovel_adv.text=这种合金强度极高,挖平沙漠也没有问题.但我真的要一块一块的挖下去?这其中一定有隐藏的潜力亟待开发.
+keletupack.research.ichorium_shovel_adv.complete.text=这个铲子不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>这个铲子有三种模式:普通挖掘模式,正方模式和柱形模式.几乎可以满足我的任何砍伐需求.
+
+keletupack.research.ichorium_sword_adv.title=觉醒灵宝剑
+keletupack.research.ichorium_sword_adv.text=这种合金强度极高,杀遍天下也没有问题.但我真的要一个一个的砍下去?这其中一定有隐藏的潜力亟待开发.
+keletupack.research.ichorium_sword_adv.complete.text=这把剑不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>这把剑在绿色的正常击杀模式下它按正常方式进行攻击。<BR>在红色的区域模式下它将会伤害到被击中目标3x3范围内的所有生物。<BR>在蓝色的猎魂模式下它的威力将会略微减小，但是每攻击一次就会使持剑者增加一颗类似符文护盾的血量，相当于一次性的生命值，它们可以代替玩家承受伤害，而它们受到伤害后又会随之消失。
 
 keletupack.research.ichorarmor.title=灵宝装备
 keletupack.research.ichorarmor.text=魔力布匹,轻如蝉翼,薄如宣纸,平如水镜,细如罗绢.这种材料既有着良好的附魔能力又能降低Vis消耗.但是太容易磨损了,我又不是像那群老古董们在家能玩一天的连连看.诶?!为什么不试试灵液呢!
@@ -121,30 +125,30 @@ keletupack.research.kamiboots.text=我使用龙驹汗血的珍宝,做了大量�
 keletupack.research.kamiboots.complete.text=通过一系列极端手段艰苦奋斗了几日,终于将其内部觉醒之潜力开发出来.<BR>新的靴子不仅让我无视一切掉落伤害,还能让我步伐矫健,甚至能轻易登上一格高的台阶.不仅如此,穿着靴子还能让走过的泥土焕发春意变成草地.
 
 ##Thaumcraft 4 
-keletupack.research.thaumisc_tc4.title=Antique Miscellanea
-keletupack.research.thaumisc_tc4.text=TEST
-keletupack.research.thaumisc_tc4.complete.text=TEST
+keletupack.research.thaumisc_tc4.title=古玩杂谈
+keletupack.research.thaumisc_tc4.text=虽然我经常未经许可的进入古时的遗迹,并且出于文物保护性的目的顺走一些奇妙的小玩意,但我发誓我的行为是出于神秘学的学术研究的伟大而神圣的目的.<BR>所以我更希望你们称呼我为...神秘考古学家!
+keletupack.research.thaumisc_tc4.complete.text=遗迹的主人已经变成了僵尸和骷髅,他们发现了我前来保护他们的物品的时候,很显然非常的生气.这些脑子已经腐朽的鼠目寸光的家伙肯定不会知道他们的物品蕴含着无数的学术研究价值.<BR>是时候把这桩生意...额,我是说研究课题正规化了!
 
-keletupack.research.runic_baubles.title=Runic Baubles
-keletupack.research.runic_baubles.text=TEST
-keletupack.research.runic_baubles.complete.text=TEST
+keletupack.research.runic_baubles.title=符文饰品
+keletupack.research.runic_baubles.text=在古时遗迹之中发现的奇妙的闪闪发光的小戒指引起了我的注意.这些小饰品虽然年代已久,又是用灵气节点来充能的.但是似乎蕴含着丰富的护盾能量.<BR>我自行研究出来的符文护盾十分昂贵,是否能将它复刻出来呢?毕竟现在的灵气充满大气之间,充能十分方便.
+keletupack.research.runic_baubles.complete.text=复刻成功!<BR>新的符文饰品分为腰带,戒指,与护身符,内部也高度蕴含着护盾能量.还能自动缓慢吸收大气中的灵气恢复护盾,简直是一举两得
 
-keletupack.research.runic_baubles_terra.title=Terra Baubles
-keletupack.research.runic_baubles_terra.text=TEST
-keletupack.research.runic_baubles_terra.complete.text=TEST
+keletupack.research.runic_baubles_terra.title=应急护盾护身符
+keletupack.research.runic_baubles_terra.text=护盾很好用,但是如果护盾被打破了怎么办?如果我能够复现那个...那个古老的饰品的话...
+keletupack.research.runic_baubles_terra.complete.text=在那些奇妙的小玩意的复刻经验下,很顺利的研究成功了.该护身符所提供的符文护盾被打破时,将会立即回复护盾,然后进入冷却状态.
 
-keletupack.research.runic_baubles_aer.title=Aer Baubles
-keletupack.research.runic_baubles_aer.text=TEST
-keletupack.research.runic_baubles_aer.complete.text=TEST
+keletupack.research.runic_baubles_aer.title=冲击符文护盾腰带
+keletupack.research.runic_baubles_aer.text=护盾很好用,但是如果护盾被打破了怎么办?如果我能够复现那个...那个古老的饰品的话...
+keletupack.research.runic_baubles_aer.complete.text=在那些奇妙的小玩意的复刻经验下,很顺利的研究成功了.该腰带所提供的符文护盾被打破时,将会自动爆发冲击波,造成伤害,弹开敌人.随后进入短暂的冷却状态.
 
-keletupack.research.runic_baubles_aqua.title=Aqua Baubles
-keletupack.research.runic_baubles_aqua.text=TEST
-keletupack.research.runic_baubles_aqua.complete.text=TEST
+keletupack.research.runic_baubles_aqua.title=再生符文护盾指环
+keletupack.research.runic_baubles_aqua.text=护盾很好用,但是如果护盾被打破了怎么办?如果我能够复现那个...那个古老的饰品的话...
+keletupack.research.runic_baubles_aqua.complete.text=在那些奇妙的小玩意的复刻经验下,很顺利的研究成功了.该戒指所提供的符文护盾被打破时,将会提供给穿戴者11秒的生命恢复II效果.随后进入短暂的冷却状态.
 
 ##Warp Theory
-keletupack.research.thaumisc_warptheory.title=Warp Studies
-keletupack.research.thaumisc_warptheory.text=TEST
-keletupack.research.thaumisc_warptheory.complete.text=TEST
+keletupack.research.thaumisc_warptheory.title=扭曲研究
+keletupack.research.thaumisc_warptheory.text=这可太扭曲啦.<BR>当我尝试接近深渊之时,虽然可能会让灵气的操纵更加容易.但它所带来的能到现实的精神影响的坏处更大.<BR>我当然也可以天天带着浴缸和肥皂走南闯北或者进行研究.这终究不是什么正路,我需要找出尽快解决扭曲反应的可行性方案.
+keletupack.research.thaumisc_warptheory.complete.text=透过凭空而生的迷雾,我逐渐明晰了一切.对扭曲理论的研究也愈发深刻,颇有拨云见日之妙.<BR>那么就将相关课题命名为神秘扭曲学吧.
 
 keletupack.research.warppaper.title=扭曲检测
 keletupack.research.warppaper.text=魔导手册上详细的讲述了神智检测仪是如何工作的,但是它只能给予我大概的数值,我想要更加精确的数据,而不是一点粗糙的颜色反应.
@@ -155,18 +159,18 @@ keletupack.research.taintmeat.stage.1.text=额...这是什么玩意...<BR>我有
 keletupack.research.taintmeat.complete.text=嗯,一种腐化的味道.毫无意外,还会增加扭曲.<BR>甚至能感觉到它像是腐化的蛆虫一样从舌尖缓慢的蠕动到胃袋里.迸发的纤维布满你的食道,细微的蛆虫缓慢爬进我的脑干.<BR>我为什么要吃这种东西?因为贪婪么?
 
 keletupack.research.cleansingamulet.title=根治扭曲
-keletupack.research.cleansingamulet.stage.1.text=我已经受够了扭曲的折磨,但是无论我使用多少肥皂与浴盐,我也只能缓解这种效果...而不能根治它!<BR>在一个偶然的机会下,我得到了一张残破的卷轴,上面书写了如何将你的扭曲传染给其他的人,但我空旷的住宅里只有我孤零零的一个人（和在一旁忙碌的傀儡）.<BR> 我得想想办法解决这个问题.
-keletupack.research.cleansingamulet.complete.text=我按照残卷上的方法解决了问题,使用净化浴盐和驱邪肥皂的力量制作了一个新的护身符,它能缓慢的将自己那些不可扭转的扭曲--转移到...自己身上!<BR> 这听起来虽然很荒谬,但是转移到自身的扭曲似乎不再是那么不可磨灭的...也许这也算是神秘使的一种突破吧!
+keletupack.research.cleansingamulet.stage.1.text=我已经受够了扭曲的折磨,但是无论我使用多少肥皂与浴盐,我也只能缓解这种效果...而不能根治它!<BR>在一个偶然的机会下,我得到了一张残破的卷轴,上面书写了如何将你的扭曲传染给其他的人,但我空旷的住宅里只有我孤零零的一个人（和在一旁忙碌的傀儡）.<BR>我得想想办法解决这个问题.
+keletupack.research.cleansingamulet.complete.text=我按照残卷上的方法解决了问题,使用净化浴盐和驱邪肥皂的力量制作了一个新的护身符,它能缓慢的将自己那些不可扭转的扭曲转换成相应的扭曲效果到...自己身上!<BR> 这听起来虽然很荒谬,但是似乎不再是那么不可磨灭的...也许这也算是神秘使的一种突破吧!
 
 ##Forbidden Magic
-keletupack.research.thaumisc_forbiddenmagic.title=Magic from Forbidden Knowledge
-keletupack.research.thaumisc_forbiddenmagic.text=TEST
-keletupack.research.thaumisc_forbiddenmagic.complete.text=TEST
+keletupack.research.thaumisc_forbiddenmagic.title=禁忌魔法
+keletupack.research.thaumisc_forbiddenmagic.text=这是真正的禁忌魔法--我在一些陈年的残卷上面发现这样的记载.但我觉得没什么可怕的,再禁忌的魔法,能为我所用的就是好魔法.
+keletupack.research.thaumisc_forbiddenmagic.complete.text=通过这几天不断地钻研和解读,还真的找到了一些实用的物件.但是...它禁忌在哪里呢?
 
-keletupack.research.morph_tools.title=Morphic Tools
-keletupack.research.morph_tools.text=TEST
-keletupack.research.morph_tools.complete.text=TEST
+keletupack.research.morph_tools.title=避役工具
+keletupack.research.morph_tools.text=按照书上的记载,古时候拥有这些工具的神秘使,无一不是个强大的角色.这激起了我研究并复原这些工具的信心.<BR>避役?为什么会叫这个名字?
+keletupack.research.morph_tools.complete.text=太美妙啦!这可太禁忌啦!经过我的研究发现,这些工具可以同时拥有最多三组附魔.潜行右键可以切换附魔组.这三组附魔,使用同一个耐久值.虽然切换附魔的时候会损失一些耐久值,但这完全物超所值!
 
-keletupack.research.distortionpick.title=Distortion Pick
-keletupack.research.distortionpick.text=TEST
-keletupack.research.distortionpick.complete.text=TEST
+keletupack.research.distortionpick.title=畸变镐
+keletupack.research.distortionpick.text=黑曜石的末日!<BR>虽然书上是这么记载的,但我总觉得有些难以想象,难道要用基岩做?
+keletupack.research.distortionpick.complete.text=通过注入腐化这种颠覆自然的魔力,我成功复刻出了这个神奇的工具!<BR>这也是把违反常规的镐子:这似乎与硬度系数有关,采掘硬的方块会更快,而采掘软的东西会很慢.<BR>基岩?哈哈,不可能的.
