@@ -91,6 +91,8 @@ item.arcane_disassembler.name=奥术分解机
 item.shadow_fortress_helm.name=暗影要塞兜鍪
 item.shadow_fortress_chest.name=暗影要塞胸铠
 item.shadow_fortress_legs.name=暗影要塞护腿
+item.shadow_ingot.name=暗影锭
+item.shadow_nugget.name=暗影粒
 #Research
 
 keletupack.research.thaumisc.title=神秘杂项学

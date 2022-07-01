@@ -50,8 +50,12 @@ public class ModItems {
     public static final ItemPickaxe DISTORTIONPICK = new DistortionPick("distortion_pick", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemSword RIDINGCROP = new RidingCrop("riding_crop", keletupack.ITEM_TAB, MATERIAL_LEATHER_K);
     public static final Item ARCANEDISASSEMBLER = new ArcaneDisassembler();
-    public static final Item ShadowHelm = new ShadowArmor("shadow_fortress_helm", ItemArmor.ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.HEAD);
-    public static final Item ShadowChest = new ShadowArmor("shadow_fortress_chest", ItemArmor.ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.CHEST);
-    public static final Item ShadowLegs = new ShadowArmor("shadow_fortress_legs", ItemArmor.ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.LEGS);
+    public static final ItemArmor.ArmorMaterial SHADOW_FORTRESS = EnumHelper.addArmorMaterial("SHADOW_FORTRESS", "shadow", 3000, new int[]{
+            4, 10, 6, 0
+    }, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 4F);
+    public static final Item ShadowHelm = new ShadowArmor("shadow_fortress_helm", SHADOW_FORTRESS, 1, EntityEquipmentSlot.HEAD);
+    public static final Item ShadowChest = new ShadowArmor("shadow_fortress_chest", SHADOW_FORTRESS, 1, EntityEquipmentSlot.CHEST);
+    public static final Item ShadowLegs = new ShadowArmor("shadow_fortress_legs", SHADOW_FORTRESS, 1, EntityEquipmentSlot.LEGS);
+    public static final Item.ToolMaterial TOOL_SHADOW = EnumHelper.addToolMaterial("SHADOW", 3, 2500, 17.0F, 6.0F, 30);
 
 }

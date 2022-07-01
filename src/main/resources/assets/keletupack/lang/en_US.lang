@@ -73,6 +73,8 @@ item.arcane_disassembler.name=Arcane Disassembler
 item.shadow_fortress_helm.name=Shadow Fortress Helm
 item.shadow_fortress_chest.name=Shadow Fortress Chest
 item.shadow_fortress_legs.name=Shadow Fortress Legs
+item.shadow_ingot.name=Shadow Metal Ingot
+item.shadow_nugget.name=Shadow Metal Nugget
 #Research
 
 keletupack.research.thaumisc.title=Thaumic Miscellaneous

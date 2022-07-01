@@ -1,8 +1,6 @@
 package keletu.keletupack.common;
 
-import keletu.keletupack.items.EnderShard;
-import keletu.keletupack.items.NetherShard;
-import keletu.keletupack.items.warppaper;
+import keletu.keletupack.items.*;
 import keletu.keletupack.util.Reference;
 import keletu.keletupack.items.baubles.*;
 import net.minecraft.item.Item;
@@ -46,4 +44,6 @@ public class ItemsKP {
     public static final Item RUNIC_RING_WATER = new RunicRingWater();
     public static final Item RUNIC_GIRDLE_AIR = new RunicGirdleAir();
     public static final Item RUNIC_AMULET_EARTH = new RunicAmuletEarth();
+    public static final Item SHADOW_INGOT = new ShadowIngot();
+    public static final Item SHADOW_NUGGET = new ShadowNugget();
 }

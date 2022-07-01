@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "keletupack:shadow_ingot"
+    }
+  ],
+  "result": {
+    "item": "keletupack:shadow_nugget",
+    "count": 9,
+    "data": 0
+  }
+}

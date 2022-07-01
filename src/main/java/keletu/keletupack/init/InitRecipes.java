@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
@@ -157,7 +158,13 @@ private static void initArcaneRecipes() {
 }
 
 private static void initCrucibleRecipes() {
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "taint_meat1"), new CrucibleRecipe(
+    ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_metal"), new CrucibleRecipe(
+            "SHADOW_METAL",
+            new ItemStack(ItemsKP.SHADOW_NUGGET),
+            "ingotIron",
+            new AspectList().add(Aspect.DARKNESS, 15).add(Aspect.METAL, 30).add(Aspect.DARKNESS, 10)
+    ));
+    ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "taint_meat1"), new CrucibleRecipe(
                 "TAINT_MEAT",
                 new ItemStack(ItemsKP.TAINT_MEAT),
                 new ItemStack(Items.CHICKEN),
@@ -558,6 +565,49 @@ private static void initInfusionRecipes() {
                     getCrystal(Aspect.AIR, 1),
                     getCrystal(Aspect.AIR, 1),
                     PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION), PotionTypes.STRONG_HARMING)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_fortress_helm"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new ItemStack(ModItems.ShadowHelm),
+            16,
+            new AspectList().add(Aspect.METAL, 100).add(Aspect.PROTECT, 80).add(Aspect.MAGIC, 45).add(Aspect.DARKNESS, 120).add(Aspect.VOID, 85),
+            new ItemStack(ItemsTC.voidHelm),
+            new Object[]{
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    "ingotIron",
+                    "ingotIron",
+                    "gemEmerald"
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_fortress_chest"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new ItemStack(ModItems.ShadowChest),
+            16,
+            new AspectList().add(Aspect.METAL, 150).add(Aspect.PROTECT, 100).add(Aspect.MAGIC, 70).add(Aspect.DARKNESS, 150).add(Aspect.VOID, 100),
+            new ItemStack(ItemsTC.voidChest),
+            new Object[]{
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    "ingotIron",
+                    "leather"
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_fortress_legs"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new ItemStack(ModItems.ShadowLegs),
+            16,
+            new AspectList().add(Aspect.METAL, 125).add(Aspect.PROTECT, 90).add(Aspect.MAGIC, 65).add(Aspect.DARKNESS, 125).add(Aspect.VOID, 90),
+            new ItemStack(ItemsTC.voidLegs),
+            new Object[]{
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    "ingotIron",
+                    "leather"
             }
     ));
     }

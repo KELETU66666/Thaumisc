@@ -22,9 +22,8 @@ import thaumcraft.api.aspects.AspectRegistryEvent;
 
 public class RegistryHandler {
     @SubscribeEvent
-    public static void onItemRegister( RegistryEvent.Register<Item> event )
-    {
-        event.getRegistry().registerAll( ModItems.ITEMS.toArray( new Item[0] ) );
+    public static void onItemRegister( RegistryEvent.Register<Item> event ) {
+        event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
         event.getRegistry().registerAll(new Cleansingamulet());
         event.getRegistry().registerAll(new warppaper());
         event.getRegistry().registerAll(new coin_witchery());
@@ -43,6 +42,8 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicRingWater());
         event.getRegistry().registerAll(new RunicGirdleAir());
         event.getRegistry().registerAll(new RunicAmuletEarth());
+        event.getRegistry().registerAll(new ShadowIngot());
+        event.getRegistry().registerAll(new ShadowNugget());
     }
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
