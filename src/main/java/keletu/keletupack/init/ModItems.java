@@ -3,6 +3,7 @@ package keletu.keletupack.init;
 import keletu.keletupack.items.NetherCake;
 import keletu.keletupack.items.armor.IchorArmor;
 import keletu.keletupack.items.armor.KamiArmor;
+import keletu.keletupack.items.armor.ShadowArmor;
 import keletu.keletupack.items.food;
 import keletu.keletupack.items.tools.*;
 import keletu.keletupack.items.warpfood;
@@ -49,4 +50,8 @@ public class ModItems {
     public static final ItemPickaxe DISTORTIONPICK = new DistortionPick("distortion_pick", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemSword RIDINGCROP = new RidingCrop("riding_crop", keletupack.ITEM_TAB, MATERIAL_LEATHER_K);
     public static final Item ARCANEDISASSEMBLER = new ArcaneDisassembler();
+    public static final Item ShadowHelm = new ShadowArmor("shadow_fortress_helm", ItemArmor.ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.HEAD);
+    public static final Item ShadowChest = new ShadowArmor("shadow_fortress_chest", ItemArmor.ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.CHEST);
+    public static final Item ShadowLegs = new ShadowArmor("shadow_fortress_legs", ItemArmor.ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.LEGS);
+
 }

@@ -10,8 +10,8 @@
 #                    - y location of sub-image in png
 #                    - x size of sub-image (255 if full x size of png must be used)
 #                    - y size of sub-image (255 if full y size of png must be used)
-#                    - scaling - 1.0 for normal 256x256 images, or smaller for proportionately smaller .png files (a 16x16 image will be 0.0625)   
-#               Examples: 
+#                    - scaling - 1.0 for normal 256x256 images, or smaller for proportionately smaller .png files (a 16x16 image will be 0.0625)
+#               Examples:
 #                   <IMG>thaumcraft:textures/gui/gui_researchbook.png:24:184:96:4:1.0</IMG>   <-- line break image as used in <LINE> above
 #                   <IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>     <-- alumentum item icon
 
@@ -63,7 +63,7 @@ item.riding_crop.name=马鞭
 tile.ichor_block.name=灵液块
 tile.bedrock_portal.name=基岩世界传送门
 item.warp_paper.name=奥术石蕊试纸
-warp.paper=当前扭曲为: 
+warp.paper=当前扭曲为:
 
 item.coin_witchery.name=巫师币
 item.coin_adventure.name=探险家币
@@ -88,6 +88,9 @@ item.runic_girdle_air.name=冲击符文护盾腰带
 item.runic_amulet_earth.name=应急护盾护身符
 
 item.arcane_disassembler.name=奥术分解机
+item.shadow_fortress_helm.name=暗影要塞兜鍪
+item.shadow_fortress_chest.name=暗影要塞胸铠
+item.shadow_fortress_legs.name=暗影要塞护腿
 #Research
 
 keletupack.research.thaumisc.title=神秘杂项学
@@ -96,11 +99,11 @@ keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神�
 
 keletupack.research.dimensionalshard.title=次元裂痕
 keletupack.research.dimensionalshard.text=“山重水复疑无路,柳暗花明又一村”<BR>当我做完了全部的研究,感觉走到了世界的尽头时,魔导手册仿佛奇迹般地多出了一页...这个神秘页面的出现也就意味着又一条新的道路为我开放...<BR> 魔导手册指引我,要去地狱和末地逛一逛,也许我能发现一些不太一样的魔力水晶碎片?先要想办法凑齐它们...
-keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG>  
+keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG>
 
 keletupack.research.ichor.title=灵宝
 keletupack.research.ichor.text=这些碎片无疑蕴含着古老而强大的力量.将万亿众生的灵魂力量与亘古存在的无尽虚空结合,会产生什么呢?我隐约感觉我将会触碰到神的领域.
-keletupack.research.ichor.complete.text=是的!这就是神之血!<BR>我还原了那群拿着法杖过时的老家伙们提起的神之血!<BR>这种液体有着惊人的魔法传导性,内部蕴含着觉醒之力,它将会被广泛应用于不计其数的设备. 
+keletupack.research.ichor.complete.text=是的!这就是神之血!<BR>我还原了那群拿着法杖过时的老家伙们提起的神之血!<BR>这种液体有着惊人的魔法传导性,内部蕴含着觉醒之力,它将会被广泛应用于不计其数的设备.
 
 keletupack.research.ichoriumtools.title=灵宝工具
 keletupack.research.ichoriumtools.text=通过多次实验,灵液与世间常见的凡俗材料似乎有着天然的排斥性.神之血既然有着那么惊人的魔法传导性,我何不将其与神秘锭结合试试看会发现什么呢?
@@ -142,7 +145,7 @@ keletupack.research.kamiboots.title=地平线盾牌之靴
 keletupack.research.kamiboots.text=我使用龙驹汗血的珍宝,做了大量的实验,难道就是为了一件永不磨损的靴子?<BR>不!这绝对不是我想要的!
 keletupack.research.kamiboots.complete.text=通过一系列极端手段艰苦奋斗了几日,终于将其内部觉醒之潜力开发出来.<BR>新的靴子不仅让我无视一切掉落伤害,还能让我步伐矫健,甚至能轻易登上一格高的台阶.不仅如此,穿着靴子还能让走过的泥土焕发春意变成草地.
 
-##Thaumcraft 4 
+##Thaumcraft 4
 keletupack.research.thaumisc_tc4.title=古玩杂谈
 keletupack.research.thaumisc_tc4.text=虽然我经常未经许可的进入古时的遗迹,并且出于文物保护性的目的顺走一些奇妙的小玩意,但我发誓我的行为是出于神秘学的学术研究的伟大而神圣的目的.<BR>所以我更希望你们称呼我为...神秘考古学家!
 keletupack.research.thaumisc_tc4.complete.text=遗迹的主人已经变成了僵尸和骷髅,他们发现了我前来保护他们的物品的时候,很显然非常的生气.这些脑子已经腐朽的鼠目寸光的家伙肯定不会知道他们的物品蕴含着无数的学术研究价值.<BR>是时候把这桩生意...额,我是说研究课题正规化了!

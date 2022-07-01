@@ -70,6 +70,9 @@ item.runic_girdle_air.name=Runic Air Girdle
 item.runic_amulet_earth.name=Runic Earth Amulet
 
 item.arcane_disassembler.name=Arcane Disassembler
+item.shadow_fortress_helm.name=Shadow Fortress Helm
+item.shadow_fortress_chest.name=Shadow Fortress Chest
+item.shadow_fortress_legs.name=Shadow Fortress Legs
 #Research
 
 keletupack.research.thaumisc.title=Thaumic Miscellaneous
