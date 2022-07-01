@@ -1,3 +1,20 @@
+# Special formatting codes:
+# <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
+# <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
+# <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
+# <PAGE> or <PAGE/>     Skip to a new page.
+# <IMG>...</IMG>  Insert a centered image into text. Parameters are separated by ':' and are:
+#                    - mod resource location name
+#                    - png file location (assumed to be a 256x256 texture, a sub-image will be grabbed from this png as specified below)
+#                    - x location of sub-image in png
+#                    - y location of sub-image in png
+#                    - x size of sub-image (255 if full x size of png must be used)
+#                    - y size of sub-image (255 if full y size of png must be used)
+#                    - scaling - 1.0 for normal 256x256 images, or smaller for proportionately smaller .png files (a 16x16 image will be 0.0625)   
+#               Examples: 
+#                   <IMG>thaumcraft:textures/gui/gui_researchbook.png:24:184:96:4:1.0</IMG>   <-- line break image as used in <LINE> above
+#                   <IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>     <-- alumentum item icon
+
 #Language
 
 language.name=中文
@@ -74,7 +91,7 @@ item.runic_amulet_earth.name=应急护盾护身符
 
 keletupack.research.thaumisc.title=神秘杂项学
 keletupack.research.thaumisc.text=在翻阅遗迹之下的古老书籍之时,偶然间瞥见上面描绘着一些奇怪的物品.似乎这正是操纵节点的那群老家伙们念念不忘的工具?<BR>是时候进行一些平行研究了.
-keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神秘杂项学.或者简称为"杂项学"
+keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神秘杂项学.或者简称为"杂项学"<BR><LINE><BR>马鞭是一种比较实用的工具,在骑乘坐骑的时候,可以拿着马鞭右键轻轻抽打坐骑,让坐骑获得一小段时间的加速.<BR>当然,也可以对别人使用.<BR><LINE><BR>地狱蛋糕则是下界版的蛋糕,原料更加节省,可惜的是不能放下.但是在下界漫长的旅途之中,随身携带一块大蛋糕也未尝不可呢.
 
 keletupack.research.dimensionalshard.title=次元裂痕
 keletupack.research.dimensionalshard.text=“山重水复疑无路,柳暗花明又一村”<BR>当我做完了全部的研究,感觉走到了世界的尽头时,魔导手册仿佛奇迹般地多出了一页...这个神秘页面的出现也就意味着又一条新的道路为我开放...<BR> 魔导手册指引我,要去地狱和末地逛一逛,也许我能发现一些不太一样的魔力水晶碎片?先要想办法凑齐它们...
