@@ -161,7 +161,7 @@ private static void initCrucibleRecipes() {
     ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_metal"), new CrucibleRecipe(
             "SHADOW_METAL",
             new ItemStack(ItemsKP.SHADOW_NUGGET),
-            "ingotIron",
+            "nuggetIron",
             new AspectList().add(Aspect.DARKNESS, 15).add(Aspect.METAL, 30).add(Aspect.DARKNESS, 10)
     ));
     ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "taint_meat1"), new CrucibleRecipe(
@@ -608,6 +608,23 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsKP.SHADOW_INGOT),
                     "ingotIron",
                     "leather"
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_disassembler"), new InfusionRecipe(
+            "ARCANE_DISASSEMBLER",
+            new ItemStack(ModItems.ARCANEDISASSEMBLER),
+            6,
+            new AspectList().add(Aspect.TOOL, 95).add(Aspect.MECHANISM, 50).add(Aspect.METAL, 50).add(Aspect.DARKNESS, 50),
+            new ItemStack(BlocksTC.metalBlockVoid),
+            new Object[]{
+                    Ingredient.fromItem(ItemsTC.primordialPearl),
+                    new ItemStack(ItemsTC.voidAxe),
+                    new ItemStack(ItemsTC.ingots, 1, 0),
+                    new ItemStack(ItemsTC.voidPick),
+                    new ItemStack(ItemsTC.ingots, 1, 0),
+                    new ItemStack(ItemsTC.voidSword),
+                    new ItemStack(ItemsTC.ingots, 1, 0),
+                    new ItemStack(ItemsTC.voidSword)
             }
     ));
     }
