@@ -35,5 +35,5 @@ jobs:
       with:
         artifactErrorsFailBuild: true
         artifacts: "/opt/build/*"
-        bodyFile: "changelog.md"
+        bodyFile: "releselog.md"
         token: ${{ secrets.GITHUB_TOKEN }}
