@@ -48,4 +48,5 @@ public class ModItems {
     public static final ItemAxe MorphAxe = new MorphAxe("morph_axe", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemPickaxe DISTORTIONPICK = new DistortionPick("distortion_pick", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemSword RIDINGCROP = new RidingCrop("riding_crop", keletupack.ITEM_TAB, MATERIAL_LEATHER_K);
+    public static final Item ARCANEDISASSEMBLER = new ArcaneDisassembler();
 }

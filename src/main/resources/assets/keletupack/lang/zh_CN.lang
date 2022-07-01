@@ -87,6 +87,7 @@ item.runic_ring_water.name=再生符文护盾指环
 item.runic_girdle_air.name=冲击符文护盾腰带
 item.runic_amulet_earth.name=应急护盾护身符
 
+item.arcane_disassembler.name=奥术分解机
 #Research
 
 keletupack.research.thaumisc.title=神秘杂项学

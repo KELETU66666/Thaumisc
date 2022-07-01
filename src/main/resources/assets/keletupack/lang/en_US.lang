@@ -69,6 +69,7 @@ item.runic_ring_water.name=Runic Water Ring
 item.runic_girdle_air.name=Runic Air Girdle
 item.runic_amulet_earth.name=Runic Earth Amulet
 
+item.arcane_disassembler.name=Arcane Disassembler
 #Research
 
 keletupack.research.thaumisc.title=Thaumic Miscellaneous
