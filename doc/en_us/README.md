@@ -19,16 +19,16 @@ Since it's now in Dev version, please download it from the actual build. If ther
 
 1. - [x] Remove Ichor Bucket
 2. - [x] Add a 3D effect to Robes of the Stratosphere
-3. - [ ] Add a Thaumonomicon copy/Add Thaumonomicon Entries (I didn't get what is really being said here)
+3. - [ ] Add Thaumonomicon Entries
 4. - [x] Add Projectile Protection to Robes
 5. - [x] Add leggings a Glow effect
 6. - [x] Add an effect to grow grass for Boots
 7. - [x] Add the Awakening Tools
 8. - [x] Change mod's name
 9. - [x] Create an english version for the README.md file
-10. - [ ] Add the Awakening Axe and Awekening Sword
+10. - [ ] Add the Awakening Axe and Awakening Sword
 11. - [ ] Adjustments for ore generation in The Bedrock World
-12. - [x] Add the Nether and Ender fragments
+12. - [x] Increase the Aspects contained in the Nether Shard and Ender Shard
 13. - [ ] When this mod is installed with Thaumic Additions: Reconstructed and Thaumic Wonders, defeating Avatar of Corruption will drop Rotten Essence Flesh, which can be used to better craft Mithminite and Adaminite materials.
 
 ## Dependencies
