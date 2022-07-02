@@ -99,6 +99,7 @@ keletupack.research.thaumisc.title=神秘杂项学
 keletupack.research.thaumisc.text=在翻阅遗迹之下的古老书籍之时,偶然间瞥见上面描绘着一些奇怪的物品.似乎这正是操纵节点的那群老家伙们念念不忘的工具?<BR>是时候进行一些平行研究了.
 keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神秘杂项学.或者简称为"杂项学"<BR><LINE><BR>马鞭是一种比较实用的工具,在骑乘坐骑的时候,可以拿着马鞭右键轻轻抽打坐骑,让坐骑获得一小段时间的加速.<BR>当然,也可以对别人使用.<BR><LINE><BR>地狱蛋糕则是下界版的蛋糕,原料更加节省,可惜的是不能放下.但是在下界漫长的旅途之中,随身携带一块大蛋糕也未尝不可呢.
 
+##Thaumic Tinkerer
 keletupack.research.dimensionalshard.title=次元裂痕
 keletupack.research.dimensionalshard.text=“山重水复疑无路,柳暗花明又一村”<BR>当我做完了全部的研究,感觉走到了世界的尽头时,魔导手册仿佛奇迹般地多出了一页...这个神秘页面的出现也就意味着又一条新的道路为我开放...<BR> 魔导手册指引我,要去地狱和末地逛一逛,也许我能发现一些不太一样的魔力水晶碎片?先要想办法凑齐它们...
 keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG>
@@ -197,3 +198,16 @@ keletupack.research.morph_tools.complete.text=太美妙啦!这可太禁忌啦!�
 keletupack.research.distortionpick.title=畸变镐
 keletupack.research.distortionpick.text=黑曜石的末日!<BR>虽然书上是这么记载的,但我总觉得有些难以想象,难道要用基岩做?
 keletupack.research.distortionpick.complete.text=通过注入腐化这种颠覆自然的魔力,我成功复刻出了这个神奇的工具!<BR>这也是把违反常规的镐子:这似乎与硬度系数有关,采掘硬的方块会更快,而采掘软的东西会很慢.<BR>基岩?哈哈,不可能的.
+
+##Tainted Magic
+keletupack.research.shadow_metal.title=暗影金属
+keletupack.research.shadow_metal.text=很久以前,我在坩埚里面煮一锅沸腾的源质汤的时候,不小心掉进去了一个金属粒,似乎发生了一些奇妙的反应.现在看来,应该是有些用处的,我看看能不能重现这个配方.
+keletupack.research.shadow_metal.complete.text=经过我的研究发现,这种黑暗与金属源质浓缩的金属粒具有相当奇怪的特性.用它们做成的金属锭硬度很高,在使用之前,很有必要做一些深刻的研究.<BR>将耳朵靠近金属锭,仔细聆听,似乎听到一种沉闷的、难以理解的低语从这种奇怪的物质中传出.真诡异...
+
+keletupack.research.shadow_armor.title=暗影要塞甲胄
+keletupack.research.shadow_armor.text=在选用神秘要塞甲胄之后,我不禁想要尝试如果使用暗影金属来做的话,效果会怎么样.不过说实话,手里拿着暗影金属,总觉得有一种诡异的感觉.<BR>比虚空锭还要诡异.
+keletupack.research.shadow_armor.complete.text=这将是终极套装?<BR>虽然这套盔甲没有继承虚空装备的自动修复的能力,但它的保护能力远超过了神秘要塞甲胄.而且耐久度也极大地提升了.<BR>这个甲胄使我免疫火焰与中毒伤害,并对瞬间伤害和凋零DEBUFF有明显的减免效果.<BR>和神秘要塞甲胄一样,每多穿戴一件这种装备的部件,就会提升其他部件的保护效果,外观造型也会变得更加炫酷.<BR>谁又在意那一点点扭曲呢?
+
+keletupack.research.arcane_disassembler.title=奥术分解机
+keletupack.research.arcane_disassembler.text=据传言,在旁边的科技世界里,那群魔法麻瓜操纵着一个叫原子分解机的工具.这种完美的工具可以使用一点点能量以无可挑剔的精确度来雕凿世界.<BR>了解到这些,说实话我有些嫉妒.但我作为一个高贵的神秘使是不会探足于麻瓜的领域的.<BR>我要用魔法的力量重现这个工具!
+keletupack.research.arcane_disassembler.complete.text=研究成功了!这确实是个伟大的工具.它的攻击伤害足有20点,潜行右键也可以改变挖掘速度.几乎可以当作万用工具来使用(确信).<BR>更美妙的是它使用灵气来供给充能.而灵气几乎无处不在!
