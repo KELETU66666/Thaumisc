@@ -29,7 +29,7 @@ Since it's now in Dev version, please download it from the actual build. If ther
 10. - [ ] Add the Awakening Axe and Awekening Sword
 11. - [ ] Adjustments for ore generation in The Bedrock World
 12. - [x] Add the Nether and Ender fragments
-13. - [ ] 神秘领域与神秘奇境的联动：晶化腐肉，击败腐化之尸掉落，可以用来更好的制作精金与秘金材料 (*translating...*)
+13. - [ ] When this mod is installed with Thaumic Additions: Reconstructed and Thaumic Wonders, defeating Avatar of Corruption will drop Rotten Essence Flesh, which can be used to better craft Mithminite and Adaminite materials.
 
 ## Dependencies
 
