@@ -204,6 +204,11 @@ public class ArcaneDisassembler extends Item implements IHasModel, IRechargable 
     }
 
     @Override
+    public boolean isFull3D() {
+        return true;
+    }
+
+    @Override
         public void registerModels() {
         keletupack.proxy.registerItemRenderer(this, 0, "inventory");
     }
