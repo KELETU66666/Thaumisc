@@ -1,3 +1,20 @@
+# Special formatting codes:
+# <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
+# <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
+# <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
+# <PAGE> or <PAGE/>     Skip to a new page.
+# <IMG>...</IMG>  Insert a centered image into text. Parameters are separated by ':' and are:
+#                    - mod resource location name
+#                    - png file location (assumed to be a 256x256 texture, a sub-image will be grabbed from this png as specified below)
+#                    - x location of sub-image in png
+#                    - y location of sub-image in png
+#                    - x size of sub-image (255 if full x size of png must be used)
+#                    - y size of sub-image (255 if full y size of png must be used)
+#                    - scaling - 1.0 for normal 256x256 images, or smaller for proportionately smaller .png files (a 16x16 image will be 0.0625)
+#               Examples:
+#                   <IMG>thaumcraft:textures/gui/gui_researchbook.png:24:184:96:4:1.0</IMG>   <-- line break image as used in <LINE> above
+#                   <IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>     <-- alumentum item icon
+
 #Language
 
 language.name=Português (Brasil)
@@ -33,6 +50,7 @@ item.kami_boots.name=Botas do Escudo do Horizonte
 item.ichorium_pick_adv.name=Picareta de Icório Despertada
 item.ichorium_axe_adv.name=Machado de Icório Despertado
 item.ichorium_shovel_adv.name=Pá de Icório Despertada
+item.ichorium_sword_adv.name=Ichorium Sword Awakened
 
 item.morph_shovel.name=Pá Mórfica
 item.morph_sword.name=Espada Mórfica
@@ -68,12 +86,19 @@ item.runic_ring_water.name=Anel Rúnico da Água
 item.runic_girdle_air.name=Cinturão Rúnico do Ar
 item.runic_amulet_earth.name=Amuleto Rúnico da Terra
 
+item.arcane_disassembler.name=Arcane Disassembler
+item.shadow_fortress_helm.name=Shadow Fortress Helm
+item.shadow_fortress_chest.name=Shadow Fortress Chest
+item.shadow_fortress_legs.name=Shadow Fortress Legs
+item.shadow_ingot.name=Shadow Metal Ingot
+item.shadow_nugget.name=Shadow Metal Nugget
 #Research
 
 keletupack.research.thaumisc.title=Miscelânea Taúmica
 keletupack.research.thaumisc.text=(*INCOMMING TRANSLATION*)<LINE>Well, I see that there're some things that will need parallel research for themselves...
 keletupack.research.thaumisc.complete.text=(*INCOMMING TRANSLATION*)<LINE>I'm calling this group as Thaumic Miscellaneous or Thaumisc for short.
 
+##Thaumic Tinkerer
 keletupack.research.dimensionalshard.title=Lascas Dimensionais
 keletupack.research.dimensionalshard.text=(waiting english translation...)
 keletupack.research.dimensionalshard.complete.text=(waiting english translation...)
@@ -97,6 +122,10 @@ keletupack.research.ichorium_axe_adv.complete.text=TEST
 keletupack.research.ichor_shovel_adv.title=A Escavadora de Icório
 keletupack.research.ichor_shovel_adv.text=TEST
 keletupack.research.ichor_shovel_adv.complete.text=TEST
+
+keletupack.research.ichorium_sword_adv.title=Ichorium Sword Awakened
+keletupack.research.ichorium_sword_adv.text=TEST
+keletupack.research.ichorium_sword_adv.complete.text=TEST
 
 keletupack.research.ichorarmor.title=Armadura de Icor
 keletupack.research.ichorarmor.text=TEST
@@ -168,3 +197,16 @@ keletupack.research.morph_tools.complete.text=TEST
 keletupack.research.distortionpick.title=Picareta da Distorção
 keletupack.research.distortionpick.text=TEST
 keletupack.research.distortionpick.complete.text=TEST
+
+##Tainted Magic
+keletupack.research.shadow_metal.title=Shadow Metal
+keletupack.research.shadow_metal.text=TEST
+keletupack.research.shadow_metal.complete.text=TEST
+
+keletupack.research.shadow_armor.title=Shadow Aromr
+keletupack.research.shadow_armor.text=TEST
+keletupack.research.shadow_armor.complete.text=TEST
+
+keletupack.research.arcane_disassembler.title=Arcane Disassembler
+keletupack.research.arcane_disassembler.text=TEST
+keletupack.research.arcane_disassembler.complete.text=TEST
