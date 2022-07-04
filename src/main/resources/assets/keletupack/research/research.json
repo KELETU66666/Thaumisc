@@ -817,7 +817,7 @@
           },
           {
             "text": "keletupack.research.shadow_armor.complete.text",
-            "recipes":["keletupack:shadow_fortress_helm", "keletupack:shadow_fortress_chest", "keletupack:shadow_fortress_legs"]
+            "recipes":["keletupack:shadow_fortress_helm", "keletupack:shadow_fortress_chest", "keletupack:shadow_fortress_legs", "keletupack:shadow_helm_goggles", "keletupack:shadow_helm_warp", "keletupack:shadow_helm_wither", "keletupack:shadow_helm_lifesteal"]
           }
         ]
       },
