@@ -8,6 +8,7 @@ import net.minecraft.block.BlockCommandBlock;
 import net.minecraft.block.BlockStructure;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -25,6 +26,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
@@ -174,6 +177,19 @@ public class IchoriumAxeAdv extends ItemAxe implements IHasModel {
             return new ActionResult<>(EnumActionResult.SUCCESS, stack);
         }
         return new ActionResult<>(EnumActionResult.PASS, stack);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 1){
+            tooltip.add(TextFormatting.RED +
+                    I18n.translateToLocal("tip.awakenaxe.name1"));}
+        else if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 2){
+            tooltip.add(TextFormatting.BLUE +
+                    I18n.translateToLocal("tip.awakenaxe.name2"));}
+        else{tooltip.add(TextFormatting.DARK_GREEN +
+                I18n.translateToLocal("tip.awakenaxe.name0"));}
+        super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 
     @Override

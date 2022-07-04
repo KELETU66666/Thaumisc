@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,9 +24,13 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.items.IRechargable;
 
 import javax.annotation.Nonnull;
+
+import java.util.List;
 
 import static net.minecraft.util.text.translation.I18n.translateToLocal;
 import static thaumcraft.api.items.RechargeHelper.consumeCharge;
@@ -64,7 +69,7 @@ public class ArcaneDisassembler extends Item implements IHasModel, IRechargable 
 
     @Override
     public boolean hitEntity (final ItemStack stack, final EntityLivingBase entity, final EntityLivingBase player) {
-        if (getCharge(stack) > 0) {
+        if (getCharge(stack) > 0 && stack.getTagCompound() != null && stack.getTagCompound().getInteger("mode") != 3) {
             entity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) player), 20);
         }
         else {
@@ -87,6 +92,24 @@ public class ArcaneDisassembler extends Item implements IHasModel, IRechargable 
         }else{
             return 0;
         }
+    }
+
+
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("mode") == 0){
+            tooltip.add(TextFormatting.DARK_BLUE +
+                    I18n.translateToLocal("tip.admode.name1"));}
+        else if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("mode") == 1){
+            tooltip.add(TextFormatting.GRAY +
+                    I18n.translateToLocal("tip.admode.name2"));}
+        else if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("mode") == 2){
+            tooltip.add(TextFormatting.DARK_AQUA +
+                I18n.translateToLocal("tip.admode.name3"));}
+        else{
+            tooltip.add(TextFormatting.AQUA +
+                    I18n.translateToLocal("tip.admode.name0"));}
+        super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 
     @Override

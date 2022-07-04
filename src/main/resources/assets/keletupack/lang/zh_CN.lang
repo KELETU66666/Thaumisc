@@ -210,3 +210,26 @@ keletupack.research.shadow_armor.complete.text=这将是终极套装?<BR>虽然�
 keletupack.research.arcane_disassembler.title=奥术分解机
 keletupack.research.arcane_disassembler.text=据传言,在旁边的科技世界里,那群魔法麻瓜操纵着一个叫原子分解机的工具.这种完美的工具可以使用一点点能量以无可挑剔的精确度来雕凿世界.<BR>了解到这些,说实话我有些嫉妒.但我作为一个高贵的神秘使是不会探足于麻瓜的领域的.<BR>我要用魔法的力量重现这个工具!
 keletupack.research.arcane_disassembler.complete.text=研究成功了!这确实是个伟大的工具.它的攻击伤害足有20点,潜行右键也可以改变挖掘速度.几乎可以当作万用工具来使用(确信).<BR>更美妙的是它使用灵气来供给充能.而灵气几乎无处不在!
+
+#Tool Mode
+
+tip.admode.name0=待机模式
+tip.admode.name1=中速模式
+tip.admode.name2=低速模式
+tip.admode.name3=高速模式
+
+tip.awakenpick.name0=方块模式
+tip.awakenpick.name1=范围模式
+tip.awakenpick.name2=线性模式
+
+tip.awakenshovel.name0=方块模式
+tip.awakenshovel.name1=范围模式
+tip.awakenshovel.name2=柱状模式
+
+tip.awakenaxe.name0=方块模式
+tip.awakenaxe.name1=范围模式
+tip.awakenaxe.name2=伐木模式
+
+tip.awakensword.name0=单杀模式
+tip.awakensword.name1=群杀模式
+tip.awakensword.name2=狩魂模式

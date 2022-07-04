@@ -96,7 +96,7 @@ keletupack.research.ichoriumtools.complete.text=This Ichorium Alloy is quite sim
 
 keletupack.research.ichorium_sword_adv.title=Awakened Ichorium Sword
 keletupack.research.ichorium_sword_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Sword i have made.
-keletupack.research.ichorium_sword_adv.completion.text=It seems it is possible to empower the Sword, with this new power, it is capable of specialized "Modes" to make combat with many foes much easier.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Swords. The "Multi" Mode, indicated by the Gems being Red, will harm all creatures near the one that is struck with equal force. The "Shield" Mode, indicated by the Gems being Blue, will reduce the Damage of the sword, but allow it to grant me extra resilience in the form of a Barrier, which can be recharged by striking creatures.
+keletupack.research.ichorium_sword_adv.complete.text=It seems it is possible to empower the Sword, with this new power, it is capable of specialized "Modes" to make combat with many foes much easier.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Swords. The "Multi" Mode, indicated by the Gems being Red, will harm all creatures near the one that is struck with equal force. The "Shield" Mode, indicated by the Gems being Blue, will reduce the Damage of the sword, but allow it to grant me extra resilience in the form of a Barrier, which can be recharged by striking creatures.
 
 keletupack.research.ichorium_pick_adv.title=Awakened Ichorium Pickaxe
 keletupack.research.ichorium_pick_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Pickaxe i have made.
@@ -193,3 +193,26 @@ keletupack.research.arcane_disassembler.complete.text=It seems several Fourth Ag
 keletupack.research.shadow_armor.title=Shadow Fortress Armor
 keletupack.research.shadow_armor.text=Scraps of knowledge from Fourth Age Thaumturges bring up the idea of an armor more effective than Thaumium Fortress Armor using Shadow Metal, both of which i have managed to create myself, this may be worth investigating.
 keletupack.research.shadow_armor.complete.text=This concept should be possible for me to pull off, in theory, as it is simply plating Void Metal armor in Shadow Metal through Infusion.<BR>It seems to offer a potent discount to Vis, being made of such alien materials, and offers that excellent level of Protection that was expected.<BR>It cannot mend itself like other Void Metal-based items, but it is incredibly durable, so there should be no need to worry.
+
+#Tool Mode
+
+tip.admode.name0=Stop
+tip.admode.name1=Medium Speed
+tip.admode.name2=Low Speed
+tip.admode.name3=Fast Speed
+
+tip.awakenpick.name0=Block Mode
+tip.awakenpick.name1=Square Mode
+tip.awakenpick.name2=Line Mode
+
+tip.awakenshovel.name0=Block Mode
+tip.awakenshovel.name1=Square Mode
+tip.awakenshovel.name2=Column Mode
+
+tip.awakenaxe.name0=Block Mode
+tip.awakenaxe.name1=Square Mode
+tip.awakenaxe.name2=Tree Mode
+
+tip.awakensword.name0=Single Mode
+tip.awakensword.name1=Area Mode
+tip.awakensword.name2=Soul Mode

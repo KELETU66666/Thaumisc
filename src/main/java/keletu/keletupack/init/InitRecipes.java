@@ -3,6 +3,7 @@ package keletu.keletupack.init;
 
 import keletu.keletupack.common.BlocksKP;
 import keletu.keletupack.common.ItemsKP;
+import keletu.keletupack.items.armor.ShadowArmor;
 import keletu.keletupack.util.ItemNBTHelper;
 import keletu.keletupack.util.Reference;
 import net.minecraft.init.Blocks;
@@ -10,6 +11,8 @@ import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.nbt.NBTTagByte;
+import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
@@ -626,6 +629,65 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsTC.ingots, 1, 0),
                     new ItemStack(ItemsTC.voidSword)
             }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_goggles"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "goggles", new NBTTagByte((byte)1) },
+            5,
+            (new AspectList()).add(Aspect.SENSES, 40).add(Aspect.AURA, 20).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[]{
+                    new ItemStack(Items.SLIME_BALL),
+                    new ItemStack(ItemsTC.goggles, 1, 32767)
+            }
+            ));
+
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_warp"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "mask", new NBTTagInt(0) },
+            8,
+            new AspectList().add(Aspect.MIND, 80).add(Aspect.LIFE, 80).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[] {
+                    "plateIron",
+                    "dyeBlack",
+                    "plateIron",
+                    "leather",
+                    BlocksTC.shimmerleaf,
+                    ItemsTC.brain
+    }
+    ));
+
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_wither"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "mask", new NBTTagInt(1) },
+            8,
+            new AspectList().add(Aspect.ENTROPY, 80).add(Aspect.DEATH, 80).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[] {
+                    "plateIron",
+                    "dyeWhite",
+                    "plateIron",
+                    "leather",
+                    Items.POISONOUS_POTATO,
+                    new ItemStack(Items.SKULL, 1, 1)
+    }
+    ));
+
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_lifesteal"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "mask", new NBTTagInt(2) },
+            8,
+            new AspectList().add(Aspect.UNDEAD, 80).add(Aspect.LIFE, 80).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[] {
+                    "plateIron",
+                    "dyeRed",
+                    "plateIron",
+                    "leather",
+                    Items.GHAST_TEAR,
+                    Items.MILK_BUCKET
+    }
     ));
     }
 }

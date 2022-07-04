@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.verdantartifice.thaumicwonders.common.items.armor.CustomArmorHelper;
 import keletu.keletupack.clinet.ModelShadowFortressArmor;
+import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
@@ -101,6 +102,41 @@ public class ShadowArmor extends ItemArmor implements ISpecialArmor, IGoggles, I
         return model;
     }
 
+    public enum MaskType {
+
+        NONE(0, ""),
+        WARP_REDUCTION(1, "item.fortress_helm.mask.0"),
+        WITHER(2, "item.fortress_helm.mask.1"),
+        LIFESTEAL(3, "item.fortress_helm.mask.2");
+
+        private int id;
+        private String name;
+
+        private MaskType(int i, String n) {
+            id = i;
+            name = n;
+        }
+
+        public int getID() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        @Nullable
+        public static MaskType fromID(int id) {
+            for (MaskType t : values()) {
+                if (t.getID() == id)
+                    return t;
+            }
+
+            return null;
+        }
+
+    }
+
 
     public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
         return "keletupack:textures/models/armor/shadow_armor.png";
@@ -123,7 +159,7 @@ public class ShadowArmor extends ItemArmor implements ISpecialArmor, IGoggles, I
     }
 
     public boolean getIsRepairable(ItemStack stack1, ItemStack stack2) {
-        return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) ? true : super
+        return stack2.isItemEqual(new ItemStack(ItemsKP.SHADOW_INGOT)) ? true : super
                 .getIsRepairable(stack1, stack2);
     }
 
