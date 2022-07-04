@@ -13,11 +13,14 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.item.EntityExpBottle;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.entity.projectile.EntitySnowball;
+import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -37,7 +40,11 @@ import thaumcraft.api.items.IVisDiscountGear;
 import thaumcraft.codechicken.lib.vec.Vector3;
 import thaumcraft.common.lib.events.PlayerEvents;
 
+import java.util.ArrayList;
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, IHasModel {
     public static final ArmorMaterial ICHORADV = EnumHelper.addArmorMaterial("ICHORADV", "ichoradv", 0, new int[]{
@@ -197,8 +204,8 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
     private void doProjectileEffect(EntityPlayer mp) {
         if (!mp.isSneaking()) {
-            List<EntityPotion> entityPotionList = mp.world.getEntitiesWithinAABB(EntityPotion.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
-            for (EntityPotion potion : entityPotionList) {
+            List<Entity> projectiles = mp.world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2), e -> e instanceof IProjectile);
+            for (Entity potion : projectiles) {
                 Vector3 motionVec = new Vector3(potion.motionX, potion.motionY, potion.motionZ).normalize().multiply(Math.sqrt((potion.posX - mp.posX) * (potion.posX - mp.posX) + (potion.posY - mp.posY) * (potion.posY - mp.posY) + (potion.posZ - mp.posZ) * (potion.posZ - mp.posZ)) * 2);
 
                 for (int i = 0; i < 6; i++)
@@ -207,28 +214,6 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
                 potion.posX += motionVec.x;
                 potion.posY += motionVec.y;
                 potion.posZ += motionVec.z;
-            }
-            List<EntitySnowball> entitySnowballs = mp.world.getEntitiesWithinAABB(EntitySnowball.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
-            for (EntitySnowball snowball : entitySnowballs) {
-                Vector3 motionVec = new Vector3(snowball.motionX, snowball.motionY, snowball.motionZ).normalize().multiply(Math.sqrt((snowball.posX - mp.posX) * (snowball.posX - mp.posX) + (snowball.posY - mp.posY) * (snowball.posY - mp.posY) + (snowball.posZ - mp.posZ) * (snowball.posZ - mp.posZ)) * 2);
-
-                for (int i = 0; i < 6; i++)
-                    keletupack.proxy.sparkle((float) snowball.posX, (float) snowball.posY, (float) snowball.posZ, 6);
-
-                snowball.posX += motionVec.x;
-                snowball.posY += motionVec.y;
-                snowball.posZ += motionVec.z;
-            }
-            List<EntityArrow> entityArrows = mp.world.getEntitiesWithinAABB(EntityArrow.class, new AxisAlignedBB(mp.posX - 2, mp.posY - 2, mp.posZ - 2, mp.posX + 2, mp.posY + 2, mp.posZ + 2));
-            for (Entity arrow : entityArrows) {
-                Vector3 motionVec = new Vector3(arrow.motionX, arrow.motionY, arrow.motionZ).normalize().multiply(Math.sqrt((arrow.posX - mp.posX) * (arrow.posX - mp.posX) + (arrow.posY - mp.posY) * (arrow.posY - mp.posY) + (arrow.posZ - mp.posZ) * (arrow.posZ - mp.posZ)) * 2);
-
-                for (int i = 0; i < 6; i++)
-                    keletupack.proxy.sparkle((float) arrow.posX, (float) arrow.posY, (float) arrow.posZ, 6);
-
-                arrow.posX += motionVec.x;
-                arrow.posY += motionVec.y;
-                arrow.posZ += motionVec.z;
             }
         }
     }
