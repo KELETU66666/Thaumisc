@@ -2,7 +2,6 @@ package keletu.keletupack.items.armor;
 
 import com.google.common.collect.Multimap;
 import keletu.keletupack.clinet.ModelWings;
-import keletu.keletupack.event.LivingEvent;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
@@ -10,17 +9,13 @@ import keletu.keletupack.util.IHasModel;
 import keletu.keletupack.util.Reference;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.item.EntityExpBottle;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.entity.projectile.EntityPotion;
-import net.minecraft.entity.projectile.EntitySnowball;
-import net.minecraft.entity.projectile.ProjectileHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -29,8 +24,13 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.relauncher.Side;
@@ -40,11 +40,7 @@ import thaumcraft.api.items.IVisDiscountGear;
 import thaumcraft.codechicken.lib.vec.Vector3;
 import thaumcraft.common.lib.events.PlayerEvents;
 
-import java.util.ArrayList;
-import java.util.IdentityHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
 
 public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, IHasModel {
     public static final ArmorMaterial ICHORADV = EnumHelper.addArmorMaterial("ICHORADV", "ichoradv", 0, new int[]{
@@ -86,6 +82,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
         switch (armorType) {
             case HEAD: {
+                if(itemStack.getItemDamage() != 1){
                 if (mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.WATER || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_WATER) {
                     mp.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
                     mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));
@@ -96,52 +93,58 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
                 if (food > 0 && food < 18 && mp.shouldHeal()
                         && mp.ticksExisted % 80 == 0)
                     mp.heal(1F);
-            }
+            }}
             break;
 
             case CHEST: {
-                mp.getEntityData().setBoolean("can_fly", true);
-                doProjectileEffect(mp);
+                if(itemStack.getItemDamage() != 1) {
+                    mp.getEntityData().setBoolean("can_fly", true);
+                    doProjectileEffect(mp);
+                }
             }
             break;
             case LEGS: {
-                if (mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE) == null || mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 1) {
-                    mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 1, 0, false, false));
-                    if (mp.isBurning()) {
-                        mp.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 20, 1, true, false));
-                        mp.extinguish();
+                if (itemStack.getItemDamage() != 1) {
+                    if (mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE) == null || mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 1) {
+                        mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 1, 0, false, false));
+                        if (mp.isBurning()) {
+                            mp.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 20, 1, true, false));
+                            mp.extinguish();
+                        }
                     }
                 }
             }
             break;
 
             case FEET: {
-                {
-                    if (!mp.capabilities.isFlying && mp.moveForward > 0.0F) {
-                        if (mp.world.isRemote && !mp.isSneaking()) {
-                            if (!PlayerEvents.prevStep.containsKey(Integer.valueOf(mp.getEntityId())))
-                                PlayerEvents.prevStep.put(Integer.valueOf(mp.getEntityId()), Float.valueOf(mp.stepHeight));
-                            mp.stepHeight = 1.0F;
+                if (itemStack.getItemDamage() != 1) {
+                    {
+                        if (!mp.capabilities.isFlying && mp.moveForward > 0.0F) {
+                            if (mp.world.isRemote && !mp.isSneaking()) {
+                                if (!PlayerEvents.prevStep.containsKey(Integer.valueOf(mp.getEntityId())))
+                                    PlayerEvents.prevStep.put(Integer.valueOf(mp.getEntityId()), Float.valueOf(mp.stepHeight));
+                                mp.stepHeight = 1.0F;
+                            }
+                            if (mp.onGround) {
+                                float bonus = 0.1F;
+                                if (mp.isInWater())
+                                    bonus /= 4.0F;
+                                mp.moveRelative(0.0F, 0.0F, bonus, 1.0F);
+                            } else {
+                                if (mp.isInWater())
+                                    mp.moveRelative(0.0F, 0.0F, 0.15F, 1.0F);
+                                mp.jumpMovementFactor = 0.05F;
+                            }
                         }
-                        if (mp.onGround) {
-                            float bonus = 0.1F;
-                            if (mp.isInWater())
-                                bonus /= 4.0F;
-                            mp.moveRelative(0.0F, 0.0F, bonus, 1.0F);
-                        } else {
-                            if (mp.isInWater())
-                                mp.moveRelative(0.0F, 0.0F, 0.15F, 1.0F);
-                            mp.jumpMovementFactor = 0.05F;
+                        if (mp.getActivePotionEffect(MobEffects.HASTE) == null || mp.getActivePotionEffect(MobEffects.HASTE).getDuration() <= 1) {
+                            mp.addPotionEffect(new PotionEffect(MobEffects.HASTE, 200, 1, false, false));
                         }
                     }
-                    if (mp.getActivePotionEffect(MobEffects.HASTE) == null || mp.getActivePotionEffect(MobEffects.HASTE).getDuration() <= 1) {
-                        mp.addPotionEffect(new PotionEffect(MobEffects.HASTE, 200, 1, false, false));
+                    BlockPos posBelow = mp.getPosition().down();
+                    IBlockState blockStateBelow = mp.world.getBlockState(posBelow);
+                    if (blockStateBelow.getBlock() == Blocks.DIRT) {
+                        mp.getEntityWorld().setBlockState(mp.getPosition().down(), Blocks.GRASS.getDefaultState(), 0);
                     }
-                }
-                BlockPos posBelow = mp.getPosition().down();
-                IBlockState blockStateBelow = mp.world.getBlockState(posBelow);
-                if (blockStateBelow.getBlock() == Blocks.DIRT) {
-                    mp.getEntityWorld().setBlockState(mp.getPosition().down(), Blocks.GRASS.getDefaultState(), 0);
                 }
             }
             break;
@@ -194,7 +197,8 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
     @Override
     public void registerModels() {
-        keletupack.proxy.registerItemRenderer(this, 0, "inventory");
+            keletupack.proxy.registerItemRenderer(this, 0, "inventory");
+            keletupack.proxy.registerItemRenderer(this, 1, "inventory");
     }
 
     @Override
@@ -218,22 +222,37 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
         }
     }
 
-    public void performEffect(EntityLivingBase entity) {
-        if (!entity.getEntityWorld().isRemote && entity.onGround && entity.getEntityWorld().isAirBlock(entity.getPosition()) && entity.getEntityWorld().getBlockState(entity.getPosition().down()).isNormalCube()) {
-            entity.getEntityWorld().setBlockState(entity.getPosition(), Blocks.DIRT.getDefaultState(), 0);
+    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
+        ItemStack stack = player.getHeldItem(hand);
+        if (player.isSneaking()) {
+            int dmg = stack.getItemDamage();
+            stack.setItemDamage(~dmg & 1);
+            return new ActionResult<>(EnumActionResult.SUCCESS, stack);
         }
+        return new ActionResult<>(EnumActionResult.PASS, stack);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        if (stack.getItemDamage() == 1){
+            tooltip.add(TextFormatting.RED +
+                    I18n.translateToLocal("tip.awakenarmor.name1"));}
+        else{tooltip.add(TextFormatting.DARK_GREEN +
+                I18n.translateToLocal("tip.awakenarmor.name0"));}
+        super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 
     public void setBlock(BlockPos pos, World world, EntityPlayer player) {
-        if ((world.isAirBlock(pos) || world.getBlockState(pos).equals(ModBlocks.NITOR_VAPOR)) && !world.isRemote && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() instanceof KamiArmor) {
+        ItemStack itemStack = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+        if ((world.isAirBlock(pos) || world.getBlockState(pos).equals(ModBlocks.NITOR_VAPOR)) && !world.isRemote && itemStack.getItem() instanceof KamiArmor && itemStack.getItemDamage() != 1) {
             world.setBlockState(pos, ModBlocks.NITOR_VAPOR.getDefaultState());
         }
     }
 
     @Override
     public void onUpdate(ItemStack par1ItemStack, World world, Entity entity, int par4, boolean par5) {
-        if (entity instanceof EntityPlayer) {
-            BlockPos pos = new BlockPos(entity.posX, entity.posY, entity.posZ).up();
+        if (entity instanceof EntityPlayer && par1ItemStack.getItemDamage() != 1) {
+        BlockPos pos = new BlockPos(entity.posX, entity.posY, entity.posZ).up();
             setBlock(pos, world, (EntityPlayer) entity);
         }
     }

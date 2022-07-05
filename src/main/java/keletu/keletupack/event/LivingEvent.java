@@ -45,8 +45,8 @@ public class LivingEvent {
     @SubscribeEvent
     public void playerJumps(net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent event)
     {
-        ItemStack is;
-        if(event.getEntity() instanceof EntityPlayer && ((EntityPlayer) event.getEntity()).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() instanceof KamiArmor)
+        ItemStack stack = event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET);
+        if(event.getEntity() instanceof EntityPlayer && stack.getItem() instanceof KamiArmor && stack.getItemDamage() != 1)
             event.getEntityLiving().motionY += 0.2750000059604645 * 1.25;
     }
 
@@ -55,7 +55,7 @@ public class LivingEvent {
     public void fall(LivingFallEvent e)
     {
         ItemStack boots = e.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET);
-        if(!boots.isEmpty() && boots.getItem() instanceof KamiArmor)
+        if(!boots.isEmpty() && boots.getItem() instanceof KamiArmor && boots.getItemDamage() != 1)
         {
             e.setDamageMultiplier(0);
             e.setCanceled(true);
