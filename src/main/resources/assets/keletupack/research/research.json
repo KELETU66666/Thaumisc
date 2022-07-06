@@ -5,7 +5,7 @@
         "name": "keletupack.research.thaumisc.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:coin_adventure"
+          "keletupack:coin_magic"
         ],"meta":["ROUND"],
         "parents": [
          "UNLOCKINFUSION"
