@@ -85,7 +85,7 @@
 42. 应急符文护盾护身符 (Runic Amulet of Barriers)
 43. 冲击符文护盾腰带 (Runic Girdle of Kinesis)
 44. 无底袋（未完成）(Ichorcloth Pouch) (unfinished)
-45. 基岩世界传送门 (Bedrock Portal)
+45. 基岩世界传送门 (Bedrock World Portal)
 46. 觉醒灵宝剑 (Thaumic Disassembler)
 47. 暗影要塞兜鍪 (Shadow Fortress Helm)
 48. 暗影要塞胸铠 (Shadow Fortress Chest)
