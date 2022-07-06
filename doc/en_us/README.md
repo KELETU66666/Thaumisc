@@ -43,15 +43,15 @@ This mod requires Thaumcraft 6
 
 ### Items
 
-1. Ichor Block
-2. Taint Meat
-3. Ichorium Sword
-4. Ichorium Axe
-5. Ichorium Shovel
-6. Ichorium Pickaxe
-7. Ichorium Cowl
-8. Ichorcloth Robe
-9. Ichorcloth Leggings
+01. Ichor Block
+02. Taint Meat
+03. Ichorium Sword
+04. Ichorium Axe
+05. Ichorium Shovel
+06. Ichorium Pickaxe
+07. Ichorium Cowl
+08. Ichorcloth Robe
+09. Ichorcloth Leggings
 10. Ichorcloth Boots
 11. Cowl of the Abyssal Depths
 12. Robes of the Stratosphere
@@ -62,30 +62,38 @@ This mod requires Thaumcraft 6
 17. Adventure's Coin
 18. Bloodstained Coin
 19. Magic Coin
-20. Ender Fragment
-21. Nether Fragment
+20. Ender Shard
+21. Nether Shard
 22. Ichor
 23. Ichor Cloth
 24. Ichorium Ingot
-25. Warp Cleaning Charm
+25. Cleansing Amulet
 26. Nether Swart
 27. Nether Cake
 28. Awakened Ichorium Pickaxe
 29. Awakened Ichorium Shovel
 30. Awakened Ichorium Axe
-31. Morph Pickaxe
-32. Morph Sword
-33. Morph Shovel
-34. Morph Axe
-35. Distortion Pickaxe
-36. Riding Crop
-37. Runic Ring
-38. Runic Amulet
-39. Runic Girdle
-40. Runic Water Ring
-41. Runic Earth Amulet
-42. Runic Air Girdle
-43. Ichorcloth Pouch (unfinished)
+31. Awakened Ichorium Sword
+32. Chamelic Pickaxe
+33. Chamelic Sword
+34. Chamelic Shovel
+35. Chamelic Axe
+36. Distortion Pickaxe
+37. Riding Crop
+38. Runic Ring
+39. Runic Amulet
+40. Runic Girdle
+41. Runic Water Ring
+42. Runic Earth Amulet
+43. Runic Air Girdle
+44. Ichorcloth Pouch (unfinished)
+45. Bedrock World Portal
+46. Thaumic Disassembler
+47. Shadow Fortress Helm
+48. Shadow Fortress Chest
+49. Shadow Fortress Legs
+50. Shadow Metal Ingot
+51. Shadow Metal Nugget
 
 ### Dimensions
 

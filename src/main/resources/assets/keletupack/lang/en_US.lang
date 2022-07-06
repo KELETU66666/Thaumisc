@@ -1,3 +1,20 @@
+# Special formatting codes:
+# <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
+# <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
+# <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
+# <PAGE> or <PAGE/>     Skip to a new page.
+# <IMG>...</IMG>  Insert a centered image into text. Parameters are separated by ':' and are:
+#                    - mod resource location name
+#                    - png file location (assumed to be a 256x256 texture, a sub-image will be grabbed from this png as specified below)
+#                    - x location of sub-image in png
+#                    - y location of sub-image in png
+#                    - x size of sub-image (255 if full x size of png must be used)
+#                    - y size of sub-image (255 if full y size of png must be used)
+#                    - scaling - 1.0 for normal 256x256 images, or smaller for proportionately smaller .png files (a 16x16 image will be 0.0625)
+#               Examples:
+#                   <IMG>thaumcraft:textures/gui/gui_researchbook.png:24:184:96:4:1.0</IMG>   <-- line break image as used in <LINE> above
+#                   <IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>     <-- alumentum item icon
+
 #Language
 
 language.name=English
@@ -186,7 +203,7 @@ keletupack.research.shadow_metal.title=Shadow Metal
 keletupack.research.shadow_metal.text=Some scraps from the Fourth Age speak of a Metal as dark and resilient as Shadows themselves, an intriguing prospect, and likely not difficult to replicate, especially with Void Metal available to use as a base.
 keletupack.research.shadow_metal.complete.text=Well, it's not difficult to discover how to replicate this metal, but certainly annoying, costly, and unexpected.<BR>This metal, despite being similar to Void Metal in concept, has no direct relations to it at all, infact, it can only be made by infusing Iron with large amounts of Metallum and Tenebrae, and it takes a lot just to form a single Ingot of this Metal, partially because infusing the entire Ingot at once is simply too much Essentia for most things to handle, so it must be done with individual Nuggets instead.
 
-keletupack.research.arcane_disassembler.title=Thaumic Diassembler
+keletupack.research.arcane_disassembler.title=Thaumic Disassembler
 keletupack.research.arcane_disassembler.text=Those who dabble in the Mechanical and Technical arts have heard of a tool called the Atomic Disassembler, a potent Multitool which is often affordable, and very effective, but i'm no Technological fool... Well, maybe that's a lie.<BR>However, replicating such a tool with Thaumaturgy sounds like an interesting prospect, although, it may not be quite as affordable, but atleast it will be fun to show off to impress your "friends", and perhaps slaughter them with.
 keletupack.research.arcane_disassembler.complete.text=It seems several Fourth Age Thaumaturges had a similar ambition to mine, scraps of Research from them were useful in speeding up the discovery of concepts behind this Tool.<BR>Much like its Technological counterpart, it has different Speed settings which can be cycled at whim, and runs on Energy, with the Energy for it being of course, Vis.
 
