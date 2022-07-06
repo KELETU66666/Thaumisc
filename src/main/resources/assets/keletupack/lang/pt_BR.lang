@@ -99,7 +99,7 @@ keletupack.research.thaumisc.title=Miscelânea Taúmica
 keletupack.research.thaumisc.text=Alguns rescunhos de Pesquisas deixadas de lado por antigos Taumaturgos ainda restaram nesse mundo, supostamente, e contêm coisas que parecem estar relacionadas a itens que não foram replicados por esses Taumaturgos que tentaram desvendá-los.<BR>Apesar disso, nada do único dentre os mais famosos Taumaturgos da Quarta Era, conhecido apenas como "O Pioneiro" pelos outros, restou, eles parecem ter simplesmente desaparecido, junto com o próprio conhecimento...
 keletupack.research.thaumisc.complete.text=A Pesquisa do Pioneiro foi abaladora, e atraiu muitos outros para o campo da Taumaturgia, entretanto, quando desapareceram, o interesse parece caído drasticamente, como isso aconteceu?<BR>Independentemente do destino do Pioneiro, eu descobri alguns desses rascunhos através de outros Taumaturgos, embora alguns deles façam sentido para mim só agora, pode ser que conforme eu explore campos diversos da Taumaturgia, eles farão mais sentido.<BR>Eu vou chamar essa seção do meu Thaumonomicon de "Miscelânea Taúmica", ou simplesmente "Taumistura", soa legal assim.
 
-##### Everything below this line is not translated properly yet #####
+##### Every research text below this line is not translated properly yet #####
 
 ##Kami
 keletupack.research.dimensionalshard.title=Lascas Dimensionais
@@ -236,3 +236,6 @@ tip.awakenaxe.name2=Modo Árvore
 tip.awakensword.name0=Modo Único
 tip.awakensword.name1=Modo Área
 tip.awakensword.name2=Modo Alma
+
+tip.awakenarmor.name0=Despertada
+tip.awakenarmor.name1=Dormente
