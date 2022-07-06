@@ -96,8 +96,10 @@ item.shadow_nugget.name=Pepita de Metal Sombrio
 #Research
 
 keletupack.research.thaumisc.title=Miscelânea Taúmica
-keletupack.research.thaumisc.text=Some scraps of Research tossed aside by old Thaumaturges still remain in the world, supposedly, and contain things which seem to relate to items that have not been replicated these Thaumaturges tried to uncover them.<BR>Despite all this, nothing from one of the most famous Thaumaturges of the Fourth Age, known only as "The Pioneer" to others, remains, they seem to have just spontaneously vanished, along with all of their knowledge...
-keletupack.research.thaumisc.complete.text=The Research of The Pioneer was groundbreaking, and pushed many more into the field of Thaumaturgy, although, when they disappeared, interest seemed to drop sharply, how did this come to be?<BR>Regardless of The Pioneer's fate, i have discovered some of these scraps from other Thaumaturges, though few of them make sense to me as of now, perhaps as i explore various fields of Thaumaturgy, these will make more sense.<BR>I'll dub this section of my Thaumonomicon "Thaumic Miscellanea", or "Thaumisc" for short, rolls off the tounge nicely.
+keletupack.research.thaumisc.text=Alguns rescunhos de Pesquisas deixadas de lado por antigos Taumaturgos ainda restaram nesse mundo, supostamente, e contêm coisas que parecem estar relacionadas a itens que não foram replicados por esses Taumaturgos que tentaram desvendá-los.<BR>Apesar disso, nada do único dentre os mais famosos Taumaturgos da Quarta Era, conhecido apenas como "O Pioneiro" pelos outros, restou, eles parecem ter simplesmente desaparecido, junto com o próprio conhecimento...
+keletupack.research.thaumisc.complete.text=A Pesquisa do Pioneiro foi abaladora, e atraiu muitos outros para o campo da Taumaturgia, entretanto, quando desapareceram, o interesse parece caído drasticamente, como isso aconteceu?<BR>Independentemente do destino do Pioneiro, eu descobri alguns desses rascunhos através de outros Taumaturgos, embora alguns deles façam sentido para mim só agora, pode ser que conforme eu explore campos diversos da Taumaturgia, eles farão mais sentido.<BR>Eu vou chamar essa seção do meu Thaumonomicon de "Miscelânea Taúmica", ou simplesmente "Taumistura", soa legal assim.
+
+##### Everything below this line is not translated properly yet #####
 
 ##Kami
 keletupack.research.dimensionalshard.title=Lascas Dimensionais
