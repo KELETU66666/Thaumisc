@@ -87,9 +87,9 @@ item.runic_girdle_air.name=Cinturão Rúnico da Cinética
 item.runic_amulet_earth.name=Amuleto Rúnico das Barreiras
 
 item.arcane_disassembler.name=Desmontador Taúmico
-item.shadow_fortress_helm.name=Capacete Fortaleza de Metal Sombrio
-item.shadow_fortress_chest.name=Peitoral Fortaleza de Metal Sombrio
-item.shadow_fortress_legs.name=Calças Fortaleza de Metal Sombrio
+item.shadow_fortress_helm.name=Capacete Fortaleza Sombrio
+item.shadow_fortress_chest.name=Peitoral Fortaleza Sombrio
+item.shadow_fortress_legs.name=Calça Fortaleza Sombria
 item.shadow_ingot.name=Barra de Metal Sombrio
 item.shadow_nugget.name=Pepita de Metal Sombrio
 
