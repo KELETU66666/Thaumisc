@@ -204,10 +204,33 @@ keletupack.research.shadow_metal.title=Shadow Metal
 keletupack.research.shadow_metal.text=TEST
 keletupack.research.shadow_metal.complete.text=TEST
 
-keletupack.research.shadow_armor.title=Shadow Aromr
+keletupack.research.shadow_armor.title=Shadow Armor
 keletupack.research.shadow_armor.text=TEST
 keletupack.research.shadow_armor.complete.text=TEST
 
 keletupack.research.arcane_disassembler.title=Arcane Disassembler
 keletupack.research.arcane_disassembler.text=TEST
 keletupack.research.arcane_disassembler.complete.text=TEST
+
+#Tool Mode
+
+tip.admode.name0=Parada
+tip.admode.name1=Velocidade Média
+tip.admode.name2=Velocidade Lenta
+tip.admode.name3=Velocidade Rápida
+
+tip.awakenpick.name0=Modo Bloco
+tip.awakenpick.name1=Modo Quadrado
+tip.awakenpick.name2=Modo Linha
+
+tip.awakenshovel.name0=Modo Bloco
+tip.awakenshovel.name1=Modo Quadrado
+tip.awakenshovel.name2=Modo Coluna
+
+tip.awakenaxe.name0=Modo Bloco
+tip.awakenaxe.name1=Modo Quadrado
+tip.awakenaxe.name2=Modo Árvore
+
+tip.awakensword.name0=Modo Único
+tip.awakensword.name1=Modo Área
+tip.awakensword.name2=Modo Alma
