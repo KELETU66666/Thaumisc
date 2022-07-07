@@ -1,5 +1,6 @@
 package keletu.keletupack.init;
 
+import keletu.keletupack.items.LootBagCrystal;
 import keletu.keletupack.items.NetherCake;
 import keletu.keletupack.items.armor.IchorArmor;
 import keletu.keletupack.items.armor.KamiArmor;
@@ -57,5 +58,4 @@ public class ModItems {
     public static final Item ShadowChest = new ShadowArmor("shadow_fortress_chest", SHADOW_FORTRESS, 1, EntityEquipmentSlot.CHEST);
     public static final Item ShadowLegs = new ShadowArmor("shadow_fortress_legs", SHADOW_FORTRESS, 1, EntityEquipmentSlot.LEGS);
     public static final Item.ToolMaterial TOOL_SHADOW = EnumHelper.addToolMaterial("SHADOW", 3, 2500, 17.0F, 6.0F, 30);
-
 }

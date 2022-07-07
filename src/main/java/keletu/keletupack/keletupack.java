@@ -2,6 +2,7 @@ package keletu.keletupack;
 
 import keletu.keletupack.init.*;
 import keletu.keletupack.loot.LootTableHandler;
+import keletu.keletupack.event.EntityDropEventTW;
 import keletu.keletupack.proxy.CommonProxy;
 import keletu.keletupack.util.Reference;
 import net.minecraft.block.Block;

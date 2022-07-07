@@ -46,4 +46,5 @@ public class ItemsKP {
     public static final Item RUNIC_AMULET_EARTH = new RunicAmuletEarth();
     public static final Item SHADOW_INGOT = new ShadowIngot();
     public static final Item SHADOW_NUGGET = new ShadowNugget();
+    public static final Item LOOT_BAG_CRYSTAL = null;
 }

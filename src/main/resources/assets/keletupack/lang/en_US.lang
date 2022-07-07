@@ -236,3 +236,7 @@ tip.awakensword.name2=Soul Mode
 
 tip.awakenarmor.name0=Awaken
 tip.awakenarmor.name1=Dormancy
+
+#compat
+
+item.loot_bag_crystal=Crystal Treasure Bag

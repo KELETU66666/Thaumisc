@@ -6,11 +6,13 @@ import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.*;
 import keletu.keletupack.items.baubles.*;
+import keletu.keletupack.keletupack;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import thaumcraft.api.aspects.Aspect;
@@ -44,6 +46,9 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicAmuletEarth());
         event.getRegistry().registerAll(new ShadowIngot());
         event.getRegistry().registerAll(new ShadowNugget());
+        if(Loader.isModLoaded("thaumadditions") && Loader.isModLoaded("thaumicwonders")){
+            event.getRegistry().registerAll(new LootBagCrystal("loot_bag_crystal", keletupack.ITEM_TAB));
+        }
     }
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
@@ -54,6 +59,11 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onModelRegister( ModelRegistryEvent event )
     {
+        for ( Item item : ModItems.ITEMS ) {
+            if (item instanceof IHasModel) {
+                ((IHasModel) item).registerModels();
+            }
+        }
         for ( Item item : ModItems.ITEMS ) {
             if (item instanceof IHasModel) {
                 ((IHasModel) item).registerModels();
