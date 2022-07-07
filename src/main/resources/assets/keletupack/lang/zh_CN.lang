@@ -1,3 +1,20 @@
+# Special formatting codes:
+# <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
+# <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
+# <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
+# <PAGE> or <PAGE/>     Skip to a new page.
+# <IMG>...</IMG>  Insert a centered image into text. Parameters are separated by ':' and are:
+#                    - mod resource location name
+#                    - png file location (assumed to be a 256x256 texture, a sub-image will be grabbed from this png as specified below)
+#                    - x location of sub-image in png
+#                    - y location of sub-image in png
+#                    - x size of sub-image (255 if full x size of png must be used)
+#                    - y size of sub-image (255 if full y size of png must be used)
+#                    - scaling - 1.0 for normal 256x256 images, or smaller for proportionately smaller .png files (a 16x16 image will be 0.0625)
+#               Examples:
+#                   <IMG>thaumcraft:textures/gui/gui_researchbook.png:24:184:96:4:1.0</IMG>   <-- line break image as used in <LINE> above
+#                   <IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>     <-- alumentum item icon
+
 #Language
 
 language.name=中文
@@ -35,7 +52,6 @@ item.ichorium_axe_adv.name=觉醒灵宝斧
 item.ichorium_shovel_adv.name=觉醒灵宝铲
 item.ichorium_sword_adv.name=觉醒灵宝剑
 
-
 item.morph_sword.name=避役剑
 item.morph_pick.name=避役镐
 item.morph_axe.name=避役斧
@@ -46,7 +62,7 @@ item.riding_crop.name=马鞭
 tile.ichor_block.name=灵液块
 tile.bedrock_portal.name=基岩世界传送门
 item.warp_paper.name=奥术石蕊试纸
-warp.paper=当前扭曲为: 
+warp.paper=当前扭曲为:
 
 item.coin_witchery.name=巫师币
 item.coin_adventure.name=探险家币
@@ -70,19 +86,26 @@ item.runic_ring_water.name=再生符文护盾指环
 item.runic_girdle_air.name=冲击符文护盾腰带
 item.runic_amulet_earth.name=应急护盾护身符
 
+item.arcane_disassembler.name=奥术分解机
+item.shadow_fortress_helm.name=暗影要塞兜鍪
+item.shadow_fortress_chest.name=暗影要塞胸铠
+item.shadow_fortress_legs.name=暗影要塞护腿
+item.shadow_ingot.name=暗影锭
+item.shadow_nugget.name=暗影粒
 #Research
 
 keletupack.research.thaumisc.title=神秘杂项学
 keletupack.research.thaumisc.text=在翻阅遗迹之下的古老书籍之时,偶然间瞥见上面描绘着一些奇怪的物品.似乎这正是操纵节点的那群老家伙们念念不忘的工具?<BR>是时候进行一些平行研究了.
-keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神秘杂项学.或者简称为"杂项学"
+keletupack.research.thaumisc.complete.text=我将这些相关课题命名为神秘杂项学.或者简称为"杂项学"<BR><LINE><BR>马鞭是一种比较实用的工具,在骑乘坐骑的时候,可以拿着马鞭右键轻轻抽打坐骑,让坐骑获得一小段时间的加速.<BR>当然,也可以对别人使用.<BR><LINE><BR>地狱蛋糕则是下界版的蛋糕,原料更加节省,可惜的是不能放下.但是在下界漫长的旅途之中,随身携带一块大蛋糕也未尝不可呢.
 
+##Thaumic Tinkerer
 keletupack.research.dimensionalshard.title=次元裂痕
 keletupack.research.dimensionalshard.text=“山重水复疑无路,柳暗花明又一村”<BR>当我做完了全部的研究,感觉走到了世界的尽头时,魔导手册仿佛奇迹般地多出了一页...这个神秘页面的出现也就意味着又一条新的道路为我开放...<BR> 魔导手册指引我,要去地狱和末地逛一逛,也许我能发现一些不太一样的魔力水晶碎片?先要想办法凑齐它们...
-keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG>  
+keletupack.research.dimensionalshard.complete.text=正如书上所写,下界与末地有一些...无法从主世界得到的水晶碎片,它们分别代表着地狱的与末地的...一片空间...<BR>它们目前来说并没有什么用,我要继续深入研究下去...<BR><BR><IMG>keletupack:textures/items/shard_end.png:0:0:255:255:0.0625</IMG><IMG>keletupack:textures/items/shard_nether.png:0:0:255:255:0.0625</IMG>
 
 keletupack.research.ichor.title=灵宝
 keletupack.research.ichor.text=这些碎片无疑蕴含着古老而强大的力量.将万亿众生的灵魂力量与亘古存在的无尽虚空结合,会产生什么呢?我隐约感觉我将会触碰到神的领域.
-keletupack.research.ichor.complete.text=是的!这就是神之血!<BR>我还原了那群拿着法杖过时的老家伙们提起的神之血!<BR>这种液体有着惊人的魔法传导性,内部蕴含着觉醒之力,它将会被广泛应用于不计其数的设备. 
+keletupack.research.ichor.complete.text=是的!这就是神之血!<BR>我还原了那群拿着法杖过时的老家伙们提起的神之血!<BR>这种液体有着惊人的魔法传导性,内部蕴含着觉醒之力,它将会被广泛应用于不计其数的设备.
 
 keletupack.research.ichoriumtools.title=灵宝工具
 keletupack.research.ichoriumtools.text=通过多次实验,灵液与世间常见的凡俗材料似乎有着天然的排斥性.神之血既然有着那么惊人的魔法传导性,我何不将其与神秘锭结合试试看会发现什么呢?
@@ -124,7 +147,7 @@ keletupack.research.kamiboots.title=地平线盾牌之靴
 keletupack.research.kamiboots.text=我使用龙驹汗血的珍宝,做了大量的实验,难道就是为了一件永不磨损的靴子?<BR>不!这绝对不是我想要的!
 keletupack.research.kamiboots.complete.text=通过一系列极端手段艰苦奋斗了几日,终于将其内部觉醒之潜力开发出来.<BR>新的靴子不仅让我无视一切掉落伤害,还能让我步伐矫健,甚至能轻易登上一格高的台阶.不仅如此,穿着靴子还能让走过的泥土焕发春意变成草地.
 
-##Thaumcraft 4 
+##Thaumcraft 4
 keletupack.research.thaumisc_tc4.title=古玩杂谈
 keletupack.research.thaumisc_tc4.text=虽然我经常未经许可的进入古时的遗迹,并且出于文物保护性的目的顺走一些奇妙的小玩意,但我发誓我的行为是出于神秘学的学术研究的伟大而神圣的目的.<BR>所以我更希望你们称呼我为...神秘考古学家!
 keletupack.research.thaumisc_tc4.complete.text=遗迹的主人已经变成了僵尸和骷髅,他们发现了我前来保护他们的物品的时候,很显然非常的生气.这些脑子已经腐朽的鼠目寸光的家伙肯定不会知道他们的物品蕴含着无数的学术研究价值.<BR>是时候把这桩生意...额,我是说研究课题正规化了!
@@ -174,3 +197,42 @@ keletupack.research.morph_tools.complete.text=太美妙啦!这可太禁忌啦!�
 keletupack.research.distortionpick.title=畸变镐
 keletupack.research.distortionpick.text=黑曜石的末日!<BR>虽然书上是这么记载的,但我总觉得有些难以想象,难道要用基岩做?
 keletupack.research.distortionpick.complete.text=通过注入腐化这种颠覆自然的魔力,我成功复刻出了这个神奇的工具!<BR>这也是把违反常规的镐子:这似乎与硬度系数有关,采掘硬的方块会更快,而采掘软的东西会很慢.<BR>基岩?哈哈,不可能的.
+
+##Tainted Magic
+keletupack.research.shadow_metal.title=暗影金属
+keletupack.research.shadow_metal.text=很久以前,我在坩埚里面煮一锅沸腾的源质汤的时候,不小心掉进去了一个金属粒,似乎发生了一些奇妙的反应.现在看来,应该是有些用处的,我看看能不能重现这个配方.
+keletupack.research.shadow_metal.complete.text=经过我的研究发现,这种黑暗与金属源质浓缩的金属粒具有相当奇怪的特性.用它们做成的金属锭硬度很高,在使用之前,很有必要做一些深刻的研究.<BR>将耳朵靠近金属锭,仔细聆听,似乎听到一种沉闷的、难以理解的低语从这种奇怪的物质中传出.真诡异...
+
+keletupack.research.shadow_armor.title=暗影要塞甲胄
+keletupack.research.shadow_armor.text=在选用神秘要塞甲胄之后,我不禁想要尝试如果使用暗影金属来做的话,效果会怎么样.不过说实话,手里拿着暗影金属,总觉得有一种诡异的感觉.<BR>比虚空锭还要诡异.
+keletupack.research.shadow_armor.complete.text=这将是终极套装?<BR>虽然这套盔甲没有继承虚空装备的自动修复的能力,但它的保护能力远超过了神秘要塞甲胄.而且耐久度也极大地提升了.<BR>这个甲胄使我免疫火焰与中毒伤害,并对瞬间伤害和凋零DEBUFF有明显的减免效果.<BR>和神秘要塞甲胄一样,每多穿戴一件这种装备的部件,就会提升其他部件的保护效果,外观造型也会变得更加炫酷.<BR>谁又在意那一点点扭曲呢?
+
+keletupack.research.arcane_disassembler.title=奥术分解机
+keletupack.research.arcane_disassembler.text=据传言,在旁边的科技世界里,那群魔法麻瓜操纵着一个叫原子分解机的工具.这种完美的工具可以使用一点点能量以无可挑剔的精确度来雕凿世界.<BR>了解到这些,说实话我有些嫉妒.但我作为一个高贵的神秘使是不会探足于麻瓜的领域的.<BR>我要用魔法的力量重现这个工具!
+keletupack.research.arcane_disassembler.complete.text=研究成功了!这确实是个伟大的工具.它的攻击伤害足有20点,潜行右键也可以改变挖掘速度.几乎可以当作万用工具来使用(确信).<BR>更美妙的是它使用灵气来供给充能.而灵气几乎无处不在!
+
+#Tool Mode
+
+tip.admode.name0=待机模式
+tip.admode.name1=中速模式
+tip.admode.name2=低速模式
+tip.admode.name3=高速模式
+
+tip.awakenpick.name0=方块模式
+tip.awakenpick.name1=范围模式
+tip.awakenpick.name2=线性模式
+
+tip.awakenshovel.name0=方块模式
+tip.awakenshovel.name1=范围模式
+tip.awakenshovel.name2=柱状模式
+
+tip.awakenaxe.name0=方块模式
+tip.awakenaxe.name1=范围模式
+tip.awakenaxe.name2=伐木模式
+
+tip.awakensword.name0=单杀模式
+tip.awakensword.name1=群杀模式
+tip.awakensword.name2=狩魂模式
+
+tip.awakenarmor.name0=觉醒
+tip.awakenarmor.name1=休眠

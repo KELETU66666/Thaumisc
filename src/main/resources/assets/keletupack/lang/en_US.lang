@@ -1,3 +1,20 @@
+# Special formatting codes:
+# <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
+# <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
+# <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
+# <PAGE> or <PAGE/>     Skip to a new page.
+# <IMG>...</IMG>  Insert a centered image into text. Parameters are separated by ':' and are:
+#                    - mod resource location name
+#                    - png file location (assumed to be a 256x256 texture, a sub-image will be grabbed from this png as specified below)
+#                    - x location of sub-image in png
+#                    - y location of sub-image in png
+#                    - x size of sub-image (255 if full x size of png must be used)
+#                    - y size of sub-image (255 if full y size of png must be used)
+#                    - scaling - 1.0 for normal 256x256 images, or smaller for proportionately smaller .png files (a 16x16 image will be 0.0625)
+#               Examples:
+#                   <IMG>thaumcraft:textures/gui/gui_researchbook.png:24:184:96:4:1.0</IMG>   <-- line break image as used in <LINE> above
+#                   <IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>     <-- alumentum item icon
+
 #Language
 
 language.name=English
@@ -11,7 +28,7 @@ tc.research_category.THAUMISC=Thaumisc
 
 #Items
 
-item.taint_meat.name=Taint Meat
+item.taint_meat.name=Tainted Amalgam
 item.nether_cake.name=Nether Cake
 item.nether_swart.name=Nether Swart
 
@@ -28,24 +45,24 @@ item.ichor_boots.name=Ichorcloth Boots
 item.kami_helm.name=Cowl of the Abyssal Depths
 item.kami_chest.name=Robes of the Stratosphere
 item.kami_legs.name=Leggings of the Burning Mantle
-item.kami_boots.name=Boots of the Horizon Shield
+item.kami_boots.name=Boots of the Horizontal Shield
 
-item.ichorium_pick_adv.name=Ichorium Pick Awakened
-item.ichorium_axe_adv.name=Ichorium Axe Awakened
-item.ichorium_shovel_adv.name=Ichorium Shovel Awakened
-item.ichorium_sword_adv.name=Ichorium Sword Awakened
+item.ichorium_pick_adv.name=Awakened Ichorium Pick
+item.ichorium_axe_adv.name=Awakened Ichorium Axe
+item.ichorium_shovel_adv.name=Awakened Ichorium Shovel
+item.ichorium_sword_adv.name=Awakened Ichorium Sword
 
-item.morph_sword.name=Morph Sword
-item.morph_pick.name=Morph Pickaxe
-item.morph_axe.name=Morph Axe
-item.morph_shovel.name=Morph Shovel
+item.morph_sword.name=Chamelic Sword
+item.morph_pick.name=Chamelic Pickaxe
+item.morph_axe.name=Chamelic Axe
+item.morph_shovel.name=Chamelic Shovel
 
 item.distortion_pick.name=Pickaxe of Distortion
 item.riding_crop.name=Riding Crop
 tile.ichor_block.name=Ichor Block
-tile.bedrock_portal.name=Bedrock World Portal
+tile.bedrock_portal.name=Bedrock Portal
 item.warp_paper.name=Arcane Litmus Paper
-warp.paper=Now your Warp is: 
+warp.paper=Warp: 
 
 item.coin_witchery.name=Wizard's Coin
 item.coin_adventure.name=Adventure's Coin
@@ -60,112 +77,162 @@ item.ichor_cloth.name=Ichor Cloth
 item.ichor_ingot.name=Ichorium Ingot
 item.ichor_pouch.name=Ichorcloth Pouch
 
-item.cleansing_amulet.name=Warp Cleaning Charm
+item.cleansing_amulet.name=Cleansing Amulet
 
 item.runic_ring.name=Runic Ring
 item.runic_girdle.name=Runic Girdle
 item.runic_amulet.name=Runic Amulet
-item.runic_ring_water.name=Runic Water Ring
-item.runic_girdle_air.name=Runic Air Girdle
-item.runic_amulet_earth.name=Runic Earth Amulet
+item.runic_ring_water.name=Runic Ring of Recovery
+item.runic_girdle_air.name=Runic Girdle of Kinesis
+item.runic_amulet_earth.name=Runic Amulet of Barriers
 
+item.arcane_disassembler.name=Thaumic Disassembler
+item.shadow_fortress_helm.name=Shadow Fortress Helm
+item.shadow_fortress_chest.name=Shadow Fortress Chest
+item.shadow_fortress_legs.name=Shadow Fortress Legs
+item.shadow_ingot.name=Shadow Metal Ingot
+item.shadow_nugget.name=Shadow Metal Nugget
 #Research
 
 keletupack.research.thaumisc.title=Thaumic Miscellaneous
-keletupack.research.thaumisc.text=Well, I see that there're some things that will need parallel research for themselves...
-keletupack.research.thaumisc.complete.text=I'm calling this group as Thaumic Miscellaneous or Thaumisc for short.
+keletupack.research.thaumisc.text=Some scraps of Research tossed aside by old Thaumaturges still remain in the world, supposedly, and contain things which seem to relate to items that have not been replicated these Thaumaturges tried to uncover them.<BR>Despite all this, nothing from one of the most famous Thaumaturges of the Fourth Age, known only as "The Pioneer" to others, remains, they seem to have just spontaneously vanished, along with all of their knowledge...
+keletupack.research.thaumisc.complete.text=The Research of The Pioneer was groundbreaking, and pushed many more into the field of Thaumaturgy, although, when they disappeared, interest seemed to drop sharply, how did this come to be?<BR>Regardless of The Pioneer's fate, i have discovered some of these scraps from other Thaumaturges, though few of them make sense to me as of now, perhaps as i explore various fields of Thaumaturgy, these will make more sense.<BR>I'll dub this section of my Thaumonomicon "Thaumic Miscellanea", or "Thaumisc" for short, rolls off the tounge nicely.
 
+##Kami
 keletupack.research.dimensionalshard.title=Dimensional Shards
-keletupack.research.dimensionalshard.text=(waiting english translation...)
-keletupack.research.dimensionalshard.complete.text=(waiting english translation...)
+keletupack.research.dimensionalshard.text=Thaumaturges of the Fourth Age spoke of a mythical substance called "Ichor", able to forge some of the most powerful Tools and Armor available to any Thaumaturge who could manage to create it.<BR>I had thought this process was impossible to replicate, until i discovered that whatever Dimensional Shards were being described in the scraps of Research i found seem to still exist. Supposedly, they suddenly stopped coalescing for Thaumaturges late into the Fourth Age, and yet, somehow, they have returned in modern times...<BR>I should gather a sample of these Shards to see if Ichor can be replicated nowadays.
+keletupack.research.dimensionalshard.complete.text=The prospect of creating this mythical "Ichor" is promising and seems possible, but i am not sure how i can replicate it as of yet, such will require further Research.<BR>These Dimensional Shards may also have other applications, though there was nothing that the Fourth Age scraps described, Fourth Age Thaumaturges were likely too fixated on Ichor.
 
-keletupack.research.ichor.title=The Forbidden Substance - Ichor
-keletupack.research.ichor.text=I'm taking note of this just because a lot of thaumaturgists mentioned this along their researches. The idea of some substance almost miraculous. Some of them even said that really did it.<BR>I've heard so much about this substance, but I don't believe it. Is something so optimistic but such a failure at the same time. If someone maneged to created Ichor somehow, then why they didn't take that secret for themselves?<BR>You know what? Challenge accepted. I gonna try it. I'm going to recreate every experiment I can from the old manuscripts. Let's see where these studies are going to lead me. Something with so many effort invested on, may give some useful knowledge at least.
-keletupack.research.ichor.complete.text=Now I understand their optimism. After studying everything about different dimensions' natures, I was surprised by thaumaturgy once more. I doubted that such a thing was possible.<BR>It was just a mith for me for a long time but it seems the thing called Ichor can be created after all. This brings me hope about my future plans. I wasn't expecting to actually perform such a feat, but here I have it now: The Ichor.
+keletupack.research.ichor.title=The Lost Substance - Ichor
+keletupack.research.ichor.text=I am getting closer to a theoretical means of creating Ichor, but i am not quite there, i must determine what the various fields of Thaumaturgy have to do with Ichor, incase there are important links i am missing, then, i must try my theoretical infusion, and hope for the best.
+keletupack.research.ichor.complete.text=It worked! I have sucessfully replicated Ichor! Though it doesn't appear quite the same as in the scraps at first, but can be easily solved by ripping it into chunks. With this substance now in my hands, it is time to push forward to rediscovering this supposedly potent arsenal.
 
 keletupack.research.ichoriumtools.title=Ichorium Tools
-keletupack.research.ichoriumtools.text=TEST
-keletupack.research.ichoriumtools.complete.text=TEST
+keletupack.research.ichoriumtools.text=Thaumaturges of the Fourth Age used an Alloy imbued with Ichor, called "Ichorium" as the basis for their powerful tools, i should create my own sample of this Alloy and investigate how to manipulate it.
+keletupack.research.ichoriumtools.complete.text=This Ichorium Alloy is quite simple, in theory, but quite costly to replicate in practice, regardless, Silverwood should be a sufficiently magical material to use as a Handle which conducts the power of Ichorium.<BR>Tools forged from this Alloy are practically undentable, and are very effective too, but is this really all they can offer...?
 
-keletupack.research.ichorium_pick_adv.title=The Ichorium Miner
-keletupack.research.ichorium_pick_adv.text=TEST
-keletupack.research.ichorium_pick_adv.complete.text=TEST
+keletupack.research.ichorium_sword_adv.title=Awakened Ichorium Sword
+keletupack.research.ichorium_sword_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Sword i have made.
+keletupack.research.ichorium_sword_adv.complete.text=It seems it is possible to empower the Sword, with this new power, it is capable of specialized "Modes" to make combat with many foes much easier.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Swords. The "Multi" Mode, indicated by the Gems being Red, will harm all creatures near the one that is struck with equal force. The "Shield" Mode, indicated by the Gems being Blue, will reduce the Damage of the sword, but allow it to grant me extra resilience in the form of a Barrier, which can be recharged by striking creatures.
 
-keletupack.research.ichorium_axe_adv.title=The Ichorium Chopper
-keletupack.research.ichorium_axe_adv.text=TEST
-keletupack.research.ichorium_axe_adv.complete.text=TEST
+keletupack.research.ichorium_pick_adv.title=Awakened Ichorium Pickaxe
+keletupack.research.ichorium_pick_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Pickaxe i have made.
+keletupack.research.ichorium_pick_adv.complete.text=It seems it is possible to empower the Pickaxe, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Pickaxes. The "Square" Mode, indicated by the Gems being Red, will be able to clear a 5x5 area by simply breaking the central block. And lastly, the "Line" Mode, indicated by the Gems being Blue, will clear out material towards where i mined, useful for creating small tunnels quickly.<BR>It also seems to be even more resilient than ever before, so resilient, it may match the toughness of Bedrock, i wonder what i can find beyond the Bedrock...
 
-keletupack.research.ichorium_shovel_adv.title=The Ichorium Digger
-keletupack.research.ichorium_shovel_adv.text=TEST
-keletupack.research.ichorium_shovel_adv.complete.text=TEST
+keletupack.research.ichorium_axe_adv.title=Awakened Ichorium Axe
+keletupack.research.ichorium_axe_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Axe i have made.
+keletupack.research.ichorium_axe_adv.complete.text=It seems it is possible to empower the Axe, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Axes. The "Square" Mode, indicated by the Gems being Red, will clear out 5x5 areas of material by simply breaking the central block. And lastly, the "Fell" Mode, indicated by the Gems being Blue, will chop entire Trees, and cause their Leaves to decay rapidly.
 
-keletupack.research.ichorarmor.title=Ichor Armor
-keletupack.research.ichorarmor.text=TEST
-keletupack.research.ichorarmor.complete.text=TEST
+keletupack.research.ichorium_shovel_adv.title=Awakened Ichorium Shovel
+keletupack.research.ichorium_shovel_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Shovel i have made.
+keletupack.research.ichorium_shovel_adv.complete.text=It seems it is possible to empower the Shovel, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Pickaxes. The "Square" Mode, indicated by the Gems being Red, will be able to clear a 5x5 area by simply breaking the central block. And lastly, the "Line" Mode, indicated by the Gems being Blue, will clear out material towards where i mined, useful for creating small tunnels quickly.
 
-keletupack.research.kamihelm.title=Divine Cowl
-keletupack.research.kamihelm.text=TEST
-keletupack.research.kamihelm.complete.text=TEST
+keletupack.research.ichorarmor.title=Ichorcloth Armor
+keletupack.research.ichorarmor.text=Infusing Enchanted Fabric with Ichor seems to be how Fourth Age Thaumaturges created Armor using Ichor. Clever.<BR>Replicating this Cloth myself should be a simple task.
+keletupack.research.ichorarmor.complete.text=It is indeed not a difficult process, just a costly one.<BR>It seems that the Enchanted Fabric is enough to support the magical energy of the Ichor, so i won't be needing any extra reagents, besides somes Diamonds to embellish the Fabric with.<BR>The Armor that can be forged out of this cloth is practically unable to be damaged, and offers great defenses, but is this really all it has to offer?
 
-keletupack.research.kamichest.title=Divine Robes
-keletupack.research.kamichest.text=TEST
-keletupack.research.kamichest.complete.text=TEST
+keletupack.research.kamihelm.title=Cowl of the Abyssal Depths
+keletupack.research.kamihelm.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Cowl.
+keletupack.research.kamihelm.complete.text=It seems to be possible to Infuse the Cowl with the aspect of Aqua, granting me the ability to breathe and see underwater, aswell as allowing me to recover my health at a steady pace regardless of how hungry i am.
 
-keletupack.research.kamilegs.title=Divine Leggings
-keletupack.research.kamilegs.text=TEST
-keletupack.research.kamilegs.complete.text=TEST
+keletupack.research.kamichest.title=Robes of the Stratosphere
+keletupack.research.kamichest.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Robes.
+keletupack.research.kamichest.complete.text=It seems to be possible to Infuse the Robe with the aspect of Aer, granting the power of Flight.
 
-keletupack.research.kamiboots.title=Divine Boots
-keletupack.research.kamiboots.text=TEST
-keletupack.research.kamiboots.complete.text=TEST
+keletupack.research.kamilegs.title=Leggings of the Mantle
+keletupack.research.kamilegs.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Legwear.
+keletupack.research.kamilegs.complete.text=It seems to be possible to Infuse the Leggings with the aspect of Ignis, granting me immunity to Fire, and drawing on the power of it to help heal my wounds.
+
+keletupack.research.kamiboots.title=Boots of the Horizontal Shield
+keletupack.research.kamiboots.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Boots.
+keletupack.research.kamiboots.complete.text=It seems to be possible to Infuse the Boots with the aspect of Terra, granting me improved speed and jumping, aswell as swifter Mining, and growing Grass atop any Dirt i walk on.
 
 ##Thaumcraft 4
 keletupack.research.thaumisc_tc4.title=Antique Miscellanea
-keletupack.research.thaumisc_tc4.text=TEST
-keletupack.research.thaumisc_tc4.complete.text=TEST
+keletupack.research.thaumisc_tc4.text=Thaumaturges of the Fourth Age had many strange differences to how they did things which modern Thaumaturges do, it may be worth peering into scraps of their work which remain to see if i can discover anything unheard of to me.
+keletupack.research.thaumisc_tc4.complete.text=Thaumaturges of the Fourth Age had many strange differences to how they did things which modern Thaumaturges do, it may be worth peering into scraps of their work which remain to see if i can discover anything unheard of to me.<BR>I shall keep record of anything like this i discover near this section.
 
 keletupack.research.runic_baubles.title=Runic Baubles
-keletupack.research.runic_baubles.text=TEST
-keletupack.research.runic_baubles.complete.text=TEST
+keletupack.research.runic_baubles.text=In the Fourth Age, Thaumaturges were said to use Baubles which granted them Runic protection against attacks - No doubt, this is akin to the Runic Shielding i have discovered.<BR>According to ancient notes, these Baubles would grant the wearer a substantial amount of Shielding, why old Thaumaturges preferred these specialized Baubles over enchanting their Armor and other Baubles with Shielding, however, is beyond me.<BR>Regardless of this information, i should see if i can replicate these Baubles, as it may grant me a cheaper means of amassing Runic Shielding.
+keletupack.research.runic_baubles.complete.text=It was far easier than i had imagined, simply enchanting mundane Baubles with a process similar to regular Shielding - albiet, with additional ingredients, gets me the result i desired.<BR>I have also discovered additional notes about versions of some of these Baubles which are attuned to particular Aspects, i should see if i can also replicate them.
 
-keletupack.research.runic_baubles_terra.title=Terra Baubles
-keletupack.research.runic_baubles_terra.text=TEST
-keletupack.research.runic_baubles_terra.complete.text=TEST
+keletupack.research.runic_baubles_terra.title=Runic Amulet of Barriers
+keletupack.research.runic_baubles_terra.text=I have found scraps of Research which mention an augmented Runic Amulet, which could instantly restore some of the wearer's Shielding when it fell, this should be replicable with my practices.
+keletupack.research.runic_baubles_terra.complete.text=Indeed it is! This Amulet will instantly restore my Runic Shielding by 8 points when it falls, though it will be unable to do so for a while after, as it must accumulate Vis.
 
-keletupack.research.runic_baubles_aer.title=Aer Baubles
-keletupack.research.runic_baubles_aer.text=TEST
-keletupack.research.runic_baubles_aer.complete.text=TEST
+keletupack.research.runic_baubles_aer.title=Runic Girdle of Kinesis
+keletupack.research.runic_baubles_aer.text=I have found scraps of Research which mention an augmented Runic Girdle, which could send opponents flying when the wearer's Shielding fell, this should be replicable with my practices.
+keletupack.research.runic_baubles_aer.complete.text=It is replicable! When my Runic Shielding falls, this Girdle will send any nearby creatures away from my position, thought it will be unable to activate again for a while after doing such.
 
-keletupack.research.runic_baubles_aqua.title=Aqua Baubles
-keletupack.research.runic_baubles_aqua.text=TEST
-keletupack.research.runic_baubles_aqua.complete.text=TEST
+keletupack.research.runic_baubles_aqua.title=Runic Ring of Recovery
+keletupack.research.runic_baubles_aqua.text=I have found scraps of Research which mention an augmented Runic Ring, which would infuse the wearer with Regenerative power when their Shielding fell, this should be replicable with my practices.
+keletupack.research.runic_baubles_aqua.complete.text=It is infact, replicable! When my Runic Shielding falls, this Ring will grant a pulse of Regenerative power to me, though it will be unable to grant it again for a while after it activates.
 
 ##Warp Theory
-keletupack.research.thaumisc_warptheory.title=Warp Studies
-keletupack.research.thaumisc_warptheory.text=TEST
-keletupack.research.thaumisc_warptheory.complete.text=TEST
+keletupack.research.thaumisc_warptheory.title=Warpology
+keletupack.research.thaumisc_warptheory.text=This madness that has begun afflicting me, Warp, as i have dubbed it, may be bothersome in the future, i should consider looking into ways of getting rid of or tracking it.
+keletupack.research.thaumisc_warptheory.complete.text=It seems some scraps of information of items related to madness have survived from the Fourth Age, i shall record any discoveries i make on replicating these items near this section.
 
-keletupack.research.warppaper.title=Warp Revealer
-keletupack.research.warppaper.text=At fist, I wasn't a big deal, but now it's serious business. This Warp makes me get sick over and over again. As I continue to study thaumaturgy, sometimes I can feel the Warp inside me, almost like a parasite draining me completely.<BR>Or worse. I've the feeling of being tortured by this. It's good that some of it goes away as time passes and not so terrible that I can bathe myself hardly with some Sanitizing Soap to get rid of it. It sucks sometimes.<BR>I think is better to find a way to know how much Warp I have, then I can take care of myself to don't let Warp get up to critical levels. Let's see what I can do, because I can't handle this anymore.
-keletupack.research.warppaper.complete.text=What a smart piece of paper! Salis Mundus itself was enough to make this possible. I just take some paper and Salis Mundus together and... BAHDAHM! I have something that allows me to see exactly how much Warp is concentrated in my body.<BR>All I need to do is rub the Arcane Litmus Paper against my skin. Strange how Warp flow through my body but most of the time, just my mind or my vision are affected. This makes me thing that Warp really tends to concentrate more in the head. Maybe I should rub this new paper against my face to be more efficient.<BR>The paper gets stained when is used and analysing the stain I can tell how bad the things are going to be for me, but it can't be used again because of how fast it turns to ashes. Even if it didn't, it wouldn't help. Knowing how much Warp I have that helps.<BR>It would help too if I can avoid those Eldritch Guardians. They can give Warp so easily that they can turn all my efforts useless. As I said, it's like some entity is mad with me and brings those Eldritch Guardians to me. This is the most disturbing thing about Warp.<BR>I fear no man... but that thing... it scares me.
+keletupack.research.warppaper.title=Arcane Litmus Paper
+keletupack.research.warppaper.text=Sometimes, a Sanity Checker is just too imprecise, especially when my Warp levels are greater than what it was designed to handle, perhaps i can invent some more precise device?
+keletupack.research.warppaper.complete.text=Making anything reusable to measure Warp in higher amounts seems to be difficult, Warp is a powerful force that can overwhelm all manner of things designed to tinker with it, so it seems i will have to go with one of my earliest, yet most wasteful solutions...<BR>Arcane Litmus Paper, as i have dubbed it, is based on scraps from some Fourth Age Thaumturges, who supposedly discovered it. This Paper, when contacting an appropriate part of my body, will react depending on how much Warp i have, with the reaction being more violent the greater the amount, to a destructive point for the paper, thanks to overwhelming force of Warp.<BR>This will grant me a means of quantifying Warp at larger amounts, depending on the violence of the reaction, it may not be the most useful to my apparent self, but perhaps it is useful to the deeper parts of my mind...? No, that's absurd.
 
-keletupack.research.taintmeat.title=Taint Meat
-keletupack.research.taintmeat.stage.1.text=TEST
-keletupack.research.taintmeat.complete.text=TEST
+keletupack.research.taintmeat.title=Tainted Amalgam
+keletupack.research.taintmeat.stage.1.text=Perhaps i should not reject the Warp, perhaps i should embrace it, perhaps... what forbidden secrets could it teach me?
+keletupack.research.taintmeat.complete.text=This was a mistake, dunking common Meat directly into Vitium Essentia corrupts and morphs it into an incomprehensible substance that is mentally taxing to eat.<BR>Though, i suppose if i am ever in need of madness, this is where to look...
 
 keletupack.research.cleansingamulet.title=Cleansing Amulet
-keletupack.research.cleansingamulet.stage.1.text=(waiting english translation...)
-keletupack.research.cleansingamulet.complete.text=(waiting english translation...)
+keletupack.research.cleansingamulet.stage.1.text=This madness is getting to me, i must do something about it. Scraps of research i've found from long-gone Thaumaturges of the Fourth Age rarely referenced a trinket only known as the Cleansing Amulet, if i am correct in my guesses, this Amulet should be able to cleanse Warp from me, though i do not know to what extent...
+keletupack.research.cleansingamulet.complete.text=I believe i've found the key to replicating this Amulet, Primordial Pearls seem to have a faint trickle of malignant energy, much like Warp, wherever their power comes from, it is tied to the same force as my madness, somehow.<BR>If my hypothesis is correct, this Pendant should be able to draw the madness from my very mind, binding it to the pearl and purifying it, making it little more than a bad dream, it does take time to do this, however, but it should even be capable of cleansing the most Permanent of madness.
 
 ##Forbidden Magic
-keletupack.research.thaumisc_forbiddenmagic.title=Magic from Forbidden Knowledge
-keletupack.research.thaumisc_forbiddenmagic.text=TEST
-keletupack.research.thaumisc_forbiddenmagic.complete.text=TEST
+keletupack.research.thaumisc_forbiddenmagic.title=Forbidden Thaumaturgy
+keletupack.research.thaumisc_forbiddenmagic.text=Some information of "Forbidden" Tools from the Fourth Age of Thaumaturgy remains in existence, i believe such tools could be replicated in modern times.
+keletupack.research.thaumisc_forbiddenmagic.complete.text=Some information of "Forbidden" Tools from the Fourth Age of Thaumaturgy remains in existence, i believe such tools could be replicated in modern times.<BR>I shall keep record of any particularly Sinister items i discover near this section.
 
-keletupack.research.morph_tools.title=Morphic Tools
-keletupack.research.morph_tools.text=TEST
-keletupack.research.morph_tools.complete.text=TEST
+keletupack.research.morph_tools.title=Chamelic Tools
+keletupack.research.morph_tools.text=Scraps of Forbidden Research from the Fourth Age speak of Tools which could shift between Enchantments at the whim of the wielder, it may be possible to replicate these Tools.
+keletupack.research.morph_tools.complete.text=Success!... Mostly. It's not a perfect replica, as whatever material was used to Infuse the Enchantment-Shifting properties in the past seems to no longer exist, but Permutatio Crystals seem to be a sufficient substitute.<BR>Either way, the properties seem to mirror those Tools i heard about, so it is sufficient for now.<BR>They can store three different sets of Enchantments, which can be cycled by Sneak-Right-clicking with the tool in hand, provided it is actually Enchanted at all, the current set is indicated by the color of the Gems on the tool. It takes a bit of Durability to switch the set away, but it is fairly neglegible.
 
-keletupack.research.distortionpick.title=Distortion Pick
-keletupack.research.distortionpick.text=TEST
-keletupack.research.distortionpick.complete.text=TEST
+keletupack.research.distortionpick.title=Pickaxe of Distortion
+keletupack.research.distortionpick.text=Scraps of Forbidden Research from the Fourth Age speak of a Pickaxe which could mine the toughest of materials in mere moments, perhaps it is possible to replicate?
+keletupack.research.distortionpick.complete.text=I believe i have figured out how it was done by experimenting on some Obsidian, by simply corrupting the weak points of the material with a twisted form of Magic, it could be tainted with traces of some strange, twisted biomass, Though this biomass quickly dies out when the pickaxe stops striking the material.<BR>It also seems to be horribly ineffective against weaker materials, such as Stone, breaking them almost as slowly as one's hands against Obsidian. But it still has some merit for tearing through tough materials.
+
+##Tainted Magic
+keletupack.research.shadow_metal.title=Shadow Metal
+keletupack.research.shadow_metal.text=Some scraps from the Fourth Age speak of a Metal as dark and resilient as Shadows themselves, an intriguing prospect, and likely not difficult to replicate, especially with Void Metal available to use as a base.
+keletupack.research.shadow_metal.complete.text=Well, it's not difficult to discover how to replicate this metal, but certainly annoying, costly, and unexpected.<BR>This metal, despite being similar to Void Metal in concept, has no direct relations to it at all, infact, it can only be made by infusing Iron with large amounts of Metallum and Tenebrae, and it takes a lot just to form a single Ingot of this Metal, partially because infusing the entire Ingot at once is simply too much Essentia for most things to handle, so it must be done with individual Nuggets instead.
+
+keletupack.research.arcane_disassembler.title=Thaumic Disassembler
+keletupack.research.arcane_disassembler.text=Those who dabble in the Mechanical and Technical arts have heard of a tool called the Atomic Disassembler, a potent Multitool which is often affordable, and very effective, but i'm no Technological fool... Well, maybe that's a lie.<BR>However, replicating such a tool with Thaumaturgy sounds like an interesting prospect, although, it may not be quite as affordable, but atleast it will be fun to show off to impress your "friends", and perhaps slaughter them with.
+keletupack.research.arcane_disassembler.complete.text=It seems several Fourth Age Thaumaturges had a similar ambition to mine, scraps of Research from them were useful in speeding up the discovery of concepts behind this Tool.<BR>Much like its Technological counterpart, it has different Speed settings which can be cycled at whim, and runs on Energy, with the Energy for it being of course, Vis.
+
+keletupack.research.shadow_armor.title=Shadow Fortress Armor
+keletupack.research.shadow_armor.text=Scraps of knowledge from Fourth Age Thaumturges bring up the idea of an armor more effective than Thaumium Fortress Armor using Shadow Metal, both of which i have managed to create myself, this may be worth investigating.
+keletupack.research.shadow_armor.complete.text=This concept should be possible for me to pull off, in theory, as it is simply plating Void Metal armor in Shadow Metal through Infusion.<BR>It seems to offer a potent discount to Vis, being made of such alien materials, and offers that excellent level of Protection that was expected.<BR>It cannot mend itself like other Void Metal-based items, but it is incredibly durable, so there should be no need to worry.
+
+#Tool Mode
+
+tip.admode.name0=Stop
+tip.admode.name1=Medium Speed
+tip.admode.name2=Low Speed
+tip.admode.name3=Fast Speed
+
+tip.awakenpick.name0=Block Mode
+tip.awakenpick.name1=Square Mode
+tip.awakenpick.name2=Line Mode
+
+tip.awakenshovel.name0=Block Mode
+tip.awakenshovel.name1=Square Mode
+tip.awakenshovel.name2=Column Mode
+
+tip.awakenaxe.name0=Block Mode
+tip.awakenaxe.name1=Square Mode
+tip.awakenaxe.name2=Tree Mode
+
+tip.awakensword.name0=Single Mode
+tip.awakensword.name1=Area Mode
+tip.awakensword.name2=Soul Mode
+
+tip.awakenarmor.name0=Awaken
+tip.awakenarmor.name1=Dormancy

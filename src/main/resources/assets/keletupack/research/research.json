@@ -5,7 +5,7 @@
         "name": "keletupack.research.thaumisc.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:coin_adventure"
+          "keletupack:coin_magic"
         ],"meta":["ROUND"],
         "parents": [
          "UNLOCKINFUSION"
@@ -736,7 +736,11 @@
         ],
         "parents": [
           "ICHORIUMTOOLS"
-        ],"meta":["HIDDEN", "REVERSE"],
+        ],
+        "meta": [
+          "HIDDEN",
+          "REVERSE"
+        ],
         "location": [
           -9,
           5
@@ -745,7 +749,8 @@
           {
             "text": "keletupack.research.ichorium_sword_adv.text",
             "required_knowledge": [
-              "THEORY;ARTIFICE;2","THEORY;INFUSION;1"
+              "THEORY;ARTIFICE;2",
+              "THEORY;INFUSION;1"
             ],
             "required_craft": [
               "keletupack:ichorium_sword"
@@ -753,7 +758,96 @@
           },
           {
             "text": "keletupack.research.ichorium_sword_adv.complete.text",
-            "recipes":["keletupack:ichorium_sword_adv"]
+            "recipes": [
+              "keletupack:ichorium_sword_adv"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "SHADOW_METAL",
+        "name": "keletupack.research.shadow_metal.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:shadow_ingot"
+        ],"warp": "3",
+        "parents": [
+          "~BASEELDRITCH"
+        ],"meta":["HIDDEN", "ROUND"],
+        "location": [
+          2,
+          2
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.shadow_metal.text",
+            "required_knowledge": [
+              "OBSERVATION;ELDRITCH;1","THEORY;ELDRITCH;1","THEORY;ALCHEMY;1"
+            ],
+            "required_item": [
+              "thaumcarft:ingot;1;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.shadow_metal.complete.text",
+            "recipes":["keletupack:shadow_metal", "keletupack:shadow_nugget", "keletupack:shadow_ingot"]
+          }
+        ]
+      },
+      {
+        "key": "SHADOW_FORTRESS_ARMOR",
+        "name": "keletupack.research.shadow_armor.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:shadow_fortress_helm", "keletupack:shadow_fortress_chest", "keletupack:shadow_fortress_legs"
+        ],"warp": "5",
+        "parents": [
+          "SHADOW_METAL", "FORTRESSMASK"
+        ],"meta":["HIDDEN"],
+        "location": [
+          5,
+          2
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.shadow_armor.text",
+            "required_knowledge": [
+              "THEORY;INFUSION;1","THEORY;ELDRITCH;2"
+            ]
+          },
+          {
+            "text": "keletupack.research.shadow_armor.complete.text",
+            "recipes":["keletupack:shadow_fortress_helm", "keletupack:shadow_fortress_chest", "keletupack:shadow_fortress_legs", "keletupack:shadow_helm_goggles", "keletupack:shadow_helm_warp", "keletupack:shadow_helm_wither", "keletupack:shadow_helm_lifesteal"]
+          }
+        ]
+      },
+      {
+        "key": "ARCANE_DISASSEMBLER",
+        "name": "keletupack.research.arcane_disassembler.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:arcane_disassembler"
+        ],"warp": "2",
+        "parents": [
+          "SHADOW_METAL", "PRIMPEARL", "PRIMALCRUSHER"
+        ],"meta":["HIDDEN"],
+        "location": [
+          4,
+          4
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.arcane_disassembler.text",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;1","THEORY;INFUSION;1","THEORY;ELDRITCH;1"
+            ],
+            "required_craft": [
+              "thaumcraft:void_sword", "thaumcraft:void_shovel", "thaumcraft:void_pick", "thaumcraft:void_axe"
+            ]
+          },
+          {
+            "text": "keletupack.research.arcane_disassembler.complete.text",
+            "recipes":["keletupack:arcane_disassembler"]
           }
         ]
       }

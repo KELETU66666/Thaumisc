@@ -3,13 +3,13 @@
         "modid": "keletupack",
         "name": "Thaumisc",
         "description": "A public personal addon by KELETU66666 for Thaumcraft 6, bringing back Ichor items from TC4's addon Thaumic Tinkerer and a little more",
-        "version": "1.12.2-1.1",
+        "version": "1.12.2-1.3",
         "mcversion": "1.12.2",
         "url": "https://github.com/KELETU66666/keletupack",
         "updateUrl": "",
         "authorList": ["KELETU66666"],
         "credits":
-            "Azanor > Thaumcraft creator , KingLemming and The CoFH Team > Thaumcraft maintainers, pixlepix and gaeakat > Thaumic Tinkerer's creator and maintainer respectively, KELETU66666 > Keletu‘s Pack author and owner, pizeroLOL/huige233/LupusParsec/Dawnwalker666/AeXiaohu > Contributors",
+            " KELETU66666 > Thaumisc author and owner, Azanor > Thaumcraft creator , KingLemming and The CoFH Team > Thaumcraft maintainers, pixlepix and gaeakat > Thaumic Tinkerer's creator and maintainer respectively, pizeroLOL/huige233/LupusParsec/Dawnwalker666/AeXiaohu > Contributors",
         "logoFile": "",
         "screenshots": [],
         "dependencies": []

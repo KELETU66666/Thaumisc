@@ -3,6 +3,7 @@ package keletu.keletupack.init;
 
 import keletu.keletupack.common.BlocksKP;
 import keletu.keletupack.common.ItemsKP;
+import keletu.keletupack.items.armor.ShadowArmor;
 import keletu.keletupack.util.ItemNBTHelper;
 import keletu.keletupack.util.Reference;
 import net.minecraft.init.Blocks;
@@ -10,8 +11,11 @@ import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.nbt.NBTTagByte;
+import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
@@ -157,7 +161,13 @@ private static void initArcaneRecipes() {
 }
 
 private static void initCrucibleRecipes() {
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "taint_meat1"), new CrucibleRecipe(
+    ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_metal"), new CrucibleRecipe(
+            "SHADOW_METAL",
+            new ItemStack(ItemsKP.SHADOW_NUGGET),
+            "nuggetIron",
+            new AspectList().add(Aspect.DARKNESS, 15).add(Aspect.METAL, 30).add(Aspect.DARKNESS, 10)
+    ));
+    ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "taint_meat1"), new CrucibleRecipe(
                 "TAINT_MEAT",
                 new ItemStack(ItemsKP.TAINT_MEAT),
                 new ItemStack(Items.CHICKEN),
@@ -559,6 +569,125 @@ private static void initInfusionRecipes() {
                     getCrystal(Aspect.AIR, 1),
                     PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION), PotionTypes.STRONG_HARMING)
             }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_fortress_helm"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new ItemStack(ModItems.ShadowHelm),
+            16,
+            new AspectList().add(Aspect.METAL, 100).add(Aspect.PROTECT, 80).add(Aspect.MAGIC, 45).add(Aspect.DARKNESS, 120).add(Aspect.VOID, 85),
+            new ItemStack(ItemsTC.voidHelm),
+            new Object[]{
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    "ingotIron",
+                    "ingotIron",
+                    "gemEmerald"
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_fortress_chest"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new ItemStack(ModItems.ShadowChest),
+            16,
+            new AspectList().add(Aspect.METAL, 150).add(Aspect.PROTECT, 100).add(Aspect.MAGIC, 70).add(Aspect.DARKNESS, 150).add(Aspect.VOID, 100),
+            new ItemStack(ItemsTC.voidChest),
+            new Object[]{
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    "ingotIron",
+                    "leather"
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_fortress_legs"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new ItemStack(ModItems.ShadowLegs),
+            16,
+            new AspectList().add(Aspect.METAL, 125).add(Aspect.PROTECT, 90).add(Aspect.MAGIC, 65).add(Aspect.DARKNESS, 125).add(Aspect.VOID, 90),
+            new ItemStack(ItemsTC.voidLegs),
+            new Object[]{
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    "ingotIron",
+                    "leather"
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "arcane_disassembler"), new InfusionRecipe(
+            "ARCANE_DISASSEMBLER",
+            new ItemStack(ModItems.ARCANEDISASSEMBLER),
+            6,
+            new AspectList().add(Aspect.TOOL, 95).add(Aspect.MECHANISM, 50).add(Aspect.METAL, 50).add(Aspect.DARKNESS, 50),
+            new ItemStack(BlocksTC.metalBlockVoid),
+            new Object[]{
+                    Ingredient.fromItem(ItemsTC.primordialPearl),
+                    new ItemStack(ItemsTC.voidAxe),
+                    new ItemStack(ItemsTC.ingots, 1, 0),
+                    new ItemStack(ItemsTC.voidPick),
+                    new ItemStack(ItemsTC.ingots, 1, 0),
+                    new ItemStack(ItemsTC.voidSword),
+                    new ItemStack(ItemsTC.ingots, 1, 0),
+                    new ItemStack(ItemsTC.voidSword)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_goggles"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "goggles", new NBTTagByte((byte)1) },
+            5,
+            (new AspectList()).add(Aspect.SENSES, 40).add(Aspect.AURA, 20).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[]{
+                    new ItemStack(Items.SLIME_BALL),
+                    new ItemStack(ItemsTC.goggles, 1, 32767)
+            }
+            ));
+
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_warp"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "mask", new NBTTagInt(0) },
+            8,
+            new AspectList().add(Aspect.MIND, 80).add(Aspect.LIFE, 80).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[] {
+                    "plateIron",
+                    "dyeBlack",
+                    "plateIron",
+                    "leather",
+                    BlocksTC.shimmerleaf,
+                    ItemsTC.brain
+    }
+    ));
+
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_wither"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "mask", new NBTTagInt(1) },
+            8,
+            new AspectList().add(Aspect.ENTROPY, 80).add(Aspect.DEATH, 80).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[] {
+                    "plateIron",
+                    "dyeWhite",
+                    "plateIron",
+                    "leather",
+                    Items.POISONOUS_POTATO,
+                    new ItemStack(Items.SKULL, 1, 1)
+    }
+    ));
+
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_lifesteal"), new InfusionRecipe(
+            "SHADOW_FORTRESS_ARMOR",
+            new Object[] { "mask", new NBTTagInt(2) },
+            8,
+            new AspectList().add(Aspect.UNDEAD, 80).add(Aspect.LIFE, 80).add(Aspect.PROTECT, 20),
+            new ItemStack(ModItems.ShadowHelm, 1, 32767),
+            new Object[] {
+                    "plateIron",
+                    "dyeRed",
+                    "plateIron",
+                    "leather",
+                    Items.GHAST_TEAR,
+                    Items.MILK_BUCKET
+    }
     ));
     }
 }
