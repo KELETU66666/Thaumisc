@@ -104,7 +104,7 @@ keletupack.research.dimensionalshard.title=Lascas Dimensionais
 keletupack.research.dimensionalshard.text=Taumaturgos da Quarta Era falavam à respeito de uma substância mítica chamada "Icor", capaz de criar algumas das mais poderosas Ferramentas e Armaduras possíveis para qualquer Taumaturgo que consiga criá-la.<BR>Eu pensava que esse processo era impossível, até eu descobrir que seja lá como as Lascas Dimensionais eram descritas nos restos de Pesquisas que encontrei parecem existir ainda. Supostamente, eles pararam repentinamente de aparecer para os Taumaturgos no final da Quarta Era, e ainda sim, de alguma forma, eles retornaram nos dias de hoje...<BR>Eu deveria recolher uma amostra dessas Lascas para ver se o Icor pode ser replicado atualmente.
 keletupack.research.dimensionalshard.complete.text=A perspectiva de criar esse Icor mítico é promissora e aparenta ser possível, mas eu não sei como reproduzir isso ainda, isso requer mais Pesquisa.<BR>Essas Lascas Dimensionais podem ter outros usos também, embora nada do tipo tenha sido descrito nas escrituras da Quarta Era, os Taumaturgos da época eram muito obcecados pelo Icor.
 
-##### Every research text below this line is not translated properly yet #####
+##### Every research text below is not translated properly yet #####
 
 keletupack.research.ichor.title=A Substância Perdida - Icor
 keletupack.research.ichor.text=I am getting closer to a theoretical means of creating Ichor, but i am not quite there, i must determine what the various fields of Thaumaturgy have to do with Ichor, incase there are important links i am missing, then, i must try my theoretical infusion, and hope for the best.
@@ -187,6 +187,8 @@ keletupack.research.taintmeat.complete.text=This was a mistake, dunking common M
 keletupack.research.cleansingamulet.title=Amuleto Removedor de Warp
 keletupack.research.cleansingamulet.stage.1.text=This madness is getting to me, i must do something about it. Scraps of research i've found from long-gone Thaumaturges of the Fourth Age rarely referenced a trinket only known as the Cleansing Amulet, if i am correct in my guesses, this Amulet should be able to cleanse Warp from me, though i do not know to what extent...
 keletupack.research.cleansingamulet.complete.text=I believe i've found the key to replicating this Amulet, Primordial Pearls seem to have a faint trickle of malignant energy, much like Warp, wherever their power comes from, it is tied to the same force as my madness, somehow.<BR>If my hypothesis is correct, this Pendant should be able to draw the madness from my very mind, binding it to the pearl and purifying it, making it little more than a bad dream, it does take time to do this, however, but it should even be capable of cleansing the most Permanent of madness.
+
+##### Every research text up is not translated properly yet #####
 
 ##Forbidden Magic
 keletupack.research.thaumisc_forbiddenmagic.title=Taumaturgia Proibida
