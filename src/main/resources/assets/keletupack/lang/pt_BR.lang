@@ -188,8 +188,6 @@ keletupack.research.cleansingamulet.title=Amuleto Removedor de Warp
 keletupack.research.cleansingamulet.stage.1.text=This madness is getting to me, i must do something about it. Scraps of research i've found from long-gone Thaumaturges of the Fourth Age rarely referenced a trinket only known as the Cleansing Amulet, if i am correct in my guesses, this Amulet should be able to cleanse Warp from me, though i do not know to what extent...
 keletupack.research.cleansingamulet.complete.text=I believe i've found the key to replicating this Amulet, Primordial Pearls seem to have a faint trickle of malignant energy, much like Warp, wherever their power comes from, it is tied to the same force as my madness, somehow.<BR>If my hypothesis is correct, this Pendant should be able to draw the madness from my very mind, binding it to the pearl and purifying it, making it little more than a bad dream, it does take time to do this, however, but it should even be capable of cleansing the most Permanent of madness.
 
-##### Every research text up is not translated properly yet #####
-
 ##Forbidden Magic
 keletupack.research.thaumisc_forbiddenmagic.title=Taumaturgia Proibida
 keletupack.research.thaumisc_forbiddenmagic.text=Some information of "Forbidden" Tools from the Fourth Age of Thaumaturgy remains in existence, i believe such tools could be replicated in modern times.
@@ -202,6 +200,8 @@ keletupack.research.morph_tools.complete.text=Success!... Mostly. It's not a per
 keletupack.research.distortionpick.title=Picareta da Distorção
 keletupack.research.distortionpick.text=Scraps of Forbidden Research from the Fourth Age speak of a Pickaxe which could mine the toughest of materials in mere moments, perhaps it is possible to replicate?
 keletupack.research.distortionpick.complete.text=I believe i have figured out how it was done by experimenting on some Obsidian, by simply corrupting the weak points of the material with a twisted form of Magic, it could be tainted with traces of some strange, twisted biomass, Though this biomass quickly dies out when the pickaxe stops striking the material.<BR>It also seems to be horribly ineffective against weaker materials, such as Stone, breaking them almost as slowly as one's hands against Obsidian. But it still has some merit for tearing through tough materials.
+
+##### Every research text up is not translated properly yet #####
 
 ##Tainted Magic
 keletupack.research.shadow_metal.title=Metal Sombrio
