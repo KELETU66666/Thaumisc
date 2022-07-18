@@ -23,9 +23,9 @@ public class warpfood extends ItemFood implements IHasModel {
     @Override
     protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
         if(!worldIn.isRemote) {
-            ThaumcraftApi.internalMethods.addWarpToPlayer(player,6, EnumWarpType.TEMPORARY);
-            ThaumcraftApi.internalMethods.addWarpToPlayer(player,4, EnumWarpType.PERMANENT);
-            ThaumcraftApi.internalMethods.addWarpToPlayer(player,5, EnumWarpType.NORMAL);
+            ThaumcraftApi.internalMethods.addWarpToPlayer(player,5 + worldIn.rand.nextInt(5), EnumWarpType.TEMPORARY);
+            ThaumcraftApi.internalMethods.addWarpToPlayer(player,4 + worldIn.rand.nextInt(4), EnumWarpType.PERMANENT);
+            ThaumcraftApi.internalMethods.addWarpToPlayer(player,5 + worldIn.rand.nextInt(5), EnumWarpType.NORMAL);
         }
     }
     @Override

@@ -62,7 +62,13 @@ item.riding_crop.name=Riding Crop
 tile.ichor_block.name=Ichor Block
 tile.bedrock_portal.name=Bedrock Portal
 item.warp_paper.name=Arcane Litmus Paper
-warp.paper=Warp: 
+chat.warp.minorwarp=There's no reaction
+chat.warp.averagewarp=The paper turns a sickly color
+chat.warp.majorwarp=The paper crumbles to dust
+chat.warp.deadlywarp=The paper catches fire
+chat.warp.permanentwarp=Permanent Warp
+chat.warp.normalwarp=Normal Warp
+chat.warp.tempwarp=Temporary Warp
 
 item.coin_witchery.name=Wizard's Coin
 item.coin_adventure.name=Adventure's Coin
@@ -239,4 +245,4 @@ tip.awakenarmor.name1=Dormancy
 
 #compat
 
-item.loot_bag_crystal=Crystal Treasure Bag
+item.loot_bag_crystal.name=Crystal Treasure Bag

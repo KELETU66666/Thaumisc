@@ -627,7 +627,7 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsTC.ingots, 1, 0),
                     new ItemStack(ItemsTC.voidSword),
                     new ItemStack(ItemsTC.ingots, 1, 0),
-                    new ItemStack(ItemsTC.voidSword)
+                    new ItemStack(ItemsTC.voidAxe)
             }
     ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_helm_goggles"), new InfusionRecipe(

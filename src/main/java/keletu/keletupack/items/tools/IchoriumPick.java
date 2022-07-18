@@ -21,7 +21,7 @@ public class IchoriumPick extends ItemPickaxe implements IHasModel {
 
     @Override
     public EnumRarity getRarity(ItemStack itemstack) {
-        return EnumRarity.RARE;
+        return EnumRarity.EPIC;
     }
     @Override
     public void registerModels() {

@@ -21,7 +21,7 @@ public class IchoriumShovel extends ItemSpade implements IHasModel {
 
     @Override
     public EnumRarity getRarity(ItemStack itemstack) {
-        return EnumRarity.RARE;
+        return EnumRarity.EPIC;
     }
 
     @Override
