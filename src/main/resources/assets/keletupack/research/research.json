@@ -366,9 +366,9 @@
         ],
         "parents": [
           "BASEINFUSION",
-          "SANESOAP",
           "TAINT_MEAT",
-          "WARP_PAPER"
+          "WARP_PAPER",
+          "ICHOR"
         ],
         "location": [
           -3,

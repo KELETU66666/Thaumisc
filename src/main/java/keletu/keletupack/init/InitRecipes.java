@@ -208,13 +208,17 @@ private static void initInfusionRecipes() {
                 "CLEANSING_AMULET",
                 new ItemStack(ItemsKP.CLEANSING_AMULET),
                 8,
-                new AspectList().add(Aspect.MIND, 100).add(Aspect.ORDER, 75).add(Aspect.AURA, 50).add(Aspect.ENERGY, 50).add(Aspect.EXCHANGE, 30),
-                new ItemStack(ItemsTC.amuletVis),
+                new AspectList().add(Aspect.EXCHANGE, 125).add(Aspect.ELDRITCH, 125).add(Aspect.MAGIC, 250),
+                new ItemStack(ItemsTC.baubles, 1, 0),
                 new Object[] {
-                        new ItemStack(ItemsTC.bathSalts),
-                        new ItemStack(ItemsTC.sanitySoap),
-                        new ItemStack(ItemsTC.bathSalts),
-                        Ingredient.fromItem(ItemsTC.primordialPearl),
+                        new ItemStack(ItemsKP.ICHOR),
+                        "ingotGold",
+                        "gemDiamond",
+                        new ItemStack(ItemsTC.salisMundus),
+                        new ItemStack(ItemsKP.ICHOR),
+                        "ingotGold",
+                        "gemDiamond",
+                        new ItemStack(ItemsTC.salisMundus)
                 }
         ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_block"), new InfusionRecipe(
