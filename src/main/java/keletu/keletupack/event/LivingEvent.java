@@ -85,7 +85,7 @@ public class LivingEvent {
     }
 
     @SubscribeEvent
-    public void onPlayerInteractEvent(PlayerInteractEvent event) {
+    public void onPlayerInteractEvent(PlayerInteractEvent.LeftClickBlock event) {
         if (event.getHand() == EnumHand.MAIN_HAND) {
             ItemStack stack = event.getEntityPlayer().getHeldItemMainhand();
             if (event.getEntityPlayer().world.getBlockState(event.getPos()).getBlock().equals(Blocks.BEDROCK)) {

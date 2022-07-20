@@ -85,6 +85,37 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         }return false;
     }
 
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    {
+        ItemStack itemstack = player.getHeldItem(hand);
+
+        if (!player.canPlayerEdit(pos.offset(facing), facing, itemstack))
+        {
+            return EnumActionResult.FAIL;
+        }
+        else
+        {
+            IBlockState iblockstate = worldIn.getBlockState(pos);
+            Block block = iblockstate.getBlock();
+
+            if (block == ModBlocks.BEDROCK_PORTAL)
+            {
+                IBlockState iblockstate1 = Blocks.BEDROCK.getDefaultState();
+
+                if (!worldIn.isRemote)
+                {
+                    worldIn.setBlockState(pos, iblockstate1, 11);
+                }
+
+                return EnumActionResult.SUCCESS;
+            }
+            else
+            {
+                return EnumActionResult.PASS;
+            }
+        }
+    }
+
     @Override
     public EnumRarity getRarity(ItemStack itemstack) {
         return EnumRarity.EPIC;

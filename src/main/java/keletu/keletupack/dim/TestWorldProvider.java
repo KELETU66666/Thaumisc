@@ -35,4 +35,17 @@ public class TestWorldProvider extends WorldProvider {
     public float setSunSize() {
         return 10.0F;
     }
+
+    public boolean canRespawnHere() {
+        return false;
+    }
+
+    @Override
+    public float getCloudHeight() {
+        return 0F;
+    }
+
+    public boolean canCoordinateBeSpawn(int par1, int par2) {
+        return false;
+    }
 }
