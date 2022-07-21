@@ -241,3 +241,7 @@ tip.awakensword.name2=Modo Escudo
 
 tip.awakenarmor.name0=Despertada
 tip.awakenarmor.name1=Dormente
+
+#Compat
+
+item.loot_bag_crystal.name=Bolsa de Tesouro de Crystal
