@@ -1,4 +1,5 @@
 # Special formatting codes:
+#
 # <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
 # <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
 # <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
@@ -62,7 +63,13 @@ item.riding_crop.name=马鞭
 tile.ichor_block.name=灵液块
 tile.bedrock_portal.name=基岩世界传送门
 item.warp_paper.name=奥术石蕊试纸
-warp.paper=当前扭曲为:
+chat.warp.minorwarp=没什么反应
+chat.warp.averagewarp=试纸呈现出一种病态的颜色
+chat.warp.majorwarp=试纸碎成了粉屑
+chat.warp.deadlywarp=试纸燃烧起来
+chat.warp.permanentwarp=阴魂不散的扭曲.
+chat.warp.normalwarp=一般的扭曲.
+chat.warp.tempwarp=浮于表面的扭曲.
 
 item.coin_witchery.name=巫师币
 item.coin_adventure.name=探险家币
@@ -92,6 +99,7 @@ item.shadow_fortress_chest.name=暗影要塞胸铠
 item.shadow_fortress_legs.name=暗影要塞护腿
 item.shadow_ingot.name=暗影锭
 item.shadow_nugget.name=暗影粒
+
 #Research
 
 keletupack.research.thaumisc.title=神秘杂项学
@@ -213,21 +221,21 @@ keletupack.research.arcane_disassembler.complete.text=研究成功了!这确实�
 
 #Tool Mode
 
-tip.admode.name0=待机模式
+tip.admode.name0=待机
 tip.admode.name1=中速模式
 tip.admode.name2=低速模式
 tip.admode.name3=高速模式
 
 tip.awakenpick.name0=方块模式
-tip.awakenpick.name1=范围模式
+tip.awakenpick.name1=正方模式
 tip.awakenpick.name2=线性模式
 
 tip.awakenshovel.name0=方块模式
-tip.awakenshovel.name1=范围模式
+tip.awakenshovel.name1=正方模式
 tip.awakenshovel.name2=柱状模式
 
 tip.awakenaxe.name0=方块模式
-tip.awakenaxe.name1=范围模式
+tip.awakenaxe.name1=正方模式
 tip.awakenaxe.name2=伐木模式
 
 tip.awakensword.name0=单杀模式
@@ -236,3 +244,7 @@ tip.awakensword.name2=狩魂模式
 
 tip.awakenarmor.name0=觉醒
 tip.awakenarmor.name1=休眠
+
+#Compat
+
+item.loot_bag_crystal.name=水晶奖励袋
