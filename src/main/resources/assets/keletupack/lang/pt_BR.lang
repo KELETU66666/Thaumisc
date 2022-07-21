@@ -154,27 +154,33 @@ keletupack.research.kamiboots.title=Botas do Escudo do Horizonte
 keletupack.research.kamiboots.text=Com certeza, deve haver uma forma de extrair algo a mais dessa Armadura, as escrituras descrevem as partes dela como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com as Botas.
 keletupack.research.kamiboots.complete.text=Parece que é possível Infundir as Botas com o aspecto de Terra, me proporcionando velocidade e saltos maiores, da mesma forma que também permite eu Minerar mais rapidamente, e faz crescer Grama encima de qualquer Terra que eu ando.
 
-##### Every research text below is not translated properly yet #####
-
 ##Thaumcraft 4
 keletupack.research.thaumisc_tc4.title=Antique Miscellanea
-keletupack.research.thaumisc_tc4.text=Thaumaturges of the Fourth Age had many strange differences to how they did things which modern Thaumaturges do, it may be worth peering into scraps of their work which remain to see if i can discover anything unheard of to me.
-keletupack.research.thaumisc_tc4.complete.text=Thaumaturges of the Fourth Age had many strange differences to how they did things which modern Thaumaturges do, it may be worth peering into scraps of their work which remain to see if i can discover anything unheard of to me.<BR>I shall keep record of anything like this i discover near this section.
+keletupack.research.thaumisc_tc4.text=Taumaturgos da Quarta Era tinham certas diferenças meio estranhas de como eles faziam coisas que Taumaturgos modernos fazem, deve valer a pena dar uma olhada nos esboços dos trabalhos deles que restaram para ver se eu consigo descobrir alguma coisa que eu desconheça.
+keletupack.research.thaumisc_tc4.complete.text=Taumaturgos da Quarta Era tinham certas diferenças meio estranhas de como eles faziam coisas que Taumaturgos modernos fazem, deve valer a pena dar uma olhada nos esboços dos trabalhos deles que restaram para ver se eu consigo descobrir alguma coisa que eu desconheça.<BR>Eu devo anotar qualquer coisa do tipo que eu descobrir próxima a essa seção.
 
-keletupack.research.runic_baubles.title=Baubles Rúnicos
-keletupack.research.runic_baubles.text=In the Fourth Age, Thaumaturges were said to use Baubles which granted them Runic protection against attacks - No doubt, this is akin to the Runic Shielding i have discovered.<BR>According to ancient notes, these Baubles would grant the wearer a substantial amount of Shielding, why old Thaumaturges preferred these specialized Baubles over enchanting their Armor and other Baubles with Shielding, however, is beyond me.<BR>Regardless of this information, i should see if i can replicate these Baubles, as it may grant me a cheaper means of amassing Runic Shielding.
-keletupack.research.runic_baubles.complete.text=It was far easier than i had imagined, simply enchanting mundane Baubles with a process similar to regular Shielding - albiet, with additional ingredients, gets me the result i desired.<BR>I have also discovered additional notes about versions of some of these Baubles which are attuned to particular Aspects, i should see if i can also replicate them.
+keletupack.research.runic_baubles.title=Quinquilharias Rúnicas
+keletupack.research.runic_baubles.text=Na Quarta Era, Taumaturgos diziam fazer uso de Ornamentos que lhes garantiam proteção Rúnica contra ataques - Sem dúvida, isso é voltado à Defesa Rúnica que eu descobri.<BR>De acordo com antigas anotações, esses Ornamentos proporcionariam ao usuário uma quantia substancial de Defesa, a razão pela qual Taumaturgos preferiam mais Ornamentos especializados do que encantar suas Armaduras e usar outros Ornamentos Defensivos, porém, isso está além do meu alcance.<BR>Independente dessas informações, eu deveria ver se consigo replicar esses Ornamentos, já que talvez eles me proporcionem meios mais baratos de Defesa Rúnica acumulada.
+keletupack.research.runic_baubles.complete.text=Foi mais fácil do que eu imaginava, simplesmente encantando Ornamentos mundanos com um processo similar à Defesa normal - embora, com ingredientes adicionais, resultadou no que eu queria.<BR>Talvez eu tenha também descoberto anoteções sobre outras versões desses mesmos Ornamentos que estão sincronizados a alguns Aspectos em particular, eu deveria ver se eu posso replicá-los também.
+
+##### Every research text below is not translated properly yet #####
 
 keletupack.research.runic_baubles_terra.title=Amuleto Rúnico das Barreiras
+keletupack.research.runic_baubles_terra.text=
 keletupack.research.runic_baubles_terra.text=I have found scraps of Research which mention an augmented Runic Amulet, which could instantly restore some of the wearer's Shielding when it fell, this should be replicable with my practices.
+keletupack.research.runic_baubles_terra.complete.text=
 keletupack.research.runic_baubles_terra.complete.text=Indeed it is! This Amulet will instantly restore my Runic Shielding by 8 points when it falls, though it will be unable to do so for a while after, as it must accumulate Vis.
 
 keletupack.research.runic_baubles_aer.title=Cinturão Rúnico da Cinética
+keletupack.research.runic_baubles_aer.text=
 keletupack.research.runic_baubles_aer.text=I have found scraps of Research which mention an augmented Runic Girdle, which could send opponents flying when the wearer's Shielding fell, this should be replicable with my practices.
+keletupack.research.runic_baubles_aer.complete.text=
 keletupack.research.runic_baubles_aer.complete.text=It is replicable! When my Runic Shielding falls, this Girdle will send any nearby creatures away from my position, thought it will be unable to activate again for a while after doing such.
 
 keletupack.research.runic_baubles_aqua.title=Anel Rúnico da Recuperação
+keletupack.research.runic_baubles_aqua.text=
 keletupack.research.runic_baubles_aqua.text=I have found scraps of Research which mention an augmented Runic Ring, which would infuse the wearer with Regenerative power when their Shielding fell, this should be replicable with my practices.
+keletupack.research.runic_baubles_aqua.complete.text=
 keletupack.research.runic_baubles_aqua.complete.text=It is infact, replicable! When my Runic Shielding falls, this Ring will grant a pulse of Regenerative power to me, though it will be unable to grant it again for a while after it activates.
 
 ##### Every research text up is not translated properly yet #####
