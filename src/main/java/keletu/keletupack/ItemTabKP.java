@@ -12,6 +12,6 @@ public class ItemTabKP extends CreativeTabs {
 
     @Override
     public ItemStack getTabIconItem() {
-        return new ItemStack(ItemsKP.COIN_ADVENTURE);
+        return new ItemStack(ItemsKP.COIN_MAGIC);
     }
 }
