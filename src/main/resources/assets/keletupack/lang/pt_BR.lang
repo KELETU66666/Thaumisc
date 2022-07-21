@@ -163,27 +163,17 @@ keletupack.research.runic_baubles.title=Quinquilharias Rúnicas
 keletupack.research.runic_baubles.text=Na Quarta Era, Taumaturgos diziam fazer uso de Ornamentos que lhes garantiam proteção Rúnica contra ataques - Sem dúvida, isso é voltado à Defesa Rúnica que eu descobri.<BR>De acordo com antigas anotações, esses Ornamentos proporcionariam ao usuário uma quantia substancial de Defesa, a razão pela qual Taumaturgos preferiam mais Ornamentos especializados do que encantar suas Armaduras e usar outros Ornamentos Defensivos, porém, isso está além do meu alcance.<BR>Independente dessas informações, eu deveria ver se consigo replicar esses Ornamentos, já que talvez eles me proporcionem meios mais baratos de Defesa Rúnica acumulada.
 keletupack.research.runic_baubles.complete.text=Foi mais fácil do que eu imaginava, simplesmente encantando Ornamentos mundanos com um processo similar à Defesa normal - embora, com ingredientes adicionais, resultadou no que eu queria.<BR>Talvez eu tenha também descoberto anoteções sobre outras versões desses mesmos Ornamentos que estão sincronizados a alguns Aspectos em particular, eu deveria ver se eu posso replicá-los também.
 
-##### Every research text below is not translated properly yet #####
-
 keletupack.research.runic_baubles_terra.title=Amuleto Rúnico das Barreiras
-keletupack.research.runic_baubles_terra.text=
-keletupack.research.runic_baubles_terra.text=I have found scraps of Research which mention an augmented Runic Amulet, which could instantly restore some of the wearer's Shielding when it fell, this should be replicable with my practices.
-keletupack.research.runic_baubles_terra.complete.text=
-keletupack.research.runic_baubles_terra.complete.text=Indeed it is! This Amulet will instantly restore my Runic Shielding by 8 points when it falls, though it will be unable to do so for a while after, as it must accumulate Vis.
+keletupack.research.runic_baubles_terra.text=Eu encontrei escrituras de Pesquisa que mencionam um Amuleto Rúnico melhorado, que poderia instantaneamente restaurar um pouco da Defesa do usuário quando ela baixasse, isso deve ser replicável com minhas práticas.
+keletupack.research.runic_baubles_terra.complete.text=De fato é! Este Amuleto vai instantaneamente restaurar minha Defesa Rúnica em 8 pontos quando ela baixar, contudo ele não conseguirá fazir isso de novo por um tempo, já que ele precisa acumular Vis.
 
 keletupack.research.runic_baubles_aer.title=Cinturão Rúnico da Cinética
-keletupack.research.runic_baubles_aer.text=
-keletupack.research.runic_baubles_aer.text=I have found scraps of Research which mention an augmented Runic Girdle, which could send opponents flying when the wearer's Shielding fell, this should be replicable with my practices.
-keletupack.research.runic_baubles_aer.complete.text=
-keletupack.research.runic_baubles_aer.complete.text=It is replicable! When my Runic Shielding falls, this Girdle will send any nearby creatures away from my position, thought it will be unable to activate again for a while after doing such.
+keletupack.research.runic_baubles_aer.text=Eu encontrei escrituras de Pesquisa que mencionam um Cinturão Rúnico melhorado, que poderia fazer os oponentes saírem voando quando a Defesa do usuário baixasse, isso deve ser replicável com minhas práticas.
+keletupack.research.runic_baubles_aer.complete.text=É replicável! Quando minha Defesa Rúnica cai, esse Cinturão vai mandar todas as criaturas próximas de mim para longe da minha atual posição, mas ela não vai conseguir ativar de novo por um tempo depois de fazer isso.
 
 keletupack.research.runic_baubles_aqua.title=Anel Rúnico da Recuperação
-keletupack.research.runic_baubles_aqua.text=
-keletupack.research.runic_baubles_aqua.text=I have found scraps of Research which mention an augmented Runic Ring, which would infuse the wearer with Regenerative power when their Shielding fell, this should be replicable with my practices.
-keletupack.research.runic_baubles_aqua.complete.text=
-keletupack.research.runic_baubles_aqua.complete.text=It is infact, replicable! When my Runic Shielding falls, this Ring will grant a pulse of Regenerative power to me, though it will be unable to grant it again for a while after it activates.
-
-##### Every research text up is not translated properly yet #####
+keletupack.research.runic_baubles_aqua.text=Eu encontrei escrituras de Pesquisa que mencionam um Anel Rúnico melhorado, que infundiria o usuário com um poder Regenerativo quando a Defesa dele baixasse, isso deve ser replicável com minhas práticas.
+keletupack.research.runic_baubles_aqua.complete.text=De fato, é replicável! Quando minha Defesa Rúnica cai, esse Anel vai me dar um pulso de poder Regenerativo para mim, mas ele não vai conseguir mandar outro pulso por um tempo depois de ativar.
 
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=Warpologia
