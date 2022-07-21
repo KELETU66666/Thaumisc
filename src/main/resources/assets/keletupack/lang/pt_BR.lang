@@ -62,7 +62,13 @@ item.riding_crop.name=Chibata
 tile.ichor_block.name=Bloco de Icor
 tile.bedrock_portal.name=Portal do Mundo Bedrock
 item.warp_paper.name=Papel Tornassol Arcano
-warp.paper=Agora seu Warp é de: 
+chat.warp.minorwarp=Não há nenhuma reação
+chat.warp.averagewarp=O papel ficou com uma cor pálida
+chat.warp.majorwarp=O papel esfarelou
+chat.warp.deadlywarp=O papel pegou fogo
+chat.warp.permanentwarp=Warp Permanente
+chat.warp.normalwarp=Warp Normal
+chat.warp.tempwarp=Warp Temporário
 
 item.coin_witchery.name=Moeda de Mago
 item.coin_adventure.name=Moeda da Aventura
