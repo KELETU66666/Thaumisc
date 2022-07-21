@@ -104,31 +104,31 @@ keletupack.research.dimensionalshard.title=Lascas Dimensionais
 keletupack.research.dimensionalshard.text=Taumaturgos da Quarta Era falavam à respeito de uma substância mítica chamada "Icor", capaz de criar algumas das mais poderosas Ferramentas e Armaduras possíveis para qualquer Taumaturgo que consiga criá-la.<BR>Eu pensava que esse processo era impossível, até eu descobrir que seja lá como as Lascas Dimensionais eram descritas nos restos de Pesquisas que encontrei parecem existir ainda. Supostamente, eles pararam repentinamente de aparecer para os Taumaturgos no final da Quarta Era, e ainda sim, de alguma forma, eles retornaram nos dias de hoje...<BR>Eu deveria recolher uma amostra dessas Lascas para ver se o Icor pode ser replicado atualmente.
 keletupack.research.dimensionalshard.complete.text=A perspectiva de criar esse Icor mítico é promissora e aparenta ser possível, mas eu não sei como reproduzir isso ainda, isso requer mais Pesquisa.<BR>Essas Lascas Dimensionais podem ter outros usos também, embora nada do tipo tenha sido descrito nas escrituras da Quarta Era, os Taumaturgos da época eram muito obcecados pelo Icor.
 
-##### Every research text below is not translated properly yet #####
-
 keletupack.research.ichor.title=A Substância Perdida - Icor
-keletupack.research.ichor.text=I am getting closer to a theoretical means of creating Ichor, but i am not quite there, i must determine what the various fields of Thaumaturgy have to do with Ichor, incase there are important links i am missing, then, i must try my theoretical infusion, and hope for the best.
-keletupack.research.ichor.complete.text=It worked! I have sucessfully replicated Ichor! Though it doesn't appear quite the same as in the scraps at first, but can be easily solved by ripping it into chunks. With this substance now in my hands, it is time to push forward to rediscovering this supposedly potent arsenal.
+keletupack.research.ichor.text=Estou chegando perto de meios teóricos de criar o Icor, mas eu não ainda não cheguei lá, eu tenho que tenho que determinar o que os vários campos da Taumaturgia têm a oferecer com o uso do Icor, caso haja conexões importantes que eu não percebi, então, eu devo tentar minha infusão teórica, e esperar pelo melhor.
+keletupack.research.ichor.complete.text=Funcionou! Eu consegui replicar o Icor! Apesar que ele não se parece muito com aquele descrito nas escrituras, mas isso pode ser facilmente resolvido o separando em pedaços. Agora com essa substância em minhas mãos, é hora de seguir em frente para redescobrir esse suposto arsenal potente.
 
 keletupack.research.ichoriumtools.title=Ferramentas de Icório
-keletupack.research.ichoriumtools.text=Thaumaturges of the Fourth Age used an Alloy imbued with Ichor, called "Ichorium" as the basis for their powerful tools, i should create my own sample of this Alloy and investigate how to manipulate it.
-keletupack.research.ichoriumtools.complete.text=This Ichorium Alloy is quite simple, in theory, but quite costly to replicate in practice, regardless, Silverwood should be a sufficiently magical material to use as a Handle which conducts the power of Ichorium.<BR>Tools forged from this Alloy are practically undentable, and are very effective too, but is this really all they can offer...?
+keletupack.research.ichoriumtools.text=Taumaturgos da Quarta Era usavam uma Liga banhada em Icor, chamada "Icório" como base para suas poderosas ferramentas, eu deveria criar minha própria amostra dessa Liga e inverstigar como manipulá-la.
+keletupack.research.ichoriumtools.complete.text=Essa Liga de Icório é um tanto quanto simples, mas é meio cara de replicar na prática, sem contar que, a Silverwood deveria ser um material mágico o suficiente para utilizar como um Canalizador que conduz o poder do Icório.<BR>Ferramentas forjadas a partir dessa liga são praticamente reconhecíveis, e bastante efetivas também, mas isso é tudo que elas têm a oferecer...?
 
 keletupack.research.ichorium_sword_adv.title=Espada de Icório Despertada
-keletupack.research.ichorium_sword_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Sword i have made.
-keletupack.research.ichorium_sword_adv.complete.text=It seems it is possible to empower the Sword, with this new power, it is capable of specialized "Modes" to make combat with many foes much easier.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Swords. The "Multi" Mode, indicated by the Gems being Red, will harm all creatures near the one that is struck with equal force. The "Shield" Mode, indicated by the Gems being Blue, will reduce the Damage of the sword, but allow it to grant me extra resilience in the form of a Barrier, which can be recharged by striking creatures.
+keletupack.research.ichorium_sword_adv.text=Com certeza, deve haver uma forma de extrair algo a mais dessas Ferramentas, as escrituras as descrevem como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com a Espada que eu fiz.
+keletupack.research.ichorium_sword_adv.complete.text=Parece que é possível deixar a Espada mais poderosa, e com esse novo poder, ela pode ter "Modos" de combate especializados contra vários inimigos bem mais facilmente<BR>O Modo padrão, indicado pelas Gemas na ferramenta estando Verdes, fará ela agir que nem a maioria das Espadas. O Modo "Múltiplo", indicado pelas Gemas estando Vermelhas, causará um dano igual a todas as criaturas próximas daquela que foi acertada. O Modo "Escudo", indicado pelas Gemas estando Azuis, reduzirá o Dano da espada, mas ela garante uma resiliência extra na forma de Barreira, a qual pode ser recarregada batendo nas criaturas.
 
 keletupack.research.ichor_pick_adv.title=Picareta de Icório Despertada
-keletupack.research.ichorium_pick_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Pickaxe i have made.
-keletupack.research.ichorium_pick_adv.complete.text=It seems it is possible to empower the Pickaxe, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Pickaxes. The "Square" Mode, indicated by the Gems being Red, will be able to clear a 5x5 area by simply breaking the central block. And lastly, the "Line" Mode, indicated by the Gems being Blue, will clear out material towards where i mined, useful for creating small tunnels quickly.<BR>It also seems to be even more resilient than ever before, so resilient, it may match the toughness of Bedrock, i wonder what i can find beyond the Bedrock...
+keletupack.research.ichorium_pick_adv.text=Com certeza, deve haver uma forma de extrair algo a mais dessas Ferramentas, as escrituras as descrevem como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com a Picareta que eu fiz.
+keletupack.research.ichorium_pick_adv.complete.text=Parece que é possível deixar a Picareta mais poderosa, e com esse novo poder, ela é capaz de limpar toda uma área de uma só vez quando desejado, simplesmente trocando entre os "Modos" disponíveis que tem. O Modo padrão, indicado pelas Gemas na ferramenta estando Verdes, fará ela agir que nem a maioria das Picaretas. O Modo "Quadrado", indicado pelas Gemas estando Vermelhas, permitirá ela limpar uma área 5x5 simplesmente quebrando o bloco central. E por último, o Modo "Linear", indicado pelas Gemas estando Azuis, vai tirar todos os materias de onde eu minerei da minha frente, útil para criar pequenos túneis rapidamente.<BR>Ela também parece estar bem mais resiliente do que antes, tão resiliente, que talvez ela supere a resistência da Bedrock, e eu me pergunto o que eu encontrarei além da Bedrock...
 
 keletupack.research.ichor_axe_adv.title=Machado de Icório Despertado
-keletupack.research.ichorium_axe_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Axe i have made.
-keletupack.research.ichorium_axe_adv.complete.text=It seems it is possible to empower the Axe, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Axes. The "Square" Mode, indicated by the Gems being Red, will clear out 5x5 areas of material by simply breaking the central block. And lastly, the "Fell" Mode, indicated by the Gems being Blue, will chop entire Trees, and cause their Leaves to decay rapidly.
+keletupack.research.ichorium_axe_adv.text=Com certeza, deve haver uma forma de extrair algo a mais dessas Ferramentas, as escrituras as descrevem como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com o Machado que eu fiz.
+keletupack.research.ichorium_axe_adv.complete.text=Parece que é possível deixar o Machado mais poderoso, e com esse novo poder, ele é capaz de limpar toda uma área de uma só vez quando desejado, simplesmente trocando entre os "Modos" disponíveis que tem. O Modo padrão, indicado pelas Gemas na ferramenta estando Verdes, fará ele agir que nem a maioria dos Machados. O Modo "Quadrado", indicado pelas Gemas estando Vermelhas, permitirá ele limpar uma área 5x5 simplesmente quebrando o bloco central. E por último, o Modo "Tombada", indicado pelas Gemas estando Azuis, vai fazê-lo derrubar Árvores inteiras, e fazer as folhas decaírem rapidamente.
 
 keletupack.research.ichor_shovel_adv.title=Pá de Icório Despertada
-keletupack.research.ichorium_shovel_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Shovel i have made.
-keletupack.research.ichorium_shovel_adv.complete.text=It seems it is possible to empower the Shovel, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Pickaxes. The "Square" Mode, indicated by the Gems being Red, will be able to clear a 5x5 area by simply breaking the central block. And lastly, the "Line" Mode, indicated by the Gems being Blue, will clear out material towards where i mined, useful for creating small tunnels quickly.
+keletupack.research.ichorium_shovel_adv.text=Com certeza, deve haver uma forma de extrair algo a mais dessas Ferramentas, as escrituras as descrevem como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com a Pá que eu fiz.
+keletupack.research.ichorium_shovel_adv.complete.text=Parece que é possível deixar a Pá mais poderosa, e com esse novo poder, ela é capaz de limpar toda uma área de uma só vez quando desejado, simplesmente trocando entre os "Modos" disponíveis que tem. O Modo padrão, indicado pelas Gemas na ferramenta estando Verdes, fará ele agir que nem a maioria das Pás. O Modo "Quadrado", indicado pelas Gemas estando Vermelhas, permitirá ela limpar uma área 5x5 simplesmente quebrando o bloco central. E por último, o Modo "Linear", vai tirar todos os materias de onde eu cavei da minha frente, útil para criar pequenos túneis rapidamente.
+
+##### Every research text below is not translated properly yet #####
 
 keletupack.research.ichorarmor.title=Armadura de Icor
 keletupack.research.ichorarmor.text=Infusing Enchanted Fabric with Ichor seems to be how Fourth Age Thaumaturges created Armor using Ichor. Clever.<BR>Replicating this Cloth myself should be a simple task.
@@ -223,21 +223,21 @@ tip.admode.name1=Velocidade Média
 tip.admode.name2=Velocidade Lenta
 tip.admode.name3=Velocidade Rápida
 
-tip.awakenpick.name0=Modo Bloco
+tip.awakenpick.name0=Modo Padrão
 tip.awakenpick.name1=Modo Quadrado
-tip.awakenpick.name2=Modo Linha
+tip.awakenpick.name2=Modo Linear
 
-tip.awakenshovel.name0=Modo Bloco
+tip.awakenshovel.name0=Modo Padrão
 tip.awakenshovel.name1=Modo Quadrado
-tip.awakenshovel.name2=Modo Coluna
+tip.awakenshovel.name2=Modo Linear
 
-tip.awakenaxe.name0=Modo Bloco
+tip.awakenaxe.name0=Modo Padrão
 tip.awakenaxe.name1=Modo Quadrado
-tip.awakenaxe.name2=Modo Árvore
+tip.awakenaxe.name2=Modo Tombada
 
-tip.awakensword.name0=Modo Único
-tip.awakensword.name1=Modo Área
-tip.awakensword.name2=Modo Alma
+tip.awakensword.name0=Modo Padrão
+tip.awakensword.name1=Modo Múltiplo
+tip.awakensword.name2=Modo Escudo
 
 tip.awakenarmor.name0=Despertada
 tip.awakenarmor.name1=Dormente
