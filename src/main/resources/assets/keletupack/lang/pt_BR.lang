@@ -128,11 +128,11 @@ keletupack.research.ichor_shovel_adv.title=Pá de Icório Despertada
 keletupack.research.ichorium_shovel_adv.text=Com certeza, deve haver uma forma de extrair algo a mais dessas Ferramentas, as escrituras as descrevem como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com a Pá que eu fiz.
 keletupack.research.ichorium_shovel_adv.complete.text=Parece que é possível deixar a Pá mais poderosa, e com esse novo poder, ela é capaz de limpar toda uma área de uma só vez quando desejado, simplesmente trocando entre os "Modos" disponíveis que tem. O Modo padrão, indicado pelas Gemas na ferramenta estando Verdes, fará ele agir que nem a maioria das Pás. O Modo "Quadrado", indicado pelas Gemas estando Vermelhas, permitirá ela limpar uma área 5x5 simplesmente quebrando o bloco central. E por último, o Modo "Linear", vai tirar todos os materias de onde eu cavei da minha frente, útil para criar pequenos túneis rapidamente.
 
-##### Every research text below is not translated properly yet #####
-
 keletupack.research.ichorarmor.title=Armadura de Icor
-keletupack.research.ichorarmor.text=Infusing Enchanted Fabric with Ichor seems to be how Fourth Age Thaumaturges created Armor using Ichor. Clever.<BR>Replicating this Cloth myself should be a simple task.
-keletupack.research.ichorarmor.complete.text=It is indeed not a difficult process, just a costly one.<BR>It seems that the Enchanted Fabric is enough to support the magical energy of the Ichor, so i won't be needing any extra reagents, besides somes Diamonds to embellish the Fabric with.<BR>The Armor that can be forged out of this cloth is practically unable to be damaged, and offers great defenses, but is this really all it has to offer?
+keletupack.research.ichorarmor.text=Infundindo Tecido Encantado com Icor parece ser o método cujo o qual os Taumaturgos da Quarta Era criaram Armaduras usando Icor. Bem sacado.<BR>Replicar esse Tecido só por mim mesmo deve ser uma tarefa fácil.
+keletupack.research.ichorarmor.complete.text=De fato não foi um processo difícil, só foi caro mesmo.<BR>Parece que o Tecido Encantado é suficiente para suportar a energia mágica do Icor, então eu não vou precisar de nenhum reagente extra, exceto alguns Diamantes para adornar o Tecido.<BR>A Armadura que pode ser forjada a partir desse tecido é praticamente incapaz de ser danificada, e oferece uma ótima defesa, mas será que isso é tudo que ela tem a oferecer?
+
+##### Every research text below is not translated properly yet #####
 
 keletupack.research.kamihelm.title=Capuz das Profundezas Abissais
 keletupack.research.kamihelm.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Cowl.
