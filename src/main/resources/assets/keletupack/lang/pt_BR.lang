@@ -83,7 +83,7 @@ item.ichor_cloth.name=Tecido de Icor
 item.ichor_ingot.name=Barra de Icório
 item.ichor_pouch.name=Pouxete de Tecido de Icor
 
-item.cleansing_amulet.name=Amuleto Remevedor de Warp
+item.cleansing_amulet.name=Amuleto de Remoção
 
 item.runic_ring.name=Anel Rúnico
 item.runic_girdle.name=Cinturão Rúnico do Ar
@@ -138,23 +138,23 @@ keletupack.research.ichorarmor.title=Armadura de Icor
 keletupack.research.ichorarmor.text=Infundindo Tecido Encantado com Icor parece ser o método cujo o qual os Taumaturgos da Quarta Era criaram Armaduras usando Icor. Bem sacado.<BR>Replicar esse Tecido só por mim mesmo deve ser uma tarefa fácil.
 keletupack.research.ichorarmor.complete.text=De fato não foi um processo difícil, só foi caro mesmo.<BR>Parece que o Tecido Encantado é suficiente para suportar a energia mágica do Icor, então eu não vou precisar de nenhum reagente extra, exceto alguns Diamantes para adornar o Tecido.<BR>A Armadura que pode ser forjada a partir desse tecido é praticamente incapaz de ser danificada, e oferece uma ótima defesa, mas será que isso é tudo que ela tem a oferecer?
 
-##### Every research text below is not translated properly yet #####
-
 keletupack.research.kamihelm.title=Capuz das Profundezas Abissais
-keletupack.research.kamihelm.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Cowl.
-keletupack.research.kamihelm.complete.text=It seems to be possible to Infuse the Cowl with the aspect of Aqua, granting me the ability to breathe and see underwater, aswell as allowing me to recover my health at a steady pace regardless of how hungry i am.
+keletupack.research.kamihelm.text=Com certeza, deve haver uma forma de extrair algo a mais dessa Armadura, as escrituras descrevem as partes dela como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com o Capuz.
+keletupack.research.kamihelm.complete.text=Parece que é possível Infundir o Capuz com o aspecto de Aqua, me proporcionando a habilidade de respirar e enxergar melhor debaixo d'água, da mesma forma que também permite que eu recupere minha vida passivamente independente do quão faminto eu estou.
 
 keletupack.research.kamichest.title=Vestes da Estratosfera
-keletupack.research.kamichest.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Robes.
-keletupack.research.kamichest.complete.text=It seems to be possible to Infuse the Robe with the aspect of Aer, granting the power of Flight.
+keletupack.research.kamichest.text=Com certeza, deve haver uma forma de extrair algo a mais dessa Armadura, as escrituras descrevem as partes dela como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com as Vestes.
+keletupack.research.kamichest.complete.text=Parece que é possível Infundir as Vestes com o aspecto de Aer, me proporcionando o poder de Voar.
 
 keletupack.research.kamilegs.title=Calças do Manto Ardente
-keletupack.research.kamilegs.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Legwear.
-keletupack.research.kamilegs.complete.text=It seems to be possible to Infuse the Leggings with the aspect of Ignis, granting me immunity to Fire, and drawing on the power of it to help heal my wounds.
+keletupack.research.kamilegs.text=Com certeza, deve haver uma forma de extrair algo a mais dessa Armadura, as escrituras descrevem as partes dela como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com as Calças.
+keletupack.research.kamilegs.complete.text=Parece que é possível Infundir as Calças com o aspecto de Ignis, me proporcionando imunidade a fogo, e drenando o poder dele para ajudar a curar minhas feridas.
 
 keletupack.research.kamiboots.title=Botas do Escudo do Horizonte
-keletupack.research.kamiboots.text=Surely, there must be a way to get more out of this Armor, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall see what i can do with the Boots.
-keletupack.research.kamiboots.complete.text=It seems to be possible to Infuse the Boots with the aspect of Terra, granting me improved speed and jumping, aswell as swifter Mining, and growing Grass atop any Dirt i walk on.
+keletupack.research.kamiboots.text=Com certeza, deve haver uma forma de extrair algo a mais dessa Armadura, as escrituras descrevem as partes dela como sendo muito mais interessantes do que as que eu criei, eu devo estar esquecendo alguma coisa, talvez eu deveria fazer uns experimentos com as Botas.
+keletupack.research.kamiboots.complete.text=Parece que é possível Infundir as Botas com o aspecto de Terra, me proporcionando velocidade e saltos maiores, da mesma forma que também permite eu Minerar mais rapidamente, e faz crescer Grama encima de qualquer Terra que eu ando.
+
+##### Every research text below is not translated properly yet #####
 
 ##Thaumcraft 4
 keletupack.research.thaumisc_tc4.title=Antique Miscellanea
@@ -177,24 +177,25 @@ keletupack.research.runic_baubles_aqua.title=Anel Rúnico da Recuperação
 keletupack.research.runic_baubles_aqua.text=I have found scraps of Research which mention an augmented Runic Ring, which would infuse the wearer with Regenerative power when their Shielding fell, this should be replicable with my practices.
 keletupack.research.runic_baubles_aqua.complete.text=It is infact, replicable! When my Runic Shielding falls, this Ring will grant a pulse of Regenerative power to me, though it will be unable to grant it again for a while after it activates.
 
+##### Every research text up is not translated properly yet #####
+
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=Warpologia
-keletupack.research.thaumisc_warptheory.text=This madness that has begun afflicting me, Warp, as i have dubbed it, may be bothersome in the future, i should consider looking into ways of getting rid of or tracking it.
-keletupack.research.thaumisc_warptheory.complete.text=It seems some scraps of information of items related to madness have survived from the Fourth Age, i shall record any discoveries i make on replicating these items near this section.
+keletupack.research.thaumisc_warptheory.text=Essa loucura que começou a me afetar, o Warp, como eu o decidi chamar, pode se tornar um encômodo no futuro, eu deveria considerar ir em busca de formas de me livrar dele ou de pelos menos monitorá-lo.
+keletupack.research.thaumisc_warptheory.complete.text=Parece que algumas escrituras de informações de itens relacionados a loucura têm sobrevivido à Quarta Era, eu deveria deixar registradas quaisquer descobertas que eu fizer a respeito desses itens próximas à essa seção.
 
 keletupack.research.warppaper.title=Papel Tornassol Arcano
-keletupack.research.warppaper.text=Sometimes, a Sanity Checker is just too imprecise, especially when my Warp levels are greater than what it was designed to handle, perhaps i can invent some more precise device?
-keletupack.research.warppaper.complete.text=Making anything reusable to measure Warp in higher amounts seems to be difficult, Warp is a powerful force that can overwhelm all manner of things designed to tinker with it, so it seems i will have to go with one of my earliest, yet most wasteful solutions...<BR>Arcane Litmus Paper, as i have dubbed it, is based on scraps from some Fourth Age Thaumturges, who supposedly discovered it. This Paper, when contacting an appropriate part of my body, will react depending on how much Warp i have, with the reaction being more violent the greater the amount, to a destructive point for the paper, thanks to overwhelming force of Warp.<BR>This will grant me a means of quantifying Warp at larger amounts, depending on the violence of the reaction, it may not be the most useful to my apparent self, but perhaps it is useful to the deeper parts of my mind...? No, that's absurd.
+keletupack.research.warppaper.text=De vez em quanto, um Checador de Sanidade é simplesmente impreciso demais, especialmente quando o meu nível de Warp são maiores do que os que ele foi desenvolvido para suportar, talvez eu possa inventar um dispositivo mais preciso?
+keletupack.research.warppaper.complete.text=Fazer algo que seja reutilizável para medir Warp em grandes quantidades me parece difícil, o Warp é uma força poderosa que pode superar todas coisas que foram feitas para trabalhar com ele, então parece que eu vou ter que fazeer uso de uma das minhas mais primitivas, e também mais disperdiçadoras soluções...<BR>Papel Tornassol Arcano, como decidi chamá-lo, é baseado nas escrituras de alguns Taumaturgos da Quarta Era, os quais supostamente o descobriram. Esse Papel, quando em contato com alguma parte apropriada do meu corpo, ele vai reagir dependendo de quanto Warp eu tenho, quanto mais violenta a reação maior a quantidade, levando até um ponto destrutivo do papel, graças a força arrasadora do Warp.<BR>Isso vai me garantir meios de medir Warp em grandes escalas, dependendo da violência da reação, talvez não seja a mais útil ao meu ver, mas quem sabe não é útil para as profundezas da minha mente...? Não, isso é absurdo.
 
 keletupack.research.taintmeat.title=Amálgama de Mácula
-keletupack.research.taintmeat.stage.1.text=Perhaps i should not reject the Warp, perhaps i should embrace it, perhaps... what forbidden secrets could it teach me?
-keletupack.research.taintmeat.complete.text=This was a mistake, dunking common Meat directly into Vitium Essentia corrupts and morphs it into an incomprehensible substance that is mentally taxing to eat.<BR>Though, i suppose if i am ever in need of madness, this is where to look...
+keletupack.research.taintmeat.stage.1.text=Talvez eu não devesse rejeitar o Warp, talvez eu devesse aceitá-lo, quem sabe... quais os segredos proibidos ele poderia me ensinar?
+keletupack.research.taintmeat.complete.text=Isso foi um erro, mergulhar Carne comum diretamente em Essência de Vitium corrompe e a transforma em uma substância incompreensível que é preciso ter estômago forte pra comer.<BR>Apesar disso, eu suponho que se eu estiver precisando de uma fonte de loucura, é pra esse negócio que eu devo me voltar...
 
-keletupack.research.cleansingamulet.title=Amuleto Removedor de Warp
-keletupack.research.cleansingamulet.stage.1.text=This madness is getting to me, i must do something about it. Scraps of research i've found from long-gone Thaumaturges of the Fourth Age rarely referenced a trinket only known as the Cleansing Amulet, if i am correct in my guesses, this Amulet should be able to cleanse Warp from me, though i do not know to what extent...
+keletupack.research.cleansingamulet.title=Amuleto de Remoção
+keletupack.research.cleansingamulet.stage.1.text=Essa doideira tá começando a mexer comigo, eu preciso fazer algo a respeito disso. Escrituras de pesquisa que eu encontrado dos velhos Taumaturgos da Quarta Era raramente mencionam uma bijuteria conhecida apenas como o Amuleto de Remoção, se minhas suposições estiverem corretas, esse Amuleto seria capaz de limpar o Warp de mim, embora eu não saiba até que nível...
+keletupack.research.cleansingamulet.complete.text=Eu acredito que encontrei a chave para replicar esse Amuleto, Pérolas Primordiais parecem ter um pingo de exaustão para energia maligna, tipo Warp, seja lá de onde o poder delas vem, ele se equilibra com a mesma força que a minha loucura, de algum jeito.<BR>Se minha hipótese estiver correta, esse Pendante deve ser capaz de drenar a loucura da minha própria mente, conectando-a à pérola e purificando-a, fazendo com que não passe de um mero sonho ruim, leva-se um tempo pra isso acontecer, apesar de funcionar, mas ele deve ser capaz de limpar até a mais Permanente das loucuras.
 keletupack.research.cleansingamulet.complete.text=I believe i've found the key to replicating this Amulet, Primordial Pearls seem to have a faint trickle of malignant energy, much like Warp, wherever their power comes from, it is tied to the same force as my madness, somehow.<BR>If my hypothesis is correct, this Pendant should be able to draw the madness from my very mind, binding it to the pearl and purifying it, making it little more than a bad dream, it does take time to do this, however, but it should even be capable of cleansing the most Permanent of madness.
-
-##### Every research text up is not translated properly yet #####
 
 ##Forbidden Magic
 keletupack.research.thaumisc_forbiddenmagic.title=Taumaturgia Proibida
