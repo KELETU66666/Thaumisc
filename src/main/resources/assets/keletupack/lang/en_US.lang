@@ -1,4 +1,5 @@
 # Special formatting codes:
+#
 # <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
 # <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
 # <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
@@ -98,6 +99,7 @@ item.shadow_fortress_chest.name=Shadow Fortress Chest
 item.shadow_fortress_legs.name=Shadow Fortress Legs
 item.shadow_ingot.name=Shadow Metal Ingot
 item.shadow_nugget.name=Shadow Metal Nugget
+
 #Research
 
 keletupack.research.thaumisc.title=Thaumic Miscellaneous
@@ -131,7 +133,7 @@ keletupack.research.ichorium_axe_adv.complete.text=It seems it is possible to em
 
 keletupack.research.ichorium_shovel_adv.title=Awakened Ichorium Shovel
 keletupack.research.ichorium_shovel_adv.text=Surely, there must be a way to get more out of these Tools, the scraps describe them as much more interesting than what i have created, perhaps i am missing something, i shall experiment with the Shovel i have made.
-keletupack.research.ichorium_shovel_adv.complete.text=It seems it is possible to empower the Shovel, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Pickaxes. The "Square" Mode, indicated by the Gems being Red, will be able to clear a 5x5 area by simply breaking the central block. And lastly, the "Line" Mode, indicated by the Gems being Blue, will clear out material towards where i mined, useful for creating small tunnels quickly.
+keletupack.research.ichorium_shovel_adv.complete.text=It seems it is possible to empower the Shovel, with this new power, it is capable of clearing out much more at once when desired, by cycling through the available "Modes" it has.<BR>The default Mode, indicated by the Gems on the tool being Green, will act similar to most Shovels. The "Square" Mode, indicated by the Gems being Red, will be able to clear a 5x5 area by simply breaking the central block. And lastly, the "Line" Mode, indicated by the Gems being Blue, will clear out material towards where i mined, useful for creating small tunnels quickly.
 
 keletupack.research.ichorarmor.title=Ichorcloth Armor
 keletupack.research.ichorarmor.text=Infusing Enchanted Fabric with Ichor seems to be how Fourth Age Thaumaturges created Armor using Ichor. Clever.<BR>Replicating this Cloth myself should be a simple task.
@@ -160,7 +162,7 @@ keletupack.research.thaumisc_tc4.complete.text=Thaumaturges of the Fourth Age ha
 
 keletupack.research.runic_baubles.title=Runic Baubles
 keletupack.research.runic_baubles.text=In the Fourth Age, Thaumaturges were said to use Baubles which granted them Runic protection against attacks - No doubt, this is akin to the Runic Shielding i have discovered.<BR>According to ancient notes, these Baubles would grant the wearer a substantial amount of Shielding, why old Thaumaturges preferred these specialized Baubles over enchanting their Armor and other Baubles with Shielding, however, is beyond me.<BR>Regardless of this information, i should see if i can replicate these Baubles, as it may grant me a cheaper means of amassing Runic Shielding.
-keletupack.research.runic_baubles.complete.text=It was far easier than i had imagined, simply enchanting mundane Baubles with a process similar to regular Shielding - albiet, with additional ingredients, gets me the result i desired.<BR>I have also discovered additional notes about versions of some of these Baubles which are attuned to particular Aspects, i should see if i can also replicate them.
+keletupack.research.runic_baubles.complete.text=It was far easier than i had imagined, simply enchanting mundane Baubles with a process similar to regular Shielding - albeit, with additional ingredients, gets me the result i desired.<BR>I have also discovered additional notes about versions of some of these Baubles which are attuned to particular Aspects, i should see if i can also replicate them.
 
 keletupack.research.runic_baubles_terra.title=Runic Amulet of Barriers
 keletupack.research.runic_baubles_terra.text=I have found scraps of Research which mention an augmented Runic Amulet, which could instantly restore some of the wearer's Shielding when it fell, this should be replicable with my practices.
@@ -243,6 +245,6 @@ tip.awakensword.name2=Soul Mode
 tip.awakenarmor.name0=Awaken
 tip.awakenarmor.name1=Dormancy
 
-#compat
+#Compat
 
 item.loot_bag_crystal.name=Crystal Treasure Bag

@@ -67,7 +67,7 @@
                      "required_craft":["forestry:frame_untreated", "thaumcraft:fabric"]
                 },
                 {
-                    "text": "tc.research_page.MB_FrameMagic.1, tc.research_page.MB_FrameMagic.2",
+                    "text": "tc.research_page.MB_FrameMagic.2",
                     "recipes": [
                         "thaumcraft:magicframe"
                     ]

@@ -1,4 +1,5 @@
 # Special formatting codes:
+#
 # <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
 # <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
 # <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
@@ -98,6 +99,7 @@ item.shadow_fortress_chest.name=暗影要塞胸铠
 item.shadow_fortress_legs.name=暗影要塞护腿
 item.shadow_ingot.name=暗影锭
 item.shadow_nugget.name=暗影粒
+
 #Research
 
 keletupack.research.thaumisc.title=神秘杂项学
@@ -243,6 +245,6 @@ tip.awakensword.name2=狩魂模式
 tip.awakenarmor.name0=觉醒
 tip.awakenarmor.name1=休眠
 
-#compat
+#Compat
 
 item.loot_bag_crystal.name=水晶奖励袋
