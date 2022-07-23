@@ -1,13 +1,10 @@
 package keletu.keletupack.init;
 
-import keletu.keletupack.items.LootBagCrystal;
-import keletu.keletupack.items.NetherCake;
+import keletu.keletupack.items.*;
 import keletu.keletupack.items.armor.IchorArmor;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.armor.ShadowArmor;
-import keletu.keletupack.items.food;
 import keletu.keletupack.items.tools.*;
-import keletu.keletupack.items.warpfood;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.Reference;
 import net.minecraft.init.SoundEvents;
@@ -57,5 +54,9 @@ public class ModItems {
     public static final Item ShadowHelm = new ShadowArmor("shadow_fortress_helm", SHADOW_FORTRESS, 1, EntityEquipmentSlot.HEAD);
     public static final Item ShadowChest = new ShadowArmor("shadow_fortress_chest", SHADOW_FORTRESS, 1, EntityEquipmentSlot.CHEST);
     public static final Item ShadowLegs = new ShadowArmor("shadow_fortress_legs", SHADOW_FORTRESS, 1, EntityEquipmentSlot.LEGS);
-    public static final Item.ToolMaterial TOOL_SHADOW = EnumHelper.addToolMaterial("SHADOW", 3, 2500, 17.0F, 6.0F, 30);
+    public static final Item.ToolMaterial MATERIAL_SHADOW = EnumHelper.addToolMaterial("SHADOW", 3, 2500, 17.0F, 6.0F, 30);
+    public static final ItemSword ShadowSword = new ShadowSword("shadow_sword", keletupack.ITEM_TAB, MATERIAL_SHADOW);
+    public static final ItemPickaxe ShadowPick = new ShadowPick("shadow_pick", keletupack.ITEM_TAB, MATERIAL_SHADOW);
+    public static final ItemAxe ShadowAxe = new ShadowAxe("shadow_axe", keletupack.ITEM_TAB, MATERIAL_SHADOW);
+    public static final ItemSpade ShadowShovel = new ShadowShovel("shadow_shovel", keletupack.ITEM_TAB, MATERIAL_SHADOW);
 }

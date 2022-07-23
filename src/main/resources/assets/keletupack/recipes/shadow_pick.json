@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "SSS",
+    " W ",
+    " W "
+  ],
+  "key": {
+    "S": {
+      "item": "keletupack:shadow_ingot"
+    },
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "keletupack:shadow_pick",
+    "data": 0
+  }
+}
