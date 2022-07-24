@@ -71,17 +71,22 @@ chat.warp.permanentwarp=阴魂不散的扭曲.
 chat.warp.normalwarp=一般的扭曲.
 chat.warp.tempwarp=浮于表面的扭曲.
 
-item.coin_witchery.name=巫师币
-item.coin_adventure.name=探险家币
-item.coin_bleed.name=血渍斑斑的金币
-item.coin_magic.name=魔法使币
+item.packresource.1.name=巫师币
+item.packresource.0.name=探险家币
+item.packresource.3.name=血渍斑斑的金币
+item.packresource.2.name=魔法使币
+item.packresource.4.name=法杖残片
+item.packresource.5.name=损坏的弓
 
-item.shard_end.name=末影裂痕
-item.shard_nether.name=下界残片
+item.big_pearl.name=极元始珍珠
 
-item.ichor.name=灵液
-item.ichor_cloth.name=灵布
-item.ichor_ingot.name=灵宝
+item.resourcetmisc.0.name=末影裂痕
+item.resourcetmisc.1.name=下界残片
+
+item.resourcetmisc.2.name=灵液
+item.resourcetmisc.3.name=灵宝
+item.resourcetmisc.4.name=灵布
+item.resourcetmisc.5.name=灵宝粒
 item.ichor_pouch.name=无底袋
 
 item.cleansing_amulet.name=净化护身符
@@ -97,8 +102,14 @@ item.arcane_disassembler.name=奥术分解机
 item.shadow_fortress_helm.name=暗影要塞兜鍪
 item.shadow_fortress_chest.name=暗影要塞胸铠
 item.shadow_fortress_legs.name=暗影要塞护腿
-item.shadow_ingot.name=暗影锭
-item.shadow_nugget.name=暗影粒
+item.shadow_sword.name=暗影金属剑
+item.shadow_pick.name=暗影金属镐
+item.shadow_axe.name=暗影金属斧
+item.shadow_shovel.name=暗影金属铲
+item.shadow_hoe.name=暗影金属锄
+
+item.resourcetmisc.6.name=暗影锭
+item.resourcetmisc.7.name=暗影粒
 
 #Research
 

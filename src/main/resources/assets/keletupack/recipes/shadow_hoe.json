@@ -1,9 +1,9 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "S",
-    "S",
-    "W"
+    "SS ",
+    " W ",
+    " W "
   ],
   "key": {
     "S": {
@@ -16,7 +16,7 @@
     }
   },
   "result": {
-    "item": "keletupack:shadow_sword",
+    "item": "keletupack:shadow_shovel",
     "data": 0
   }
 }

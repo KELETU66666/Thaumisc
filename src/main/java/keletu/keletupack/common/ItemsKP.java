@@ -11,11 +11,6 @@ public class ItemsKP {
     public static final Item WARP_PAPER = new warppaper();
     public static final Item TAINT_MEAT = null;
     public static final Item CLEANSING_AMULET =null;
-    public static final Item ICHOR = null;
-    public static final Item ICHOR_CLOTH =null;
-    public static final Item ICHOR_INGOT = null;
-    public static final Item SHARD_NETHER = new NetherShard();
-    public static final Item SHARD_END = new EnderShard();
     public static final Item ICHORIUM_SWORD =null;
     public static final Item ICHORIUM_AXE = null;
     public static final Item ICHORIUM_PICK =null;
@@ -36,7 +31,6 @@ public class ItemsKP {
     public static final Item MORPH_AXE = null;
     public static final Item MORPH_PICK =null;
     public static final Item MORPH_SHOVEL = null;
-    public static final Item COIN_ADVENTURE = null;
     public static final Item DISTORTION_PICK = null;
     public static final Item RUNIC_RING = new RunicRing();
     public static final Item RUNIC_GIRDLE = new RunicGirdle();
@@ -44,7 +38,6 @@ public class ItemsKP {
     public static final Item RUNIC_RING_WATER = new RunicRingWater();
     public static final Item RUNIC_GIRDLE_AIR = new RunicGirdleAir();
     public static final Item RUNIC_AMULET_EARTH = new RunicAmuletEarth();
-    public static final Item SHADOW_INGOT = new ShadowIngot();
-    public static final Item SHADOW_NUGGET = new ShadowNugget();
     public static final Item LOOT_BAG_CRYSTAL = null;
+    public static final Item RESOURCETMISC = null;
 }

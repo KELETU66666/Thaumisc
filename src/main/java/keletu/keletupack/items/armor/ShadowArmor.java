@@ -159,7 +159,7 @@ public class ShadowArmor extends ItemArmor implements ISpecialArmor, IGoggles, I
     }
 
     public boolean getIsRepairable(ItemStack stack1, ItemStack stack2) {
-        return stack2.isItemEqual(new ItemStack(ItemsKP.SHADOW_INGOT)) ? true : super
+        return stack2.isItemEqual(new ItemStack(ItemsKP.RESOURCETMISC, 1, 6)) ? true : super
                 .getIsRepairable(stack1, stack2);
     }
 

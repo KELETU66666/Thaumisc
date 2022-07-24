@@ -5,7 +5,7 @@
         "name": "keletupack.research.thaumisc.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:coin_magic"
+          "keletupack:textures/items/coin_magic.png"
         ],"meta":["ROUND"],
         "parents": [
          "UNLOCKINFUSION"
@@ -32,7 +32,7 @@
         "name": "keletupack.research.thaumisc_warptheory.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:coin_witchery"
+          "keletupack:textures/items/coin_witchery.png"
         ],"meta":["ROUND", "REVERSE"],
         "parents": [
          "THAUMISC", "INFUSION", "WARP"
@@ -58,7 +58,7 @@
         "name": "keletupack.research.thaumisc_forbiddenmagic.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:coin_bleed"
+          "keletupack:textures/items/coin_bleed.png"
         ],"meta":["ROUND"],
         "parents": [
          "THAUMISC", "INFUSION"
@@ -140,7 +140,7 @@
         "name": "keletupack.research.thaumisc_tc4.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:coin_adventure"
+          "keletupack:textures/items/coin_adventure.png"
         ],"meta":["ROUND"],
         "parents": [
          "THAUMISC", "INFUSION", "RUNICSHIELDING"
@@ -405,8 +405,8 @@
         "name": "keletupack.research.dimensionalshard.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:shard_nether",
-          "keletupack:shard_end"
+          "keletupack:resourcetmisc;1;0",
+          "keletupack:resourcetmisc;1;1"
         ],
         "parents": [
           "ESSENTIATRANSPORT","IMPROVEDSMELTING2","POTIONSPRAYER", "SANESOAP", "LIQUIDDEATH", "BOTTLETAINT", "ARCANESPA", "EVERFULLURN", "METALPURIFICATION", "POTIONSPRAYER",
@@ -442,7 +442,7 @@
         "name": "keletupack.research.ichor.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:ichor"
+          "keletupack:resourcetmisc;1;2"
         ],
         "parents": [
           "DIMENSIONALSHARD"
@@ -477,7 +477,7 @@
         "name": "keletupack.research.ichoriumtools.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:ichor_ingot"
+          "keletupack:resourcetmisc;1;3"
         ],
         "parents": [
           "ICHOR"
@@ -506,7 +506,7 @@
         "name": "keletupack.research.ichorarmor.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:ichor_cloth"
+          "keletupack:resourcetmisc;1;4"
         ],
         "parents": [
           "ICHOR"
@@ -769,7 +769,7 @@
         "name": "keletupack.research.shadow_metal.title",
         "category": "THAUMISC",
         "icons": [
-          "keletupack:shadow_ingot"
+          "keletupack:resourcetmisc;1;6"
         ],
         "parents": [
           "~BASEELDRITCH"

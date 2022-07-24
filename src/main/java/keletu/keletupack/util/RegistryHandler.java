@@ -29,11 +29,6 @@ public class RegistryHandler {
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
         event.getRegistry().registerAll(new Cleansingamulet());
         event.getRegistry().registerAll(new warppaper());
-        event.getRegistry().registerAll(new EnderShard());
-        event.getRegistry().registerAll(new NetherShard());
-        event.getRegistry().registerAll(new Ichor());
-        event.getRegistry().registerAll(new IchorCloth());
-        event.getRegistry().registerAll(new IchorIngot());
         event.getRegistry().registerAll(new IchorPouch());
         event.getRegistry().registerAll(new RunicRing());
         event.getRegistry().registerAll(new RunicGirdle());
@@ -41,13 +36,9 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicRingWater());
         event.getRegistry().registerAll(new RunicGirdleAir());
         event.getRegistry().registerAll(new RunicAmuletEarth());
-        event.getRegistry().registerAll(new ShadowIngot());
-        event.getRegistry().registerAll(new ShadowNugget());
+        event.getRegistry().registerAll(new ResourceTmisc());
         if(ConfigKP.ConfigKP.ENABLEPACKITEM){
-            event.getRegistry().registerAll(new coin_adventure());
-            event.getRegistry().registerAll(new coin_witchery());
-            event.getRegistry().registerAll(new coin_bleed());
-            event.getRegistry().registerAll(new coin_magic());
+            event.getRegistry().registerAll(new ResourceKP());
         }
         if(Loader.isModLoaded("thaumadditions") && Loader.isModLoaded("thaumicwonders") && ConfigKP.ConfigKP.ENABLECRYSTALBAG == true){
             event.getRegistry().registerAll(new LootBagCrystal("loot_bag_crystal", keletupack.ITEM_TAB));
@@ -85,7 +76,7 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void registerAspects(AspectRegistryEvent event) {
         AspectEventProxy proxy = event.register;
-        proxy.registerComplexObjectTag(new ItemStack(ItemsKP.SHARD_NETHER), new AspectList().add(Aspect.FIRE, 2).add(Aspect.UNDEAD, 2).add(Aspect.DEATH, 2));
-        proxy.registerComplexObjectTag(new ItemStack(ItemsKP.SHARD_END), new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.DESIRE, 2).add(Aspect.DARKNESS, 2));
+        proxy.registerComplexObjectTag(new ItemStack(ItemsKP.RESOURCETMISC, 1, 1), new AspectList().add(Aspect.FIRE, 2).add(Aspect.UNDEAD, 2).add(Aspect.DEATH, 2));
+        proxy.registerComplexObjectTag(new ItemStack(ItemsKP.RESOURCETMISC, 1, 0), new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.DESIRE, 2).add(Aspect.DARKNESS, 2));
     }
 }

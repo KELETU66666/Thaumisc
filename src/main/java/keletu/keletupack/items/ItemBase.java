@@ -12,9 +12,12 @@ public class ItemBase extends Item implements IHasModel {
         ModItems.ITEMS.add(this);
     }
 
+
     @Override
     public void registerModels() {
-        keletupack.proxy.registerItemRenderer(this, 0, "inventory");
+        for (int i = 0; i < 8; i++) {
+            keletupack.proxy.registerItemRenderer(this, i, "inventory");
+        }
     }
 
 }

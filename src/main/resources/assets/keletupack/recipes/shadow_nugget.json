@@ -2,12 +2,13 @@
   "type": "forge:ore_shapeless",
   "ingredients": [
     {
-      "item": "keletupack:shadow_ingot"
+      "item": "keletupack:resourcetmisc",
+      "data": 6
     }
   ],
   "result": {
-    "item": "keletupack:shadow_nugget",
+    "item": "keletupack:resourcetmisc",
     "count": 9,
-    "data": 0
+    "data": 7
   }
 }

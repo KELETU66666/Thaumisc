@@ -2,36 +2,45 @@
   "type": "forge:ore_shapeless",
   "ingredients": [
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     },
     {
-      "item": "keletupack:shadow_nugget"
+      "item": "keletupack:resourcetmisc",
+      "data": 7
     }
   ],
   "result": {
-    "item": "keletupack:shadow_ingot",
+    "item": "keletupack:resourcetmisc",
     "count": 1,
-    "data": 0
+    "data": 6
   }
 }

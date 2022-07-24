@@ -71,17 +71,22 @@ chat.warp.permanentwarp=Permanent Warp
 chat.warp.normalwarp=Normal Warp
 chat.warp.tempwarp=Temporary Warp
 
-item.coin_witchery.name=Wizard's Coin
-item.coin_adventure.name=Adventure's Coin
-item.coin_bleed.name=Bloodstained Coin
-item.coin_magic.name=Magic Coin
+item.packresource.1.name=Wizard's Coin
+item.packresource.0.name=Adventure's Coin
+item.packresource.3.name=Bloodstained Coin
+item.packresource.2.name=Magic Coin
+item.packresource.4.name=Broken Twilight Wand
+item.packresource.5.name=Broken Twilight Bow
 
-item.shard_end.name=Ender Shard
-item.shard_nether.name=Nether Shard
+item.big_pearl.name=Extremely Primordial Pearl
 
-item.ichor.name=Ichor
-item.ichor_cloth.name=Ichor Cloth
-item.ichor_ingot.name=Ichorium Ingot
+item.resourcetmisc.0.name=Ender Shard
+item.resourcetmisc.1.name=Nether Shard
+
+item.resourcetmisc.2.name=Ichor
+item.resourcetmisc.3.name=Ichorium Ingot
+item.resourcetmisc.4.name=Ichor Cloth
+item.resourcetmisc.5.name=Ichorium Nugget
 item.ichor_pouch.name=Ichorcloth Pouch
 
 item.cleansing_amulet.name=Cleansing Amulet
@@ -97,8 +102,14 @@ item.arcane_disassembler.name=Thaumic Disassembler
 item.shadow_fortress_helm.name=Shadow Fortress Helm
 item.shadow_fortress_chest.name=Shadow Fortress Chest
 item.shadow_fortress_legs.name=Shadow Fortress Legs
-item.shadow_ingot.name=Shadow Metal Ingot
-item.shadow_nugget.name=Shadow Metal Nugget
+item.shadow_sword.name=Shadow Metal Sword
+item.shadow_pick.name=Shadow Metal Pickaxe
+item.shadow_axe.name=Shadow Metal Axe
+item.shadow_shovel.name=Shadow Metal Shovel
+item.shadow_hoe.name=Shadow Metal Hoe
+
+item.resourcetmisc.6.name=Shadow Metal Ingot
+item.resourcetmisc.7.name=Shadow Metal Nugget
 
 #Research
 

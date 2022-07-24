@@ -1,0 +1,38 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "keletupack:items/coin_adventure"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "meta": 1
+            },
+            "model": "keletupack:item/coin_witchery"
+        },
+        {
+            "predicate": {
+                "meta": 2
+            },
+            "model": "keletupack:item/coin_magic"
+        },
+        {
+            "predicate": {
+                "meta": 3
+            },
+            "model": "keletupack:item/coin_bleed"
+        },
+        {
+            "predicate": {
+                "meta": 4
+            },
+            "model": "keletupack:item/broken_wand"
+        },
+        {
+            "predicate": {
+                "meta": 5
+            },
+            "model": "keletupack:item/broken_bow"
+        }
+    ]
+}

@@ -57,24 +57,24 @@ private static void initArcaneRecipes() {
             "ICHOR",
             750,
             new AspectList().add(Aspect.AIR, 10).add(Aspect.WATER, 10).add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.FIRE, 10).add(Aspect.ENTROPY, 10),
-            new ItemStack(ItemsKP.ICHOR_CLOTH,3,0),
+            new ItemStack(ItemsKP.RESOURCETMISC,3,4),
             "CCC",
             "III",
             "DDD",
             'C', new ItemStack(ItemsTC.fabric),
-            'I', new ItemStack(ItemsKP.ICHOR),
+            'I', new ItemStack(ItemsKP.RESOURCETMISC,1,2),
             'D', new ItemStack(Items.DIAMOND)));
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_ingot"), new ShapedArcaneRecipe(
                   defaultGroup,
                   "ICHOR",
                     500,
                   new AspectList().add(Aspect.AIR, 5).add(Aspect.WATER, 5).add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.FIRE, 5).add(Aspect.ENTROPY, 5),
-                   new ItemStack(ItemsKP.ICHOR_INGOT),
+                        new ItemStack(ItemsKP.RESOURCETMISC,1,3),
                         " T ",
                         "IDI",
                         " I ",
                         'T', new ItemStack(ItemsTC.ingots, 1, 0),
-                        'I', new ItemStack(ItemsKP.ICHOR),
+                        'I', new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                         'D', new ItemStack(Items.DIAMOND)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_sword"), new ShapedArcaneRecipe(
             defaultGroup,
@@ -82,10 +82,10 @@ private static void initArcaneRecipes() {
             150,
             new AspectList().add(Aspect.AIR, 3).add(Aspect.WATER, 3).add(Aspect.ORDER, 3).add(Aspect.EARTH, 3).add(Aspect.FIRE, 3).add(Aspect.ENTROPY, 3),
             new ItemStack(ItemsKP.ICHORIUM_SWORD),
-            " I ",
-            " I ",
-            " S ",
-            'I', new ItemStack(ItemsKP.ICHOR_INGOT),
+            "I",
+            "I",
+            "S",
+            'I', new ItemStack(ItemsKP.RESOURCETMISC,1,3),
             'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_pick"), new ShapedArcaneRecipe(
             defaultGroup,
@@ -96,7 +96,7 @@ private static void initArcaneRecipes() {
             "III",
             " S ",
             " S ",
-            'I', new ItemStack(ItemsKP.ICHOR_INGOT),
+            'I', new ItemStack(ItemsKP.RESOURCETMISC,1,3),
             'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_shovel"), new ShapedArcaneRecipe(
             defaultGroup,
@@ -107,7 +107,7 @@ private static void initArcaneRecipes() {
             " I ",
             " S ",
             " S ",
-            'I', new ItemStack(ItemsKP.ICHOR_INGOT),
+            'I', new ItemStack(ItemsKP.RESOURCETMISC,1,3),
             'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_axe"), new ShapedArcaneRecipe(
             defaultGroup,
@@ -118,7 +118,7 @@ private static void initArcaneRecipes() {
             "II ",
             "IS ",
             " S ",
-            'I', new ItemStack(ItemsKP.ICHOR_INGOT),
+            'I', new ItemStack(ItemsKP.RESOURCETMISC,1,3),
             'S', new ItemStack(BlocksTC.logSilverwood)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_helm"), new ShapedArcaneRecipe(
             defaultGroup,
@@ -128,7 +128,7 @@ private static void initArcaneRecipes() {
             new ItemStack(ItemsKP.ICHOR_HELM),
             "CCC",
             "C C",
-            'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
+            'C', new ItemStack(ItemsKP.RESOURCETMISC,1,4)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_chest"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORARMOR",
@@ -138,7 +138,7 @@ private static void initArcaneRecipes() {
             "C C",
             "CCC",
             "CCC",
-            'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
+            'C', new ItemStack(ItemsKP.RESOURCETMISC,1,4)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_legs"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORARMOR",
@@ -148,7 +148,7 @@ private static void initArcaneRecipes() {
             "CCC",
             "C C",
             "C C",
-            'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
+            'C', new ItemStack(ItemsKP.RESOURCETMISC,1,4)));
     ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_boots"), new ShapedArcaneRecipe(
             defaultGroup,
             "ICHORARMOR",
@@ -157,13 +157,13 @@ private static void initArcaneRecipes() {
             new ItemStack(ItemsKP.ICHOR_BOOTS),
             "C C",
             "C C",
-            'C', new ItemStack(ItemsKP.ICHOR_CLOTH)));
+            'C', new ItemStack(ItemsKP.RESOURCETMISC,1,4)));
 }
 
 private static void initCrucibleRecipes() {
     ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "shadow_metal"), new CrucibleRecipe(
             "SHADOW_METAL",
-            new ItemStack(ItemsKP.SHADOW_NUGGET),
+            new ItemStack(ItemsKP.RESOURCETMISC,1,7),
             "nuggetIron",
             new AspectList().add(Aspect.DARKNESS, 15).add(Aspect.METAL, 30).add(Aspect.DARKNESS, 10)
     ));
@@ -211,11 +211,11 @@ private static void initInfusionRecipes() {
                 new AspectList().add(Aspect.EXCHANGE, 125).add(Aspect.ELDRITCH, 125).add(Aspect.MAGIC, 250),
                 new ItemStack(ItemsTC.baubles, 1, 0),
                 new Object[] {
-                        new ItemStack(ItemsKP.ICHOR),
+                        new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                         "ingotGold",
                         "gemDiamond",
                         new ItemStack(ItemsTC.salisMundus),
-                        new ItemStack(ItemsKP.ICHOR),
+                        new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                         "ingotGold",
                         "gemDiamond",
                         new ItemStack(ItemsTC.salisMundus)
@@ -228,9 +228,9 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.LIGHT, 125).add(Aspect.MAN, 125).add(Aspect.SOUL, 250),
             new ItemStack(Items.NETHER_STAR),
             new Object[]{
-                    new ItemStack(ItemsKP.SHARD_NETHER),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,1),
                     new ItemStack(Items.DIAMOND),
-                    new ItemStack(ItemsKP.SHARD_END),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,0),
                     new ItemStack(Items.ENDER_EYE),
             }
     ));
@@ -242,8 +242,8 @@ private static void initInfusionRecipes() {
                     new ItemStack(ItemsKP.ICHOR_HELM),
             new Object[]{
                     new ItemStack(Items.DIAMOND),
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.thaumonomicon),
                     new ItemStack(Items.CHORUS_FRUIT_POPPED),
                     new ItemStack(Items.GOLDEN_HELMET),
@@ -263,8 +263,8 @@ private static void initInfusionRecipes() {
             new ItemStack(ItemsKP.ICHOR_CHEST),
             new Object[]{
                     new ItemStack(Items.DIAMOND),
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.thaumonomicon),
                     new ItemStack(Items.CHORUS_FRUIT_POPPED),
                     new ItemStack(Items.GOLDEN_CHESTPLATE),
@@ -284,8 +284,8 @@ private static void initInfusionRecipes() {
             new ItemStack(ItemsKP.ICHOR_LEGS),
             new Object[]{
                     new ItemStack(Items.DIAMOND),
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.thaumonomicon),
                     new ItemStack(Items.CHORUS_FRUIT_POPPED),
                     new ItemStack(Items.GOLDEN_CHESTPLATE),
@@ -305,8 +305,8 @@ private static void initInfusionRecipes() {
             new ItemStack(ItemsKP.ICHOR_BOOTS),
             new Object[]{
                     new ItemStack(Items.DIAMOND),
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.thaumonomicon),
                     new ItemStack(Items.CHORUS_FRUIT_POPPED),
                     new ItemStack(Items.GOLDEN_BOOTS),
@@ -325,8 +325,8 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.FIRE, 150).add(Aspect.DESIRE, 60).add(Aspect.METAL, 125).add(Aspect.TOOL, 250).add(Aspect.SENSES, 60).add(Aspect.EARTH, 125),
             new ItemStack(ItemsKP.ICHORIUM_PICK),
             new Object[]{
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR_INGOT),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,3),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.elementalPick),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(Blocks.TNT),
@@ -336,7 +336,7 @@ private static void initInfusionRecipes() {
                     new ItemStack(Items.DIAMOND),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(ItemsTC.elementalPick),
-                    new ItemStack(ItemsKP.ICHOR_CLOTH)
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,4)
             }
     ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_shovel_adv"), new InfusionRecipe(
@@ -346,8 +346,8 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.TOOL, 250).add(Aspect.SENSES, 60).add(Aspect.EARTH, 125).add(Aspect.TRAP, 60),
             new ItemStack(ItemsKP.ICHORIUM_SHOVEL),
             new Object[]{
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR_INGOT),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,3),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.elementalShovel),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(Blocks.TNT),
@@ -357,7 +357,7 @@ private static void initInfusionRecipes() {
                     new ItemStack(Items.DIAMOND),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(ItemsTC.elementalShovel),
-                    new ItemStack(ItemsKP.ICHOR_CLOTH)
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,4)
             }
     ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_axe_adv"), new InfusionRecipe(
@@ -367,8 +367,8 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.WATER, 150).add(Aspect.PLANT, 125).add(Aspect.TOOL, 250).add(Aspect.SENSES, 60),
             new ItemStack(ItemsKP.ICHORIUM_AXE),
             new Object[]{
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR_INGOT),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,3),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.elementalAxe),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(Blocks.TNT),
@@ -378,7 +378,7 @@ private static void initInfusionRecipes() {
                     new ItemStack(Items.DIAMOND),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(ItemsTC.elementalAxe),
-                    new ItemStack(ItemsKP.ICHOR_CLOTH)
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,4)
             }
     ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichorium_sword_adv"), new InfusionRecipe(
@@ -388,8 +388,8 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.AIR, 150).add(Aspect.DESIRE, 250).add(Aspect.ORDER, 60).add(Aspect.ENERGY, 125).add(Aspect.CRYSTAL, 60).add(Aspect.SOUL, 125).add(Aspect.AVERSION, 125),
             new ItemStack(ItemsKP.ICHORIUM_SWORD),
             new Object[]{
-                    new ItemStack(ItemsKP.ICHOR),
-                    new ItemStack(ItemsKP.ICHOR_INGOT),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,3),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
                     new ItemStack(ItemsTC.elementalSword),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(Blocks.CACTUS),
@@ -399,7 +399,7 @@ private static void initInfusionRecipes() {
                     new ItemStack(Items.DIAMOND),
                     new ItemStack(ItemsTC.mechanismComplex),
                     new ItemStack(ItemsTC.elementalSword),
-                    new ItemStack(ItemsKP.ICHOR_CLOTH)
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,4)
             }
     ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "morph_shovel"), new InfusionRecipe(
@@ -581,8 +581,8 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.METAL, 100).add(Aspect.PROTECT, 80).add(Aspect.MAGIC, 45).add(Aspect.DARKNESS, 120).add(Aspect.VOID, 85),
             new ItemStack(ItemsTC.voidHelm),
             new Object[]{
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
                     "ingotIron",
                     "ingotIron",
                     "gemEmerald"
@@ -595,10 +595,10 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.METAL, 150).add(Aspect.PROTECT, 100).add(Aspect.MAGIC, 70).add(Aspect.DARKNESS, 150).add(Aspect.VOID, 100),
             new ItemStack(ItemsTC.voidChest),
             new Object[]{
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
                     "ingotIron",
                     "leather"
             }
@@ -610,9 +610,9 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.METAL, 125).add(Aspect.PROTECT, 90).add(Aspect.MAGIC, 65).add(Aspect.DARKNESS, 125).add(Aspect.VOID, 90),
             new ItemStack(ItemsTC.voidLegs),
             new Object[]{
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
-                    new ItemStack(ItemsKP.SHADOW_INGOT),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,6),
                     "ingotIron",
                     "leather"
             }
