@@ -2,6 +2,7 @@ package keletu.keletupack.items.baubles;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
+import keletu.keletupack.ConfigKP;
 import keletu.keletupack.items.ItemBase;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.ItemNBTHelper;
@@ -32,7 +33,7 @@ public class Cleansingamulet extends ItemBase implements IBauble {
                 }else if(ItemNBTHelper.getInt(itemstack, "time",0)==0){
                     ThaumcraftApi.internalMethods.addWarpToPlayer(p,-2, IPlayerWarp.EnumWarpType.PERMANENT);
                     ThaumcraftApi.internalMethods.addWarpToPlayer(p ,3, IPlayerWarp.EnumWarpType.TEMPORARY);
-                    ItemNBTHelper.setInt(itemstack, "time", 12000);
+                    ItemNBTHelper.setInt(itemstack, "time", ConfigKP.ConfigKP.CLEASINGCHARMTICK);
                 }
             }
         }
@@ -41,7 +42,7 @@ public class Cleansingamulet extends ItemBase implements IBauble {
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
         if (tab == keletupack.ITEM_TAB) {
             ItemStack item = new ItemStack(this);
-            ItemNBTHelper.setInt(item, "time", 12000);
+            ItemNBTHelper.setInt(item, "time", ConfigKP.ConfigKP.CLEASINGCHARMTICK);
             items.add(item);
         }
     }

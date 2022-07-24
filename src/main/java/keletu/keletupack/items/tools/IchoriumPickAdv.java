@@ -1,5 +1,6 @@
 package keletu.keletupack.items.tools;
 
+import keletu.keletupack.ConfigKP;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
@@ -76,10 +77,10 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         IBlockState state = world.getBlockState(pos);
         state.getBlock().equals(ModBlocks.BEDROCK_PORTAL);
 
-        if (y <= 253 && world.getBlockState(pos).getBlock().equals(Blocks.BEDROCK) && player.dimension == 31871) {
+        if (y <= 253 && world.getBlockState(pos).getBlock().equals(Blocks.BEDROCK) && player.dimension == ConfigKP.ConfigKP.BEDROCKDIMENSIONID) {
             world.setBlockToAir(pos);
         }
-        if (world.getBlockState(pos).getBlock() == Blocks.BEDROCK && ((player.dimension == 0 && y < 3) || (y > 253 && player.dimension == 31871)))
+        if (world.getBlockState(pos).getBlock() == Blocks.BEDROCK && ((player.dimension == 0 && y < 3) || (y > 253 && player.dimension == ConfigKP.ConfigKP.BEDROCKDIMENSIONID)))
         {
             world.setBlockState(pos, ModBlocks.BEDROCK_PORTAL.getDefaultState());
         }return false;
@@ -159,7 +160,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
                     //:Replicate logic of PlayerInteractionManager.tryHarvestBlock(pos1)
                     IBlockState state1 = worldIn.getBlockState(pos1);
                     float f = state1.getBlockHardness(worldIn, pos1);
-                    if (f >= 0F|| (f>=-1F && player.dimension ==31871)) {
+                    if (f >= 0F|| (f>=-1F && player.dimension ==ConfigKP.ConfigKP.BEDROCKDIMENSIONID)) {
                         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
                         MinecraftForge.EVENT_BUS.post(event);
                         if (!event.isCanceled()) {
@@ -230,7 +231,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
 
                 IBlockState state1 = worldIn.getBlockState(pos1);
                 float f = state1.getBlockHardness(worldIn, pos1);
-                if (f >= 0F|| (f>=-1F && player.dimension ==31871)) {
+                if (f >= 0F|| (f>=-1F && player.dimension ==ConfigKP.ConfigKP.BEDROCKDIMENSIONID)) {
                     BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
                     MinecraftForge.EVENT_BUS.post(event);
                     if (!event.isCanceled()) {

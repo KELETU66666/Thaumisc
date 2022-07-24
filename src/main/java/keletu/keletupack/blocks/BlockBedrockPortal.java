@@ -1,5 +1,6 @@
 package keletu.keletupack.blocks;
 
+import keletu.keletupack.ConfigKP;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
 import keletu.keletupack.dim.TestWorldProvider;
 import keletu.keletupack.init.ModBlocks;
@@ -65,7 +66,7 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
         super.onEntityCollidedWithBlock(world, pos, state, entity);
 
         if (entity instanceof EntityPlayer && !world.isRemote) {
-            if (entity.dimension != 31871) {
+            if (entity.dimension != ConfigKP.ConfigKP.BEDROCKDIMENSIONID) {
 
                 int x = pos.getX();
                 int y = pos.getY();
@@ -77,7 +78,7 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
                 BlockPos pos4 = pos.add(0, 254 - y, 0);
                 BlockPos pos5 = pos.add(0, 255 - y, 0);
 
-                entity.changeDimension(31871, new TeleporterBedrock((WorldServer) world));
+                entity.changeDimension(ConfigKP.ConfigKP.BEDROCKDIMENSIONID, new TeleporterBedrock((WorldServer) world));
                 entity.setPositionAndUpdate(x + 0.5, 251, z + 0.5);
 
 

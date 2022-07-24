@@ -1,5 +1,6 @@
 package keletu.keletupack.dim;
 
+import keletu.keletupack.ConfigKP;
 import keletu.keletupack.util.Reference;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
@@ -14,10 +15,10 @@ public class ModDimensions {
     }
 
     private static void registerDimensionTypes() {
-        testDimensionType = DimensionType.register(Reference.MOD_ID, "_test", 31871, TestWorldProvider.class, false);
+        testDimensionType = DimensionType.register(Reference.MOD_ID, "_test", ConfigKP.ConfigKP.BEDROCKDIMENSIONID, TestWorldProvider.class, false);
     }
 
     private static void registerDimensions() {
-        DimensionManager.registerDimension(31871, testDimensionType);
+        DimensionManager.registerDimension(ConfigKP.ConfigKP.BEDROCKDIMENSIONID, testDimensionType);
     }
 }

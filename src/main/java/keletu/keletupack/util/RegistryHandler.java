@@ -1,5 +1,6 @@
 package keletu.keletupack.util;
 
+import keletu.keletupack.ConfigKP;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.init.ModBlocks;
@@ -28,10 +29,6 @@ public class RegistryHandler {
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
         event.getRegistry().registerAll(new Cleansingamulet());
         event.getRegistry().registerAll(new warppaper());
-        event.getRegistry().registerAll(new coin_witchery());
-        event.getRegistry().registerAll(new coin_adventure());
-        event.getRegistry().registerAll(new coin_bleed());
-        event.getRegistry().registerAll(new coin_magic());
         event.getRegistry().registerAll(new EnderShard());
         event.getRegistry().registerAll(new NetherShard());
         event.getRegistry().registerAll(new Ichor());
@@ -46,7 +43,13 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicAmuletEarth());
         event.getRegistry().registerAll(new ShadowIngot());
         event.getRegistry().registerAll(new ShadowNugget());
-        if(Loader.isModLoaded("thaumadditions") && Loader.isModLoaded("thaumicwonders")){
+        if(ConfigKP.ConfigKP.ENABLEPACKITEM){
+            event.getRegistry().registerAll(new coin_adventure());
+            event.getRegistry().registerAll(new coin_witchery());
+            event.getRegistry().registerAll(new coin_bleed());
+            event.getRegistry().registerAll(new coin_magic());
+        }
+        if(Loader.isModLoaded("thaumadditions") && Loader.isModLoaded("thaumicwonders") && ConfigKP.ConfigKP.ENABLECRYSTALBAG == true){
             event.getRegistry().registerAll(new LootBagCrystal("loot_bag_crystal", keletupack.ITEM_TAB));
         }
     }
