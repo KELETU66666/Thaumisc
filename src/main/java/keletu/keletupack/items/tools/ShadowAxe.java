@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 public class ShadowAxe extends ItemAxe implements IHasModel{
     public ShadowAxe(String name, CreativeTabs tab, ToolMaterial material) {
 
-        super(material,10.0F,-3.0F);
+        super(material,11.0F,-3.0F);
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);

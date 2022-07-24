@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 public class IchoriumAxe extends ItemAxe implements IHasModel{
     public IchoriumAxe(String name, CreativeTabs tab, ToolMaterial material) {
 
-        super(material,9.0F,-3.0F);
+        super(material,10.0F,-3.0F);
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);

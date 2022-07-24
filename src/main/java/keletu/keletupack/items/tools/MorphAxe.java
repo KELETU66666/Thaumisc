@@ -25,7 +25,7 @@ public class MorphAxe extends ItemAxe implements IHasModel {
 
     public MorphAxe(String name, CreativeTabs tab, ToolMaterial material) {
 
-        super(material,10.0F,-3.0F);
+        super(material,8.0F,-3.0F);
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);

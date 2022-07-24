@@ -29,7 +29,6 @@ public class RegistryHandler {
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
         event.getRegistry().registerAll(new Cleansingamulet());
         event.getRegistry().registerAll(new warppaper());
-        event.getRegistry().registerAll(new IchorPouch());
         event.getRegistry().registerAll(new RunicRing());
         event.getRegistry().registerAll(new RunicGirdle());
         event.getRegistry().registerAll(new RunicAmulet());
