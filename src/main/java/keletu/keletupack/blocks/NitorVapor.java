@@ -2,15 +2,14 @@ package keletu.keletupack.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.EnumBlockRenderType;
-import net.minecraft.util.TabCompleter;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 public class NitorVapor extends Block {
 
@@ -54,6 +53,15 @@ public class NitorVapor extends Block {
         return true;
     }
 
+    public boolean canCollideCheck(IBlockState state, boolean hitIfLiquid)
+    {
+        return false;
+    }
+
+    public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
+    {
+    }
+
     // TODO According to MCP, this affects ambient occlusion & culling?
     @Override
     public boolean isOpaqueCube(IBlockState state) {
@@ -79,5 +87,10 @@ public class NitorVapor extends Block {
     public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
         if (!world.isRemote)
             world.scheduleBlockUpdate(pos, this, tickRate(world), 0);
+    }
+
+    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
+    {
+        return BlockFaceShape.UNDEFINED;
     }
 }
