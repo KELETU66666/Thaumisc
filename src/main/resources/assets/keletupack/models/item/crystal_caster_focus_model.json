@@ -1,0 +1,6 @@
+{
+    "parent": "thaumcraft:item/caster_gauntlet_focus",
+    "textures": {
+        "skin": "keletupack:items/crystal_caster"
+    }
+}

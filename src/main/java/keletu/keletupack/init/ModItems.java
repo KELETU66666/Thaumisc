@@ -11,6 +11,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraftforge.common.util.EnumHelper;
+import thaumcraft.common.items.casters.ItemCaster;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,4 +60,5 @@ public class ModItems {
     public static final ItemAxe ShadowAxe = new ShadowAxe("shadow_axe", keletupack.ITEM_TAB, MATERIAL_SHADOW);
     public static final ItemSpade ShadowShovel = new ShadowShovel("shadow_shovel", keletupack.ITEM_TAB, MATERIAL_SHADOW);
     public static final ItemHoe ShadowHoe = new ShadowHoe("shadow_hoe", keletupack.ITEM_TAB, MATERIAL_SHADOW);
+    public static final ItemCaster CrystalCaster = new CrystalCaster();
 }

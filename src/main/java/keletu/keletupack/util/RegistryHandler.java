@@ -36,6 +36,7 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicGirdleAir());
         event.getRegistry().registerAll(new RunicAmuletEarth());
         event.getRegistry().registerAll(new ResourceTmisc());
+        event.getRegistry().registerAll(new AkashicRecord());
         if(ConfigKP.ConfigKP.ENABLEPACKITEM){
             event.getRegistry().registerAll(new ResourceKP());
         }

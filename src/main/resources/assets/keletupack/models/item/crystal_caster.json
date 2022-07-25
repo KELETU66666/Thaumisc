@@ -1,0 +1,13 @@
+{
+  "parent": "item/generated",
+  "overrides": [
+    {
+      "predicate": { "focus": 0 },
+      "model": "keletupack:item/crystal_caster_model"
+    },
+    {
+      "predicate": { "focus": 1 },
+      "model": "keletupack:item/crystal_caster_focus_model"
+    }
+  ]
+}
