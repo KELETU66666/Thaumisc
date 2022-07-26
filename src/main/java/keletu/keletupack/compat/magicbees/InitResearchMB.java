@@ -1,4 +1,4 @@
-package keletu.keletupack.init;
+package keletu.keletupack.compat.magicbees;
 
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.ThaumcraftApi;

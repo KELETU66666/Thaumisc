@@ -4,6 +4,7 @@ import keletu.keletupack.items.*;
 import keletu.keletupack.items.armor.IchorArmor;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.armor.ShadowArmor;
+import keletu.keletupack.items.cheat.CrystalCaster;
 import keletu.keletupack.items.tools.*;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.Reference;

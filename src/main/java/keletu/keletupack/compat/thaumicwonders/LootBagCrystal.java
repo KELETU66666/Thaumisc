@@ -1,4 +1,4 @@
-package keletu.keletupack.items;
+package keletu.keletupack.compat.thaumicwonders;
 
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.init.ModItems;

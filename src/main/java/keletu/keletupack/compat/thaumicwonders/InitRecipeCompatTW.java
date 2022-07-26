@@ -1,4 +1,4 @@
-package keletu.keletupack.init;
+package keletu.keletupack.compat.thaumicwonders;
 
 
 import com.verdantartifice.thaumicwonders.common.items.ItemsTW;

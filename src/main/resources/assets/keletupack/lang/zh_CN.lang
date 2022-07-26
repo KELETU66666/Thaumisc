@@ -78,8 +78,6 @@ item.packresource.2.name=魔法使币
 item.packresource.4.name=法杖残片
 item.packresource.5.name=损坏的弓
 
-item.big_pearl.name=极元始珍珠
-
 item.resourcetmisc.0.name=末影裂痕
 item.resourcetmisc.1.name=下界残片
 
@@ -250,7 +248,7 @@ tip.awakenaxe.name1=正方模式
 tip.awakenaxe.name2=伐木模式
 
 tip.awakensword.name0=单杀模式
-tip.awakensword.name1=群杀模式
+tip.awakensword.name1=区域模式
 tip.awakensword.name2=狩魂模式
 
 tip.awakenarmor.name0=觉醒
@@ -261,3 +259,4 @@ tip.awakenarmor.name1=休眠
 item.loot_bag_crystal.name=水晶奖励袋
 item.crystal_caster.name=水晶镶嵌宇宙中子素法师护手
 item.akashic_record.name=阿卡西记录
+item.big_pearl.name=极元始珍珠

@@ -1,0 +1,40 @@
+{
+	"type": "avaritia:shaped",
+	"result": {
+		"item": "keletupack:crystal_caster",
+		"count": 1
+	},
+	"pattern": [
+		"  C C C  ",
+		"  C C C  ",
+		"  CNCNC C",
+		"C CNCNCNC",
+		"CNNIIINNC",
+		"CCNIXINC ",
+		" NNIIINN ",
+		"  NN NN  ",
+		"   NNN   "
+	],
+	"key": {
+		"C": {
+			"type": "minecraft:item",
+			"item": "avaritia:resource",
+			"data": 1
+		},
+		"X": {
+			"type": "minecraft:item",
+			"item": "avaritia:resource",
+			"data": 5
+		},
+		"N": {
+			"type": "minecraft:item",
+			"item": "avaritia:resource",
+			"data": 4
+		},
+		"I": {
+			"type": "minecraft:item",
+			"item": "avaritia:resource",
+			"data": 6
+		}
+	}
+}

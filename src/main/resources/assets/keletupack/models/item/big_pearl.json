@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "avaritia:items/akashic_record"
+    "layer0": "keletupack:items/big_pearl"
   }
 }

@@ -78,8 +78,6 @@ item.packresource.2.name=Magic Coin
 item.packresource.4.name=Broken Twilight Wand
 item.packresource.5.name=Broken Twilight Bow
 
-item.big_pearl.name=Extremely Primordial Pearl
-
 item.resourcetmisc.0.name=Ender Shard
 item.resourcetmisc.1.name=Nether Shard
 
@@ -261,3 +259,4 @@ tip.awakenarmor.name1=Dormancy
 item.loot_bag_crystal.name=Crystal Treasure Bag
 item.crystal_caster.name=Crystal Studded Cosmic Neutronium Caster's Gauntlet
 item.akashic_record.name=Akashic Record
+item.big_pearl.name=Extremely Primordial Pearl

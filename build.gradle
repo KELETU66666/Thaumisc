@@ -116,6 +116,8 @@ dependencies {
         implementation 'curse.maven:forestry-59751:2684780'
         implementation 'curse.maven:magic-bees-65764:2855061'
         implementation 'curse.maven:thaumic-additions-232564:3663195'
+    implementation 'curse.maven:thaumicaugmentation-319441:3819917'
+    implementation 'curse.maven:avaritia-261348:3143349'
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

@@ -1,4 +1,4 @@
-package keletu.keletupack.items.tools;
+package keletu.keletupack.items.cheat;
 
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
@@ -23,13 +23,19 @@ public class CrystalCaster extends ItemCaster implements IHasModel, IVisDiscount
 
     public void onUpdate(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected) {
         float i = AuraHelper.getVis(world, entity.getPosition());
+        float k = AuraHelper.getAuraBase(world, entity.getPosition());
+        float f = AuraHelper.getFlux(world, entity.getPosition());
         if (entity instanceof EntityPlayer && world.isRemote) {
             if (i < 99999 && ((EntityPlayer) entity).getHeldItem(EnumHand.MAIN_HAND).getItem() == this) {
-              AuraHelper.addVis(world, entity.getPosition(), 99999 - i);
+                AuraHelper.addVis(world, entity.getPosition(), 99999 - i);
+                AuraHelper.drainFlux(world, entity.getPosition(), f, false);
+            }
+            if(((EntityPlayer) entity).getHeldItem(EnumHand.MAIN_HAND).getItem() != this && i > 500){
+                AuraHelper.drainVis(world, entity.getPosition(), i-k, false);
+                AuraHelper.drainFlux(world, entity.getPosition(), f, false);
             }
         }
     }
-
     @Override
     public EnumRarity getRarity(ItemStack itemstack) {
         return EnumRarity.EPIC;

@@ -1,0 +1,5 @@
+{
+  "conditions": {
+    "enable_crystal_caster": "keletu.keletupack.compat.avaritia.CrystalCasterConditionFactory"
+  }
+}

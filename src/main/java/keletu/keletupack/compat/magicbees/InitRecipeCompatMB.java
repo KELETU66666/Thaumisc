@@ -1,4 +1,4 @@
-package keletu.keletupack.init;
+package keletu.keletupack.compat.magicbees;
 
 
 import com.google.common.collect.Maps;

@@ -40,4 +40,6 @@ public class ItemsKP {
     public static final Item RUNIC_AMULET_EARTH = new RunicAmuletEarth();
     public static final Item LOOT_BAG_CRYSTAL = null;
     public static final Item RESOURCETMISC = null;
+    public static final Item AKASHIC_RECORD = null;
+    public static final Item BIG_PEARL = null;
 }

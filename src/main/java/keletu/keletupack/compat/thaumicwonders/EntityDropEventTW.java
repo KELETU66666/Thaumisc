@@ -1,4 +1,4 @@
-package keletu.keletupack.event;
+package keletu.keletupack.compat.thaumicwonders;
 
 import com.verdantartifice.thaumicwonders.common.entities.monsters.EntityCorruptionAvatar;
 import keletu.keletupack.common.ItemsKP;

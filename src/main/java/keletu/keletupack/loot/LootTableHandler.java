@@ -2,9 +2,7 @@ package keletu.keletupack.loot;
 
 import keletu.keletupack.ConfigKP;
 import keletu.keletupack.common.ItemsKP;
-import keletu.keletupack.items.ResourceTmisc;
 import keletu.keletupack.util.Reference;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.storage.loot.*;
 import net.minecraft.world.storage.loot.conditions.KilledByPlayer;
 import net.minecraft.world.storage.loot.conditions.LootCondition;

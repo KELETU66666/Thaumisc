@@ -3,10 +3,15 @@ package keletu.keletupack.util;
 import keletu.keletupack.ConfigKP;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
 import keletu.keletupack.common.ItemsKP;
+import keletu.keletupack.compat.thaumicwonders.LootBagCrystal;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.*;
 import keletu.keletupack.items.baubles.*;
+import keletu.keletupack.items.cheat.AkashicRecord;
+import keletu.keletupack.items.cheat.BigPearl;
+import keletu.keletupack.items.resources.ResourceKP;
+import keletu.keletupack.items.resources.ResourceTmisc;
 import keletu.keletupack.keletupack;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -36,12 +41,15 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicGirdleAir());
         event.getRegistry().registerAll(new RunicAmuletEarth());
         event.getRegistry().registerAll(new ResourceTmisc());
-        event.getRegistry().registerAll(new AkashicRecord());
         if(ConfigKP.ConfigKP.ENABLEPACKITEM){
             event.getRegistry().registerAll(new ResourceKP());
         }
         if(Loader.isModLoaded("thaumadditions") && Loader.isModLoaded("thaumicwonders") && ConfigKP.ConfigKP.ENABLECRYSTALBAG == true){
             event.getRegistry().registerAll(new LootBagCrystal("loot_bag_crystal", keletupack.ITEM_TAB));
+        }
+        if(Loader.isModLoaded("avaritia")){
+            event.getRegistry().registerAll(new BigPearl());
+            event.getRegistry().registerAll(new AkashicRecord());
         }
     }
     @SubscribeEvent

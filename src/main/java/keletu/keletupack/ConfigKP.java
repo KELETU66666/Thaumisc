@@ -53,6 +53,10 @@ public class ConfigKP {
         @Config.RangeInt(min = 0, max = 1)
         @Config.RequiresMcRestart
         public float SHARDDROPRATE = 0.0065F;
+
+        @Config.LangKey("keletupack.configkp.enablecrystalcaster")
+        @Config.Comment("keletupack.configkp.enablecrystalcaster.comment")
+        public boolean ENABLECRYSTALCASTER = true;
     }
 
 }

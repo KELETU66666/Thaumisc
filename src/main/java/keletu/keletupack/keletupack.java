@@ -1,8 +1,11 @@
 package keletu.keletupack;
 
+import keletu.keletupack.compat.avaritia.InitRecipeAvaritia;
+import keletu.keletupack.compat.magicbees.InitRecipeCompatMB;
+import keletu.keletupack.compat.magicbees.InitResearchMB;
+import keletu.keletupack.compat.thaumicwonders.InitRecipeCompatTW;
 import keletu.keletupack.init.*;
 import keletu.keletupack.loot.LootTableHandler;
-import keletu.keletupack.event.EntityDropEventTW;
 import keletu.keletupack.proxy.CommonProxy;
 import keletu.keletupack.util.Reference;
 import net.minecraft.block.Block;
@@ -56,6 +59,9 @@ public class keletupack {
         if(Loader.isModLoaded("magicbees")) {
             InitRecipeCompatMB.InitRecipeCompat();
             InitResearchMB.registerResearchMB();
+        }
+        if(Loader.isModLoaded("avaritia")) {
+            InitRecipeAvaritia.InitRecipeCompat();
         }}
 
     /**
