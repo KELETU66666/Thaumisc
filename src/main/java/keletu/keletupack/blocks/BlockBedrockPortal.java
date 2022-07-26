@@ -100,7 +100,7 @@ public class BlockBedrockPortal extends BlockContainer implements IHasModel
             } else{
 
                 entity.changeDimension(0, new TeleporterBedrock((WorldServer) world));
-                entity.setPositionAndUpdate(world.getSpawnPoint().getX(), world.getSpawnPoint().getY() + 3, world.getSpawnPoint().getZ());
+                entity.setPositionAndUpdate(((EntityPlayer) entity).getBedLocation().getX(), ((EntityPlayer) entity).getBedLocation().getY() + 3, ((EntityPlayer) entity).getBedLocation().getZ());
             }
         }
     }
