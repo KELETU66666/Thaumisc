@@ -26,6 +26,7 @@ public class CommonProxy {
         ModDimensions.init();
     }
 
+    public void registerDisplayInformationInit() {}
 
     public void init( FMLInitializationEvent event )
     {

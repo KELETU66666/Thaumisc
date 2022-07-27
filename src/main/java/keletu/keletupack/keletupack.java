@@ -62,7 +62,9 @@ public class keletupack {
         }
         if(Loader.isModLoaded("avaritia")) {
             InitRecipeAvaritia.InitRecipeCompat();
-        }}
+        }
+    proxy.registerDisplayInformationInit();
+    }
 
     /**
      * This is the final initialization event. Register actions from other mods here

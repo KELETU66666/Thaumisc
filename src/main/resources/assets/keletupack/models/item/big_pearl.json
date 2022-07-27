@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "keletupack:items/big_pearl"
+    "layer0": "avaritia:items/big_pearl"
   }
 }

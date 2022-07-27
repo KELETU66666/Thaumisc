@@ -45,7 +45,7 @@ public class InitRecipeAvaritia {
                 }
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "big_pearl"), new InfusionRecipe(
-                "AKASHIC_RECORD",
+                "BIG_PEARL",
                 new ItemStack(ItemsKP.BIG_PEARL),
                 20,
                 new AspectList().add(Aspect.AIR, 250).add(Aspect.ELDRITCH, 250).add(Aspect.WATER, 250).add(Aspect.EARTH, 250).add(Aspect.FIRE, 250).add(Aspect.ORDER, 250).add(Aspect.ENTROPY, 250).add(Aspect.MAGIC, 250),

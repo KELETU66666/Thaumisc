@@ -2,6 +2,7 @@ package keletu.keletupack.util;
 
 import keletu.keletupack.ConfigKP;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
+import keletu.keletupack.blocks.tiles.TileEtherealBloom;
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.compat.thaumicwonders.LootBagCrystal;
 import keletu.keletupack.init.ModBlocks;
@@ -56,6 +57,7 @@ public class RegistryHandler {
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
         TileBedrockPortal.register("bedrock_portal", TileBedrockPortal.class);
+        TileBedrockPortal.register("ethereal_bloom", TileEtherealBloom.class);
     }
 
     @SubscribeEvent
