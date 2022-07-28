@@ -202,6 +202,12 @@ private static void initCrucibleRecipes() {
             new ItemStack(ItemsKP.TAINT_MEAT),
             new ItemStack(Items.FISH),
             new AspectList().add(Aspect.FLUX, 20).add(Aspect.EXCHANGE, 10)
+    ));
+    ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(Reference.MOD_ID, "ethereal_bloom"), new CrucibleRecipe(
+            "ETHEREAL_BLOOM",
+            new ItemStack(ModBlocks.ETHEREAL_BLOOM),
+            new ItemStack(BlocksTC.shimmerleaf),
+            new AspectList().add(Aspect.PLANT, 40).add(Aspect.MAGIC, 40).add(Aspect.LIFE, 40).add(Aspect.FLUX, 25)
     ));}
 private static void initInfusionRecipes() {
       ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "cleansing_amulet"), new InfusionRecipe(

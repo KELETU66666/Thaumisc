@@ -31,7 +31,7 @@ public class InitRecipeAvaritia {
     }
 
     private static void compatInfusionRecipe() {
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "akashicrecord"), new InfusionRecipe(
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "akashic_record"), new InfusionRecipe(
                 "AKASHIC_RECORD",
                 new ItemStack(ItemsKP.AKASHIC_RECORD),
                 20,

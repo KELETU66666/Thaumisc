@@ -11,6 +11,7 @@ import keletu.keletupack.items.*;
 import keletu.keletupack.items.baubles.*;
 import keletu.keletupack.items.cheat.AkashicRecord;
 import keletu.keletupack.items.cheat.BigPearl;
+import keletu.keletupack.items.cheat.CrystalCaster;
 import keletu.keletupack.items.resources.ResourceKP;
 import keletu.keletupack.items.resources.ResourceTmisc;
 import keletu.keletupack.keletupack;
@@ -51,6 +52,7 @@ public class RegistryHandler {
         if(Loader.isModLoaded("avaritia")){
             event.getRegistry().registerAll(new BigPearl());
             event.getRegistry().registerAll(new AkashicRecord());
+            event.getRegistry().registerAll(new CrystalCaster());
         }
     }
     @SubscribeEvent

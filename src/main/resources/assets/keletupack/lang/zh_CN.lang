@@ -62,6 +62,7 @@ item.distortion_pick.name=畸变镐
 item.riding_crop.name=马鞭
 tile.ichor_block.name=灵液块
 tile.bedrock_portal.name=基岩世界传送门
+tile.ethereal_bloom.name=天域花
 item.warp_paper.name=奥术石蕊试纸
 chat.warp.minorwarp=没什么反应
 chat.warp.averagewarp=试纸呈现出一种病态的颜色

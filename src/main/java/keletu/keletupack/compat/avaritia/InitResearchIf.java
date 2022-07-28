@@ -7,7 +7,7 @@ import thaumcraft.api.research.ResearchCategories;
 
 public class InitResearchIf {
 
-    public static void registerResearchMB() {
+    public static void registerResearchIf() {
 
         ThaumcraftApi.registerResearchLocation(new ResourceLocation("keletupack", "research/researchif.json"));
     }

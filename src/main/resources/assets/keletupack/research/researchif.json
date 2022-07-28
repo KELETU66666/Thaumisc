@@ -1,0 +1,63 @@
+{
+"entries" :[        {
+            "key": "BIG_PEARL",
+            "name": "keletupack.research.big_pearl.title",
+            "icons": [
+                "keletupack:big_pearl"
+            ],
+            "category": "THAUMISC",
+            "parents": [
+                "PRIMPEARL", "BASEINFUSION", "~THAUMISC"
+                ],        "meta": ["ROUND", "HIDDEN"],
+            "location": [
+                1,
+                7
+            ],
+            "stages": [
+                {
+                    "text": "keletupack.research.big_pearl.text",
+                    "required_knowledge": [
+                        "OBSERVATION;INFUSION;1","THEORY;BASICS;3","THEORY;INFUSION;3","THEORY;ELDRITCH;5"
+                    ]
+               },
+                {
+                    "text": "keletupack.research.big_pearl.complete.text","recipes": [
+                    "keletupack:big_pearl"
+                ]
+               }
+            ]
+        },
+    {
+        "key": "AKASHIC_RECORD",
+        "name": "keletupack.research.akashic_record.title",
+        "icons": [
+            "keletupack:akashic_record"
+        ],
+        "category": "THAUMISC",
+        "parents": [
+            "PRIMPEARL", "BASEINFUSION", "~THAUMISC"
+        ],        "meta": ["ROUND", "HIDDEN"],
+        "location": [
+            3,
+            7
+        ],
+        "stages": [
+            {
+                "text": "keletupack.research.akashic_record.text",
+                "required_knowledge": [
+                    "THEORY;INFUSION;5","THEORY;ELDRITCH;5"
+                ],
+                "required_item": [
+                    "thaumcraft:curio;1;4"
+                ]
+            },
+            {
+                "text": "keletupack.research.akashic_record.complete.text",
+              "recipes": [
+                "keletupack:akashic_record"
+            ]
+            }
+        ]
+    }
+]
+}

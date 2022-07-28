@@ -1,6 +1,7 @@
 package keletu.keletupack;
 
 import keletu.keletupack.compat.avaritia.InitRecipeAvaritia;
+import keletu.keletupack.compat.avaritia.InitResearchIf;
 import keletu.keletupack.compat.magicbees.InitRecipeCompatMB;
 import keletu.keletupack.compat.magicbees.InitResearchMB;
 import keletu.keletupack.compat.thaumicwonders.InitRecipeCompatTW;
@@ -62,6 +63,7 @@ public class keletupack {
         }
         if(Loader.isModLoaded("avaritia")) {
             InitRecipeAvaritia.InitRecipeCompat();
+            InitResearchIf.registerResearchIf();
         }
     proxy.registerDisplayInformationInit();
     }

@@ -162,6 +162,34 @@
         ]
       },
       {
+        "key": "ETHEREAL_BLOOM",
+        "name": "keletupack.research.ethereal_bloom.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:ethereal_bloom"
+        ],
+        "parents": [
+          "THAUMISC_TC4", "HEDGEALCHEMY", "!TaintSeed"
+        ],
+        "location": [
+          6,
+          0
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.ethereal_bloom.text",
+            "required_knowledge": [
+              "THEORY;ALCHEMY;1"
+            ],
+            "required_item":["thaumcraft:shimmerleaf"]
+          },
+          {
+            "text": "keletupack.research.ethereal_bloom.complete.text",
+            "recipes": ["keletupack:ethereal_bloom"]
+          }
+        ]
+      },
+      {
         "key": "RUNIC_BAUBLES",
         "name": "keletupack.research.runic_baubles.title",
         "category": "THAUMISC",

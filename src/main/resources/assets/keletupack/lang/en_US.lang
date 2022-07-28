@@ -62,6 +62,7 @@ item.distortion_pick.name=Pickaxe of Distortion
 item.riding_crop.name=Riding Crop
 tile.ichor_block.name=Ichor Block
 tile.bedrock_portal.name=Bedrock Portal
+tile.ethereal_bloom.name=Ethereal Bloom
 item.warp_paper.name=Arcane Litmus Paper
 chat.warp.minorwarp=There's no reaction
 chat.warp.averagewarp=The paper turns a sickly color
