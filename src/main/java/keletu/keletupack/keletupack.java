@@ -5,6 +5,7 @@ import keletu.keletupack.compat.avaritia.InitResearchIf;
 import keletu.keletupack.compat.magicbees.InitRecipeCompatMB;
 import keletu.keletupack.compat.magicbees.InitResearchMB;
 import keletu.keletupack.compat.thaumicwonders.InitRecipeCompatTW;
+import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.init.*;
 import keletu.keletupack.loot.LootTableHandler;
 import keletu.keletupack.proxy.CommonProxy;

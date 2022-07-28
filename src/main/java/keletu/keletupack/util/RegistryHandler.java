@@ -5,6 +5,7 @@ import keletu.keletupack.blocks.tiles.TileBedrockPortal;
 import keletu.keletupack.blocks.tiles.TileEtherealBloom;
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.compat.thaumicwonders.LootBagCrystal;
+import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.*;
@@ -16,6 +17,7 @@ import keletu.keletupack.items.resources.ResourceKP;
 import keletu.keletupack.items.resources.ResourceTmisc;
 import keletu.keletupack.keletupack;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -90,5 +92,11 @@ public class RegistryHandler {
         AspectEventProxy proxy = event.register;
         proxy.registerComplexObjectTag(new ItemStack(ItemsKP.RESOURCETMISC, 1, 1), new AspectList().add(Aspect.FIRE, 2).add(Aspect.UNDEAD, 2).add(Aspect.DEATH, 2));
         proxy.registerComplexObjectTag(new ItemStack(ItemsKP.RESOURCETMISC, 1, 0), new AspectList().add(Aspect.ELDRITCH, 2).add(Aspect.DESIRE, 2).add(Aspect.DARKNESS, 2));
+    }
+
+    @SubscribeEvent
+    public static void onEnchantmentRegister(RegistryEvent.Register<Enchantment> event)
+    {
+        event.getRegistry().registerAll(EnchantmentsKP.ENCHANTNENTS.toArray(new Enchantment[0]));
     }
 }
