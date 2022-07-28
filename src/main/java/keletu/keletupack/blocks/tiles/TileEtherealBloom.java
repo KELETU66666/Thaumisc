@@ -89,9 +89,9 @@ public class TileEtherealBloom extends TileEntity implements ITickable {
             if (this.foundTaint > 0 && !foundsomething)
                 this.foundTaint--;
         }
-        if (this.world.isRemote &&
-                this.growthCounter == 0)
-        this.growthCounter++;
+        if (this.world.isRemote && this.growthCounter == 0) {
+            this.growthCounter++;
+        }
     }
 
     private boolean clearBlock(BlockPos p) {
