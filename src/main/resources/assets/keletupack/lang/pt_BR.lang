@@ -1,4 +1,5 @@
 # Special formatting codes:
+
 # <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
 # <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
 # <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
@@ -61,6 +62,7 @@ item.distortion_pick.name=Picareta da Distorção
 item.riding_crop.name=Chibata
 tile.ichor_block.name=Bloco de Icor
 tile.bedrock_portal.name=Portal do Mundo Bedrock
+tile.ethereal_bloom.name=Ethereal Bloom
 item.warp_paper.name=Papel Tornassol Arcano
 chat.warp.minorwarp=Não há nenhuma reação
 chat.warp.averagewarp=O papel ficou com uma cor pálida
@@ -70,17 +72,20 @@ chat.warp.permanentwarp=Warp Permanente
 chat.warp.normalwarp=Warp Normal
 chat.warp.tempwarp=Warp Temporário
 
-item.coin_witchery.name=Moeda de Mago
-item.coin_adventure.name=Moeda da Aventura
-item.coin_bleed.name=Moeda Ensanguentada
-item.coin_magic.name=Moeda Mágica
+item.packresource.1.name=Moeda de Mago
+item.packresource.0.name=Moeda da Aventura
+item.packresource.3.name=Moeda Ensanguentada
+item.packresource.2.name=Moeda Mágica
+item.packresource.4.name=Broken Twilight Wand
+item.packresource.5.name=Broken Twilight Bow
 
 item.shard_end.name=Lasca do Ender
 item.shard_nether.name=Lasca do Nether
 
-item.ichor.name=Icor
-item.ichor_cloth.name=Tecido de Icor
-item.ichor_ingot.name=Barra de Icório
+item.resourcetmisc.2.name=Icor
+item.resourcetmisc.3.name=Ichorium Ingot
+item.resourcetmisc.4.name=Tecido de Icor
+item.resourcetmisc.5.name=Barra de Icório
 item.ichor_pouch.name=Pouxete de Tecido de Icor
 
 item.cleansing_amulet.name=Amuleto de Remoção
@@ -96,8 +101,14 @@ item.arcane_disassembler.name=Desmontador Taúmico
 item.shadow_fortress_helm.name=Capacete Fortaleza Sombrio
 item.shadow_fortress_chest.name=Peitoral Fortaleza Sombrio
 item.shadow_fortress_legs.name=Calça Fortaleza Sombria
-item.shadow_ingot.name=Barra de Metal Sombrio
-item.shadow_nugget.name=Pepita de Metal Sombrio
+item.shadow_sword.name=Shadow Metal Sword
+item.shadow_pick.name=Shadow Metal Pickaxe
+item.shadow_axe.name=Shadow Metal Axe
+item.shadow_shovel.name=Shadow Metal Shovel
+item.shadow_hoe.name=Shadow Metal Hoe
+
+item.resourcetmisc.6.name=Barra de Metal Sombrio
+item.resourcetmisc.7.name=Pepita de Metal Sombrio
 
 #Research
 
@@ -175,6 +186,10 @@ keletupack.research.runic_baubles_aqua.title=Anel Rúnico da Recuperação
 keletupack.research.runic_baubles_aqua.text=Eu encontrei escrituras de Pesquisa que mencionam um Anel Rúnico melhorado, que infundiria o usuário com um poder Regenerativo quando a Defesa dele baixasse, isso deve ser replicável com minhas práticas.
 keletupack.research.runic_baubles_aqua.complete.text=De fato, é replicável! Quando minha Defesa Rúnica cai, esse Anel vai me dar um pulso de poder Regenerativo para mim, mas ele não vai conseguir mandar outro pulso por um tempo depois de ativar.
 
+keletupack.research.ethereal_bloom.title=Ethereal Bloom
+keletupack.research.ethereal_bloom.text=TEXT
+keletupack.research.ethereal_bloom.complete.text=TEXT
+
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=Warpologia
 keletupack.research.thaumisc_warptheory.text=Essa loucura que começou a me afetar, o Warp, como eu o decidi chamar, pode se tornar um encômodo no futuro, eu deveria considerar ir em busca de formas de me livrar dele ou de pelos menos monitorá-lo.
@@ -191,7 +206,6 @@ keletupack.research.taintmeat.complete.text=Isso foi um erro, mergulhar Carne co
 keletupack.research.cleansingamulet.title=Amuleto de Remoção
 keletupack.research.cleansingamulet.stage.1.text=Essa doideira tá começando a mexer comigo, eu preciso fazer algo a respeito disso. Escrituras de pesquisa que eu encontrado dos velhos Taumaturgos da Quarta Era raramente mencionam uma bijuteria conhecida apenas como o Amuleto de Remoção, se minhas suposições estiverem corretas, esse Amuleto seria capaz de limpar o Warp de mim, embora eu não saiba até que nível...
 keletupack.research.cleansingamulet.complete.text=Eu acredito que encontrei a chave para replicar esse Amuleto, Pérolas Primordiais parecem ter um pingo de exaustão para energia maligna, tipo Warp, seja lá de onde o poder delas vem, ele se equilibra com a mesma força que a minha loucura, de algum jeito.<BR>Se minha hipótese estiver correta, esse Pendante deve ser capaz de drenar a loucura da minha própria mente, conectando-a à pérola e purificando-a, fazendo com que não passe de um mero sonho ruim, leva-se um tempo pra isso acontecer, apesar de funcionar, mas ele deve ser capaz de limpar até a mais Permanente das loucuras.
-keletupack.research.cleansingamulet.complete.text=I believe i've found the key to replicating this Amulet, Primordial Pearls seem to have a faint trickle of malignant energy, much like Warp, wherever their power comes from, it is tied to the same force as my madness, somehow.<BR>If my hypothesis is correct, this Pendant should be able to draw the madness from my very mind, binding it to the pearl and purifying it, making it little more than a bad dream, it does take time to do this, however, but it should even be capable of cleansing the most Permanent of madness.
 
 ##Forbidden Magic
 keletupack.research.thaumisc_forbiddenmagic.title=Taumaturgia Proibida
@@ -218,6 +232,15 @@ keletupack.research.arcane_disassembler.complete.text=Parece que diversos Taumat
 keletupack.research.shadow_armor.title=Armadura Fortaleza Sombria
 keletupack.research.shadow_armor.text=Resquícios de conhecimento dos Taumaturgos da Quarta Era levantavam a ideia de uma armadura mais efetiva do que a Armadura Fortaleza de Táumio usando Metal Sobrio, as quais eu já consegui criar por conta própria, então deve valer a pena invstigar isso mais a fundo.
 keletupack.research.shadow_armor.complete.text=Esse conceito me deve ser possível de reproduzir, em teoria, simplismente blindando a Armadura de Void Metal com Metal Sombrio através de Infusão<BR>Ela parece oferecer um desconto em Vis bem decente, sendo composta de tais materiais dessa natureza alienígena, e oferecendo aquele excelente nível de Proteção que era esperado.<BR>Ela não consegue se regenerar assim como outros itens baseados em Void Metal, mas é extremamente durável, então não há com o que se preocupar.
+
+##Avaritia
+keletupack.research.akashic_record.title=Akashic Record
+keletupack.research.akashic_record.text=TEXT
+keletupack.research.akashic_record.complete.text=TEXT
+
+keletupack.research.big_pearl.title=Extremely Primordial Pearl
+keletupack.research.big_pearl.text=TEXT
+keletupack.research.big_pearl.complete.text=TEXT
 
 #Tool Mode
 
@@ -248,3 +271,6 @@ tip.awakenarmor.name1=Dormente
 #Compat
 
 item.loot_bag_crystal.name=Bolsa de Tesouro de Crystal
+item.crystal_caster.name=Crystal Studded Cosmic Neutronium Caster's Gauntlet
+item.akashic_record.name=Akashic Record
+item.big_pearl.name=Extremely Primordial Pearl

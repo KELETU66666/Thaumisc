@@ -143,7 +143,7 @@ keletupack.research.ichorium_shovel_adv.complete.text=这个铲子不仅不会�
 
 keletupack.research.ichorium_sword_adv.title=觉醒灵宝剑
 keletupack.research.ichorium_sword_adv.text=这种合金强度极高,杀遍天下也没有问题.但我真的要一个一个的砍下去?这其中一定有隐藏的潜力亟待开发.
-keletupack.research.ichorium_sword_adv.complete.text=这把剑不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>这把剑在绿色的正常击杀模式下它按正常方式进行攻击。<BR>在红色的区域模式下它将会伤害到被击中目标3x3范围内的所有生物。<BR>在蓝色的猎魂模式下它的威力将会略微减小，但是每攻击一次就会使持剑者增加一颗类似符文护盾的血量，相当于一次性的生命值，它们可以代替玩家承受伤害，而它们受到伤害后又会随之消失。
+keletupack.research.ichorium_sword_adv.complete.text=这把剑不仅不会磨损,而且还能通过潜行右键来变换挖掘模式!<BR>这把剑在绿色的正常击杀模式下它按正常方式进行攻击.<BR>在红色的区域模式下它将会伤害到被击中目标3x3范围内的所有生物.<BR>在蓝色的猎魂模式下它的威力将会略微减小,但是每攻击一次就会使持剑者增加一颗类似符文护盾的血量,相当于一次性的生命值,它们可以代替玩家承受伤害,而它们受到伤害后又会随之消失.
 
 keletupack.research.ichorarmor.title=灵宝装备
 keletupack.research.ichorarmor.text=魔力布匹,轻如蝉翼,薄如宣纸,平如水镜,细如罗绢.这种材料既有着良好的附魔能力又能降低Vis消耗.但是太容易磨损了,我又不是像那群老古董们在家能玩一天的连连看.诶?!为什么不试试灵液呢!
@@ -185,6 +185,10 @@ keletupack.research.runic_baubles_aer.complete.text=在那些奇妙的小玩意�
 keletupack.research.runic_baubles_aqua.title=再生符文护盾指环
 keletupack.research.runic_baubles_aqua.text=护盾很好用,但是如果护盾被打破了怎么办?如果我能够复现那个...那个古老的饰品的话...
 keletupack.research.runic_baubles_aqua.complete.text=在那些奇妙的小玩意的复刻经验下,很顺利的研究成功了.该戒指所提供的符文护盾被打破时,将会提供给穿戴者11秒的生命恢复II效果.随后进入短暂的冷却状态.
+
+keletupack.research.ethereal_bloom.title=天域花
+keletupack.research.ethereal_bloom.text=古卷上提到了一类花,在那个凝结着节点的时代,有一种邪恶的节点会使得所在之地遍地腐化.而在这种花放射出的神圣的光辉之下,能够净化一切腐化之物.看看能不能做出来一个.
+keletupack.research.ethereal_bloom.complete.text=嗯,成功了,并且更加好用.这个现代化的天域花,在它洁白的圣光之下,不仅能净化掉空气中的咒波瓦斯,还能快速的消除掉周围的腐化之物.可惜的是,它仍然会受到流动液体的影响而掉落,使用时应该注意一下.
 
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=扭曲研究
@@ -228,6 +232,15 @@ keletupack.research.shadow_armor.complete.text=这将是终极套装?<BR>虽然�
 keletupack.research.arcane_disassembler.title=奥术分解机
 keletupack.research.arcane_disassembler.text=据传言,在旁边的科技世界里,那群魔法麻瓜操纵着一个叫原子分解机的工具.这种完美的工具可以使用一点点能量以无可挑剔的精确度来雕凿世界.<BR>了解到这些,说实话我有些嫉妒.但我作为一个高贵的神秘使是不会探足于麻瓜的领域的.<BR>我要用魔法的力量重现这个工具!
 keletupack.research.arcane_disassembler.complete.text=研究成功了!这确实是个伟大的工具.它的攻击伤害足有20点,潜行右键也可以改变挖掘速度.几乎可以当作万用工具来使用(确信).<BR>更美妙的是它使用灵气来供给充能.而灵气几乎无处不在!
+
+##Avaritia
+keletupack.research.akashic_record.title=阿卡西记录
+keletupack.research.akashic_record.text=在翻阅书籍的时候,偶然间发觉书中提到了一种不可知型态之讯息的集合体,被编码储存在以太之中.既存于一切存在被创造以来,甚至在那之前,即使我们的知识系统随着外在的时间变化而变得更加复杂,但这些讯息也早就被编码为一种共通的语言而记录在阿卡西纪录中.我们所有的创造或是文化都是通过观察和改变既有的环境而得出的.<BR>说的什么玩意?这玩意真会有人信?真是疯了.
+keletupack.research.akashic_record.complete.text=大师,我悟了,这是真的.<BR>所见者皆所能见,不可见者亦包含此内.般若无知,无事不知;般若无见,无事不见.<BR>当我阅读这个来自天国的石板时,我瞬间明悟了宇宙的过去,现在及未来的一切知识.现在我所知道的知识,甚至比创造天地的神明还要多一点.
+
+keletupack.research.big_pearl.title=极元始珍珠
+keletupack.research.big_pearl.text=元始珍珠是个非常珍贵的东西.如此完美的晶格之内,蕴含着元始要素,互相反应却不产生冲突.握在手心把玩,它因为内部晶格的振动而向周围不断散发出魔法的脉动.这让我想起来...这是否就是宇宙的最初形态?我看着掌中珍珠,陷入了沉思.这粒珍珠...是不是还不够大?
+keletupack.research.big_pearl.complete.text=我将我所能搜集到的珍珠都放在一起,使用更强大的魔法力量使之完美融合.<BR>注魔结束后,真是太美妙啦!我获得了一个更大更漂亮的珍珠.那么问题来了,这玩意能干什么?
 
 #Tool Mode
 

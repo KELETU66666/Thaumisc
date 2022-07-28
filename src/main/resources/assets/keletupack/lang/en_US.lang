@@ -186,6 +186,10 @@ keletupack.research.runic_baubles_aqua.title=Runic Ring of Recovery
 keletupack.research.runic_baubles_aqua.text=I have found scraps of Research which mention an augmented Runic Ring, which would infuse the wearer with Regenerative power when their Shielding fell, this should be replicable with my practices.
 keletupack.research.runic_baubles_aqua.complete.text=It is infact, replicable! When my Runic Shielding falls, this Ring will grant a pulse of Regenerative power to me, though it will be unable to grant it again for a while after it activates.
 
+keletupack.research.ethereal_bloom.title=Ethereal Bloom
+keletupack.research.ethereal_bloom.text=TEXT
+keletupack.research.ethereal_bloom.complete.text=TEXT
+
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=Warpology
 keletupack.research.thaumisc_warptheory.text=This madness that has begun afflicting me, Warp, as i have dubbed it, may be bothersome in the future, i should consider looking into ways of getting rid of or tracking it.
@@ -228,6 +232,15 @@ keletupack.research.arcane_disassembler.complete.text=It seems several Fourth Ag
 keletupack.research.shadow_armor.title=Shadow Fortress Armor
 keletupack.research.shadow_armor.text=Scraps of knowledge from Fourth Age Thaumturges bring up the idea of an armor more effective than Thaumium Fortress Armor using Shadow Metal, both of which i have managed to create myself, this may be worth investigating.
 keletupack.research.shadow_armor.complete.text=This concept should be possible for me to pull off, in theory, as it is simply plating Void Metal armor in Shadow Metal through Infusion.<BR>It seems to offer a potent discount to Vis, being made of such alien materials, and offers that excellent level of Protection that was expected.<BR>It cannot mend itself like other Void Metal-based items, but it is incredibly durable, so there should be no need to worry.
+
+##Avaritia
+keletupack.research.akashic_record.title=Akashic Record
+keletupack.research.akashic_record.text=TEXT
+keletupack.research.akashic_record.complete.text=TEXT
+
+keletupack.research.big_pearl.title=Extremely Primordial Pearl
+keletupack.research.big_pearl.text=TEXT
+keletupack.research.big_pearl.complete.text=TEXT
 
 #Tool Mode
 
