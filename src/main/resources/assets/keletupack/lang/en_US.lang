@@ -274,3 +274,11 @@ item.loot_bag_crystal.name=Crystal Treasure Bag
 item.crystal_caster.name=Crystal Studded Cosmic Neutronium Caster's Gauntlet
 item.akashic_record.name=Akashic Record
 item.big_pearl.name=Extremely Primordial Pearl
+
+#Enchantment
+
+enchantment.voidtouched=Void Touched
+enchantment.wrath=Wrath
+enchantment.educational=Education
+enchantment.greedy=Greedy
+enchantment.consuming=Consuming

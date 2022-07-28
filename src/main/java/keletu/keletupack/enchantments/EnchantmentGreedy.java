@@ -12,7 +12,7 @@ import thaumcraft.common.items.tools.ItemPrimalCrusher;
 
 public class EnchantmentGreedy extends Enchantment {
     public EnchantmentGreedy(int id) {
-        super(Rarity.RARE, EnumEnchantmentType.DIGGER, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
         this.setRegistryName("greedy");
         this.setName("greedy");
 
@@ -41,6 +41,6 @@ public class EnchantmentGreedy extends Enchantment {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack) {
-        return false;
+        return true;
     }
 }
