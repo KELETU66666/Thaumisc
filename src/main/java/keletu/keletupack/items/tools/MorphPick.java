@@ -1,9 +1,12 @@
 package keletu.keletupack.items.tools;
 
+import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -96,5 +99,12 @@ public class MorphPick extends ItemPickaxe implements IHasModel {
     @Override
     public void registerModels() {
         keletupack.proxy.registerItemRenderer(this, 0, "inventory");
+    }
+    public void onUpdate(ItemStack stack, World world, Entity entity, int fuckObfuscation, boolean fuckObfuscation2) {
+        super.onUpdate(stack, world, entity, fuckObfuscation, fuckObfuscation2);
+        if(EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.voidtouched, stack) > 0 && stack.isItemDamaged() && entity != null && entity.ticksExisted % 10 == 0 && entity instanceof EntityLivingBase) {
+            stack.damageItem(-1, (EntityLivingBase)entity);
+        }
+
     }
 }

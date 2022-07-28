@@ -7,12 +7,25 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import java.util.ArrayList;
+
 @Config(modid = Reference.MOD_ID, category = "")
 public class ConfigKP {
+
+
     @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
     private static class EventHandler {
 
         private EventHandler() {
+        }
+
+        public static ArrayList<String> trash = new ArrayList<String>();
+
+        String trashlist = "dirt;sand;gravel;cobblestone;netherrack";
+        String[] trashpile = trashlist.split(";");{
+            for(String garbage : trashpile) {
+                trash.add(garbage);
+            }
         }
 
         @SubscribeEvent
@@ -57,6 +70,11 @@ public class ConfigKP {
         @Config.LangKey("keletupack.configkp.enablecrystalcaster")
         @Config.Comment("keletupack.configkp.enablecrystalcaster.comment")
         public boolean ENABLECRYSTALCASTER = true;
+
+        @Config.LangKey("keletupack.configkp.enablecrystalcaster")
+        @Config.Comment("keletupack.configkp.enablecrystalcaster.comment")
+        public String trashlist = "dirt;sand;gravel;cobblestone;netherrack";
+        public String[] trashpile = trashlist.split(";");
     }
 
 }
