@@ -274,3 +274,11 @@ item.loot_bag_crystal.name=水晶奖励袋
 item.crystal_caster.name=水晶镶嵌宇宙中子素法师护手
 item.akashic_record.name=阿卡西记录
 item.big_pearl.name=极元始珍珠
+
+#Enchantment
+
+enchantment.voidtouched=虚空之触
+enchantment.wrath=暴怒
+enchantment.educational=教育
+enchantment.greedy=贪婪
+enchantment.consuming=挥霍

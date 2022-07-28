@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 
 public class EnchantmentEducational extends Enchantment {
     public EnchantmentEducational(int id) {
-        super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
+        super(Rarity.UNCOMMON, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
         this.setRegistryName("educational");
         this.setName("educational");
 
