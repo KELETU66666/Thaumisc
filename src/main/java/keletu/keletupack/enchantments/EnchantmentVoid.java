@@ -35,11 +35,11 @@ public class EnchantmentVoid extends Enchantment {
 
     @Override
     public boolean canApply(ItemStack item) {
-        return (item.getItem() instanceof MorphPick || item.getItem() instanceof MorphAxe || item.getItem() instanceof MorphSword || item.getItem() instanceof MorphShovel);
+       return (item.getItem() instanceof MorphPick || item.getItem() instanceof MorphAxe || item.getItem() instanceof MorphSword || item.getItem() instanceof MorphShovel);
     }
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack) {
-        return true;
+        return false;
     }
 }

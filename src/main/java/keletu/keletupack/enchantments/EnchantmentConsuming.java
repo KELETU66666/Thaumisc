@@ -12,7 +12,7 @@ import thaumcraft.common.items.tools.ItemPrimalCrusher;
 
 public class EnchantmentConsuming extends Enchantment {
     public EnchantmentConsuming(int id) {
-        super(Rarity.RARE, EnumEnchantmentType.DIGGER, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnumEnchantmentType.DIGGER, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
         this.setRegistryName("consuming");
         this.setName("consuming");
 

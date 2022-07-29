@@ -9,6 +9,7 @@ import keletu.keletupack.items.tools.IchoriumPickAdv;
 import keletu.keletupack.util.Reference;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -21,33 +22,36 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.oredict.OreDictionary;
+import thaumcraft.common.lib.SoundsTC;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class LivingEvent {
     public static void register(ResourceLocation resourceLocation) {
     }
+
 
     @SubscribeEvent
     public void playerTick(TickEvent.PlayerTickEvent e) {
@@ -67,22 +71,54 @@ public class LivingEvent {
     }
 
     @SubscribeEvent
-    public void playerJumps(net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent event)
-    {
+    public void playerJumps(net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent event) {
         ItemStack stack = event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET);
-        if(event.getEntity() instanceof EntityPlayer && stack.getItem() instanceof KamiArmor && stack.getItemDamage() != 1)
+        if (event.getEntity() instanceof EntityPlayer && stack.getItem() instanceof KamiArmor && stack.getItemDamage() != 1)
             event.getEntityLiving().motionY += 0.2750000059604645 * 1.25;
+
+        if (event.getEntityLiving() instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+            ItemStack stack1 = event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+            int boost = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.ascentboost, stack1);
+
+            if (boost >= 1 && !player.isSneaking())
+                player.motionY *= (boost + 2) / 2D;
+        }
     }
 
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onEntityUpdate(net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent event) {
+        final double min = -0.0784000015258789;
+
+        if (event.getEntityLiving() instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+            int slowfall = EnchantmentHelper.getMaxEnchantmentLevel(EnchantmentsKP.slowfall, player);
+            if (slowfall > 0 && !event.getEntityLiving().isSneaking() && event.getEntityLiving().motionY < min && event.getEntityLiving().fallDistance >= 2.9) {
+                event.getEntityLiving().motionY /= 1 + slowfall * 0.33F;
+                event.getEntityLiving().fallDistance = Math.max(2.9F, player.fallDistance - slowfall / 3F);
+
+                player.world.spawnParticle(EnumParticleTypes.CLOUD, player.posX + 0.25, player.posY - 1, player.posZ + 0.25, -player.motionX, player.motionY, -player.motionZ);
+            }
+        }
+    }
 
     @SubscribeEvent
-    public void fall(LivingFallEvent e)
-    {
+    public void fall(LivingFallEvent e) {
         ItemStack boots = e.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET);
-        if(!boots.isEmpty() && boots.getItem() instanceof KamiArmor && boots.getItemDamage() != 1)
-        {
+        if (!boots.isEmpty() && boots.getItem() instanceof KamiArmor && boots.getItemDamage() != 1) {
             e.setDamageMultiplier(0);
             e.setCanceled(true);
+        }
+
+        if (e.getEntityLiving() instanceof EntityPlayer) {
+            int shockwave = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.shockwave, boots);
+            if (shockwave > 0) {
+                for (EntityLivingBase target : (List<EntityLivingBase>) e.getEntity().world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(e.getEntity().posX - 10, e.getEntity().posY - 10, e.getEntity().posZ - 10, e.getEntity().posX + 10, e.getEntity().posY + 10, e.getEntity().posZ + 10))) {
+                    if (target != e.getEntity() && e.getDistance() > 3) {
+                        target.attackEntityFrom(DamageSource.FALL, .1F * shockwave * e.getDistance());
+                    }
+                }
+            }
         }
     }
 
@@ -125,10 +161,11 @@ public class LivingEvent {
         if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
             ((EntityPlayer) event.getSource().getTrueSource()).getHeldEquipment();
             ItemStack equip = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
+            LivingExperienceDropEvent event1 = new LivingExperienceDropEvent(((EntityLiving) event.getEntityLiving()), ((EntityPlayer) event.getSource().getTrueSource()), 1);
 
             if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.educational, equip) > 0 && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0) {
                 try {
-                    int learning = 3 * EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.educational, equip);
+                    int learning = 3 * event1.getOriginalExperience() * EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.educational, equip);
                     while (learning > 0) {
                         int xp = EntityXPOrb.getXPSplit(learning);
                         learning -= xp;
@@ -146,7 +183,7 @@ public class LivingEvent {
         if (player != null) {
             player.inventory.getCurrentItem();
             ItemStack equip = player.inventory.getCurrentItem();
-            if(EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.consuming, equip) > 0) {
+            if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.consuming, equip) > 0) {
                 for (int x = 0; x < event.getDrops().size(); x++) {
                     ItemStack drop = (ItemStack) event.getDrops().get(x);
                     if (drop != null && isGarbage(drop))
@@ -157,9 +194,9 @@ public class LivingEvent {
     }
 
     private boolean isGarbage(ItemStack drop) {
-        for(int id : OreDictionary.getOreIDs(drop)) {
-            for(String ore : ConfigKP.ConfigKP.trashpile) {
-                if(OreDictionary.getOreName(id).equals(ore))
+        for (int id : OreDictionary.getOreIDs(drop)) {
+            for (String ore : ConfigKP.ConfigKP.trashpile) {
+                if (OreDictionary.getOreName(id).equals(ore))
                     return true;
             }
         }
@@ -178,9 +215,9 @@ public class LivingEvent {
             EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
             ItemStack equip = player.getHeldItem(EnumHand.MAIN_HAND);
             if (equip != null && EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.greedy, equip) > 0 && event.getLootingLevel() <= 0) {
-                if (event.getEntityLiving() instanceof EntityVillager){
-                    addDrop(event, new ItemStack(Items.EMERALD, 1, 0));}
-                else if (rand.nextInt(35) < 3)
+                if (event.getEntityLiving() instanceof EntityVillager) {
+                    addDrop(event, new ItemStack(Items.EMERALD, 1, 0));
+                } else if (rand.nextInt(35) < 3)
                     addDrop(event, new ItemStack(Items.EMERALD));
             }
         }
@@ -219,6 +256,53 @@ public class LivingEvent {
 
                     greed += EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, heldItem);
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onEntityDamaged(LivingHurtEvent event) {
+        if (event.getSource().getTrueSource() instanceof EntityLivingBase) {
+            EntityLivingBase attacker = (EntityLivingBase) event.getSource().getTrueSource();
+            ItemStack heldItem = attacker.getHeldItem(EnumHand.MAIN_HAND);
+
+            if (heldItem == null)
+                return;
+
+
+            if (attacker instanceof EntityPlayer) {
+                EntityPlayer player = (EntityPlayer) attacker;
+
+                ItemStack legs = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+                int pounce = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.pounce, legs);
+                if (pounce > 0) {
+                    BlockPos pos = new BlockPos((int) Math.floor(player.posX), (int) Math.floor(player.posY) - 1, (int) Math.floor(player.posZ));
+                    if (player.world.getBlockState(pos) == Blocks.AIR.getDefaultState()) {
+                        event.setAmount((float) (event.getAmount() * (1 + (.25 * pounce))));
+                    }
+                }
+
+            }
+
+            int finalStrike = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.finalStrike, heldItem);
+            if (finalStrike > 0) {
+                Random rand = new Random();
+                if (rand.nextInt(20 - finalStrike) == 0) {
+                    event.setAmount((float) (event.getAmount() * 3));
+                }
+            }
+
+            int valiance = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.valiance, heldItem);
+            if (valiance > 0) {
+                if (attacker.getHealth() / attacker.getMaxHealth() < .5F) {
+                    event.setAmount((float) (event.getAmount() * (1 + .1 * valiance)));
+                }
+            }
+
+            int vampirism = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.vampirism, heldItem);
+            if (vampirism > 0) {
+                attacker.heal(vampirism);
+                event.getEntityLiving().world.playSound(event.getEntityLiving().posX, event.getEntityLiving().posY, event.getEntityLiving().posZ, SoundsTC.zap, SoundCategory.NEUTRAL, 0.6F, 1F, false);
             }
         }
     }

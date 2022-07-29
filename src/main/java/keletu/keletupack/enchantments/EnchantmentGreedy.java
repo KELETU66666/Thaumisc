@@ -5,6 +5,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
@@ -12,7 +13,7 @@ import thaumcraft.common.items.tools.ItemPrimalCrusher;
 
 public class EnchantmentGreedy extends Enchantment {
     public EnchantmentGreedy(int id) {
-        super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
         this.setRegistryName("greedy");
         this.setName("greedy");
 
@@ -36,11 +37,15 @@ public class EnchantmentGreedy extends Enchantment {
 
     @Override
     protected boolean canApplyTogether(Enchantment ench) {
-        return this !=ench&&ench!= EnchantmentsKP.educational && ench!= Enchantments.LOOTING;
+        return ench != EnchantmentsKP.educational && ench != Enchantments.LOOTING;
+    }
+    public boolean canApply(ItemStack stack)
+    {
+        return stack.getItem() instanceof ItemAxe ? true : super.canApply(stack);
     }
 
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack) {
+    public boolean isTreasureEnchantment()
+    {
         return true;
     }
 }

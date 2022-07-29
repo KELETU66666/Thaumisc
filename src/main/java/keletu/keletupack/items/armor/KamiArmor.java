@@ -74,12 +74,6 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
     @Override
     public void onArmorTick(World world, EntityPlayer mp, ItemStack itemStack) {
-        ItemStack tmp;
-        boolean headWorn = !(tmp = mp.getItemStackFromSlot(EntityEquipmentSlot.HEAD)).isEmpty() && tmp.getItem() instanceof KamiArmor;
-        boolean bodyWorn = !(tmp = mp.getItemStackFromSlot(EntityEquipmentSlot.CHEST)).isEmpty() && tmp.getItem() instanceof KamiArmor;
-        boolean beltWorn = !(tmp = mp.getItemStackFromSlot(EntityEquipmentSlot.LEGS)).isEmpty() && tmp.getItem() instanceof KamiArmor;
-        boolean bootsWorn = !(tmp = mp.getItemStackFromSlot(EntityEquipmentSlot.FEET)).isEmpty() && tmp.getItem() instanceof KamiArmor;
-
         switch (armorType) {
             case HEAD: {
                 if(itemStack.getItemDamage() != 1){

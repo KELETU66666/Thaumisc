@@ -23,11 +23,6 @@ public class EnchantmentEducational extends Enchantment {
 
     @Override
     protected boolean canApplyTogether(Enchantment ench) {
-        return this !=ench&&ench!= Enchantments.LOOTING && ench!= EnchantmentsKP.greedy;
-    }
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack) {
-        return false;
+        return ench!= Enchantments.LOOTING && ench!= EnchantmentsKP.greedy;
     }
 }
