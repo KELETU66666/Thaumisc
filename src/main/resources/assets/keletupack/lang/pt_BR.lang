@@ -62,7 +62,7 @@ item.distortion_pick.name=Picareta da Distorção
 item.riding_crop.name=Chibata
 tile.ichor_block.name=Bloco de Icor
 tile.bedrock_portal.name=Portal do Mundo Bedrock
-tile.ethereal_bloom.name=Ethereal Bloom
+tile.ethereal_bloom.name=Flor Etérea
 item.warp_paper.name=Papel Tornassol Arcano
 chat.warp.minorwarp=Não há nenhuma reação
 chat.warp.averagewarp=O papel ficou com uma cor pálida
@@ -76,16 +76,16 @@ item.packresource.1.name=Moeda de Mago
 item.packresource.0.name=Moeda da Aventura
 item.packresource.3.name=Moeda Ensanguentada
 item.packresource.2.name=Moeda Mágica
-item.packresource.4.name=Broken Twilight Wand
-item.packresource.5.name=Broken Twilight Bow
+item.packresource.4.name=Varinha Quebrada da Twilight
+item.packresource.5.name=Arco Quebrado da Twilight
 
-item.shard_end.name=Lasca do Ender
-item.shard_nether.name=Lasca do Nether
+item.resourcetmisc.0.name=Lasca do Ender
+item.resourcetmisc.1.name=Lasca do Nether
 
 item.resourcetmisc.2.name=Icor
-item.resourcetmisc.3.name=Ichorium Ingot
+item.resourcetmisc.3.name=Barra de Icório
 item.resourcetmisc.4.name=Tecido de Icor
-item.resourcetmisc.5.name=Barra de Icório
+item.resourcetmisc.5.name=Pepita de Icório
 item.ichor_pouch.name=Pouxete de Tecido de Icor
 
 item.cleansing_amulet.name=Amuleto de Remoção
@@ -101,11 +101,11 @@ item.arcane_disassembler.name=Desmontador Taúmico
 item.shadow_fortress_helm.name=Capacete Fortaleza Sombrio
 item.shadow_fortress_chest.name=Peitoral Fortaleza Sombrio
 item.shadow_fortress_legs.name=Calça Fortaleza Sombria
-item.shadow_sword.name=Shadow Metal Sword
-item.shadow_pick.name=Shadow Metal Pickaxe
-item.shadow_axe.name=Shadow Metal Axe
-item.shadow_shovel.name=Shadow Metal Shovel
-item.shadow_hoe.name=Shadow Metal Hoe
+item.shadow_sword.name=Espada de Metal Sombrio
+item.shadow_pick.name=Picareta de Metal Sombrio
+item.shadow_axe.name=Machado de Metal Sombrio
+item.shadow_shovel.name=Pá de Metal Sombrio
+item.shadow_hoe.name=Enxada de Metal Sombrio
 
 item.resourcetmisc.6.name=Barra de Metal Sombrio
 item.resourcetmisc.7.name=Pepita de Metal Sombrio
@@ -186,7 +186,7 @@ keletupack.research.runic_baubles_aqua.title=Anel Rúnico da Recuperação
 keletupack.research.runic_baubles_aqua.text=Eu encontrei escrituras de Pesquisa que mencionam um Anel Rúnico melhorado, que infundiria o usuário com um poder Regenerativo quando a Defesa dele baixasse, isso deve ser replicável com minhas práticas.
 keletupack.research.runic_baubles_aqua.complete.text=De fato, é replicável! Quando minha Defesa Rúnica cai, esse Anel vai me dar um pulso de poder Regenerativo para mim, mas ele não vai conseguir mandar outro pulso por um tempo depois de ativar.
 
-keletupack.research.ethereal_bloom.title=Ethereal Bloom
+keletupack.research.ethereal_bloom.title=Flor Etérea
 keletupack.research.ethereal_bloom.text=TEXT
 keletupack.research.ethereal_bloom.complete.text=TEXT
 
@@ -196,7 +196,7 @@ keletupack.research.thaumisc_warptheory.text=Essa loucura que começou a me afet
 keletupack.research.thaumisc_warptheory.complete.text=Parece que algumas escrituras de informações de itens relacionados a loucura têm sobrevivido à Quarta Era, eu deveria deixar registradas quaisquer descobertas que eu fizer a respeito desses itens próximas à essa seção.
 
 keletupack.research.warppaper.title=Papel Tornassol Arcano
-keletupack.research.warppaper.text=De vez em quanto, um Checador de Sanidade é simplesmente impreciso demais, especialmente quando o meu nível de Warp são maiores do que os que ele foi desenvolvido para suportar, talvez eu possa inventar um dispositivo mais preciso?
+keletupack.research.warppaper.text=De vez em quando, um Checador de Sanidade é simplesmente impreciso demais, especialmente quando o meu nível de Warp são maiores do que os que ele foi desenvolvido para suportar, talvez eu possa inventar um dispositivo mais preciso?
 keletupack.research.warppaper.complete.text=Fazer algo que seja reutilizável para medir Warp em grandes quantidades me parece difícil, o Warp é uma força poderosa que pode superar todas coisas que foram feitas para trabalhar com ele, então parece que eu vou ter que fazeer uso de uma das minhas mais primitivas, e também mais disperdiçadoras soluções...<BR>Papel Tornassol Arcano, como decidi chamá-lo, é baseado nas escrituras de alguns Taumaturgos da Quarta Era, os quais supostamente o descobriram. Esse Papel, quando em contato com alguma parte apropriada do meu corpo, ele vai reagir dependendo de quanto Warp eu tenho, quanto mais violenta a reação maior a quantidade, levando até um ponto destrutivo do papel, graças a força arrasadora do Warp.<BR>Isso vai me garantir meios de medir Warp em grandes escalas, dependendo da violência da reação, talvez não seja a mais útil ao meu ver, mas quem sabe não é útil para as profundezas da minha mente...? Não, isso é absurdo.
 
 keletupack.research.taintmeat.title=Amálgama de Mácula
@@ -234,11 +234,11 @@ keletupack.research.shadow_armor.text=Resquícios de conhecimento dos Taumaturgo
 keletupack.research.shadow_armor.complete.text=Esse conceito me deve ser possível de reproduzir, em teoria, simplismente blindando a Armadura de Void Metal com Metal Sombrio através de Infusão<BR>Ela parece oferecer um desconto em Vis bem decente, sendo composta de tais materiais dessa natureza alienígena, e oferecendo aquele excelente nível de Proteção que era esperado.<BR>Ela não consegue se regenerar assim como outros itens baseados em Void Metal, mas é extremamente durável, então não há com o que se preocupar.
 
 ##Avaritia
-keletupack.research.akashic_record.title=Akashic Record
+keletupack.research.akashic_record.title=Registro Akáshico
 keletupack.research.akashic_record.text=TEXT
 keletupack.research.akashic_record.complete.text=TEXT
 
-keletupack.research.big_pearl.title=Extremely Primordial Pearl
+keletupack.research.big_pearl.title=Pérola Extremamente Primordial
 keletupack.research.big_pearl.text=TEXT
 keletupack.research.big_pearl.complete.text=TEXT
 
@@ -271,6 +271,6 @@ tip.awakenarmor.name1=Dormente
 #Compat
 
 item.loot_bag_crystal.name=Bolsa de Tesouro de Crystal
-item.crystal_caster.name=Crystal Studded Cosmic Neutronium Caster's Gauntlet
-item.akashic_record.name=Akashic Record
-item.big_pearl.name=Extremely Primordial Pearl
+item.crystal_caster.name=Manopla de Neutrônio Cósmico com Botões Cristalinos
+item.akashic_record.name=Registro Akáshico
+item.big_pearl.name=Pérola Extremamente Primordial
