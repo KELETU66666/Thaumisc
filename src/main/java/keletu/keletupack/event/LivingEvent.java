@@ -159,9 +159,8 @@ public class LivingEvent {
     @SubscribeEvent
     public void onDeath(LivingDeathEvent event) {
         if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer) {
-            ((EntityPlayer) event.getSource().getTrueSource()).getHeldEquipment();
             ItemStack equip = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-            LivingExperienceDropEvent event1 = new LivingExperienceDropEvent(((EntityLiving) event.getEntityLiving()), ((EntityPlayer) event.getSource().getTrueSource()), 1);
+            LivingExperienceDropEvent event1 = new LivingExperienceDropEvent(((EntityLiving) event.getEntityLiving()), ((EntityPlayer) event.getSource().getTrueSource()), 5);
 
             if (EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.educational, equip) > 0 && event.getEntityLiving() instanceof EntityLiving && EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, equip) == 0) {
                 try {
