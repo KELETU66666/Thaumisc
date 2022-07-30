@@ -23,6 +23,9 @@ public class EnchantmentsKP {
     public static final Enchantment finalStrike = new EnchantmentFinalStrike(206);
     public static final Enchantment valiance = new EnchantmentValiance(207);
     public static final Enchantment vampirism = new EnchantmentVampirism(208);
+    public static final Enchantment dispersedStrikes = new EnchantmentDispersedStrikes(209);
+    public static final Enchantment focusedStrike = new EnchantmentFocusedStrike(210);
+    public static final Enchantment quickdraw = new EnchantmentQuickDraw(210);
 
 
 }

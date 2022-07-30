@@ -52,6 +52,9 @@ public class LivingEvent {
     public static void register(ResourceLocation resourceLocation) {
     }
 
+    public final String NBTLastTarget = "TTEnchantLastTarget";
+
+    public final String NBTSuccessiveStrike = "TTEnchantSuccessiveStrike";
 
     @SubscribeEvent
     public void playerTick(TickEvent.PlayerTickEvent e) {
@@ -98,7 +101,23 @@ public class LivingEvent {
                 event.getEntityLiving().fallDistance = Math.max(2.9F, player.fallDistance - slowfall / 3F);
 
                 player.world.spawnParticle(EnumParticleTypes.CLOUD, player.posX + 0.25, player.posY - 1, player.posZ + 0.25, -player.motionX, player.motionY, -player.motionZ);
+
             }
+        }
+    }
+
+    @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
+    public void onEvent(LivingEntityUseItemEvent.Tick event) {
+        if (event.getEntityLiving() instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+            ItemStack heldItem = player.getHeldItem(EnumHand.MAIN_HAND);
+
+            int quickDraw = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.quickdraw, heldItem);
+            ItemStack usingItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem().getDefaultInstance();
+            int time =  event.getDuration();
+            if (quickDraw > 0 && usingItem.getItem() instanceof ItemBow)
+                if ((usingItem.getItem().getMaxItemUseDuration(usingItem) - time) % (6 - quickDraw) == 0)
+                    event.setDuration(time - 1);
         }
     }
 
@@ -303,6 +322,35 @@ public class LivingEvent {
                 attacker.heal(vampirism);
                 event.getEntityLiving().world.playSound(event.getEntityLiving().posX, event.getEntityLiving().posY, event.getEntityLiving().posZ, SoundsTC.zap, SoundCategory.NEUTRAL, 0.6F, 1F, false);
             }
-        }
+
+            int focusedStrikes = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.focusedStrike, heldItem);
+
+            int dispersedStrikes = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.dispersedStrikes, heldItem);
+
+            if (focusedStrikes > 0 || dispersedStrikes > 0) {
+                int lastTarget = heldItem.getTagCompound().getInteger(NBTLastTarget);
+                int successiveStrikes = heldItem.getTagCompound().getInteger(NBTSuccessiveStrike);
+                int entityId = event.getEntityLiving().getEntityId();
+
+                if (lastTarget != entityId) {
+                    heldItem.getTagCompound().setInteger(NBTSuccessiveStrike, 0);
+                    successiveStrikes = 0;
+                } else {
+                    heldItem.getTagCompound().setInteger(NBTSuccessiveStrike, successiveStrikes + 1);
+                    successiveStrikes = 1;
+                }
+
+                if (focusedStrikes > 0) {
+                    event.setAmount(event.getAmount() / 2);
+                    event.setAmount((float) (event.getAmount() + (.5 * successiveStrikes * event.getAmount() * focusedStrikes)));
+                }
+                if (dispersedStrikes > 0) {
+                    event.setAmount((float) (event.getAmount() * (1 + 0.2 * successiveStrikes)));
+                    event.setAmount(event.getAmount() / (1 + (successiveStrikes * 2)));
+                }
+
+                heldItem.getTagCompound().setInteger("TTEnchantLastTarget", entityId);
+
+            }        }
     }
 }
