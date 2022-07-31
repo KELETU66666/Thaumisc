@@ -10,6 +10,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 - [中文简体](./README.md)
 - [English](./doc/en_us/README.md)
+- [Português](./doc/pt_br/README.md)
 
 ## DOWNLOAD
 
