@@ -106,6 +106,8 @@ This mod requires Thaumcraft 6
 60. Crystal Studded Cosmic Neutronium Caster's Gauntlet (requires Avaritia)
 61. Extremely Primordial Pearl (requires Avaritia)
 62. Akashic Record (requires Avaritia)
+63. Broken Twilight Wand
+64. Broken Twilight Bow
 
 ### Dimensions
 
