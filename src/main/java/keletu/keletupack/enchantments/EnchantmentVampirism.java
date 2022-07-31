@@ -21,6 +21,12 @@ public class EnchantmentVampirism extends Enchantment {
     }
 
     @Override
+    public int getMinEnchantability(int min)
+    {
+        return 16 + 12 * (min - 1);
+    }
+
+    @Override
     public int getMaxLevel() {
         return 2;
     }

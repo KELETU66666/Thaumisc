@@ -7,6 +7,7 @@ import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.tools.DistortionPick;
 import keletu.keletupack.items.tools.IchoriumPickAdv;
 import keletu.keletupack.util.Reference;
+import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -55,6 +56,8 @@ public class LivingEvent {
     public final String NBTLastTarget = "TTEnchantLastTarget";
 
     public final String NBTSuccessiveStrike = "TTEnchantSuccessiveStrike";
+
+    public final String NBTTunnelDirection = "TTEnchantTunnelDir";
 
     @SubscribeEvent
     public void playerTick(TickEvent.PlayerTickEvent e) {
@@ -351,6 +354,60 @@ public class LivingEvent {
 
                 heldItem.getTagCompound().setInteger("TTEnchantLastTarget", entityId);
 
-            }        }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onBreakBlock(BlockEvent.BreakEvent event) {
+        ItemStack item = event.getPlayer().getHeldItem(EnumHand.MAIN_HAND);
+        int tunnel = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.tunnel, item);
+        if (tunnel > 0) {
+            float dir = event.getPlayer().rotationYaw;
+            item.getTagCompound().setFloat(NBTTunnelDirection, dir);
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onGetHarvestSpeed(PlayerEvent.BreakSpeed event) {
+        ItemStack heldItem = event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND);
+
+        if (heldItem == null)
+            return;
+
+        int shatter = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.shatter, heldItem);
+        if (shatter > 0) {
+            if (event.getState().getBlockHardness(event.getEntityPlayer().world, BlockPos.ORIGIN) > 20F) {
+                event.setNewSpeed((float) (event.getOriginalSpeed() * 3 * shatter));
+            } else {
+                event.setNewSpeed((float) (event.getOriginalSpeed() * .8));
+            }
+        }
+
+        int tunnel = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.tunnel, heldItem);
+        if (tunnel > 0) {
+            float dir = event.getEntityPlayer().rotationYaw;
+            if (heldItem.getTagCompound() != null && heldItem.getTagCompound().hasKey(NBTTunnelDirection)) {
+                float oldDir = heldItem.getTagCompound().getFloat(NBTTunnelDirection);
+                float dif = Math.abs(oldDir - dir);
+                if (dif < 50) {
+                    event.setNewSpeed((float) (event.getOriginalSpeed() * (1 + (.2 * tunnel))));
+                } else {
+                    event.setNewSpeed((float) (event.getOriginalSpeed() * .3));
+                }
+            }
+        }
+
+        int desintegrate = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.desintegrate, heldItem);
+        int autoSmelt = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.autosmelt, heldItem);
+
+        boolean desintegrateApplies = desintegrate > 0 && event.getState().getBlockHardness(event.getEntityPlayer().world, BlockPos.ORIGIN) <= 1.5F;
+        boolean autoSmeltApplies = autoSmelt > 0 && event.getState().getMaterial() == Material.WOOD;
+
+        if (desintegrateApplies || autoSmeltApplies) {
+            heldItem.damageItem(1, event.getEntityPlayer());
+            event.setNewSpeed(Float.MAX_VALUE);
+        } else if (desintegrate > 0 || autoSmelt > 0)
+            event.setCanceled(true);
     }
 }

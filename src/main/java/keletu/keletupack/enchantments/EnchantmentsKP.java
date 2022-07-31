@@ -25,7 +25,11 @@ public class EnchantmentsKP {
     public static final Enchantment vampirism = new EnchantmentVampirism(208);
     public static final Enchantment dispersedStrikes = new EnchantmentDispersedStrikes(209);
     public static final Enchantment focusedStrike = new EnchantmentFocusedStrike(210);
-    public static final Enchantment quickdraw = new EnchantmentQuickDraw(210);
+    public static final Enchantment quickdraw = new EnchantmentQuickDraw(211);
+    public static final Enchantment tunnel = new EnchantmentTunnel(212);
+    public static final Enchantment shatter = new EnchantmentShatter(213);
+    public static final Enchantment desintegrate = new EnchantmentDesIntegrate(214);
+    public static final Enchantment autosmelt = new EnchantmentAutoSmelt(215);
 
 
 }

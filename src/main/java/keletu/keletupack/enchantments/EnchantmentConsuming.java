@@ -38,7 +38,8 @@ public class EnchantmentConsuming extends Enchantment {
     }
 
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack) {
-        return false;
+    public int getMinEnchantability(int level)
+    {
+        return 30;
     }
 }
