@@ -103,8 +103,11 @@
           },
           {
             "text": "keletupack.research.morph_tools.complete.text",
-            "recipes": ["keletupack:morph_sword", "keletupack:morph_pick", "keletupack:morph_axe", "keletupack:morph_shovel"]
+            "recipes": ["keletupack:morph_sword", "keletupack:morph_pick", "keletupack:morph_axe", "keletupack:morph_shovel", "keletupack:bookofvoid"]
           }
+        ],
+        "addenda": [
+          {"text": "keletupack.research.morph_tools.void","required_research":["BASEELDRITCH"]}
         ]
       },
       {

@@ -8,8 +8,8 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 public class EnchantmentDesIntegrate extends Enchantment {
     public EnchantmentDesIntegrate(int id) {
         super(Rarity.UNCOMMON, EnumEnchantmentType.DIGGER, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
-        this.setRegistryName("desentegrate");
-        this.setName("desentegrate");
+        this.setRegistryName("desintegrate");
+        this.setName("desintegrate");
 
         EnchantmentsKP.ENCHANTNENTS.add(this);
     }

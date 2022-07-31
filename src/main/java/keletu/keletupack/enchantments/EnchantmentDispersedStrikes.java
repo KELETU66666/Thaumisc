@@ -10,8 +10,8 @@ import net.minecraft.item.ItemStack;
 public class EnchantmentDispersedStrikes extends Enchantment {
     public EnchantmentDispersedStrikes(int id) {
         super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
-        this.setRegistryName("dispersedstrike");
-        this.setName("dispersedstrike");
+        this.setRegistryName("dispersedstrikes");
+        this.setName("dispersedstrikes");
 
         EnchantmentsKP.ENCHANTNENTS.add(this);
     }

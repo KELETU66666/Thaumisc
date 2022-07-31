@@ -3,12 +3,15 @@ package keletu.keletupack.init;
 
 import keletu.keletupack.common.BlocksKP;
 import keletu.keletupack.common.ItemsKP;
+import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.items.armor.ShadowArmor;
 import keletu.keletupack.util.ItemNBTHelper;
 import keletu.keletupack.util.Reference;
+import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
+import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.NBTTagByte;
@@ -698,6 +701,21 @@ private static void initInfusionRecipes() {
                     Items.GHAST_TEAR,
                     Items.MILK_BUCKET
     }
+    ));
+    ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+    ItemEnchantedBook.addEnchantment(book, new EnchantmentData(EnchantmentsKP.voidtouched, 1));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "bookofvoid"), new InfusionRecipe(
+            "MORPH_TOOLS&&BASEELDRITCH",
+            book,
+            8,
+            new AspectList().add(Aspect.ENTROPY, 70),
+            new ItemStack(Items.BOOK),
+            new Object[] {
+                    "ingotVoid",
+                    "ingotVoid",
+                    "ingotVoid",
+                    "ingotVoid"
+            }
     ));
     }
 }

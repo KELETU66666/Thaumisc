@@ -12,6 +12,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraftforge.common.util.EnumHelper;
+import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.common.items.casters.ItemCaster;
 
 import java.util.ArrayList;
@@ -21,9 +22,8 @@ public class ModItems {
     public static final List<Item> ITEMS = new ArrayList<Item>();
     public static final ItemFood TAINT_MEAT = new warpfood("taint_meat", 0, 0.0F, false, keletupack.ITEM_TAB);
     public static final ItemFood NetherCake = new NetherCake("nether_cake", 0, 0.0F, false, keletupack.ITEM_TAB);
-    public static final ItemFood NrtherSwart  = new food("nether_swart", 2, 0.4F, false, keletupack.ITEM_TAB);
-    public static final Item.ToolMaterial MATERIAL_MORPH = EnumHelper.addToolMaterial("morph", 7, 1500, 8.0F, 3.0F, 15);
-    public static final Item.ToolMaterial MATERIAL_LEATHER_K = EnumHelper.addToolMaterial("ridingcrop", 0, 64, 0.0F, 0.0F, 10);
+    public static final ItemFood NetherSwart  = new food("nether_swart", 2, 0.4F, false, keletupack.ITEM_TAB);
+    public static final Item.ToolMaterial MATERIAL_MORPH = EnumHelper.addToolMaterial("morph", 3, 1500, 10.0F, 3.0F, 18);
     public static final Item.ToolMaterial MATERIAL_ICHORIUM= EnumHelper.addToolMaterial("ICHOR", 4, -1, 10F, 5F, 25);
     public static final ItemArmor.ArmorMaterial MATERIAL_ICHOR = EnumHelper.addArmorMaterial("ichor", Reference.MOD_ID + ":ichor", -1, new int[]{3, 6, 8, 3}, 22, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 2.0F);
     public static final ItemSword IchoriumSword = new IchoriumSword("ichorium_sword", keletupack.ITEM_TAB, MATERIAL_ICHORIUM);
@@ -47,7 +47,7 @@ public class ModItems {
     public static final ItemPickaxe MorphPickaxe = new MorphPick("morph_pick", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemAxe MorphAxe = new MorphAxe("morph_axe", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemPickaxe DISTORTIONPICK = new DistortionPick("distortion_pick", keletupack.ITEM_TAB, MATERIAL_MORPH);
-    public static final ItemSword RIDINGCROP = new RidingCrop("riding_crop", keletupack.ITEM_TAB, MATERIAL_LEATHER_K);
+    public static final ItemSword RIDINGCROP = new RidingCrop("riding_crop", keletupack.ITEM_TAB, Item.ToolMaterial.WOOD);
     public static final Item ARCANEDISASSEMBLER = new ArcaneDisassembler();
     public static final ItemArmor.ArmorMaterial SHADOW_FORTRESS = EnumHelper.addArmorMaterial("SHADOW_FORTRESS", "shadow", 300, new int[]{
             0, 6, 10, 4
