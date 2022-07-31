@@ -24,4 +24,16 @@ public class EnchantmentQuickDraw extends Enchantment {
     public boolean canApplyTogether(Enchantment ench) {
         return ench != Enchantments.PUNCH;
     }
+
+    @Override
+    public int getMinEnchantability(int ench)
+    {
+        return 10 + 12 * (ench - 1);
+    }
+
+    @Override
+    public int getMaxEnchantability(int ench)
+    {
+        return this.getMinEnchantability(ench) + 30;
+    }
 }

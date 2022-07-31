@@ -24,4 +24,10 @@ public class EnchantmentPounce extends Enchantment {
     {
         return 25 + 15 * (level - 1);
     }
+
+    @Override
+    public int getMaxEnchantability(int level)
+    {
+        return this.getMinEnchantability(level) + 30;
+    }
 }

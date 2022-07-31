@@ -23,4 +23,10 @@ public class EnchantmentShatter extends Enchantment {
     protected boolean canApplyTogether(Enchantment ench) {
         return ench != EnchantmentsKP.desintegrate && ench != Enchantments.EFFICIENCY;
     }
+
+    @Override
+    public int getMinEnchantability(int level)
+    {
+        return 20 + 3 * (level - 1);
+    }
 }

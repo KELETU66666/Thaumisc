@@ -16,11 +16,23 @@ public class EnchantmentDesIntegrate extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 5;
+        return 1;
     }
 
     @Override
     protected boolean canApplyTogether(Enchantment ench) {
         return ench != EnchantmentsKP.tunnel && ench != Enchantments.EFFICIENCY;
+    }
+
+    @Override
+    public int getMinEnchantability(int level)
+    {
+        return 25;
+    }
+
+    @Override
+    public int getMaxEnchantability(int level)
+    {
+        return 55;
     }
 }

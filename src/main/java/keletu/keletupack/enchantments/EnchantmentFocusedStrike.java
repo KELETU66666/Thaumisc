@@ -24,4 +24,16 @@ public class EnchantmentFocusedStrike extends Enchantment {
     public int getMaxLevel() {
         return 5;
     }
+
+    @Override
+    public int getMinEnchantability(int ench)
+    {
+        return 15 + (ench - 1) * 8;
+    }
+
+    @Override
+    public int getMaxEnchantability(int ench)
+    {
+        return this.getMinEnchantability(ench) + 40;
+    }
 }

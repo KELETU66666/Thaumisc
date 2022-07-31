@@ -27,6 +27,17 @@ public class EnchantmentFinalStrike extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 5;
+        return 5;}
+
+    @Override
+    public int getMinEnchantability(int ench)
+    {
+        return 10 + (ench - 1) * 8;
+    }
+
+    @Override
+    public int getMaxEnchantability(int ench)
+    {
+        return this.getMinEnchantability(ench) + 40;
     }
 }

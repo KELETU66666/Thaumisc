@@ -5,6 +5,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 
 public class EnchantmentDispersedStrikes extends Enchantment {
     public EnchantmentDispersedStrikes(int id) {
@@ -23,5 +24,10 @@ public class EnchantmentDispersedStrikes extends Enchantment {
     @Override
     public int getMaxLevel() {
         return 5;
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack) {
+        return false;
     }
 }

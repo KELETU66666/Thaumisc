@@ -26,13 +26,13 @@ public class EnchantmentGreedy extends Enchantment {
     }
 
     @Override
-    public int getMinEnchantability(int par1) {
+    public int getMinEnchantability(int ench) {
         return 20;
     }
 
     @Override
-    public int getMaxEnchantability(int par1) {
-        return super.getMinEnchantability(par1) + 50;
+    public int getMaxEnchantability(int ench) {
+        return super.getMinEnchantability(ench) + 50;
     }
 
     @Override

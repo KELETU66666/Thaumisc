@@ -25,4 +25,12 @@ public class EnchantmentEducational extends Enchantment {
     protected boolean canApplyTogether(Enchantment ench) {
         return ench!= Enchantments.LOOTING && ench!= EnchantmentsKP.greedy;
     }
+
+    public int getMinEnchantability(int ench)
+    {
+        return 10 + (ench - 1) * 9;    }
+
+    public int getMaxEnchantability(int ench) {
+        return super.getMinEnchantability(ench) + 50;
+    }
 }

@@ -29,4 +29,9 @@ public class EnchantmentValiance extends Enchantment {
     {
         return 10 + (level - 1) * 11;
     }
+
+    public int getMaxEnchantability(int level)
+    {
+        return this.getMinEnchantability(level) + 40;
+    }
 }

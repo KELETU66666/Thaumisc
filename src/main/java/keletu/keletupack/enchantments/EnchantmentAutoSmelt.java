@@ -23,4 +23,15 @@ public class EnchantmentAutoSmelt extends Enchantment {
     protected boolean canApplyTogether(Enchantment ench) {
         return ench == Enchantments.UNBREAKING && ench == Enchantments.MENDING;
     }
+
+    @Override
+    public int getMinEnchantability(int level) {
+        return 25;
+    }
+
+    @Override
+    public int getMaxEnchantability(int level)
+    {
+        return 50;
+    }
 }

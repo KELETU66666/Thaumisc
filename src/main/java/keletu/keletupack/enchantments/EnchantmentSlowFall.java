@@ -30,4 +30,16 @@ public class EnchantmentSlowFall extends Enchantment {
     public boolean canApplyTogether(Enchantment ench) {
         return ench != Enchantments.FEATHER_FALLING;
     }
+
+    @Override
+    public int getMinEnchantability(int ench)
+    {
+        return 25 + 15 * (ench - 1);
+    }
+
+    @Override
+    public int getMaxEnchantability(int ench)
+    {
+        return super.getMinEnchantability(ench) + 40;
+    }
 }

@@ -28,4 +28,9 @@ public class EnchantmentTunnel extends Enchantment {
     protected boolean canApplyTogether(Enchantment ench) {
         return ench != EnchantmentsKP.shatter && ench != Enchantments.EFFICIENCY;
     }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack) {
+        return false;
+    }
 }

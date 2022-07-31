@@ -27,4 +27,16 @@ public class EnchantmentShockwave extends Enchantment {
     public boolean canApplyTogether(Enchantment ench) {
         return ench != Enchantments.FEATHER_FALLING && ench != EnchantmentsKP.slowfall;
     }
+
+    @Override
+    public int getMinEnchantability(int par1)
+    {
+        return 20 + 10 * (par1 - 1);
+    }
+
+    @Override
+    public int getMaxEnchantability(int par1)
+    {
+        return super.getMinEnchantability(par1) + 40;
+    }
 }

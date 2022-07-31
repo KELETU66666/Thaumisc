@@ -42,4 +42,9 @@ public class EnchantmentConsuming extends Enchantment {
     {
         return 30;
     }
+
+    public int getMaxEnchantability(int enchantmentLevel)
+    {
+        return 60;
+    }
 }

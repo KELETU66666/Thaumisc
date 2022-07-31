@@ -31,4 +31,9 @@ public class EnchantmentAscentBoost extends Enchantment {
     {
         return 20 + 10 * (level - 1);
     }
+
+    public int getMaxEnchantability(int level)
+    {
+        return this.getMinEnchantability(level) + 20;
+    }
 }
