@@ -274,3 +274,25 @@ item.loot_bag_crystal.name=Bolsa de Tesouro de Crystal
 item.crystal_caster.name=Manopla de Neutrônio Cósmico com Botões Cristalinos
 item.akashic_record.name=Registro Akáshico
 item.big_pearl.name=Pérola Extremamente Primordial
+
+#Enchantment
+
+enchantment.voidtouched=Influência do Vácuo
+enchantment.wrath=Ira
+enchantment.educational=Educação
+enchantment.greedy=Ambicioso
+enchantment.consuming=Consumir
+enchantment.ascentboost=Ascensão
+enchantment.shockwave=Onda de Choque
+enchantment.slowfall=Queda Lenta
+enchantment.pounce=Ofensiva
+enchantment.finalstrike=Golpe Final
+enchantment.valiance=Valentia
+enchantment.vampirism=Vampirismo
+enchantment.desintegrate=Desintegrar
+enchantment.dispersedstrikes=Golpes Dispersos
+enchantment.focusedstrike=Golpe Concentrado
+enchantment.quickdraw=Saque Rápido
+enchantment.shatter=Despedaçar
+enchantment.tunnel=Túnel
+enchantment.autosmelt=Auto-Queima
