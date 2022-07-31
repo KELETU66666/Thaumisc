@@ -76,8 +76,8 @@ item.packresource.1.name=Moeda de Mago
 item.packresource.0.name=Moeda da Aventura
 item.packresource.3.name=Moeda Ensanguentada
 item.packresource.2.name=Moeda Mágica
-item.packresource.4.name=Varinha Quebrada da Twilight
-item.packresource.5.name=Arco Quebrado da Twilight
+item.packresource.4.name=Varinha Twilight Quebrada
+item.packresource.5.name=Arco Twilight Quebrado
 
 item.resourcetmisc.0.name=Lasca do Ender
 item.resourcetmisc.1.name=Lasca do Nether
@@ -91,7 +91,7 @@ item.ichor_pouch.name=Pouxete de Tecido de Icor
 item.cleansing_amulet.name=Amuleto de Remoção
 
 item.runic_ring.name=Anel Rúnico
-item.runic_girdle.name=Cinturão Rúnico do Ar
+item.runic_girdle.name=Cinturão Rúnico
 item.runic_amulet.name=Amuleto Rúnico
 item.runic_ring_water.name=Anel Rúnico da Recuperação
 item.runic_girdle_air.name=Cinturão Rúnico da Cinética
