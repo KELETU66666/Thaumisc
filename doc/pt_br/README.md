@@ -14,7 +14,7 @@ AVISO: A TRADUÇÃO EM PORTUGUÊS PODE NÂO ESTAR TOTALMENTE CORRETA
 
 ## DOWNLOAD
 
-Já que ele está em fase de Desenvolvimento, por favor baixe-o pela fonte original. Se encontrar quaisquer erros, por favor reporte-os
+Já que o mod está em fase de Desenvolvimento, por favor baixe-o pela fonte original. Se encontrar quaisquer erros, por favor reporte-os
 
 ## lista de afazeres do desenvolvedor
 
