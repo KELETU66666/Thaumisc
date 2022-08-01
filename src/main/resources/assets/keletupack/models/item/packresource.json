@@ -33,6 +33,12 @@
                 "meta": 5
             },
             "model": "keletupack:item/broken_bow"
+        },
+        {
+            "predicate": {
+                "meta": 6
+            },
+            "model": "keletupack:item/portal_crystal"
         }
     ]
 }
