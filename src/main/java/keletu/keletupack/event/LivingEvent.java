@@ -111,18 +111,23 @@ public class LivingEvent {
 
     @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
     public void onEvent(LivingEntityUseItemEvent.Tick event) {
-        if (event.getEntityLiving() instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-            ItemStack heldItem = player.getHeldItem(EnumHand.MAIN_HAND);
+        EntityLivingBase entity = event.getEntityLiving();
+        if (entity instanceof EntityPlayer) {
+            ItemStack item = event.getItem();
+            int time = event.getDuration();
+            int quickDraw = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.quickdraw, item);
+            if (item.isEmpty()) {
+                return;
+            }
 
-            int quickDraw = EnchantmentHelper.getEnchantmentLevel(EnchantmentsKP.quickdraw, heldItem);
-            ItemStack usingItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem().getDefaultInstance();
-            int time =  event.getDuration();
-            if (quickDraw > 0 && usingItem.getItem() instanceof ItemBow)
-                if ((usingItem.getItem().getMaxItemUseDuration(usingItem) - time) % (6 - quickDraw) == 0)
-                    event.setDuration(time - 1);
+            if (quickDraw > 0 && item.getItem() instanceof ItemBow) {
+
+                    if ((item.getItem().getMaxItemUseDuration(item) - time) % (6 - quickDraw) == 0)
+                        event.setDuration(time - 1);
+            }
         }
     }
+
 
     @SubscribeEvent
     public void fall(LivingFallEvent e) {
