@@ -101,8 +101,8 @@ This mod requires Thaumcraft 6
 55. Shadow Metal Axe
 56. Shadow Metal Shovel
 57. Shadow Metal Hoe
-58. Crystal Treasure Bag (requires Thaumic Additions: Reconstructed)
-59. Ethereal Bloom (requires Avaritia)
+58. Ethereal Bloom
+59. Crystal Treasure Bag (requires Thaumic Additions: Reconstructed)
 60. Crystal Studded Cosmic Neutronium Caster's Gauntlet (requires Avaritia)
 61. Extremely Primordial Pearl (requires Avaritia)
 62. Akashic Record (requires Avaritia)
