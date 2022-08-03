@@ -1,5 +1,5 @@
 # Special formatting codes:
-
+#
 # <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
 # <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
 # <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
@@ -78,6 +78,7 @@ item.packresource.3.name=Moeda Ensanguentada
 item.packresource.2.name=Moeda Mágica
 item.packresource.4.name=Varinha Twilight Quebrada
 item.packresource.5.name=Arco Twilight Quebrado
+item.packresource.6.name=Cristal do Portal Twilight
 
 item.resourcetmisc.0.name=Lasca do Ender
 item.resourcetmisc.1.name=Lasca do Nether
@@ -215,6 +216,7 @@ keletupack.research.thaumisc_forbiddenmagic.complete.text=Algumas informações 
 keletupack.research.morph_tools.title=Ferramentas Camaleônicas
 keletupack.research.morph_tools.text=Resquícios de Pesquisas Proibidas da Quarta Era falam sobre Ferramentas que podem trocar entre Encantamentos de acordo com a vontade do usuário, deve ser possível replicar essas Ferramentas.
 keletupack.research.morph_tools.complete.text=Sucesso!... Quase. Não é uma réplica perfeita, seja lá quais materiais eram usados para Infundir as propiedades de Encanto-Variação no passado parecem não existir mais, mas Cristais de Permutatio parecem ser o suficiente para substituí-los.<BR>De qualquer maneira, as propriedades parecem refletir às daquelas Ferramentas que eu ouvi falar, então é o suficiente por agora.<BR>Elas podem conter até três formas de Encantamentos, as quais podem ser trocadas dando Shift + Botão Direito com a ferramenta na mão, providenciado pelo próprio Encantamento em si, a forma atual é indicada pela cor da Gema na ferramenta. Consome-se um pouco da Durabilidade para trocar de forma, mas é bem insignificante.
+keletupack.research.morph_tools.void=text
 
 keletupack.research.distortionpick.title=Picareta da Distorção
 keletupack.research.distortionpick.text=Resquícios de Pesquisas Proibidas da Quarta Era falam sobre uma Picareta que pode minerar o mais duro dos materiais in alguns momentos, quem sabe seja possível replicá-la?
