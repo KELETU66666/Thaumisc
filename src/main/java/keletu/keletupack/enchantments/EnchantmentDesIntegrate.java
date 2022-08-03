@@ -21,7 +21,7 @@ public class EnchantmentDesIntegrate extends Enchantment {
 
     @Override
     protected boolean canApplyTogether(Enchantment ench) {
-        return ench != EnchantmentsKP.tunnel && ench != Enchantments.EFFICIENCY;
+        return ench != EnchantmentsKP.tunnel && ench != Enchantments.EFFICIENCY && ench != this;
     }
 
     @Override

@@ -1,15 +1,23 @@
 package keletu.keletupack.blocks;
 
+import keletu.keletupack.init.ModItems;
+import keletu.keletupack.items.armor.KamiArmor;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.List;
+import java.util.Random;
 
 public class NitorVapor extends Block {
 
@@ -92,5 +100,19 @@ public class NitorVapor extends Block {
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
         return BlockFaceShape.UNDEFINED;
+    }
+
+    @Override
+    public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
+
+
+        if (!world.isRemote) {
+            List<EntityPlayer> players = world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX() - 1, pos.getY() - 1, pos.getZ() - 1, pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1));
+
+            if (players.isEmpty()) world.setBlockToAir(pos);
+            else if (players.stream().noneMatch(p -> p.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() instanceof KamiArmor))
+                world.setBlockToAir(pos);
+
+        }
     }
 }

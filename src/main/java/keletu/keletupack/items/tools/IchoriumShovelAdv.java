@@ -59,6 +59,11 @@ public class IchoriumShovelAdv extends ItemSpade implements IHasModel {
     }
 
     @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public EnumRarity getRarity(ItemStack itemstack) {
         return EnumRarity.EPIC;
     }

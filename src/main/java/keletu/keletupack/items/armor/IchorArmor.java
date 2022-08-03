@@ -23,6 +23,11 @@ public class IchorArmor extends ItemArmor implements IHasModel, IVisDiscountGear
     }
 
     @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public EnumRarity getRarity(ItemStack itemstack) {
         return EnumRarity.RARE;
     }

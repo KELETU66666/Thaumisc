@@ -17,7 +17,7 @@ public class EnchantmentVampirism extends Enchantment {
 
     @Override
     public boolean canApplyTogether(Enchantment ench) {
-        return ench != Enchantments.FIRE_ASPECT && ench != Enchantments.KNOCKBACK;
+        return ench != Enchantments.FIRE_ASPECT && ench != Enchantments.KNOCKBACK && ench != this;
     }
 
     @Override

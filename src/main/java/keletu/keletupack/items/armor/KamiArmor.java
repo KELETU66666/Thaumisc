@@ -43,20 +43,6 @@ import thaumcraft.common.lib.events.PlayerEvents;
 import java.util.List;
 
 public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, IHasModel {
-    public static final ArmorMaterial ICHORADV = EnumHelper.addArmorMaterial("ICHORADV", "ichoradv", 0, new int[]{
-            3,
-            8,
-            6,
-            3
-    }, 40, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 3F);
-    private final int[] discounts = new int[]{
-            0,
-            0,
-            4,
-            4,
-            4,
-            4
-    };
 
     public KamiArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, CreativeTabs tab) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
@@ -186,7 +172,7 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
 
     @Override
     public int getVisDiscount(ItemStack stack, EntityPlayer mp) {
-        return discounts[armorType.ordinal()];
+        return 4;
     }
 
     @Override

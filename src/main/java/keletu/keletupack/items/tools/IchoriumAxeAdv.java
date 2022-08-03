@@ -69,6 +69,11 @@ public class IchoriumAxeAdv extends ItemAxe implements IHasModel {
     }
 
     @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
         boolean ret = super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
         if (stack.getTagCompound() != null && stack.getTagCompound().getInteger("awaken") == 1) {
