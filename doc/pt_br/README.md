@@ -101,8 +101,8 @@ Este mod requer o Thaumcraft 6
 55. Machado de Metal Sombrio
 56. Pá de Metal Sombrio
 57. Enxada de Metal Sombrio
-58. Bolsa de Tesouro de Crystal (requer Thaumic Additions: Reconstructed)
-59. Flor Etérea (requer Avaritia)
+58. Flor Etérea
+59. Bolsa de Tesouro de Crystal (requer Thaumic Additions: Reconstructed)
 60. Manopla de Neutrônio Cósmico com Adornos Cristalinos (requer Avaritia)
 61. Pérola Extremamente Primordial (requer Avaritia)
 62. Registro Akáshico (requer Avaritia)
