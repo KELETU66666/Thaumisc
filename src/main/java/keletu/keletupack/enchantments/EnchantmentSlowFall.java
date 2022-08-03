@@ -28,7 +28,7 @@ public class EnchantmentSlowFall extends Enchantment {
 
     @Override
     public boolean canApplyTogether(Enchantment ench) {
-        return ench != Enchantments.FEATHER_FALLING;
+        return ench != Enchantments.FEATHER_FALLING && ench != this;
     }
 
     @Override

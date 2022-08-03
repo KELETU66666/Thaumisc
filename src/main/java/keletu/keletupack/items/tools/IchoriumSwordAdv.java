@@ -71,6 +71,11 @@ public class IchoriumSwordAdv extends Item implements IHasModel
     }
 
     @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         boolean ret = super.onLeftClickEntity(stack, player, entity);
         if (!ignoreLeftClick && entity instanceof EntityLivingBase && entity.hurtResistantTime == 0 && !entity.isDead) {

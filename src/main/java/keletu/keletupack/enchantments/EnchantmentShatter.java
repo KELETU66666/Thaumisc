@@ -21,7 +21,7 @@ public class EnchantmentShatter extends Enchantment {
 
     @Override
     protected boolean canApplyTogether(Enchantment ench) {
-        return ench != EnchantmentsKP.desintegrate && ench != Enchantments.EFFICIENCY;
+        return ench != EnchantmentsKP.desintegrate && ench != Enchantments.EFFICIENCY && ench != this;
     }
 
     @Override

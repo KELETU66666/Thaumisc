@@ -66,6 +66,11 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
     }
 
     @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public boolean canHarvestBlock(IBlockState blockIn) {
         return blockIn.getBlock().equals(Blocks.BEDROCK) || super.canHarvestBlock(blockIn);
     }

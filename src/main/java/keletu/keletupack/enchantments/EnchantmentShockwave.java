@@ -25,7 +25,7 @@ public class EnchantmentShockwave extends Enchantment {
 
     @Override
     public boolean canApplyTogether(Enchantment ench) {
-        return ench != Enchantments.FEATHER_FALLING && ench != EnchantmentsKP.slowfall;
+        return ench != Enchantments.FEATHER_FALLING && ench != EnchantmentsKP.slowfall && ench != this;
     }
 
     @Override

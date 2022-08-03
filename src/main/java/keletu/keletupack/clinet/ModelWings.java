@@ -5,6 +5,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import org.jetbrains.annotations.NotNull;
 
 public class ModelWings extends ModelBiped {
 
@@ -30,7 +31,7 @@ public class ModelWings extends ModelBiped {
     }
 
     @Override
-    public void render(Entity entity, float v1, float v2, float v3, float v4, float v5, float v6) {
+    public void render(@NotNull Entity entity, float v1, float v2, float v3, float v4, float v5, float v6) {
         setRotationAngles(v1, v2, v3, v4, v5, v6, entity);
 
         bipedHead.showModel = false;

@@ -37,7 +37,7 @@ public class EnchantmentGreedy extends Enchantment {
 
     @Override
     protected boolean canApplyTogether(Enchantment ench) {
-        return ench != EnchantmentsKP.educational && ench != Enchantments.LOOTING;
+        return ench != EnchantmentsKP.educational && ench != Enchantments.LOOTING && ench != this;
     }
     public boolean canApply(ItemStack stack)
     {
