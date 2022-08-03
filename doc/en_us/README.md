@@ -108,6 +108,7 @@ This mod requires Thaumcraft 6
 62. Akashic Record (requires Avaritia)
 63. Broken Twilight Wand
 64. Broken Twilight Bow
+65. Twilight Portal Crystal
 
 ### Dimensions
 
