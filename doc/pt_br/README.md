@@ -108,6 +108,7 @@ Este mod requer o Thaumcraft 6
 62. Registro Akáshico (requer Avaritia)
 63. Varinha Twilight Quebrada
 64. Arco Twilight Quebrado
+65. Cristal do Portal Twilight
 
 ### Dimensões
 
