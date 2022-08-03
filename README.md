@@ -104,9 +104,9 @@
 60. 水晶镶嵌宇宙中子素法师护手 (Crystal Studded Cosmic Neutronium Caster's Gauntlet (requires Avaritia))
 61. 极元始珍珠 (Extremely Primordial Pearl (requires Avaritia))
 62. 阿卡西记录 (Akashic Record (requires Avaritia))
-63. (Broken Twilight Wand)
-64. (Broken Twilight Bow)
-65. (Twilight Portal Crystal)
+63. 法杖残片 (Broken Twilight Wand)
+64. 损坏的弓 (Broken Twilight Bow)
+65. 暮色传送门水晶 (Twilight Portal Crystal)
 
 ### 维度 (Dimensions)
 
