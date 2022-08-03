@@ -66,7 +66,7 @@
 22. 灵液 (Ichor)
 23. 灵布 (Ichor Cloth)
 24. 灵宝 (Ichorium Ingot)
-25. (Shadow Metal Nugget)
+25. 灵宝粒 (Ichorium Nugget)
 26. 扭曲清除坠饰 (Cleansing Amulet)
 27. 糖渍地狱疣 (Nether Swart)
 28. 地狱疣蛋糕 (Nether Cake)
