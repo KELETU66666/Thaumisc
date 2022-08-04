@@ -1,10 +1,11 @@
 package keletu.keletupack.init;
 
-import keletu.keletupack.items.*;
 import keletu.keletupack.items.armor.IchorArmor;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.armor.ShadowArmor;
-import keletu.keletupack.items.cheat.CrystalCaster;
+import keletu.keletupack.items.food.NetherCake;
+import keletu.keletupack.items.food.food;
+import keletu.keletupack.items.food.warpfood;
 import keletu.keletupack.items.tools.*;
 import keletu.keletupack.keletupack;
 import keletu.keletupack.util.Reference;
@@ -12,8 +13,6 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraftforge.common.util.EnumHelper;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.common.items.casters.ItemCaster;
 
 import java.util.ArrayList;
 import java.util.List;

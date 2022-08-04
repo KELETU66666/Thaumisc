@@ -68,7 +68,7 @@ public class LivingEvent {
             e.player.capabilities.allowFlying = true;
             nbt.setBoolean("can_fly", false);
         } else if (nbt.hasKey("can_fly")) {
-            if (!e.player.capabilities.isCreativeMode) {
+            if (!e.player.capabilities.isCreativeMode || !e.player.isSpectator()) {
                 e.player.capabilities.allowFlying = false;
                 e.player.capabilities.isFlying = false;
             }

@@ -1,4 +1,4 @@
-package keletu.keletupack.items;
+package keletu.keletupack.items.food;
 
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;

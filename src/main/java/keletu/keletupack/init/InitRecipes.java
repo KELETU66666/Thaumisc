@@ -39,7 +39,7 @@ public class InitRecipes {
         initInfusionRecipes();
     }
 
-    public static ItemStack getCrystal(Aspect asp, int quantity){
+    public static ItemStack taintCrystal(Aspect asp, int quantity){
         ItemStack crystal = new ItemStack(ItemsTC.crystalEssence, quantity);
         ((ItemCrystalEssence) ItemsTC.crystalEssence).setAspects(crystal, new AspectList().add(asp, 100));
         return crystal;
@@ -475,7 +475,7 @@ private static void initInfusionRecipes() {
             new ItemStack(ItemsTC.thaumiumPick),
             new Object[]{
                     new ItemStack(ItemsTC.nuggets,1 ,10),
-                    getCrystal(Aspect.FLUX, 1),
+                    taintCrystal(Aspect.FLUX, 1),
                     ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
                     new ItemStack(BlocksTC.logGreatwood)
             }
@@ -541,11 +541,11 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.WATER, 75).add(Aspect.MAGIC, 45).add(Aspect.LIFE, 70).add(Aspect.PROTECT, 30),
             isRR,
             new Object[]{
-                    getCrystal(Aspect.WATER, 1),
-                    getCrystal(Aspect.WATER, 1),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
                     new ItemStack(ItemsTC.visResonator),
-                    getCrystal(Aspect.WATER, 1),
-                    getCrystal(Aspect.WATER, 1),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
                     PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.LONG_REGENERATION)
             }
     ));
@@ -558,11 +558,11 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.WATER, 45).add(Aspect.MAGIC, 70).add(Aspect.VOID, 70).add(Aspect.PROTECT, 35),
             isRA,
             new Object[]{
-                    getCrystal(Aspect.EARTH, 1),
-                    getCrystal(Aspect.EARTH, 1),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
                     new ItemStack(ItemsTC.visResonator),
-                    getCrystal(Aspect.EARTH, 1),
-                    getCrystal(Aspect.EARTH, 1),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
                     PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.STRONG_STRENGTH)
             }
     ));
@@ -575,11 +575,11 @@ private static void initInfusionRecipes() {
             new AspectList().add(Aspect.AIR, 125).add(Aspect.MAGIC, 125).add(Aspect.PROTECT, 50),
             isRG,
             new Object[]{
-                    getCrystal(Aspect.AIR, 1),
-                    getCrystal(Aspect.AIR, 1),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
                     new ItemStack(ItemsTC.visResonator),
-                    getCrystal(Aspect.AIR, 1),
-                    getCrystal(Aspect.AIR, 1),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
+                    ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
                     PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION), PotionTypes.STRONG_HARMING)
             }
     ));
