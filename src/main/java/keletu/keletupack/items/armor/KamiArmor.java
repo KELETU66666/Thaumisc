@@ -59,37 +59,37 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
     }
 
     @Override
-    public void onArmorTick(World world, EntityPlayer mp, ItemStack itemStack) {
+    public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
         switch (armorType) {
             case HEAD: {
                 if(itemStack.getItemDamage() != 1){
-                if (mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.WATER || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_WATER) {
-                    mp.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
-                    mp.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));
+                if (player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.WATER || player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.FLOWING_WATER) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
+                    player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));
                 }
-                if ((mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.LAVA || mp.getEntityWorld().getBlockState(mp.getPosition().up()).getBlock() == Blocks.FLOWING_LAVA) && mp.ticksExisted % 10 == 0)
-                    mp.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 31, 0, true, false));
-                int food = mp.getFoodStats().getFoodLevel();
-                if (food > 0 && food < 18 && mp.shouldHeal()
-                        && mp.ticksExisted % 80 == 0)
-                    mp.heal(1F);
+                if ((player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.LAVA || player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.FLOWING_LAVA) && player.ticksExisted % 10 == 0)
+                    player.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 31, 0, true, false));
+                int food = player.getFoodStats().getFoodLevel();
+                if (food > 0 && food < 18 && player.shouldHeal()
+                        && player.ticksExisted % 80 == 0)
+                    player.heal(1F);
             }}
             break;
 
             case CHEST: {
                 if(itemStack.getItemDamage() != 1) {
-                    mp.getEntityData().setBoolean("can_fly", true);
-                    doProjectileEffect(mp);
+                    player.getEntityData().setBoolean("can_fly", true);
+                    doProjectileEffect(player);
                 }
             }
             break;
             case LEGS: {
                 if (itemStack.getItemDamage() != 1) {
-                    if (mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE) == null || mp.getActivePotionEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 1) {
-                        mp.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 1, 0, false, false));
-                        if (mp.isBurning()) {
-                            mp.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 20, 1, true, false));
-                            mp.extinguish();
+                    if (player.getActivePotionEffect(MobEffects.FIRE_RESISTANCE) == null || player.getActivePotionEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 1) {
+                        player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 1, 0, false, false));
+                        if (player.isBurning()) {
+                            player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 20, 1, true, false));
+                            player.extinguish();
                         }
                     }
                 }
@@ -99,31 +99,38 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
             case FEET: {
                 if (itemStack.getItemDamage() != 1) {
                     {
-                        if (!mp.capabilities.isFlying && mp.moveForward > 0.0F) {
-                            if (mp.world.isRemote && !mp.isSneaking()) {
-                                if (!PlayerEvents.prevStep.containsKey(Integer.valueOf(mp.getEntityId())))
-                                    PlayerEvents.prevStep.put(Integer.valueOf(mp.getEntityId()), Float.valueOf(mp.stepHeight));
-                                mp.stepHeight = 1.0F;
+                        if (player.world.isRemote && !player.isSneaking() && !player.capabilities.isFlying) {
+                        if (!PlayerEvents.prevStep.containsKey(player.getEntityId()))
+                            PlayerEvents.prevStep.put(player.getEntityId(), player.stepHeight);
+                        player.stepHeight = 1.0F;
+                    }
+                        if ( player.moveForward > 0.0F) {
+                            if(!player.capabilities.isFlying) {
+                                if (player.onGround) {
+                                    float bonus = 0.15F;
+                                    if (player.isInWater())
+                                        bonus /= 4.0F;
+                                    player.moveRelative(0.0F, 0.0F, bonus, 1.0F);
+                                } else {
+                                    if (player.isInWater())
+                                        player.moveRelative(0.0F, 0.0F, 0.25F, 1.0F);
+                                    player.jumpMovementFactor = 0.05F;
+                                }
                             }
-                            if (mp.onGround) {
-                                float bonus = 0.1F;
-                                if (mp.isInWater())
-                                    bonus /= 4.0F;
-                                mp.moveRelative(0.0F, 0.0F, bonus, 1.0F);
-                            } else {
-                                if (mp.isInWater())
-                                    mp.moveRelative(0.0F, 0.0F, 0.15F, 1.0F);
-                                mp.jumpMovementFactor = 0.05F;
+                            if(player.capabilities.isFlying){
+                                player.moveRelative(0.0F, 0.0F, 0.075F, 1.0F);
                             }
+                            player.fallDistance = 0F;
+                            player.jumpMovementFactor = player.isSprinting() ? 0.05F : 0.04F;
                         }
-                        if (mp.getActivePotionEffect(MobEffects.HASTE) == null || mp.getActivePotionEffect(MobEffects.HASTE).getDuration() <= 1) {
-                            mp.addPotionEffect(new PotionEffect(MobEffects.HASTE, 200, 1, false, false));
+                        if (player.getActivePotionEffect(MobEffects.HASTE) == null || player.getActivePotionEffect(MobEffects.HASTE).getDuration() <= 1) {
+                            player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 200, 1, false, false));
                         }
                     }
-                    BlockPos posBelow = mp.getPosition().down();
-                    IBlockState blockStateBelow = mp.world.getBlockState(posBelow);
+                    BlockPos posBelow = player.getPosition().down();
+                    IBlockState blockStateBelow = player.world.getBlockState(posBelow);
                     if (blockStateBelow.getBlock() == Blocks.DIRT) {
-                        mp.getEntityWorld().setBlockState(mp.getPosition().down(), Blocks.GRASS.getDefaultState(), 0);
+                        player.getEntityWorld().setBlockState(player.getPosition().down(), Blocks.GRASS.getDefaultState(), 0);
                     }
                 }
             }
