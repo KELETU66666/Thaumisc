@@ -68,7 +68,7 @@ public class LivingEvent {
             e.player.capabilities.allowFlying = true;
             nbt.setBoolean("can_fly", false);
         } else if (nbt.hasKey("can_fly")) {
-            if (!e.player.capabilities.isCreativeMode || !e.player.isSpectator()) {
+            if (!e.player.capabilities.isCreativeMode && !e.player.isSpectator()) {
                 e.player.capabilities.allowFlying = false;
                 e.player.capabilities.isFlying = false;
             }
@@ -80,7 +80,7 @@ public class LivingEvent {
     public void playerJumps(net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent event) {
         ItemStack stack = event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.FEET);
         if (event.getEntity() instanceof EntityPlayer && stack.getItem() instanceof KamiArmor && stack.getItemDamage() != 1)
-            event.getEntityLiving().motionY += 0.2750000059604645 * 1.25;
+            event.getEntityLiving().motionY += 0.3;
 
         if (event.getEntityLiving() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
