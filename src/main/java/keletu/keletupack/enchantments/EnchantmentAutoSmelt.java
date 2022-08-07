@@ -21,7 +21,7 @@ public class EnchantmentAutoSmelt extends Enchantment {
 
     @Override
     protected boolean canApplyTogether(Enchantment ench) {
-        return ench == Enchantments.UNBREAKING && ench == Enchantments.MENDING;
+        return ench == Enchantments.UNBREAKING || ench == Enchantments.MENDING;
     }
 
     @Override

@@ -456,8 +456,8 @@
           {
             "text": "keletupack.research.dimensionalshard.text",
             "required_item": [
-              "keletupack:shard_nether",
-              "keletupack:shard_end"
+              "keletupack:resourcetmisc;1;0",
+              "keletupack:resourcetmisc;1;1"
             ],
             "required_knowledge": [
               "THEORY;BASICS;2","THEORY;ARTIFICE;1","THEORY;ALCHEMY;1","THEORY;INFUSION;1","THEORY;AUROMANCY;1"

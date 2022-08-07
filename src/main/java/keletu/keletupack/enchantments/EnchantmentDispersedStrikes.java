@@ -18,7 +18,7 @@ public class EnchantmentDispersedStrikes extends Enchantment {
 
     @Override
     public boolean canApplyTogether(Enchantment ench) {
-        return ench == Enchantments.MENDING && ench == Enchantments.UNBREAKING && ench == Enchantments.KNOCKBACK && ench == Enchantments.LOOTING;
+        return ench == Enchantments.MENDING || ench == Enchantments.UNBREAKING || ench == Enchantments.KNOCKBACK || ench == Enchantments.LOOTING;
     }
 
     @Override
