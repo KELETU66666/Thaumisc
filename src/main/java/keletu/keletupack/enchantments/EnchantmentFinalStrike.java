@@ -22,7 +22,7 @@ public class EnchantmentFinalStrike extends Enchantment {
 
     @Override
     public boolean canApplyTogether(Enchantment ench) {
-        return ench == Enchantments.MENDING && ench == Enchantments.UNBREAKING && ench == Enchantments.SHARPNESS && ench == Enchantments.SMITE && ench == Enchantments.BANE_OF_ARTHROPODS;
+        return ench == Enchantments.MENDING || ench == Enchantments.UNBREAKING || ench == Enchantments.SHARPNESS || ench == Enchantments.SMITE || ench == Enchantments.BANE_OF_ARTHROPODS;
     }
 
     @Override
