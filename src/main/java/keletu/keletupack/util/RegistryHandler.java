@@ -61,7 +61,7 @@ public class RegistryHandler {
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
         TileBedrockPortal.register("bedrock_portal", TileBedrockPortal.class);
-        TileBedrockPortal.register("ethereal_bloom", TileEtherealBloom.class);
+        TileEtherealBloom.register("ethereal_bloom", TileEtherealBloom.class);
     }
 
     @SubscribeEvent
