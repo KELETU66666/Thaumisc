@@ -187,8 +187,8 @@ keletupack.research.runic_baubles_aqua.text=Eu encontrei escrituras de Pesquisa 
 keletupack.research.runic_baubles_aqua.complete.text=De fato, é replicável! Quando minha Defesa Rúnica cai, esse Anel vai me dar um pulso de poder Regenerativo para mim, mas ele não vai conseguir mandar outro pulso por um tempo depois de ativar.
 
 keletupack.research.ethereal_bloom.title=Flor Etérea
-keletupack.research.ethereal_bloom.text=TEXT
-keletupack.research.ethereal_bloom.complete.text=TEXT
+keletupack.research.ethereal_bloom.text=Há algumas escrituras que mencionam uma espécie de flor. Naquela época em que haviam nódulos consdensados na aura, havia um tipo de nódulo maligno que corrompia tudo no ambiente ao seu redor. Quando expostas à sagrada radiância desta flor, ela poderia purificar todas as coisas corrompidas. Vejamos se consigo recriá-la.
+keletupack.research.ethereal_bloom.complete.text=Bem, funcionou e o resultado foi melhor do que eu imaginava. Esta Flor Etérea moderna, com sua sagrada e mais pura luz, não apenas consegue limpar o Flux presente no ar, mas também consegue rapidamente se livrar da mácula ao seu redor. O único problema é que ela pode acabar sendo arrancada do chão por líquidos, então eu deveria tomar cuidado com isso.
 
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=Warpologia
@@ -235,12 +235,12 @@ keletupack.research.shadow_armor.complete.text=Esse conceito me deve ser possív
 
 ##Avaritia
 keletupack.research.akashic_record.title=Registro Akáshico
-keletupack.research.akashic_record.text=TEXT
-keletupack.research.akashic_record.complete.text=TEXT
+keletupack.research.akashic_record.text=Enquanto eu folheava o Thaumonomicon, me deparei com uma variedade de informações escritas em hieróglifos desconhecidos, codificados e de difícil compreensão. Desde a criação de toda a existência, e talvez até antes disso, mesmo com nossos métodos de aprendizado se tornando cada vez mais complexos com o tempo, estes hieróglifos têm sido há muito tempo, codificados em uma linguagem em comum e registrados em Registros Akáshicos. Todas as nossas crenças e culturas originaram-se da forma como observamos e modificamos o ambiente ao nosso redor.<BR>Mas que doideira é essa? Por que alguém acreditaria nessa falácia? Isso é loucura.
+keletupack.research.akashic_record.complete.text=Mestre, agora eu entendo, essa é a verdade.<BR>Tudo que eu vejo é tudo que eu posso ver, incluindo tudo o que eu não posso. Prajna é ignorância e tudo é ignorante; Ao ler essa tabuleta dos Céus, eu instantaneamente compreendi todo o conhecimento do passado, presente e futuro do universo. Agora eu possuo mais conhecimento do que os Deuses que criaram os Céus e a Terra.
 
 keletupack.research.big_pearl.title=Pérola Extremamente Primordial
-keletupack.research.big_pearl.text=TEXT
-keletupack.research.big_pearl.complete.text=TEXT
+keletupack.research.big_pearl.text=A Pérola Primordial é uma preciosidade. Com uma estrutura perfeita, ela possui os aspectos da Origem Primordial, que reagem entre si sem conflitarem. Quando ela está na palma da sua mão e você a manipula, ela continuamente emite pulsos de magia ao redor dela devida á vibração de sua estrutura interna. Isso me faz lembrar... seria essa a forma original do universo? Eu fiquei encarando a pérola na palma da minha mão, perdido nos meus pensamentos. Essa pérola... será que ela não é grande o bastante?
+keletupack.research.big_pearl.complete.text=Eu juntei o máximo de pérolas que eu pude, e então usei uma magia mais forte para fazer com que elas se fundissem.<BR>Quando a infusão terminou, o resultado foi espetacular! Eu consegui uma pérola maior e mais bonita. A pergunta é, o que será que esse troço faz?
 
 #Tool Mode
 

@@ -10,6 +10,7 @@ WARNING: THE ENGLISH TRANSLATION MAY NOT BE SO ACCURATE
 
 - [中文简体](./README.md)
 - [English](./doc/en_us/README.md)
+- [Português](./doc/pt_br/README.md)
 
 ## DOWNLOAD
 
@@ -49,7 +50,7 @@ This mod requires Thaumcraft 6
 04. Ichorium Axe
 05. Ichorium Shovel
 06. Ichorium Pickaxe
-07. Ichorium Cowl
+07. Ichorcloth Cowl
 08. Ichorcloth Robe
 09. Ichorcloth Leggings
 10. Ichorcloth Boots
@@ -67,33 +68,47 @@ This mod requires Thaumcraft 6
 22. Ichor
 23. Ichor Cloth
 24. Ichorium Ingot
-25. Cleansing Amulet
-26. Nether Swart
-27. Nether Cake
-28. Awakened Ichorium Pickaxe
-29. Awakened Ichorium Shovel
-30. Awakened Ichorium Axe
-31. Awakened Ichorium Sword
-32. Chamelic Pickaxe
-33. Chamelic Sword
-34. Chamelic Shovel
-35. Chamelic Axe
-36. Distortion Pickaxe
-37. Riding Crop
-38. Runic Ring
-39. Runic Amulet
-40. Runic Girdle
-41. Runic Water Ring
-42. Runic Earth Amulet
-43. Runic Air Girdle
-44. Ichorcloth Pouch (unfinished)
-45. Bedrock World Portal
-46. Thaumic Disassembler
-47. Shadow Fortress Helm
-48. Shadow Fortress Chest
-49. Shadow Fortress Legs
-50. Shadow Metal Ingot
-51. Shadow Metal Nugget
+25. Ichorium Nugget
+26. Cleansing Amulet
+27. Nether Swart
+28. Nether Cake
+29. Awakened Ichorium Pickaxe
+30. Awakened Ichorium Shovel
+31. Awakened Ichorium Axe
+32. Awakened Ichorium Sword
+33. Chamelic Pickaxe
+34. Chamelic Sword
+35. Chamelic Shovel
+36. Chamelic Axe
+37. Distortion Pickaxe
+38. Riding Crop
+39. Runic Ring
+40. Runic Amulet
+41. Runic Girdle
+42. Runic Water Ring
+43. Runic Earth Amulet
+44. Runic Air Girdle
+45. Ichorcloth Pouch (unfinished)
+46. Bedrock Portal
+47. Thaumic Disassembler
+48. Shadow Fortress Helm
+49. Shadow Fortress Chest
+50. Shadow Fortress Legs
+51. Shadow Metal Ingot
+52. Shadow Metal Nugget
+53. Shadow Metal Sword
+54. Shadow Metal Pickaxe
+55. Shadow Metal Axe
+56. Shadow Metal Shovel
+57. Shadow Metal Hoe
+58. Ethereal Bloom
+59. Crystal Treasure Bag (requires Thaumic Additions: Reconstructed)
+60. Crystal Studded Cosmic Neutronium Caster's Gauntlet (requires Avaritia)
+61. Extremely Primordial Pearl (requires Avaritia)
+62. Akashic Record (requires Avaritia)
+63. Broken Twilight Wand
+64. Broken Twilight Bow
+65. Twilight Portal Crystal
 
 ### Dimensions
 

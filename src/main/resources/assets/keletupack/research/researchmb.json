@@ -61,13 +61,13 @@
             ],
             "stages": [
                 {
-                    "text": "tc.research_page.MB_FrameMagic.1",
+                    "text": "tc.research_text.MB_FrameMagic",
                     "required_knowledge": [
 "OBSERVATION;ALCHEMY;1","OBSERVATION;ARTIFICE;1","THEORY;ARTIFICE;1"],
                      "required_craft":["forestry:frame_untreated", "thaumcraft:fabric"]
                 },
                 {
-                    "text": "tc.research_page.MB_FrameMagic.2",
+                    "text": "tc.research_page.MB_FrameMagic.1",
                     "recipes": [
                         "thaumcraft:magicframe"
                     ]
