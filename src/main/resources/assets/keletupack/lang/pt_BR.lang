@@ -1,5 +1,5 @@
 # Special formatting codes:
-#
+
 # <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
 # <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
 # <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
@@ -76,9 +76,8 @@ item.packresource.1.name=Moeda de Mago
 item.packresource.0.name=Moeda da Aventura
 item.packresource.3.name=Moeda Ensanguentada
 item.packresource.2.name=Moeda Mágica
-item.packresource.4.name=Varinha Twilight Quebrada
-item.packresource.5.name=Arco Twilight Quebrado
-item.packresource.6.name=Cristal do Portal Twilight
+item.packresource.4.name=Varinha Quebrada da Twilight
+item.packresource.5.name=Arco Quebrado da Twilight
 
 item.resourcetmisc.0.name=Lasca do Ender
 item.resourcetmisc.1.name=Lasca do Nether
@@ -92,7 +91,7 @@ item.ichor_pouch.name=Pouxete de Tecido de Icor
 item.cleansing_amulet.name=Amuleto de Remoção
 
 item.runic_ring.name=Anel Rúnico
-item.runic_girdle.name=Cinturão Rúnico
+item.runic_girdle.name=Cinturão Rúnico do Ar
 item.runic_amulet.name=Amuleto Rúnico
 item.runic_ring_water.name=Anel Rúnico da Recuperação
 item.runic_girdle_air.name=Cinturão Rúnico da Cinética
@@ -188,8 +187,8 @@ keletupack.research.runic_baubles_aqua.text=Eu encontrei escrituras de Pesquisa 
 keletupack.research.runic_baubles_aqua.complete.text=De fato, é replicável! Quando minha Defesa Rúnica cai, esse Anel vai me dar um pulso de poder Regenerativo para mim, mas ele não vai conseguir mandar outro pulso por um tempo depois de ativar.
 
 keletupack.research.ethereal_bloom.title=Flor Etérea
-keletupack.research.ethereal_bloom.text=TEXT
-keletupack.research.ethereal_bloom.complete.text=TEXT
+keletupack.research.ethereal_bloom.text=Há algumas escrituras que mencionam uma espécie de flor. Naquela época em que haviam nódulos consdensados na aura, havia um tipo de nódulo maligno que corrompia tudo no ambiente ao seu redor. Quando expostas à sagrada radiância desta flor, ela poderia purificar todas as coisas corrompidas. Vejamos se consigo recriá-la.
+keletupack.research.ethereal_bloom.complete.text=Bem, funcionou e o resultado foi melhor do que eu imaginava. Esta Flor Etérea moderna, com sua sagrada e mais pura luz, não apenas consegue limpar o Flux presente no ar, mas também consegue rapidamente se livrar da mácula ao seu redor. O único problema é que ela pode acabar sendo arrancada do chão por líquidos, então eu deveria tomar cuidado com isso.
 
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=Warpologia
@@ -216,7 +215,6 @@ keletupack.research.thaumisc_forbiddenmagic.complete.text=Algumas informações 
 keletupack.research.morph_tools.title=Ferramentas Camaleônicas
 keletupack.research.morph_tools.text=Resquícios de Pesquisas Proibidas da Quarta Era falam sobre Ferramentas que podem trocar entre Encantamentos de acordo com a vontade do usuário, deve ser possível replicar essas Ferramentas.
 keletupack.research.morph_tools.complete.text=Sucesso!... Quase. Não é uma réplica perfeita, seja lá quais materiais eram usados para Infundir as propiedades de Encanto-Variação no passado parecem não existir mais, mas Cristais de Permutatio parecem ser o suficiente para substituí-los.<BR>De qualquer maneira, as propriedades parecem refletir às daquelas Ferramentas que eu ouvi falar, então é o suficiente por agora.<BR>Elas podem conter até três formas de Encantamentos, as quais podem ser trocadas dando Shift + Botão Direito com a ferramenta na mão, providenciado pelo próprio Encantamento em si, a forma atual é indicada pela cor da Gema na ferramenta. Consome-se um pouco da Durabilidade para trocar de forma, mas é bem insignificante.
-keletupack.research.morph_tools.void=text
 
 keletupack.research.distortionpick.title=Picareta da Distorção
 keletupack.research.distortionpick.text=Resquícios de Pesquisas Proibidas da Quarta Era falam sobre uma Picareta que pode minerar o mais duro dos materiais in alguns momentos, quem sabe seja possível replicá-la?
@@ -237,12 +235,12 @@ keletupack.research.shadow_armor.complete.text=Esse conceito me deve ser possív
 
 ##Avaritia
 keletupack.research.akashic_record.title=Registro Akáshico
-keletupack.research.akashic_record.text=TEXT
-keletupack.research.akashic_record.complete.text=TEXT
+keletupack.research.akashic_record.text=Enquanto eu folheava o Thaumonomicon, me deparei com uma variedade de informações escritas em hieróglifos desconhecidos, codificados e de difícil compreensão. Desde a criação de toda a existência, e talvez até antes disso, mesmo com nossos métodos de aprendizado se tornando cada vez mais complexos com o tempo, estes hieróglifos têm sido há muito tempo, codificados em uma linguagem em comum e registrados em Registros Akáshicos. Todas as nossas crenças e culturas originaram-se da forma como observamos e modificamos o ambiente ao nosso redor.<BR>Mas que doideira é essa? Por que alguém acreditaria nessa falácia? Isso é loucura.
+keletupack.research.akashic_record.complete.text=Mestre, agora eu entendo, essa é a verdade.<BR>Tudo que eu vejo é tudo que eu posso ver, incluindo tudo o que eu não posso. Prajna é ignorância e tudo é ignorante; Ao ler essa tabuleta dos Céus, eu instantaneamente compreendi todo o conhecimento do passado, presente e futuro do universo. Agora eu possuo mais conhecimento do que os Deuses que criaram os Céus e a Terra.
 
 keletupack.research.big_pearl.title=Pérola Extremamente Primordial
-keletupack.research.big_pearl.text=TEXT
-keletupack.research.big_pearl.complete.text=TEXT
+keletupack.research.big_pearl.text=A Pérola Primordial é uma preciosidade. Com uma estrutura perfeita, ela possui os aspectos da Origem Primordial, que reagem entre si sem conflitarem. Quando ela está na palma da sua mão e você a manipula, ela continuamente emite pulsos de magia ao redor dela devida á vibração de sua estrutura interna. Isso me faz lembrar... seria essa a forma original do universo? Eu fiquei encarando a pérola na palma da minha mão, perdido nos meus pensamentos. Essa pérola... será que ela não é grande o bastante?
+keletupack.research.big_pearl.complete.text=Eu juntei o máximo de pérolas que eu pude, e então usei uma magia mais forte para fazer com que elas se fundissem.<BR>Quando a infusão terminou, o resultado foi espetacular! Eu consegui uma pérola maior e mais bonita. A pergunta é, o que será que esse troço faz?
 
 #Tool Mode
 
@@ -273,28 +271,6 @@ tip.awakenarmor.name1=Dormente
 #Compat
 
 item.loot_bag_crystal.name=Bolsa de Tesouro de Crystal
-item.crystal_caster.name=Manopla de Neutrônio Cósmico com Adornos Cristalinos
+item.crystal_caster.name=Manopla de Neutrônio Cósmico com Botões Cristalinos
 item.akashic_record.name=Registro Akáshico
 item.big_pearl.name=Pérola Extremamente Primordial
-
-#Enchantment
-
-enchantment.voidtouched=Influência do Vácuo
-enchantment.wrath=Ira
-enchantment.educational=Educação
-enchantment.greedy=Ambicioso
-enchantment.consuming=Consumir
-enchantment.ascentboost=Ascensão
-enchantment.shockwave=Onda de Choque
-enchantment.slowfall=Queda Lenta
-enchantment.pounce=Ofensiva
-enchantment.finalstrike=Golpe Final
-enchantment.valiance=Valentia
-enchantment.vampirism=Vampirismo
-enchantment.desintegrate=Desintegrar
-enchantment.dispersedstrikes=Golpes Dispersos
-enchantment.focusedstrike=Golpe Concentrado
-enchantment.quickdraw=Saque Rápido
-enchantment.shatter=Despedaçar
-enchantment.tunnel=Túnel
-enchantment.autosmelt=Auto-Queima
