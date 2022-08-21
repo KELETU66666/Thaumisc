@@ -188,8 +188,8 @@ keletupack.research.runic_baubles_aqua.text=I have found scraps of Research whic
 keletupack.research.runic_baubles_aqua.complete.text=It is infact, replicable! When my Runic Shielding falls, this Ring will grant a pulse of Regenerative power to me, though it will be unable to grant it again for a while after it activates.
 
 keletupack.research.ethereal_bloom.title=Ethereal Bloom
-keletupack.research.ethereal_bloom.text=TEXT
-keletupack.research.ethereal_bloom.complete.text=TEXT
+keletupack.research.ethereal_bloom.text=There are some scraps that mention a species of bloom. At that time when there were condensed nodes in the aura, there was a kind of malignant node that corrupted everything in the environment around it. When exposed to the sacred radiance of this bloom, it could purify all corrupted things. Let's see if I can recreate it.
+keletupack.research.ethereal_bloom.complete.text=Well, it worked and the result was better than I imagined. This modern Ethereal Bloom, with its sacred and purest light, not only manages to cleanse the Flux present in the air, but also manages to quickly get rid of the taint around it. The only problem is that it could end up being ripped off the floor by liquids, so I should be careful with that.
 
 ##Warp Theory
 keletupack.research.thaumisc_warptheory.title=Warpology
@@ -237,12 +237,12 @@ keletupack.research.shadow_armor.complete.text=This concept should be possible f
 
 ##Avaritia
 keletupack.research.akashic_record.title=Akashic Record
-keletupack.research.akashic_record.text=TEXT
-keletupack.research.akashic_record.complete.text=TEXT
+keletupack.research.akashic_record.text=As I leafed through the Thaumonomicon, I came across a variety of information written in unfamiliar, coded, and difficult to understand hieroglyphics. Since the creation of all existence, and perhaps even before that, even as our methods of learning have become more and more complex over time, these hieroglyphs have long been encoded in a common language and recorded in the Akashic Records. All our beliefs and cultures originated from the way we observe and modify the environment around us.<BR>But what is this crazy thing? Why would anyone believe this fallacy? That's crazy.
+keletupack.research.akashic_record.complete.text=Master, now I understand, that's the truth.<BR>Everything I see is everything I can see, including everything I can't. Prajna is ignorance and everything is ignorant; Upon reading this tablet from Heaven, I instantly grasped all knowledge of the past, present and future of the universe. I now possess more knowledge than the Gods who created the Heavens and Earth.
 
 keletupack.research.big_pearl.title=Extremely Primordial Pearl
-keletupack.research.big_pearl.text=TEXT
-keletupack.research.big_pearl.complete.text=TEXT
+keletupack.research.big_pearl.text=The Primordial Pearl is precious. With a perfect structure, it has aspects of the Primordial Origin, which react to each other without conflict. When it is in the palm of your hand and you manipulate it, it continually emits pulses of magic around it due to the vibration of its internal structure. It reminds me... is this the original form of the universe? I stared at the pearl in my palm, lost in my thoughts. This pearl... perhaps is it not big enough?
+keletupack.research.big_pearl.complete.text=I gathered as many pearls as I could, and then used stronger magic to make them fuse together.<BR>When the infusion was over, the result was spectacular! I got a bigger and prettier pearl. The question is, what does this thing can do?
 
 #Tool Mode
 
