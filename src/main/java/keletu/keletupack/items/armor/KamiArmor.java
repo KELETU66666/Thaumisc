@@ -42,10 +42,10 @@ import thaumcraft.common.lib.events.PlayerEvents;
 
 import java.util.List;
 
-public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, IHasModel {
+public class KamiArmor extends IchorArmor implements IGoggles, IHasModel {
 
     public KamiArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, CreativeTabs tab) {
-        super(materialIn, renderIndexIn, equipmentSlotIn);
+        super(name, materialIn, renderIndexIn, equipmentSlotIn);
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(tab);
@@ -63,8 +63,8 @@ public class KamiArmor extends ItemArmor implements IVisDiscountGear, IGoggles, 
         switch (armorType) {
             case HEAD: {
                 if(itemStack.getItemDamage() != 1){
+                    player.setAir(300);
                 if (player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.WATER || player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.FLOWING_WATER) {
-                    player.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 31, 0, true, false));
                     player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 400, 0, true, false));
                 }
                 if ((player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.LAVA || player.getEntityWorld().getBlockState(player.getPosition().up()).getBlock() == Blocks.FLOWING_LAVA) && player.ticksExisted % 10 == 0)
