@@ -175,12 +175,6 @@ public class KamiArmor extends IchorArmor implements IGoggles, IHasModel {
         return null;
     }
 
-
-    @Override
-    public int getVisDiscount(ItemStack stack, EntityPlayer mp) {
-        return 4;
-    }
-
     @Override
     public void registerModels() {
             keletupack.proxy.registerItemRenderer(this, 0, "inventory");
