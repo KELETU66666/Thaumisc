@@ -44,11 +44,10 @@ import java.util.List;
 
 public class KamiArmor extends IchorArmor implements IGoggles, IHasModel {
 
-    public KamiArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn, CreativeTabs tab) {
+    public KamiArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
         super(name, materialIn, renderIndexIn, equipmentSlotIn);
         setUnlocalizedName(name);
-        setRegistryName(name);
-        setCreativeTab(tab);
+        setCreativeTab(keletupack.ITEM_TAB);
 
         ModItems.ITEMS.add(this);
     }
