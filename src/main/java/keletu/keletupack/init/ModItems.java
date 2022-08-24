@@ -29,10 +29,10 @@ public class ModItems {
     public static final ItemPickaxe IchoriumPick = new IchoriumPick("ichorium_pick", keletupack.ITEM_TAB, MATERIAL_ICHORIUM);
     public static final ItemAxe IchoriumAxe = new IchoriumAxe("ichorium_axe", keletupack.ITEM_TAB, MATERIAL_ICHORIUM);
     public static final ItemSpade IchoriumShovel = new IchoriumShovel("ichorium_shovel", keletupack.ITEM_TAB, MATERIAL_ICHORIUM);
-    public static final Item IchorHelm = new IchorArmor("ichor_helm", MATERIAL_ICHOR, 1, EntityEquipmentSlot.HEAD, keletupack.ITEM_TAB);
-    public static final Item IchorChest = new IchorArmor("ichor_chest", MATERIAL_ICHOR, 1, EntityEquipmentSlot.CHEST, keletupack.ITEM_TAB);
-    public static final Item IchorLegs = new IchorArmor("ichor_legs", MATERIAL_ICHOR, 2, EntityEquipmentSlot.LEGS, keletupack.ITEM_TAB);
-    public static final Item IchorBoots = new IchorArmor("ichor_boots", MATERIAL_ICHOR, 1, EntityEquipmentSlot.FEET, keletupack.ITEM_TAB);
+    public static final Item IchorHelm = new IchorArmor("ichor_helm", MATERIAL_ICHOR, 1, EntityEquipmentSlot.HEAD);
+    public static final Item IchorChest = new IchorArmor("ichor_chest", MATERIAL_ICHOR, 1, EntityEquipmentSlot.CHEST);
+    public static final Item IchorLegs = new IchorArmor("ichor_legs", MATERIAL_ICHOR, 2, EntityEquipmentSlot.LEGS);
+    public static final Item IchorBoots = new IchorArmor("ichor_boots", MATERIAL_ICHOR, 1, EntityEquipmentSlot.FEET);
     public static final Item IchorHelmAdv = new KamiArmor("kami_helm", MATERIAL_ICHOR, 1, EntityEquipmentSlot.HEAD, keletupack.ITEM_TAB);
     public static final Item IchorChestAdv = new KamiArmor("kami_chest", MATERIAL_ICHOR, 1, EntityEquipmentSlot.CHEST, keletupack.ITEM_TAB);
     public static final Item IchorLegsAdv = new KamiArmor("kami_legs", MATERIAL_ICHOR, 2, EntityEquipmentSlot.LEGS, keletupack.ITEM_TAB);
