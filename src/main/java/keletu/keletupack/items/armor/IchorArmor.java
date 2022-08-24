@@ -1,5 +1,6 @@
 package keletu.keletupack.items.armor;
 
+import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,6 +21,7 @@ public class IchorArmor extends ItemArmor implements IVisDiscountGear, ISpecialA
         setRegistryName(name);
         setCreativeTab(keletupack.ITEM_TAB);
 
+        ModItems.ITEMS.add(this);
     }
 
     private final int[] discounts = new int[]{0, 0, 3, 4, 4, 4};
