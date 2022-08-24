@@ -2,6 +2,7 @@ package keletu.keletupack.items.armor;
 
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.keletupack;
+import keletu.keletupack.util.IHasModel;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -13,7 +14,7 @@ import net.minecraftforge.common.ISpecialArmor;
 import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.items.IVisDiscountGear;
 
-public class IchorArmor extends ItemArmor implements IVisDiscountGear, ISpecialArmor {
+public class IchorArmor extends ItemArmor implements IVisDiscountGear, ISpecialArmor, IHasModel {
 
     public IchorArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
@@ -53,5 +54,10 @@ public class IchorArmor extends ItemArmor implements IVisDiscountGear, ISpecialA
     @Override
     public int getVisDiscount(ItemStack itemStack, EntityPlayer entityPlayer) {
         return discounts[armorType.ordinal()];
+    }
+
+    @Override
+    public void registerModels() {
+        keletupack.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }
