@@ -82,7 +82,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
         IBlockState state = world.getBlockState(pos);
         state.getBlock().equals(ModBlocks.BEDROCK_PORTAL);
 
-        if (y <= 253 && world.getBlockState(pos).getBlock().equals(Blocks.BEDROCK) && player.dimension == ConfigKP.ConfigKP.BEDROCKDIMENSIONID) {
+        if (y > 3 && y <= 253 && world.getBlockState(pos).getBlock().equals(Blocks.BEDROCK) && player.dimension == ConfigKP.ConfigKP.BEDROCKDIMENSIONID) {
             world.setBlockToAir(pos);
         }
         if (world.getBlockState(pos).getBlock() == Blocks.BEDROCK && ((player.dimension == 0 && y < 3) || (y > 253 && player.dimension == ConfigKP.ConfigKP.BEDROCKDIMENSIONID)))
@@ -165,7 +165,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
                     //:Replicate logic of PlayerInteractionManager.tryHarvestBlock(pos1)
                     IBlockState state1 = worldIn.getBlockState(pos1);
                     float f = state1.getBlockHardness(worldIn, pos1);
-                    if (f >= 0F|| (f>=-1F && player.dimension ==ConfigKP.ConfigKP.BEDROCKDIMENSIONID)) {
+                    if (f >= 0F) {
                         BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
                         MinecraftForge.EVENT_BUS.post(event);
                         if (!event.isCanceled()) {
@@ -236,7 +236,7 @@ public class IchoriumPickAdv extends ItemPickaxe implements IHasModel
 
                 IBlockState state1 = worldIn.getBlockState(pos1);
                 float f = state1.getBlockHardness(worldIn, pos1);
-                if (f >= 0F|| (f>=-1F && player.dimension ==ConfigKP.ConfigKP.BEDROCKDIMENSIONID)) {
+                if (f >= 0F) {
                     BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(worldIn, pos1, state1, player);
                     MinecraftForge.EVENT_BUS.post(event);
                     if (!event.isCanceled()) {

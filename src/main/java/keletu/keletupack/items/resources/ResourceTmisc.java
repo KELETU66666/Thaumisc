@@ -5,6 +5,7 @@ import keletu.keletupack.items.ItemBase;
 import keletu.keletupack.keletupack;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -55,6 +56,11 @@ public class ResourceTmisc extends ItemBase {
         });
 
         ModItems.ITEMS.add(this);
+    }
+
+    @Override
+    public EnumRarity getRarity (final ItemStack stack) {
+        return EnumRarity.EPIC;
     }
 
     @Override

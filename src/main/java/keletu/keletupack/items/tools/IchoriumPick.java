@@ -24,6 +24,8 @@ public class IchoriumPick extends ItemPickaxe implements IHasModel {
         return EnumRarity.EPIC;
     }
     @Override
+    public boolean isEnchantable(ItemStack itemStack){return true;}
+    @Override
     public void registerModels() {
         keletupack.proxy.registerItemRenderer(this, 0, "inventory");
     }

@@ -23,7 +23,8 @@ public class IchoriumAxe extends ItemAxe implements IHasModel{
     public EnumRarity getRarity(ItemStack itemstack) {
         return EnumRarity.EPIC;
     }
-
+    @Override
+    public boolean isEnchantable(ItemStack itemStack){return true;}
     @Override
     public void registerModels() {
         keletupack.proxy.registerItemRenderer(this, 0, "inventory");

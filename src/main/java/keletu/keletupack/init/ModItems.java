@@ -48,7 +48,7 @@ public class ModItems {
     public static final ItemPickaxe DISTORTIONPICK = new DistortionPick("distortion_pick", keletupack.ITEM_TAB, MATERIAL_MORPH);
     public static final ItemSword RIDINGCROP = new RidingCrop("riding_crop", keletupack.ITEM_TAB, Item.ToolMaterial.WOOD);
     public static final Item ARCANEDISASSEMBLER = new ArcaneDisassembler();
-    public static final ItemArmor.ArmorMaterial SHADOW_FORTRESS = EnumHelper.addArmorMaterial("SHADOW_FORTRESS", "shadow", 300, new int[]{
+    public static final ItemArmor.ArmorMaterial SHADOW_FORTRESS = EnumHelper.addArmorMaterial("SHADOW_FORTRESS", "shadow", 3000, new int[]{
             0, 6, 10, 4
     }, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 4F);
     public static final Item ShadowHelm = new ShadowArmor("shadow_fortress_helm", SHADOW_FORTRESS, 1, EntityEquipmentSlot.HEAD);
