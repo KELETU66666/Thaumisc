@@ -31,7 +31,7 @@ public class Cleansingamulet extends ItemBase implements IBauble {
                 if(ItemNBTHelper.getInt(itemstack, "time",0)>0){
                     ItemNBTHelper.setInt(itemstack, "time", ItemNBTHelper.getInt(itemstack, "time",0)-1);
                 }else if(ItemNBTHelper.getInt(itemstack, "time",0)==0){
-                    ThaumcraftApi.internalMethods.addWarpToPlayer(p,-2, IPlayerWarp.EnumWarpType.PERMANENT);
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(p,-1, IPlayerWarp.EnumWarpType.PERMANENT);
                     ThaumcraftApi.internalMethods.addWarpToPlayer(p ,3, IPlayerWarp.EnumWarpType.TEMPORARY);
                     ItemNBTHelper.setInt(itemstack, "time", ConfigKP.ConfigKP.CLEASINGCHARMTICK);
                 }

@@ -66,10 +66,9 @@ public class RidingCrop extends ItemSword implements IHasModel {
 
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         ItemStack itemstack = player.getHeldItem(hand);
-        if (player.getRidingEntity() != null && player.getRidingEntity() instanceof EntityLivingBase) {
+        if (!world.isRemote && player.getRidingEntity() != null && player.getRidingEntity() instanceof EntityLivingBase) {
             EntityLivingBase mount = (EntityLivingBase) player.getRidingEntity();
             itemstack.damageItem(1, player);
-            player.getSwingProgress(1);
             mount.attackEntityFrom(DamageSource.GENERIC, 1.0F);
             mount.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 5, false, false));
         }

@@ -1,5 +1,6 @@
 package keletu.keletupack.blocks;
 
+import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.armor.KamiArmor;
 import net.minecraft.block.Block;
@@ -24,6 +25,9 @@ public class NitorVapor extends Block {
     public NitorVapor() {
         super(Material.AIR);
         this.setTickRandomly(true);
+        this.setRegistryName("nitor_vapor");
+
+        ModBlocks.BLOCKS.add(this);
     }
 
     // TODO Actual meaning and necessity
