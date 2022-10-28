@@ -1,0 +1,14 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "keletupack:items/pure_tear"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "meta": 1
+            },
+            "model": "keletupack:item/dirty_tear"
+        }
+    ]
+}

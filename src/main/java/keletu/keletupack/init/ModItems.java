@@ -4,6 +4,7 @@ import keletu.keletupack.items.armor.IchorArmor;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.armor.ShadowArmor;
 import keletu.keletupack.items.food.NetherCake;
+import keletu.keletupack.items.food.PureTear;
 import keletu.keletupack.items.food.food;
 import keletu.keletupack.items.food.warpfood;
 import keletu.keletupack.items.tools.*;
@@ -60,4 +61,5 @@ public class ModItems {
     public static final ItemAxe ShadowAxe = new ShadowAxe("shadow_axe", keletupack.ITEM_TAB, MATERIAL_SHADOW);
     public static final ItemSpade ShadowShovel = new ShadowShovel("shadow_shovel", keletupack.ITEM_TAB, MATERIAL_SHADOW);
     public static final ItemHoe ShadowHoe = new ShadowHoe("shadow_hoe", keletupack.ITEM_TAB, MATERIAL_SHADOW);
+    public static final ItemFood PureTear = new PureTear("item_cleanser", 0, 0.0F, false, keletupack.ITEM_TAB);
 }

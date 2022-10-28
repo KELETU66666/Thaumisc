@@ -213,23 +213,59 @@ private static void initCrucibleRecipes() {
             new AspectList().add(Aspect.PLANT, 40).add(Aspect.MAGIC, 40).add(Aspect.LIFE, 40).add(Aspect.FLUX, 25)
     ));}
 private static void initInfusionRecipes() {
-      ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "cleansing_amulet"), new InfusionRecipe(
-                "CLEANSING_AMULET",
-                new ItemStack(ItemsKP.CLEANSING_AMULET),
-                8,
-                new AspectList().add(Aspect.EXCHANGE, 125).add(Aspect.ELDRITCH, 125).add(Aspect.MAGIC, 250),
-                new ItemStack(ItemsTC.baubles, 1, 0),
+      ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "dirty_tear"), new InfusionRecipe(
+                "DIRTY_TEAR",
+                new ItemStack(ModItems.PureTear, 1, 1),
+                4,
+                new AspectList().add(Aspect.EXCHANGE, 60).add(Aspect.ELDRITCH, 60),
+                new ItemStack(Items.NETHER_STAR),
                 new Object[] {
-                        new ItemStack(ItemsKP.RESOURCETMISC,1,2),
-                        "ingotGold",
+                        new ItemStack(Items.GHAST_TEAR),
+                        "gemQuartz",
                         "gemDiamond",
                         new ItemStack(ItemsTC.salisMundus),
-                        new ItemStack(ItemsKP.RESOURCETMISC,1,2),
-                        "ingotGold",
+                        new ItemStack(Items.GHAST_TEAR),
+                        "gemQuartz",
                         "gemDiamond",
                         new ItemStack(ItemsTC.salisMundus)
                 }
         ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "pure_tear"), new InfusionRecipe(
+            "PURE_TEAR",
+            new ItemStack(ModItems.PureTear, 1, 0),
+            4,
+            new AspectList().add(Aspect.EXCHANGE, 60).add(Aspect.ELDRITCH, 60),
+            new ItemStack(Items.NETHER_STAR),
+            new Object[] {
+                    new ItemStack(ModItems.PureTear, 1, 1),
+                    "gemQuartz",
+                    "gemDiamond",
+                    new ItemStack(ItemsTC.salisMundus),
+                    new ItemStack(ModItems.PureTear, 1, 1),
+                    "gemQuartz",
+                    "gemDiamond",
+                    new ItemStack(ItemsTC.salisMundus)
+            }
+    ));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "cleansing_amulet"), new InfusionRecipe(
+            "CLEANSING_AMULET",
+            new ItemStack(ItemsKP.CLEANSING_AMULET),
+            8,
+            new AspectList().add(Aspect.EXCHANGE, 125).add(Aspect.ELDRITCH, 125).add(Aspect.MAGIC, 250),
+            new ItemStack(ItemsTC.baubles, 1, 0),
+            new Object[] {
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
+                    new ItemStack(ModItems.PureTear, 1, 0),
+                    "ingotGold",
+                    "gemDiamond",
+                    new ItemStack(ItemsTC.salisMundus),
+                    new ItemStack(ItemsKP.RESOURCETMISC,1,2),
+                    new ItemStack(ModItems.PureTear, 1, 0),
+                    "ingotGold",
+                    "gemDiamond",
+                    new ItemStack(ItemsTC.salisMundus)
+            }
+    ));
     ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "ichor_block"), new InfusionRecipe(
             "ICHOR@1",
             new ItemStack(BlocksKP.ICHOR_BLOCK),

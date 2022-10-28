@@ -1,8 +1,10 @@
 package keletu.keletupack.event;
 
+import baubles.api.BaublesApi;
 import com.google.common.collect.Multimap;
 import keletu.keletupack.ConfigKP;
 import keletu.keletupack.enchantments.EnchantmentsKP;
+import keletu.keletupack.entity.PassiveCreeper;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.tools.DistortionPick;
 import keletu.keletupack.items.tools.IchoriumPickAdv;
@@ -14,23 +16,30 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.boss.EntityWither;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.IMob;
-import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.*;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.*;
@@ -41,12 +50,23 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.capabilities.IPlayerWarp;
+import thaumcraft.api.capabilities.ThaumcraftCapabilities;
+import thaumcraft.api.items.ItemsTC;
+import thaumcraft.common.config.ModConfig;
+import thaumcraft.common.entities.monster.EntityMindSpider;
+import thaumcraft.common.items.armor.ItemFortressArmor;
 import thaumcraft.common.lib.SoundsTC;
+import thaumcraft.common.lib.events.PlayerEvents;
+import thaumcraft.common.lib.events.WarpEvents;
+import thaumcraft.common.lib.network.PacketHandler;
+import thaumcraft.common.lib.network.misc.PacketMiscEvent;
+import thaumcraft.common.lib.potions.*;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class LivingEvent {
@@ -414,5 +434,349 @@ public class LivingEvent {
             event.setNewSpeed(Float.MAX_VALUE);
         } else if (desintegrate > 0 || autoSmelt > 0)
             event.setCanceled(true);
+    }
+
+    private static int getWarpFromGear(EntityPlayer player) {
+        int w = PlayerEvents.getFinalWarp(player.getHeldItemMainhand(), player);
+
+        for(int a = 0; a < 4; ++a) {
+            w += PlayerEvents.getFinalWarp((ItemStack)player.inventory.armorInventory.get(a), player);
+        }
+
+        IInventory baubles = BaublesApi.getBaubles(player);
+
+        for(int a = 0; a < baubles.getSizeInventory(); ++a) {
+            w += PlayerEvents.getFinalWarp(baubles.getStackInSlot(a), player);
+        }
+
+        return w;
+    }
+
+    @SubscribeEvent
+    public void livingTick(net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent event) {
+        if (event.getEntity() instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer)event.getEntity();
+            if (!player.world.isRemote) {
+                handleWarp(player);
+            }
+        }
+    }
+
+    private static void handleWarp(EntityPlayer player) {
+        if (!ModConfig.CONFIG_MISC.wussMode && player.ticksExisted > 0 && player.ticksExisted % 2000 == 0 &&
+                !player.isPotionActive(PotionWarpWard.instance))
+            checkWarpEvent(player);
+        if (player.ticksExisted % 20 == 0 && player.isPotionActive(PotionDeathGaze.instance))
+            WarpEvents.checkDeathGaze(player);
+    }
+
+    public static void checkWarpEvent(EntityPlayer player) {
+        IPlayerWarp wc = ThaumcraftCapabilities.getWarp(player);
+        ThaumcraftApi.internalMethods.addWarpToPlayer(player, -1, IPlayerWarp.EnumWarpType.TEMPORARY);
+        int tw = wc.get(IPlayerWarp.EnumWarpType.TEMPORARY);
+        int nw = wc.get(IPlayerWarp.EnumWarpType.NORMAL);
+        int pw = wc.get(IPlayerWarp.EnumWarpType.PERMANENT);
+        int warp = tw + nw + pw;
+        int actualwarp = pw + nw;
+        int gearWarp = getWarpFromGear(player);
+        warp += gearWarp;
+        int warpCounter = wc.getCounter();
+        int r = player.world.rand.nextInt(100);
+        if (warpCounter > 0 && warp > 0 && (double)r <= Math.sqrt((double)warpCounter)) {
+            warp = Math.min(100, (warp + warp + warpCounter) / 3);
+            warpCounter = (int)((double)warpCounter - Math.max(5.0D, Math.sqrt((double)warpCounter) * 2.0D - (double)(gearWarp * 2)));
+            wc.setCounter(warpCounter);
+            int eff = player.world.rand.nextInt(warp) + gearWarp;
+            ItemStack helm = (ItemStack)player.inventory.armorInventory.get(3);
+            if (helm.getItem() instanceof ItemFortressArmor && helm.hasTagCompound() && helm.getTagCompound().hasKey("mask") && helm.getTagCompound().getInteger("mask") == 0) {
+                eff -= 2 + player.world.rand.nextInt(4);
+            }
+
+            PacketHandler.INSTANCE.sendTo(new PacketMiscEvent((byte)0), (EntityPlayerMP)player);
+            if (eff > 0) {
+                if (eff <= ConfigKP.warpKP.SummonBat) {
+                    summonbat(player, warp);
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.1")), true);
+                }else if (eff <= ConfigKP.warpKP.BloodPoison)
+                {player.addPotionEffect(new PotionEffect(MobEffects.POISON, warp * 20, 0));
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.2")), true);}
+                else if (eff <= ConfigKP.warpKP.JumpBoostLesser)
+                {player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 400, 3));
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.3")), true);}
+                else if (eff <= ConfigKP.warpKP.ThunderAndRain)
+                {player.world.getWorldInfo().setRaining(true);
+                    player.world.getWorldInfo().setThundering(true);
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.4")), true);}
+                else if (eff <= ConfigKP.warpKP.Nausea) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, warp * 20, 0));
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.5")), true);
+                }
+                else if (eff <= ConfigKP.warpKP.PassiveCreeper){
+                    summoncreeper(player, 1);
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.6")), true);
+                }
+                else if (eff <= ConfigKP.warpKP.ThunderNoRain) {
+                    player.addTag("lightning");
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.7")), true);
+                }
+                else if (eff <= ConfigKP.warpKP.SummonAnimal) {
+                    summonanimal(player, warp);
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.8")), true);
+                }
+                else if (eff <= ConfigKP.warpKP.JumpBoostHigher) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 400, 20));
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.9")), true);
+                }
+                else if (eff <= ConfigKP.warpKP.RandomTeleport) {
+                    player.addTag("tmisc_teleport");
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.10")), true);
+                }
+                else if (eff <= ConfigKP.warpKP.SummonWither) {
+                    summonwither(player, 1);
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.11")), true);
+                }
+            }
+                if (ConfigKP.warpKP.EnableForceEldritch && actualwarp > ConfigKP.warpKP.ForceEldritch && !ThaumcraftCapabilities.knowsResearch(player, new String[]{"BASEELDRITCH"}) && player.inventory.hasItemStack(new ItemStack(ItemsTC.thaumonomicon))) {
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warp.tip.1")), true);
+                    ThaumcraftApi.internalMethods.completeResearch(player, "!BASEELDRITCH");
+                }
+                player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.10")), true);
+
+        }
+
+    }
+
+    private static void summonSPIDER(EntityPlayer player, int warp, boolean real) {
+        int spawns = Math.min(15, warp);
+
+        for(int a = 0; a < spawns; ++a) {
+            EntityMindSpider spider = new EntityMindSpider(player.world);
+            int i = MathHelper.floor(player.posX);
+            int j = MathHelper.floor(player.posY);
+            int k = MathHelper.floor(player.posZ);
+            boolean success = false;
+
+            for(int l = 0; l < 50; ++l) {
+                int i1 = i + MathHelper.getInt(player.world.rand, 7, 24) * MathHelper.getInt(player.world.rand, -1, 1);
+                int j1 = j + MathHelper.getInt(player.world.rand, 7, 24) * MathHelper.getInt(player.world.rand, -1, 1);
+                int k1 = k + MathHelper.getInt(player.world.rand, 7, 24) * MathHelper.getInt(player.world.rand, -1, 1);
+                if (player.world.getBlockState(new BlockPos(i1, j1 - 1, k1)).isFullCube()) {
+                    spider.setPosition((double)i1, (double)j1, (double)k1);
+                    if (player.world.checkNoEntityCollision(spider.getEntityBoundingBox()) && player.world.getCollisionBoxes(spider, spider.getEntityBoundingBox()).isEmpty() && !player.world.containsAnyLiquid(spider.getEntityBoundingBox())) {
+                        success = true;
+                        break;
+                    }
+                }
+            }
+
+            if (success) {
+                spider.setAttackTarget(player);
+                if (!real) {
+                    spider.setViewer(player.getName());
+                    spider.setHarmless(true);
+                }
+
+                player.world.spawnEntity(spider);
+            }
+        }
+
+        player.sendStatusMessage(new TextComponentString(I18n.translateToLocal("warp.text.7")), true);
+    }
+
+    private static void summonbat(EntityPlayer player, int warp) {
+        int spawns = 15 + player.world.rand.nextInt(30);
+
+        for (int a = 0; a < spawns; ++a) {
+            EntityBat bat = new EntityBat(player.world);
+            boolean success = false;
+
+            for (int l = 0; l < 6; l++) {
+                int i1 = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                int j1 = (int) player.posY + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                int k1 = (int) player.posZ + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                if (player.world.getBlockState(new BlockPos(i1, j1 - 1, k1)).isFullCube()) {
+                    bat.setPosition((double) i1, (double) j1, (double) k1);
+                    success = true;
+                    break;
+                }
+            }
+
+            if (success) {
+                player.world.spawnEntity(bat);
+            }
+        }
+        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
+    }
+
+    private static void summonanimal(EntityPlayer player, int warp) {
+        int spawns = 1;
+
+        for (int i = 0; i < 6; i++) {
+            int targetX = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+            int targetY = (int) player.posY + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+            int targetZ = (int) player.posZ + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+            boolean canDrop = true;
+            for (int y = targetY; y < targetY + 25; y++) {
+                if (!player.world.isAirBlock(new BlockPos(targetX, y, targetZ))) {
+                    canDrop = false;
+                    break;
+                }
+            }
+            if (!canDrop)
+                continue;
+            targetY += 25;
+            if (player.world.isAirBlock(new BlockPos(targetX, targetY, targetZ))) {
+                EntityLiving victim;
+                switch (player.world.rand.nextInt(3)) {
+                    case 0:
+                        victim = new EntityCow(player.world);
+                        break;
+                    case 1:
+                        victim = new EntityPig(player.world);
+                        break;
+                    case 2:
+                        victim = new EntitySheep(player.world);
+                        break;
+                    default:
+                        victim = new EntityChicken(player.world);
+                        break;
+                }
+                if (player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()) {
+                    victim.setPosition((double) targetX, (double) targetY, (double) targetZ);
+                    player.world.spawnEntity(victim);
+                    break;
+                }
+            }
+        }
+        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
+    }
+
+    private static void summonwither(EntityPlayer player, int warp) {
+        int spawns = 1;
+
+            EntityWither wither = new EntityWither(player.world);
+            boolean success = false;
+
+            for (int l = 0; l < 6; l++) {
+                int targetX = (int)player.posX + player.world.rand.nextInt(4) - player.world.rand.nextInt(4);
+                int targetY = (int)player.posY + player.world.rand.nextInt(4) - player.world.rand.nextInt(4);
+                int targetZ = (int)player.posZ + player.world.rand.nextInt(4) - player.world.rand.nextInt(4);
+                if (player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()) {
+                    wither.setPosition((double) targetX, (double) targetY, (double) targetZ);
+                    success = true;
+                    break;
+                }
+            }
+
+            if (success) {
+                player.world.spawnEntity(wither);
+            }
+        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
+    }
+
+    @SubscribeEvent
+    public static void summonlightning(TickEvent.PlayerTickEvent event)
+    {
+            if (event.player.getTags().contains("lightning")) {
+                int lightning = ThaumcraftApi.internalMethods.getActualWarp(event.player);
+                int x = (int) event.player.posX + event.player.world.rand.nextInt(3) - event.player.world.rand.nextInt(3);
+                int y = (int) event.player.posY;
+                int z = (int) event.player.posZ + event.player.world.rand.nextInt(3) - event.player.world.rand.nextInt(3);
+                BlockPos pos = new BlockPos(x, y, z);
+                if (event.player.world.rand.nextInt(100) == 0 && event.player.world.canBlockSeeSky(pos)) {
+                    EntityLightningBolt bolt = new EntityLightningBolt(event.player.world, x, y, z, true);
+                    event.player.world.addWeatherEffect(bolt);
+                    if (event.player.getTags().contains("lightning"))
+                        --lightning;
+                    if (lightning <= 0)
+                        event.player.removeTag("lightning");
+
+                }
+        }
+    }
+
+    private static void summoncreeper(EntityPlayer player, int warp) {
+        int spawns = 1;
+
+        PassiveCreeper preeper = new PassiveCreeper(player.world);
+        boolean success = false;
+
+        for (int l = 0; l < 6; l++) {
+            int targetX = (int) player.posX + player.world.rand.nextInt(4) - player.world.rand.nextInt(4);
+            int targetY = (int) player.posY + player.world.rand.nextInt(4) - player.world.rand.nextInt(4);
+            int targetZ = (int) player.posZ + player.world.rand.nextInt(4) - player.world.rand.nextInt(4);
+            if (player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()) {
+                preeper.setPosition((double) targetX, (double) targetY, (double) targetZ);
+                preeper.setCustomNameTag("keletu");
+                success = true;
+                break;
+            }
+        }
+
+        if (success) {
+            player.world.spawnEntity(preeper);
+        }
+        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
+    }
+
+    @SubscribeEvent
+    public void TickEvents(TickEvent.PlayerTickEvent event) {
+        if (event.player.getTags().contains("puring") && event.player.ticksExisted % 200 == 0) {
+            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.TEMPORARY)> 5) {
+                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -5, IPlayerWarp.EnumWarpType.TEMPORARY);
+                checkWarpEvent(event.player);
+                WarpEvents.checkWarpEvent(event.player);}else
+            {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.TEMPORARY);}
+            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.PERMANENT)  > 5) {
+                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -5, IPlayerWarp.EnumWarpType.PERMANENT);
+                checkWarpEvent(event.player);
+                WarpEvents.checkWarpEvent(event.player);}else
+            {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.PERMANENT);}
+            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.NORMAL) > 5) {
+                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -5, IPlayerWarp.EnumWarpType.NORMAL);
+                checkWarpEvent(event.player);
+                WarpEvents.checkWarpEvent(event.player);}else
+            {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.NORMAL);}
+        }
+        if((ThaumcraftApi.internalMethods.getActualWarp(event.player) + ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.TEMPORARY)) == 0)
+        {
+            event.player.removeTag("puring");
+        }
+    }
+
+    @SubscribeEvent
+    public void onTick(TickEvent.PlayerTickEvent event)
+    {
+        if (!event.player.world.isRemote && event.player.getTags().contains("tmisc_teleport"))
+        {
+            int teleport = ThaumcraftApi.internalMethods.getActualWarp(event.player);
+            double d0 = event.player.posX;
+            double d1 = event.player.posY;
+            double d2 = event.player.posZ;
+
+            for (int i = 0; i < 16; ++i)
+            {
+                double d3 = event.player.posX + (event.player.getRNG().nextDouble() - 0.5D) * 24.0D;
+                double d4 = MathHelper.clamp(event.player.posY + (double)(event.player.getRNG().nextInt(16) - 8), 0.0D, (double)(event.player.world.getActualHeight() - 1));
+                double d5 = event.player.posZ + (event.player.getRNG().nextDouble() - 0.5D) * 24.0D;
+
+                if (event.player.isRiding())
+                {
+                    event.player.dismountRidingEntity();
+                }
+
+                if (event.player.attemptTeleport(d3, d4, d5) && event.player.ticksExisted % 200 == 0)
+                {
+                    event.player.world.playSound((EntityPlayer)null, d0, d1, d2, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
+                    event.player.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 1.0F, 1.0F);
+                    teleport--;
+                }
+
+                if (teleport == 0)
+                {
+                    event.player.removeTag("tmisc_teleport");
+                }
+            }
+        }
     }
 }

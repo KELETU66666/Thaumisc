@@ -77,4 +77,86 @@ public class ConfigKP {
         public String[] trashpile = trashlist.split(";");
     }
 
+    @Config.LangKey("keletupack.configkp.langkey")
+    @Config.Comment("keletupack.configkp.comment")
+    public static final warpKP warpKP = new warpKP();
+
+    public static class warpKP {
+        @Config.LangKey("keletupack.warpkp.summonbat")
+        @Config.Comment("Min warp for summon bats")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int SummonBat = 20;
+
+        @Config.LangKey("keletupack.warpkp.poison")
+        @Config.Comment("Min warp for poison")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int BloodPoison = 32;
+
+        @Config.LangKey("keletupack.warpkp.jumpboost3")
+        @Config.Comment("Min warp for jump boots effect lvl3")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int JumpBoostLesser = 36;
+
+        @Config.LangKey("keletupack.warpkp.thunderrain")
+        @Config.Comment("Min warp for rain")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int ThunderAndRain = 48;
+
+        @Config.LangKey("keletupack.warpkp.nausea")
+        @Config.Comment("Min warp for Nausea")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int Nausea = 50;
+
+        @Config.LangKey("keletupack.warpkp.summoncreeper")
+        @Config.Comment("Min warp for Summon Creeper")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int PassiveCreeper = 55;
+
+        @Config.LangKey("keletupack.warpkp.thunder")
+        @Config.Comment("Min warp for Summon Thunder")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int ThunderNoRain = 60;
+
+        @Config.LangKey("keletupack.warpkp.summonanimal")
+        @Config.Comment("Min warp for Summon Animals")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int SummonAnimal = 64;
+
+        @Config.LangKey("keletupack.warpkp.jumpboost20")
+        @Config.Comment("Min warp for jump boots effect lvl20")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int JumpBoostHigher = 80;
+
+        @Config.LangKey("keletupack.warpkp.randomteleport")
+        @Config.Comment("Min warp for Random Teleport")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int RandomTeleport = 90;
+
+        @Config.LangKey("keletupack.warpkp.summonwither")
+        @Config.Comment("Min warp for Summon Wither")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int SummonWither = 150;
+
+        @Config.LangKey("keletupack.warpkp.enableforceunlock")
+        @Config.Comment("Enable Forced player unlock eldritch")
+        @Config.RequiresMcRestart
+        public boolean EnableForceEldritch = true;
+
+        @Config.LangKey("keletupack.warpkp.unlockeldritch")
+        @Config.Comment("Min Actual warp to FORCE Unlock Eldritch")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int ForceEldritch = 50;
+    }
 }

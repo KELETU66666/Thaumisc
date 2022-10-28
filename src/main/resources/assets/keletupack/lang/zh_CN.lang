@@ -89,6 +89,8 @@ item.resourcetmisc.4.name=灵布
 item.resourcetmisc.5.name=灵宝粒
 item.ichor_pouch.name=无底袋
 
+item.item_cleanser.0.name=纯净泪水
+item.item_cleanser.1.name=污秽泪水
 item.cleansing_amulet.name=净化护身符
 
 item.runic_ring.name=符文戒指
@@ -200,6 +202,14 @@ keletupack.research.warppaper.title=扭曲检测
 keletupack.research.warppaper.text=魔导手册上详细的讲述了神智检测仪是如何工作的,但是它只能给予我大概的数值,我想要更加精确的数据,而不是一点粗糙的颜色反应.
 keletupack.research.warppaper.complete.text=我已经决定,需要更精确的东西来衡量体内负面魔法能量的积累,而不是统计周围发生了什么扭曲反应.<BR>通过将世界盐与灵气注入纸张中,制造出一种能精确读取自己究竟暴露在多高的危险之中的试纸.
 
+keletupack.research.dirtytear.title=Impure Tear
+keletupack.research.dirtytear.stage.1.text=[WIP]Magical-ish Medicine
+keletupack.research.dirtytear.complete.text=You've dealt with warp long enough, time to try to find a way to get rid of it. You decide to try mixing together some cleansing type items you've found.<BR>You succeeded, but the effect only works when you have a decent amount of it, so you can't get rid of it all. But at least you can avoid the worst effects, unlike Bob who had a wither spawn and blow up his base. Poor Bob. (You need 50+ warp for it to work, and it removes 5 warp)<BR>You suspect that if you had better materials, you could make a better version.
+
+keletupack.research.puretear.title=Pure Tear
+keletupack.research.puretear.stage.1.text=[WIP]Magical Medicine
+keletupack.research.puretear.complete.text=combining the curative properties of Ghast Tears, the magical energy of Salis Mundus, and the stabilizing properties of crystals, you've discovered a means of purging negative magical energy from the body.<BR>The process is not without drawbacks, though, as all that energy has to go somewhere.
+
 keletupack.research.taintmeat.title=腐化肉块
 keletupack.research.taintmeat.stage.1.text=额...这是什么玩意...<BR>我有一种不好的预感,它甚至似乎在蠕动!<BR>嘿...乐观点,万一塞翁失马呢?
 keletupack.research.taintmeat.complete.text=嗯,一种腐化的味道.毫无意外,还会增加扭曲.<BR>甚至能感觉到它像是腐化的蛆虫一样从舌尖缓慢的蠕动到胃袋里.迸发的纤维布满你的食道,细微的蛆虫缓慢爬进我的脑干.<BR>我为什么要吃这种东西?因为贪婪么?
@@ -270,6 +280,11 @@ tip.awakensword.name2=狩魂模式
 tip.awakenarmor.name0=觉醒
 tip.awakenarmor.name1=休眠
 
+item.warppaper.name=扭曲指示剂
+item.dirtytear.name=它少了些什么...
+item.puretear.name=咔咔作响
+item.something.name=没准能吃?
+item.cleansingamulet.name=净化扭曲
 #Compat
 
 item.loot_bag_crystal.name=水晶奖励袋
@@ -298,3 +313,19 @@ enchantment.quickdraw=及时战备
 enchantment.shatter=碎裂
 enchantment.tunnel=隧道
 enchantment.autosmelt=熔炼
+
+#Warps
+
+warptheory.text.1=扑响声回荡在空气中...
+warptheory.text.2=你的血管里仿佛流淌着火焰...
+warptheory.text.3=你感到充满活力...
+warptheory.text.4=你听到远处隆隆作响...
+warptheory.text.5=你的胃开始疼痛...
+warptheory.text.6=孤独感突然袭上心头...
+warptheory.text.7=你的头发根根竖立...
+warptheory.text.8=你觉得有一点饿了...
+warptheory.text.9=你感到充满活力...
+warptheory.text.10=你突然迷失了方向...
+warptheory.text.11=你感到惶恐而不知所措...
+message.clearsuccessful.warp=你对此有一种糟糕的预感...
+message.clearfailed.warp=没有发生什么特别的事情

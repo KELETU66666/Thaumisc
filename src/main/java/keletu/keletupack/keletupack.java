@@ -6,6 +6,7 @@ import keletu.keletupack.compat.magicbees.InitRecipeCompatMB;
 import keletu.keletupack.compat.magicbees.InitResearchMB;
 import keletu.keletupack.compat.thaumicwonders.InitRecipeCompatTW;
 import keletu.keletupack.enchantments.EnchantmentsKP;
+import keletu.keletupack.entity.PassiveCreeper;
 import keletu.keletupack.init.*;
 import keletu.keletupack.loot.LootTableHandler;
 import keletu.keletupack.proxy.CommonProxy;
@@ -13,6 +14,7 @@ import keletu.keletupack.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -22,6 +24,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(
@@ -45,6 +48,7 @@ public class keletupack {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + "passive_creeper"), PassiveCreeper.class, "creeperPassive", 0, this, 160, 4, true);
     }
 
     /**

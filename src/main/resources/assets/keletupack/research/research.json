@@ -359,19 +359,19 @@
         "category": "THAUMISC",
         "icons": [
           "keletupack:taint_meat"
-        ],"meta":["ROUND", "REVERSE"],
+        ],"meta":["HEX"],
         "parents": [
           "WARP", "~BASEALCHEMY", "THAUMISC_WARPTHEORY"
         ],
         "location": [
-          -2,
-          0
+          0,
+          -2
         ],
         "stages": [
           {
             "text": "keletupack.research.taintmeat.stage.1.text",
             "required_item": [
-                "keletupack:triple_meat_treat"
+                "thaumcraft:triple_meat_treat"
             ],
             "required_knowledge": [
                 "OBSERVATION;BASICS;1",
@@ -389,6 +389,78 @@
         ]
       },
       {
+        "key": "DIRTY_TEAR",
+        "name": "keletupack.research.dirtytear.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:item_cleanser;1;1"
+        ],"meta":["ROUND", "REVERSE"],
+        "parents": [
+          "BASEINFUSION",
+          "THAUMISC_WARPTHEORY",
+          "UNLOCKELDRITCH"
+        ],
+        "location": [
+          -2,
+          0
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.dirtytear.stage.1.text",
+            "required_item": [
+              "minecraft:ghast_tear"
+            ],
+            "required_knowledge": [
+              "OBSERVATION;ALCHEMY;1",
+              "THEORY;ALCHEMY;1",
+              "THEORY;INFUSION;1"
+            ]
+          },
+          {
+            "text": "keletupack.research.dirtytear.complete.text",
+            "recipes": [
+              "keletupack:dirty_tear"
+            ],
+            "warp": 1
+          }
+        ]
+      },
+      {
+        "key": "PURE_TEAR",
+        "name": "keletupack.research.puretear.title",
+        "category": "THAUMISC",
+        "icons": [
+          "keletupack:item_cleanser;1;0"
+        ],"meta":["ROUND", "HIDDEN"],
+        "parents": [
+          "DIRTY_TEAR",
+          "WARP_PAPER"
+        ],
+        "location": [
+          -3,
+          -1
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.puretear.stage.1.text",
+            "required_craft": [
+              "keletupack:item_cleanser;1;1"
+            ],
+            "required_knowledge": [
+              "THEORY;INFUSION;2",
+              "THEORY;ELDRITCH;2"
+            ]
+          },
+          {
+            "text": "keletupack.research.puretear.complete.text",
+            "recipes": [
+              "keletupack:pure_tear"
+            ],
+            "warp": 3
+          }
+        ]
+      },
+      {
         "key": "CLEANSING_AMULET",
         "name": "keletupack.research.cleansingamulet.title",
         "category": "THAUMISC",
@@ -396,14 +468,11 @@
           "keletupack:cleansing_amulet"
         ],
         "parents": [
-          "BASEINFUSION",
-          "TAINT_MEAT",
-          "WARP_PAPER",
+          "PURE_TEAR",
           "ICHOR"
         ],
         "location": [
-          -3,
-          -1
+          -3,1
         ],
         "meta": [
           "HIDDEN"
@@ -412,10 +481,10 @@
           {
             "text": "keletupack.research.cleansingamulet.stage.1.text",
             "required_item": [
-              "thaumcraft:sanity_soap"
+              "thaumcraft:sanity_soap", "keletupack:warp_paper"
             ],
             "required_craft": [
-              "thaumcraft:amulet_vis;1;1"
+              "keletupack:item_cleanser;1;0"
             ],
             "required_knowledge": [
               "OBSERVATION;BASICS;1",

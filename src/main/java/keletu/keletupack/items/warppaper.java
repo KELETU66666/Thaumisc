@@ -1,6 +1,7 @@
 package keletu.keletupack.items;
 
 import keletu.keletupack.keletupack;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -10,9 +11,13 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
+
+import java.util.List;
 
 public class warppaper extends ItemBase {
     public warppaper() {
@@ -51,5 +56,11 @@ public class warppaper extends ItemBase {
             }
         }
         return super.onItemRightClick(world, player, handIn);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(TextFormatting.GRAY.toString() + TextFormatting.ITALIC + I18n.translateToLocal("item.warppaper.name"));
+        super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 }
