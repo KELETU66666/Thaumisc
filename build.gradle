@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '3.0.0'
+version = '3.0.1'
 group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'thaumisc'
 
@@ -118,6 +118,8 @@ dependencies {
         implementation 'curse.maven:thaumic-additions-232564:3663195'
     implementation 'curse.maven:thaumicaugmentation-319441:3819917'
     implementation 'curse.maven:avaritia-261348:3143349'
+    implementation fg.deobf("curse.maven:mantle-74924:2713386")
+    implementation fg.deobf("curse.maven:TConstruct-74072:2809406")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

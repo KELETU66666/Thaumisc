@@ -124,6 +124,12 @@ public class ConfigKP {
         @Config.RequiresMcRestart
         public int ThunderNoRain = 60;
 
+        @Config.LangKey("keletupack.warpkp.summonbat")
+        @Config.Comment("Min warp for summon bats")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int SummonFireBat = 61;
+
         @Config.LangKey("keletupack.warpkp.summonanimal")
         @Config.Comment("Min warp for Summon Animals")
         @Config.RangeInt(min = 10)
@@ -158,5 +164,29 @@ public class ConfigKP {
         @Config.RangeInt(min = 10)
         @Config.RequiresMcRestart
         public int ForceEldritch = 50;
+
+        @Config.LangKey("keletupack.warpkp.speed")
+        @Config.Comment("Min warp for Speed Effect")
+        @Config.RangeInt(min = 10)
+        @Config.RequiresMcRestart
+        public int Lighter = 95;
+    }
+
+    @Config.LangKey("keletupack.configkp.langkey")
+    @Config.Comment("keletupack.configkp.comment")
+    public static final CompatKP CompatKP = new CompatKP();
+
+    public static class CompatKP {
+        @Config.LangKey("keletupack.configkp.aurastrikedamage")
+        @Config.Comment("Aura Strike Damage Bonus")
+        @Config.RangeInt(min = 0, max = 100)
+        @Config.RequiresMcRestart
+        public float AURASTRIKEBONUS = 6;
+
+        @Config.LangKey("keletupack.configkp.ichorbasedamage")
+        @Config.Comment("Ichorium Part Base Damage")
+        @Config.RangeInt(min = 0)
+        @Config.RequiresMcRestart
+        public float IchorAttackDamage = 3.5F;
     }
 }

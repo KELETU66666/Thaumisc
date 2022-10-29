@@ -1,5 +1,6 @@
 package keletu.keletupack;
 
+import keletu.keletupack.compat.Tconstruct.TConstructHandler;
 import keletu.keletupack.compat.avaritia.InitRecipeAvaritia;
 import keletu.keletupack.compat.avaritia.InitResearchIf;
 import keletu.keletupack.compat.magicbees.InitRecipeCompatMB;
@@ -49,6 +50,9 @@ public class keletupack {
     public void preinit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + "passive_creeper"), PassiveCreeper.class, "creeperPassive", 0, this, 160, 4, true);
+        if(Loader.isModLoaded("tconstruct")) {
+            TConstructHandler.preInit(event);
+        }
     }
 
     /**

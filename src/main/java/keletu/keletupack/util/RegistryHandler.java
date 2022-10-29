@@ -1,9 +1,11 @@
 package keletu.keletupack.util;
 
+import forestry.mail.items.ItemStamps;
 import keletu.keletupack.ConfigKP;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
 import keletu.keletupack.blocks.tiles.TileEtherealBloom;
 import keletu.keletupack.common.ItemsKP;
+import keletu.keletupack.compat.Tconstruct.TConstructHandler;
 import keletu.keletupack.compat.thaumicwonders.LootBagCrystal;
 import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.init.ModBlocks;
@@ -19,12 +21,14 @@ import keletu.keletupack.keletupack;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSaddle;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectEventProxy;
 import thaumcraft.api.aspects.AspectList;
@@ -62,6 +66,8 @@ public class RegistryHandler {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
         TileBedrockPortal.register("bedrock_portal", TileBedrockPortal.class);
         TileEtherealBloom.register("ethereal_bloom", TileEtherealBloom.class);
+        if(Loader.isModLoaded("tconstruct"))
+        TConstructHandler.registerBlocks(event);
     }
 
     @SubscribeEvent
@@ -98,5 +104,12 @@ public class RegistryHandler {
     public static void onEnchantmentRegister(RegistryEvent.Register<Enchantment> event)
     {
         event.getRegistry().registerAll(EnchantmentsKP.ENCHANTNENTS.toArray(new Enchantment[0]));
+    }
+
+    @SubscribeEvent
+    public static void OreRegister(RegistryEvent.Register<Enchantment> event)
+    {
+        OreDictionary.registerOre("ingotIchorium", new ItemStack(ItemsKP.RESOURCETMISC, 1, 3));
+        OreDictionary.registerOre("nuggetIchorium", new ItemStack(ItemsKP.RESOURCETMISC, 1, 5));
     }
 }

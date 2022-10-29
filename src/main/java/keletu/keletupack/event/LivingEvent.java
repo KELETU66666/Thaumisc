@@ -57,6 +57,7 @@ import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.config.ModConfig;
+import thaumcraft.common.entities.monster.EntityFireBat;
 import thaumcraft.common.entities.monster.EntityMindSpider;
 import thaumcraft.common.items.armor.ItemFortressArmor;
 import thaumcraft.common.lib.SoundsTC;
@@ -519,6 +520,10 @@ public class LivingEvent {
                     player.addTag("lightning");
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.7")), true);
                 }
+                else if (eff <= ConfigKP.warpKP.SummonFireBat) {
+                    summonnetherbat(player, warp);
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.1")), true);
+                }
                 else if (eff <= ConfigKP.warpKP.SummonAnimal) {
                     summonanimal(player, warp);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.8")), true);
@@ -526,6 +531,10 @@ public class LivingEvent {
                 else if (eff <= ConfigKP.warpKP.JumpBoostHigher) {
                     player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 400, 20));
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.9")), true);
+                }
+                else if (eff <= ConfigKP.warpKP.Lighter) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.SPEED, warp * 5, 10));
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.12")), true);
                 }
                 else if (eff <= ConfigKP.warpKP.RandomTeleport) {
                     player.addTag("tmisc_teleport");
@@ -605,11 +614,51 @@ public class LivingEvent {
                 player.world.spawnEntity(bat);
             }
         }
-        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
+    }
+
+    private static void summonnetherbat(EntityPlayer player, int warp) {
+        int spawns = 15 + player.world.rand.nextInt(30);
+
+        for (int a = 0; a < spawns; ++a) {
+            EntityFireBat bat = new EntityFireBat(player.world);
+            boolean success = false;
+
+            for (int l = 0; l < 6; l++) {
+                int i1 = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                int j1 = (int) player.posY + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                int k1 = (int) player.posZ + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                if (player.world.getBlockState(new BlockPos(i1, j1 - 1, k1)).isFullCube()) {
+                    bat.setPosition((double) i1, (double) j1, (double) k1);
+                    success = true;
+                    break;
+                }
+            }
+
+            if (success) {
+                player.world.spawnEntity(bat);
+            }
+        }
     }
 
     private static void summonanimal(EntityPlayer player, int warp) {
         int spawns = 1;
+
+        EntityLiving victim;
+        switch (player.world.rand.nextInt(3)) {
+            case 0:
+                victim = new EntityCow(player.world);
+                break;
+            case 1:
+                victim = new EntityPig(player.world);
+                break;
+            case 2:
+                victim = new EntitySheep(player.world);
+                break;
+            default:
+                victim = new EntityChicken(player.world);
+                break;
+        }
+        boolean success = false;
 
         for (int i = 0; i < 6; i++) {
             int targetX = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
@@ -625,32 +674,15 @@ public class LivingEvent {
             if (!canDrop)
                 continue;
             targetY += 25;
-            if (player.world.isAirBlock(new BlockPos(targetX, targetY, targetZ))) {
-                EntityLiving victim;
-                switch (player.world.rand.nextInt(3)) {
-                    case 0:
-                        victim = new EntityCow(player.world);
-                        break;
-                    case 1:
-                        victim = new EntityPig(player.world);
-                        break;
-                    case 2:
-                        victim = new EntitySheep(player.world);
-                        break;
-                    default:
-                        victim = new EntityChicken(player.world);
-                        break;
-                }
-                if (player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()) {
-                    victim.setPosition((double) targetX, (double) targetY, (double) targetZ);
-                    player.world.spawnEntity(victim);
-                    break;
-                }
-            }
-        }
-        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
-    }
 
+            victim.setPosition((double) targetX, (double) targetY, (double) targetZ);
+            success = true;
+            break;
+        }
+                if (success) {
+                    player.world.spawnEntity(victim);
+                }
+    }
     private static void summonwither(EntityPlayer player, int warp) {
         int spawns = 1;
 
@@ -671,7 +703,6 @@ public class LivingEvent {
             if (success) {
                 player.world.spawnEntity(wither);
             }
-        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
     }
 
     @SubscribeEvent
@@ -716,7 +747,6 @@ public class LivingEvent {
         if (success) {
             player.world.spawnEntity(preeper);
         }
-        player.sendStatusMessage(new TextComponentString("§5§o" + I18n.translateToLocal("warp.text.7")), true);
     }
 
     @SubscribeEvent
@@ -747,7 +777,7 @@ public class LivingEvent {
     @SubscribeEvent
     public void onTick(TickEvent.PlayerTickEvent event)
     {
-        if (!event.player.world.isRemote && event.player.getTags().contains("tmisc_teleport"))
+        if (!event.player.world.isRemote && event.player.getTags().contains("tmisc_teleport")  && event.player.ticksExisted % 200 == 0)
         {
             int teleport = ThaumcraftApi.internalMethods.getActualWarp(event.player);
             double d0 = event.player.posX;
@@ -765,14 +795,14 @@ public class LivingEvent {
                     event.player.dismountRidingEntity();
                 }
 
-                if (event.player.attemptTeleport(d3, d4, d5) && event.player.ticksExisted % 200 == 0)
+                if (event.player.attemptTeleport(d3, d4, d5))
                 {
                     event.player.world.playSound((EntityPlayer)null, d0, d1, d2, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
                     event.player.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 1.0F, 1.0F);
                     teleport--;
                 }
 
-                if (teleport == 0)
+                if (teleport <= 0)
                 {
                     event.player.removeTag("tmisc_teleport");
                 }
