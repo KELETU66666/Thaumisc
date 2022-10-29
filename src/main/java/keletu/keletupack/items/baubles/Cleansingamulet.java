@@ -42,14 +42,14 @@ public class Cleansingamulet extends ItemBase implements IBauble {
                 if(ItemNBTHelper.getInt(itemstack, "time",0)>0){
                     ItemNBTHelper.setInt(itemstack, "time", ItemNBTHelper.getInt(itemstack, "time",0)-1);
                 }else if(ItemNBTHelper.getInt(itemstack, "time",0)==0){
-                    if(ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.TEMPORARY) * 0.05 > 1) {
-                        ThaumcraftApi.internalMethods.addWarpToPlayer(p, (int) (-ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.TEMPORARY) * 0.05), IPlayerWarp.EnumWarpType.TEMPORARY);}else
+                    if(ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.TEMPORARY) * 0.1 > 1) {
+                        ThaumcraftApi.internalMethods.addWarpToPlayer(p, (int) (-ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.TEMPORARY) * 0.1), IPlayerWarp.EnumWarpType.TEMPORARY);}else
                     {ThaumcraftApi.internalMethods.addWarpToPlayer(p, -1, IPlayerWarp.EnumWarpType.TEMPORARY);}
-                    if(ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.PERMANENT) * 0.05 > 1) {
-                        ThaumcraftApi.internalMethods.addWarpToPlayer(p, (int) (-ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.PERMANENT) * 0.05), IPlayerWarp.EnumWarpType.PERMANENT);                        WarpEvents.checkWarpEvent(p);}else
+                    if(ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.PERMANENT) * 0.1 > 1) {
+                        ThaumcraftApi.internalMethods.addWarpToPlayer(p, (int) (-ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.PERMANENT) * 0.1), IPlayerWarp.EnumWarpType.PERMANENT);                        WarpEvents.checkWarpEvent(p);}else
                     {ThaumcraftApi.internalMethods.addWarpToPlayer(p, -1, IPlayerWarp.EnumWarpType.PERMANENT);}
-                    if(ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.NORMAL) * 0.05 > 1) {
-                        ThaumcraftApi.internalMethods.addWarpToPlayer(p, (int) (-ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.NORMAL) * 0.05), IPlayerWarp.EnumWarpType.NORMAL);;}else
+                    if(ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.NORMAL) * 0.1 > 1) {
+                        ThaumcraftApi.internalMethods.addWarpToPlayer(p, (int) (-ThaumcraftCapabilities.getWarp(p).get(IPlayerWarp.EnumWarpType.NORMAL) * 0.1), IPlayerWarp.EnumWarpType.NORMAL);;}else
                     {ThaumcraftApi.internalMethods.addWarpToPlayer(p, -1, IPlayerWarp.EnumWarpType.NORMAL);}
                     WarpEvents.checkWarpEvent(p);
                     LivingEvent.checkWarpEvent(p);
