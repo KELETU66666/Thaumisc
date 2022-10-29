@@ -549,7 +549,6 @@ public class LivingEvent {
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warp.tip.1")), true);
                     ThaumcraftApi.internalMethods.completeResearch(player, "!BASEELDRITCH");
                 }
-                player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.10")), true);
 
         }
 
@@ -640,49 +639,42 @@ public class LivingEvent {
         }
     }
 
-    private static void summonanimal(EntityPlayer player, int warp) {
-        int spawns = 1;
+    public static void summonanimal(EntityPlayer player, int warp) {
+        int spawns = 2 + player.world.rand.nextInt(10);
 
-        EntityLiving victim;
-        switch (player.world.rand.nextInt(3)) {
-            case 0:
-                victim = new EntityCow(player.world);
-                break;
-            case 1:
-                victim = new EntityPig(player.world);
-                break;
-            case 2:
-                victim = new EntitySheep(player.world);
-                break;
-            default:
-                victim = new EntityChicken(player.world);
-                break;
-        }
-        boolean success = false;
-
-        for (int i = 0; i < 6; i++) {
-            int targetX = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
-            int targetY = (int) player.posY + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
-            int targetZ = (int) player.posZ + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
-            boolean canDrop = true;
-            for (int y = targetY; y < targetY + 25; y++) {
-                if (!player.world.isAirBlock(new BlockPos(targetX, y, targetZ))) {
-                    canDrop = false;
+        for (int a = 0; a < spawns; ++a) {
+            EntityLiving victim;
+            switch (player.world.rand.nextInt(3)) {
+                case 0:
+                    victim = new EntityCow(player.world);
                     break;
+                case 1:
+                    victim = new EntityPig(player.world);
+                    break;
+                case 2:
+                    victim = new EntitySheep(player.world);
+                    break;
+                default:
+                    victim = new EntityChicken(player.world);
+                    break;
+            }
+            boolean success = false;
+
+            for (int i = 0; i < 6; i++) {
+                int targetX = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                int targetY = (int) player.posY + player.world.rand.nextInt(8) - player.world.rand.nextInt(8) + 25;
+                int targetZ = (int) player.posZ + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                for (int y = targetY; y < targetY + 25; y++) {
+                        victim.setPosition((double) targetX, (double) targetY, (double) targetZ);
+                        success = true;
                 }
             }
-            if (!canDrop)
-                continue;
-            targetY += 25;
-
-            victim.setPosition((double) targetX, (double) targetY, (double) targetZ);
-            success = true;
-            break;
-        }
                 if (success) {
                     player.world.spawnEntity(victim);
                 }
+        }
     }
+
     private static void summonwither(EntityPlayer player, int warp) {
         int spawns = 1;
 
@@ -751,19 +743,19 @@ public class LivingEvent {
 
     @SubscribeEvent
     public void TickEvents(TickEvent.PlayerTickEvent event) {
-        if (event.player.getTags().contains("puring") && event.player.ticksExisted % 200 == 0) {
-            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.TEMPORARY)> 5) {
-                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -5, IPlayerWarp.EnumWarpType.TEMPORARY);
+        if (event.player.getTags().contains("puring") && event.player.ticksExisted % 20 == 0) {
+            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.TEMPORARY)> 2.5) {
+                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, (int) -2.5, IPlayerWarp.EnumWarpType.TEMPORARY);
                 checkWarpEvent(event.player);
                 WarpEvents.checkWarpEvent(event.player);}else
             {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.TEMPORARY);}
-            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.PERMANENT)  > 5) {
-                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -5, IPlayerWarp.EnumWarpType.PERMANENT);
+            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.PERMANENT)  > 2.5) {
+                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, (int) -2.5, IPlayerWarp.EnumWarpType.PERMANENT);
                 checkWarpEvent(event.player);
                 WarpEvents.checkWarpEvent(event.player);}else
             {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.PERMANENT);}
-            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.NORMAL) > 5) {
-                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -5, IPlayerWarp.EnumWarpType.NORMAL);
+            if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.NORMAL) > 2.5) {
+                ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, (int) -2.5, IPlayerWarp.EnumWarpType.NORMAL);
                 checkWarpEvent(event.player);
                 WarpEvents.checkWarpEvent(event.player);}else
             {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.NORMAL);}
@@ -775,7 +767,7 @@ public class LivingEvent {
     }
 
     @SubscribeEvent
-    public void onTick(TickEvent.PlayerTickEvent event)
+    public static void onTick(TickEvent.PlayerTickEvent event)
     {
         if (!event.player.world.isRemote && event.player.getTags().contains("tmisc_teleport")  && event.player.ticksExisted % 200 == 0)
         {
