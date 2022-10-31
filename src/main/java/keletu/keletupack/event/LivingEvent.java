@@ -9,23 +9,17 @@ import keletu.keletupack.enchantments.inchantment.EnumInfusionEnchantmentKP;
 import keletu.keletupack.entity.PassiveCreeper;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.armor.KamiArmor;
-import keletu.keletupack.items.resources.ResourceCrimson;
 import keletu.keletupack.items.tools.DistortionPick;
 import keletu.keletupack.items.tools.IchoriumPickAdv;
 import keletu.keletupack.util.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -64,24 +58,23 @@ import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
-import thaumcraft.api.entities.IEldritchMob;
-import thaumcraft.api.entities.ITaintedMob;
 import thaumcraft.api.items.ItemsTC;
-import thaumcraft.api.potions.PotionFluxTaint;
 import thaumcraft.common.config.ModConfig;
 import thaumcraft.common.entities.monster.EntityFireBat;
 import thaumcraft.common.entities.monster.EntityMindSpider;
 import thaumcraft.common.entities.monster.tainted.EntityTaintCrawler;
-import thaumcraft.common.entities.monster.tainted.EntityTaintSwarm;
 import thaumcraft.common.items.armor.ItemFortressArmor;
 import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.lib.events.PlayerEvents;
 import thaumcraft.common.lib.events.WarpEvents;
 import thaumcraft.common.lib.network.PacketHandler;
 import thaumcraft.common.lib.network.misc.PacketMiscEvent;
-import thaumcraft.common.lib.potions.*;
+import thaumcraft.common.lib.potions.PotionDeathGaze;
+import thaumcraft.common.lib.potions.PotionWarpWard;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class LivingEvent {
@@ -872,25 +865,29 @@ public class LivingEvent {
 
             if (!mainHund.isEmpty() && mainHund.getItem() instanceof ItemSword && (EnumInfusionEnchantmentKP.getInfusionEnchantmentLevel(mainHund, EnumInfusionEnchantmentKP.CRIMSONPOWER) > 0)) {
                 if (!(mob instanceof EntityTaintCrawler)) {
-                        attacker.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_warning_1")));
+                    attacker.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_warning_1")));
                     e.setAmount(1.0f);
-                }else {
-                        e.setAmount(999.0f);
-                        if(mob.isDead)
-                        mob.dropItem(ModItems.TaintCrawler, 1);
-                    }
+                } else {
+                    e.setAmount(999);
+                }
             }
-
-
-        }}
-
-    @SubscribeEvent
-    public void DropItem(LivingDeathEvent event) {
-        if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && !(event.getEntity() instanceof EntityLivingBase)) {
-            ItemStack equip = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
-            if (EnumInfusionEnchantmentKP.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentKP.CRIMSONPOWER) > 0)
-        if(event.getEntity() instanceof EntityTaintCrawler)
-            event.getEntity().dropItem(ModItems.TaintCrawler, 1);
         }
     }
+
+    private void addDrop(List<EntityItem> drops, Entity e, int min, int max) {
+        drops.add(new EntityItem(e.world, e.posX, e.posY, e.posZ, new ItemStack(ModItems.TaintCrawler, 1)));
+    }
+
+    @SubscribeEvent
+    public void onDrops(LivingDropsEvent event) {
+        Entity e = event.getEntity();
+        EntityLivingBase player = (EntityLivingBase) event.getSource().getTrueSource();
+        if (player instanceof EntityPlayer) {
+            if (EnumInfusionEnchantmentKP.getInfusionEnchantmentLevel(player.getHeldItemMainhand(), EnumInfusionEnchantmentKP.CRIMSONPOWER) > 0)
+                if (e instanceof EntityTaintCrawler) {
+                    addDrop(event.getDrops(), e, 1, 1);
+                }
+        }
+    }
+
 }

@@ -95,8 +95,11 @@ public class ResourceCrimson extends ItemBase {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_2")));
                 } else if (player.getTags().contains("crimson_invite_2") && ThaumcraftApi.internalMethods.getActualWarp(player) > 45) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_3")));
-                    player.addTag("crimson_invite_3");
-
+                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == ModItems.TaintCrawler && player.getHeldItemOffhand().getCount() >= 5) {
+                        player.getHeldItemOffhand().shrink(5);
+                        player.addTag("crimson_invite_3");
+                        player.removeTag("crimson_invite_2");
+                    }
                 }
             }
                 if (player.getTags().contains("mission_1")) {
@@ -118,7 +121,6 @@ public class ResourceCrimson extends ItemBase {
                 if (player.getTags().contains("mission_3")) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_2")));
                     if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == ItemsTC.fabric && player.getHeldItemOffhand().getCount() >= 20) {
-                        player.addItemStackToInventory(new ItemStack(this, 1, 1));
                         player.getHeldItemOffhand().shrink(20);
                         player.addTag("crimson_invite_1");
                         player.removeTag("mission_3");
