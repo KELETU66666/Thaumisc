@@ -3,9 +3,13 @@ package keletu.keletupack.event;
 import baubles.api.BaublesApi;
 import com.google.common.collect.Multimap;
 import keletu.keletupack.ConfigKP;
+import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.enchantments.EnchantmentsKP;
+import keletu.keletupack.enchantments.inchantment.EnumInfusionEnchantmentKP;
 import keletu.keletupack.entity.PassiveCreeper;
+import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.armor.KamiArmor;
+import keletu.keletupack.items.resources.ResourceCrimson;
 import keletu.keletupack.items.tools.DistortionPick;
 import keletu.keletupack.items.tools.IchoriumPickAdv;
 import keletu.keletupack.util.Reference;
@@ -16,10 +20,12 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,6 +38,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -43,6 +50,7 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.*;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -51,14 +59,20 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
+import thaumcraft.api.entities.IEldritchMob;
+import thaumcraft.api.entities.ITaintedMob;
 import thaumcraft.api.items.ItemsTC;
+import thaumcraft.api.potions.PotionFluxTaint;
 import thaumcraft.common.config.ModConfig;
 import thaumcraft.common.entities.monster.EntityFireBat;
 import thaumcraft.common.entities.monster.EntityMindSpider;
+import thaumcraft.common.entities.monster.tainted.EntityTaintCrawler;
+import thaumcraft.common.entities.monster.tainted.EntityTaintSwarm;
 import thaumcraft.common.items.armor.ItemFortressArmor;
 import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.lib.events.PlayerEvents;
@@ -547,7 +561,7 @@ public class LivingEvent {
             }
                 if (ConfigKP.warpKP.EnableForceEldritch && actualwarp > ConfigKP.warpKP.ForceEldritch && !ThaumcraftCapabilities.knowsResearch(player, new String[]{"BASEELDRITCH"}) && player.inventory.hasItemStack(new ItemStack(ItemsTC.thaumonomicon))) {
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warp.tip.1")), true);
-                    ThaumcraftApi.internalMethods.completeResearch(player, "!BASEELDRITCH");
+                    ThaumcraftApi.internalMethods.completeResearch(player, "BASEELDRITCH");
                 }
 
         }
@@ -640,38 +654,40 @@ public class LivingEvent {
     }
 
     public static void summonanimal(EntityPlayer player, int warp) {
-        int spawns = 2 + player.world.rand.nextInt(10);
+        if(!player.world.isRemote) {
+            int spawns = 2 + player.world.rand.nextInt(10);
 
-        for (int a = 0; a < spawns; ++a) {
-            EntityLiving victim;
-            switch (player.world.rand.nextInt(3)) {
-                case 0:
-                    victim = new EntityCow(player.world);
-                    break;
-                case 1:
-                    victim = new EntityPig(player.world);
-                    break;
-                case 2:
-                    victim = new EntitySheep(player.world);
-                    break;
-                default:
-                    victim = new EntityChicken(player.world);
-                    break;
-            }
-            boolean success = false;
+            for (int a = 0; a < spawns; ++a) {
+                EntityLiving victim;
+                switch (player.world.rand.nextInt(3)) {
+                    case 0:
+                        victim = new EntityCow(player.world);
+                        break;
+                    case 1:
+                        victim = new EntityPig(player.world);
+                        break;
+                    case 2:
+                        victim = new EntitySheep(player.world);
+                        break;
+                    default:
+                        victim = new EntityChicken(player.world);
+                        break;
+                }
+                boolean success = false;
 
-            for (int i = 0; i < 6; i++) {
-                int targetX = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
-                int targetY = (int) player.posY + player.world.rand.nextInt(8) - player.world.rand.nextInt(8) + 25;
-                int targetZ = (int) player.posZ + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
-                for (int y = targetY; y < targetY + 25; y++) {
+                for (int i = 0; i < 6; i++) {
+                    int targetX = (int) player.posX + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                    int targetY = (int) player.posY + player.world.rand.nextInt(8) - player.world.rand.nextInt(8) + 25;
+                    int targetZ = (int) player.posZ + player.world.rand.nextInt(8) - player.world.rand.nextInt(8);
+                    for (int y = targetY; y < targetY + 25; y++) {
                         victim.setPosition((double) targetX, (double) targetY, (double) targetZ);
                         success = true;
+                    }
                 }
-            }
                 if (success) {
                     player.world.spawnEntity(victim);
                 }
+            }
         }
     }
 
@@ -700,7 +716,7 @@ public class LivingEvent {
     @SubscribeEvent
     public static void summonlightning(TickEvent.PlayerTickEvent event)
     {
-            if (event.player.getTags().contains("lightning")) {
+            if (!event.player.world.isRemote && event.player.getTags().contains("lightning")) {
                 int lightning = ThaumcraftApi.internalMethods.getActualWarp(event.player);
                 int x = (int) event.player.posX + event.player.world.rand.nextInt(3) - event.player.world.rand.nextInt(3);
                 int y = (int) event.player.posY;
@@ -799,6 +815,82 @@ public class LivingEvent {
                     event.player.removeTag("tmisc_teleport");
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public void WarpSeriesEvents(TickEvent.PlayerTickEvent event) {
+            if (!event.player.world.isRemote && ThaumcraftApi.internalMethods.getActualWarp(event.player) > 50 && ((event.player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonPlateHelm)|| event.player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonRobeHelm || event.player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.voidRobeHelm)
+                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonPlateChest || event.player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonRobeChest || event.player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.voidRobeChest)
+                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonPlateLegs || event.player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonRobeLegs || event.player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.voidRobeLegs)
+                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.crimsonBoots || event.player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.voidBoots)
+                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == Items.IRON_SWORD || event.player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == ItemsTC.voidSword)
+                    && !event.player.getTags().contains("crimson_invite_0")
+                    && !event.player.getTags().contains("crimson_invite_1")
+                    && !event.player.getTags().contains("crimson_invite_2")
+                    && !event.player.getTags().contains("crimson_invite_3")
+                    && !event.player.getTags().contains("crimson_invite_4")
+                    && !event.player.getTags().contains("crimson_invite_5")
+            ) {
+                event.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
+                ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
+                if(stack.getTagCompound() != null)
+                    stack.getTagCompound().setInteger("invite_progress", 0);
+                event.player.addItemStackToInventory(stack);
+                event.player.addTag("crimson_invite_0");
+
+        }
+    }
+
+    @SideOnly(value = Side.CLIENT)
+    @SubscribeEvent
+    public void tooltipEvent(ItemTooltipEvent event) {
+        event.getItemStack();
+        NBTTagList nbttaglist = EnumInfusionEnchantmentKP.getInfusionEnchantmentTagList(event.getItemStack());
+        if(nbttaglist != null) {
+            for(int j = 0; j < nbttaglist.tagCount(); ++j) {
+                short k = nbttaglist.getCompoundTagAt(j).getShort("id");
+                short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
+                if(k < 0 || k >= EnumInfusionEnchantmentKP.values().length)
+                    continue;
+                String s = TextFormatting.DARK_PURPLE + I18n
+                        .translateToLocal("enchantment.infusion." + EnumInfusionEnchantmentKP.values()[k].toString());
+                if(EnumInfusionEnchantmentKP.values()[k].maxLevel > 1) {
+                    s = s + " " + I18n.translateToLocal("enchantment.level." + l);
+                }
+                event.getToolTip().add(1, s);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onModDamage(LivingHurtEvent e) {
+        if (e.getSource().getTrueSource() instanceof EntityPlayer) {
+            EntityPlayer attacker = (EntityPlayer) e.getSource().getTrueSource();
+            EntityLivingBase mob = e.getEntityLiving();
+            ItemStack mainHund = attacker.getHeldItemMainhand();
+
+            if (!mainHund.isEmpty() && mainHund.getItem() instanceof ItemSword && (EnumInfusionEnchantmentKP.getInfusionEnchantmentLevel(mainHund, EnumInfusionEnchantmentKP.CRIMSONPOWER) > 0)) {
+                if (!(mob instanceof EntityTaintCrawler)) {
+                        attacker.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_warning_1")));
+                    e.setAmount(1.0f);
+                }else {
+                        e.setAmount(999.0f);
+                        if(mob.isDead)
+                        mob.dropItem(ModItems.TaintCrawler, 1);
+                    }
+            }
+
+
+        }}
+
+    @SubscribeEvent
+    public void DropItem(LivingDeathEvent event) {
+        if (event.getSource().getTrueSource() != null && event.getSource().getTrueSource() instanceof EntityPlayer && !(event.getEntity() instanceof EntityLivingBase)) {
+            ItemStack equip = ((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND);
+            if (EnumInfusionEnchantmentKP.getInfusionEnchantmentLevel(equip, EnumInfusionEnchantmentKP.CRIMSONPOWER) > 0)
+        if(event.getEntity() instanceof EntityTaintCrawler)
+            event.getEntity().dropItem(ModItems.TaintCrawler, 1);
         }
     }
 }

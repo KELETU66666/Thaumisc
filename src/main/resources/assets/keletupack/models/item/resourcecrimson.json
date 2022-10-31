@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "keletupack:items/unknow_rite"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "meta": 1
+      },
+      "model": "keletupack:item/torn_part"
+    }
+  ]
+}

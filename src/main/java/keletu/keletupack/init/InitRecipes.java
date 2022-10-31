@@ -1,9 +1,12 @@
 package keletu.keletupack.init;
 
 
+import keletu.keletupack.blocks.BlockCrimsonPortalPlaceHolder;
 import keletu.keletupack.common.BlocksKP;
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.enchantments.EnchantmentsKP;
+import keletu.keletupack.enchantments.inchantment.EnumInfusionEnchantmentKP;
+import keletu.keletupack.enchantments.inchantment.InfusionEnchantmentRecipeKP;
 import keletu.keletupack.items.armor.ShadowArmor;
 import keletu.keletupack.util.ItemNBTHelper;
 import keletu.keletupack.util.Reference;
@@ -11,6 +14,7 @@ import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -24,16 +28,16 @@ import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
-import thaumcraft.api.crafting.CrucibleRecipe;
-import thaumcraft.api.crafting.InfusionRecipe;
-import thaumcraft.api.crafting.ShapedArcaneRecipe;
+import thaumcraft.api.crafting.*;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.items.resources.ItemCrystalEssence;
+import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 
 public class InitRecipes {
     private static ResourceLocation defaultGroup = new ResourceLocation("");
 
     public static void initRecipes() {
+        initMultiblockRecipes();
         initArcaneRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
@@ -45,6 +49,61 @@ public class InitRecipes {
         return crystal;
     }
 
+    private static void initMultiblockRecipes() {
+        initCrimsonCllaer();
+    }
+
+    private static void initCrimsonCllaer() {
+        Part A = new Part(BlocksTC.stoneArcane, BlocksTC.stoneAncient);
+        Part N = new Part(Blocks.RED_NETHER_BRICK, Blocks.NETHER_BRICK);
+        Part O = new Part(Blocks.OBSIDIAN, BlocksTC.stoneEldritchTile);
+        Part G = new Part(Blocks.GOLD_BLOCK, BlocksTC.amberBlock);
+        Part S = new Part(BlocksTC.matrixSpeed, BlocksTC.stoneAncientGlyphed);
+        Part C = new Part(BlocksTC.matrixCost, BlocksTC.stoneAncientGlyphed);
+        Part V = new Part(BlocksTC.metalBlockVoid, ModBlocks.PLACE_HOLDER);
+        Part[][][] CrimsonCallerBlueprint = {
+                {
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, V, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                        { null, null, null, null, null, null, null, null, null ,null, null, null, null},
+                },
+                {
+                        { null, null, null, A, null, null, null, null, null, A, null, null, null },
+                        { null, null, A, N, O, null, null, null, O, N, A, null, null },
+                        { null, A, G, N, N, O, A, O, N, N, G, A, null },
+                        { A, N, N, G, N, N, A, N, N, G, N, N, A },
+                        { null, O, N, N, G, O, O, O, G, N, N, O, null },
+                        { null, null, O, N, O, C, S, C, O, N, O, null, null },
+                        { null, null, A, A, O, S, O, S, O, A, A, null, null },
+                        { null, null, O, N, O, C, S, C, O, N, O, null, null },
+                        { null, O, N, N, G, O, O, O, G, N, N, O, null },
+                        { A, N, N, G, N, N, A, N, N, G, N, N, A },
+                        { null, A, G, N, N, O, A, O, N, N, G, A, null },
+                        { null, null, A, N, O, null, null, null, O, N, A, null, null },
+                        { null, null, null, A, null, null, null, null, null, A, null, null, null }
+                }
+        };
+        IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("", CrimsonCallerBlueprint));
+        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(Reference.MOD_ID, "crimson_caller"), new ThaumcraftApi.BluePrint(
+                "",
+                CrimsonCallerBlueprint,
+                new ItemStack(Blocks.RED_NETHER_BRICK, 40),
+                new ItemStack(Blocks.GOLD_BLOCK, 12),
+                new ItemStack(BlocksTC.stoneArcane, 24),
+                new ItemStack(BlocksTC.matrixCost, 4),
+                new ItemStack(BlocksTC.matrixSpeed, 4),
+                new ItemStack(BlocksTC.metalBlockVoid)));
+    }
 private static void initArcaneRecipes() {
                 ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(Reference.MOD_ID, "warp_paper"), new ShapedArcaneRecipe(
                         defaultGroup,
@@ -753,5 +812,12 @@ private static void initInfusionRecipes() {
                     "ingotVoid"
             }
     ));
-    }
+    
+    ItemStack cpower = new ItemStack(ItemsTC.voidSword);
+    EnumInfusionEnchantmentKP.addInfusionEnchantment(cpower, EnumInfusionEnchantmentKP.CRIMSONPOWER, 1);
+    InfusionEnchantmentRecipeKP IECPOWER = new InfusionEnchantmentRecipeKP(EnumInfusionEnchantmentKP.CRIMSONPOWER, (new AspectList()).add(Aspect.FLUX, 1000), new IngredientNBTTC(new ItemStack(BlocksTC.crystalTaint)), new ItemStack(BlocksTC.crystalTaint), new ItemStack(BlocksTC.crystalTaint), new ItemStack(BlocksTC.crystalTaint), new ItemStack(BlocksTC.crystalTaint), new ItemStack(BlocksTC.crystalTaint), new ItemStack(BlocksTC.crystalTaint), new ItemStack(BlocksTC.crystalTaint));
+    ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("keletupack:IECPOWER"), (InfusionRecipe)IECPOWER);
+    ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("keletupack:IECPOWERFAKE"), new InfusionEnchantmentRecipeKP(IECPOWER, cpower));
+
+}
 }

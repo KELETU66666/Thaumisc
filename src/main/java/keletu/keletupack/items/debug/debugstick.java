@@ -21,13 +21,13 @@ public class debugstick extends ItemBase {
 
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         ItemStack stack = player.getHeldItem(hand);
-        IPlayerWarp wc = ThaumcraftCapabilities.getWarp(player);
-        ThaumcraftApi.internalMethods.addWarpToPlayer(player, -1, IPlayerWarp.EnumWarpType.TEMPORARY);
-        int tw = wc.get(IPlayerWarp.EnumWarpType.TEMPORARY);
-        int nw = wc.get(IPlayerWarp.EnumWarpType.NORMAL);
-        int pw = wc.get(IPlayerWarp.EnumWarpType.PERMANENT);
-        int warp = tw + nw + pw;
-        LivingEvent.summonanimal(player, warp);
+        player.removeTag("crimson_invite_0");
+        player.removeTag("crimson_invite_1");
+        player.removeTag("crimson_invite_2");
+        player.removeTag("crimson_invite_3");
+        player.removeTag("mission_1");
+        player.removeTag("mission_2");
+        player.removeTag("mission_3");
         return new ActionResult<>(EnumActionResult.SUCCESS, stack);
     }
 }

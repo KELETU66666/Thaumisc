@@ -11,6 +11,8 @@ import keletu.keletupack.entity.PassiveCreeper;
 import keletu.keletupack.init.*;
 import keletu.keletupack.loot.LootTableHandler;
 import keletu.keletupack.proxy.CommonProxy;
+import keletu.keletupack.research.theorycraft.CardLearnFoolish;
+import keletu.keletupack.research.theorycraft.CardLearnFoolish1;
 import keletu.keletupack.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -27,6 +29,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import thaumcraft.api.research.theorycraft.TheorycraftManager;
 
 @Mod(
         modid = Reference.MOD_ID,
@@ -74,6 +77,8 @@ public class keletupack {
             InitRecipeAvaritia.InitRecipeCompat();
             InitResearchIf.registerResearchIf();
         }
+        TheorycraftManager.registerCard(CardLearnFoolish.class);
+        TheorycraftManager.registerCard(CardLearnFoolish1.class);
     proxy.registerDisplayInformationInit();
     }
 

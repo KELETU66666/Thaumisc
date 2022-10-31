@@ -3,6 +3,7 @@ package keletu.keletupack.util;
 import forestry.mail.items.ItemStamps;
 import keletu.keletupack.ConfigKP;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
+import keletu.keletupack.blocks.tiles.TileEntityCrimsonPortalPlaceHolder;
 import keletu.keletupack.blocks.tiles.TileEtherealBloom;
 import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.compat.Tconstruct.TConstructHandler;
@@ -16,6 +17,7 @@ import keletu.keletupack.items.cheat.AkashicRecord;
 import keletu.keletupack.items.cheat.BigPearl;
 import keletu.keletupack.items.cheat.CrystalCaster;
 import keletu.keletupack.items.debug.debugstick;
+import keletu.keletupack.items.resources.ResourceCrimson;
 import keletu.keletupack.items.resources.ResourceKP;
 import keletu.keletupack.items.resources.ResourceTmisc;
 import keletu.keletupack.keletupack;
@@ -52,6 +54,7 @@ public class RegistryHandler {
         event.getRegistry().registerAll(new RunicGirdleAir());
         event.getRegistry().registerAll(new RunicAmuletEarth());
         event.getRegistry().registerAll(new ResourceTmisc());
+        event.getRegistry().registerAll(new ResourceCrimson());
         if(ConfigKP.ConfigKP.ENABLEPACKITEM){
             event.getRegistry().registerAll(new ResourceKP());
         }
@@ -69,6 +72,7 @@ public class RegistryHandler {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
         TileBedrockPortal.register("bedrock_portal", TileBedrockPortal.class);
         TileEtherealBloom.register("ethereal_bloom", TileEtherealBloom.class);
+        TileEntityCrimsonPortalPlaceHolder.register("portal_summoner", TileEntityCrimsonPortalPlaceHolder.class);
         if(Loader.isModLoaded("tconstruct"))
         TConstructHandler.registerBlocks(event);
     }
