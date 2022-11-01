@@ -7,6 +7,7 @@ import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.enchantments.inchantment.EnumInfusionEnchantmentKP;
 import keletu.keletupack.entity.PassiveCreeper;
+import keletu.keletupack.entity.ThaumoobCaster;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.tools.DistortionPick;
@@ -888,6 +889,16 @@ public class LivingEvent {
                     addDrop(event.getDrops(), e, 1, 1);
                 }
         }
+    }
+
+    @SubscribeEvent
+    public void CrimsonUpgrade(LivingDeathEvent event) {
+            if(event.getSource().getTrueSource() != null && event.getEntity() instanceof ThaumoobCaster && event.getSource().getTrueSource().getTags().contains("crimson_invite_3"))
+            {
+                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_3_1")));
+                event.getSource().getTrueSource().removeTag("crimson_invite_3");
+                event.getSource().getTrueSource().addTag("crimson_invite_4");
+            }
     }
 
 }

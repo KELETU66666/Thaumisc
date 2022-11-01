@@ -101,6 +101,10 @@ public class ResourceCrimson extends ItemBase {
                         player.removeTag("crimson_invite_2");
                     }
                 }
+                else if(player.getTags().contains("crimson_invite_3") && ThaumcraftApi.internalMethods.getActualWarp(player) > 50) {
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_4")));
+                }else if(player.getTags().contains("crimson_invite_4") && ThaumcraftApi.internalMethods.getActualWarp(player) > 70)
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_5")));
             }
                 if (player.getTags().contains("mission_1")) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1")));
