@@ -19,7 +19,6 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class StructureNoobHouse implements IWorldGenerator {
-    //你所要生成的建筑名称,可以写多个建筑
     public static final Structure NoobHouse = new Structure("noobhouse");
 
     @Override
@@ -27,12 +26,6 @@ public class StructureNoobHouse implements IWorldGenerator {
         if(world.provider.getDimension() == 0)
                 generateStructure(NoobHouse, world, random, chunkX, chunkZ, 1000, Blocks.GRASS, BiomeGenMagicalForest.class);
 
-    }
-
-
-    @SubscribeEvent
-    public boolean PlayerTickEvent(TickEvent.PlayerTickEvent event){
-            return event.player.getTags().contains("crimson_invite_3");
     }
 
     private void generateStructure(WorldGenerator generator , World world, Random random, int chunkX, int chunkZ, int chance, Block topBlock, Class<?>... classes) {

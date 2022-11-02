@@ -21,6 +21,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.items.ItemsTC;
 
 import javax.annotation.Nullable;
@@ -74,9 +75,12 @@ public class ResourceCrimson extends ItemBase {
                     stack.setTagCompound(nbtTagCompound);
                 }
 
-                if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == this && player.getHeldItemOffhand().getMetadata() == 1 && player.getHeldItemMainhand().getMetadata() == 0 && nbtTagCompound.getInteger("invite_progress") < 5) {
-                    nbtTagCompound.setInteger("invite_progress", (nbtTagCompound.getInteger("invite_progress") + 1));
+                if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == this && player.getHeldItemOffhand().getMetadata() == 1 && player.getHeldItemMainhand().getMetadata() == 0 && player.getTags().contains("crimson_invite_4")) {
+                    player.addItemStackToInventory(new ItemStack(this, 1 ,2));
+                    player.getHeldItemMainhand().shrink(1);
                     player.getHeldItemOffhand().shrink(1);
+                    player.removeTag("crimson_invite_4");
+                    player.addTag("crimson_invite_final");
                 }
                 return new ActionResult<>(EnumActionResult.SUCCESS, stack);
             }
@@ -103,29 +107,34 @@ public class ResourceCrimson extends ItemBase {
                 }
                 else if(player.getTags().contains("crimson_invite_3") && ThaumcraftApi.internalMethods.getActualWarp(player) > 50) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_4")));
-                }else if(player.getTags().contains("crimson_invite_4") && ThaumcraftApi.internalMethods.getActualWarp(player) > 70)
+                    player.addTag("crimson_invite_3_1");
+                    player.removeTag("crimson_invite_3");
+                }else if(player.getTags().contains("crimson_invite_3_1") && ThaumcraftApi.internalMethods.getActualWarp(player) > 50){
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_4_1")));
+                }
+                else if(player.getTags().contains("crimson_invite_4") && ThaumcraftApi.internalMethods.getActualWarp(player) > 70)
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_5")));
             }
                 if (player.getTags().contains("mission_1")) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1")));
-                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == ItemsTC.ingots && player.getHeldItemOffhand().getMetadata() == 1 && player.getHeldItemOffhand().getCount() >= 3) {
-                        player.getHeldItemOffhand().shrink(3);
+                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == ItemsTC.bottleTaint && player.getHeldItemOffhand().getCount() >= 3) {
+                        player.getHeldItemOffhand().shrink(8);
                         player.addTag("crimson_invite_1");
                         player.removeTag("mission_1");
                     }
                 }
                 if (player.getTags().contains("mission_2")) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_1")));
-                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == Items.DIAMOND && player.getHeldItemOffhand().getCount() >= 10) {
-                        player.getHeldItemOffhand().shrink(10);
+                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == Items.ENDER_EYE && player.getHeldItemOffhand().getCount() >= 10) {
+                        player.getHeldItemOffhand().shrink(16);
                         player.addTag("crimson_invite_1");
                         player.removeTag("mission_2");
                     }
                 }
                 if (player.getTags().contains("mission_3")) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_2")));
-                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == ItemsTC.fabric && player.getHeldItemOffhand().getCount() >= 20) {
-                        player.getHeldItemOffhand().shrink(20);
+                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == new ItemStack(BlocksTC.jarBrain).getItem() && player.getHeldItemOffhand().getCount() >= 20) {
+                        player.getHeldItemOffhand().shrink(1);
                         player.addTag("crimson_invite_1");
                         player.removeTag("mission_3");
                     }

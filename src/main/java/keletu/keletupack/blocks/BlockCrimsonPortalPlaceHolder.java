@@ -57,7 +57,7 @@ public class BlockCrimsonPortalPlaceHolder extends BlockContainer implements IHa
     @Override
     public boolean onCasterRightClick(World world, ItemStack stack, EntityPlayer player, BlockPos pos, EnumFacing facing, EnumHand hand) {
         TileEntity te = world.getTileEntity(pos);
-        if (!world.isRemote && te instanceof TileEntityCrimsonPortalPlaceHolder) {
+        if (!world.isRemote && te instanceof TileEntityCrimsonPortalPlaceHolder && (player.getTags().contains("crimson_invite_4") || player.getTags().contains("crimson_invite_final"))) {
             if (((TileEntityCrimsonPortalPlaceHolder) te).checkLocation()) {
                 world.playSound(null, pos, SoundsTC.zap, SoundCategory.BLOCKS, 1.0F, 1.0F);
 

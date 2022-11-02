@@ -2,7 +2,7 @@ package keletu.keletupack.util.handler;
 
 
 import keletu.keletupack.entity.EntityRender;
-import keletu.keletupack.entity.ThaumoobCaster;
+import keletu.keletupack.entity.ThaumaturgeSpeller;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
@@ -12,10 +12,10 @@ public class RenderHandler {
 
     public static void registerEntityRenders(){
 
-        RenderingRegistry.registerEntityRenderingHandler(ThaumoobCaster.class, new IRenderFactory<ThaumoobCaster>()
+        RenderingRegistry.registerEntityRenderingHandler(ThaumaturgeSpeller.class, new IRenderFactory<ThaumaturgeSpeller>()
         {
             @Override
-            public Render<? super ThaumoobCaster> createRenderFor(RenderManager manager)
+            public Render<? super ThaumaturgeSpeller> createRenderFor(RenderManager manager)
             {
                 return new EntityRender(manager) ;
             }

@@ -7,7 +7,7 @@ import keletu.keletupack.common.ItemsKP;
 import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.enchantments.inchantment.EnumInfusionEnchantmentKP;
 import keletu.keletupack.entity.PassiveCreeper;
-import keletu.keletupack.entity.ThaumoobCaster;
+import keletu.keletupack.entity.ThaumaturgeSpeller;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.armor.KamiArmor;
 import keletu.keletupack.items.tools.DistortionPick;
@@ -21,6 +21,7 @@ import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -44,6 +45,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -63,6 +65,7 @@ import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.config.ModConfig;
 import thaumcraft.common.entities.monster.EntityFireBat;
 import thaumcraft.common.entities.monster.EntityMindSpider;
+import thaumcraft.common.entities.monster.boss.EntityCultistLeader;
 import thaumcraft.common.entities.monster.tainted.EntityTaintCrawler;
 import thaumcraft.common.items.armor.ItemFortressArmor;
 import thaumcraft.common.lib.SoundsTC;
@@ -72,6 +75,7 @@ import thaumcraft.common.lib.network.PacketHandler;
 import thaumcraft.common.lib.network.misc.PacketMiscEvent;
 import thaumcraft.common.lib.potions.PotionDeathGaze;
 import thaumcraft.common.lib.potions.PotionWarpWard;
+import thaumcraft.common.lib.utils.EntityUtils;
 
 import java.util.Collection;
 import java.util.List;
@@ -813,26 +817,52 @@ public class LivingEvent {
     }
 
     @SubscribeEvent
-    public void WarpSeriesEvents(TickEvent.PlayerTickEvent event) {
-            if (!event.player.world.isRemote && ThaumcraftApi.internalMethods.getActualWarp(event.player) > 50 && ((event.player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonPlateHelm)|| event.player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonRobeHelm || event.player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.voidRobeHelm)
-                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonPlateChest || event.player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonRobeChest || event.player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.voidRobeChest)
-                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonPlateLegs || event.player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonRobeLegs || event.player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.voidRobeLegs)
-                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.crimsonBoots || event.player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.voidBoots)
-                    && (event.player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == Items.IRON_SWORD || event.player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == ItemsTC.voidSword)
-                    && !event.player.getTags().contains("crimson_invite_0")
-                    && !event.player.getTags().contains("crimson_invite_1")
-                    && !event.player.getTags().contains("crimson_invite_2")
-                    && !event.player.getTags().contains("crimson_invite_3")
-                    && !event.player.getTags().contains("crimson_invite_4")
-                    && !event.player.getTags().contains("crimson_invite_5")
-            ) {
-                event.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
+    public void WarpSeriesEvents(LivingDeathEvent event) {
+        if(event.getSource().getTrueSource() instanceof EntityPlayer && event.getSource().getTrueSource() != null) {
+            if (
+            !event.getSource().getTrueSource().world.isRemote && ThaumcraftApi.internalMethods.getActualWarp((EntityPlayer) event.getSource().getTrueSource()) > 50 && ((((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonPlateHelm) || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonRobeHelm || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.voidRobeHelm)
+                    && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonPlateChest || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonRobeChest || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.voidRobeChest)
+                    && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonPlateLegs || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonRobeLegs || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.voidRobeLegs)
+                    && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.crimsonBoots || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.voidBoots)
+                    && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == Items.IRON_SWORD || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == ItemsTC.voidSword)
+                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_0")
+                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_1")
+                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_2")
+                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_3")
+                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_4")
+                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1")
+                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_final")
+                    && event.getEntityLiving() instanceof EntityVillager
+            ){
+                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
                 ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
-                if(stack.getTagCompound() != null)
+                if (stack.getTagCompound() != null)
                     stack.getTagCompound().setInteger("invite_progress", 0);
-                event.player.addItemStackToInventory(stack);
-                event.player.addTag("crimson_invite_0");
+                ((EntityPlayer) event.getSource().getTrueSource()).addItemStackToInventory(stack);
+                event.getSource().getTrueSource().addTag("crimson_invite_0");
 
+            }
+
+            if (
+                    !event.getSource().getTrueSource().world.isRemote && ThaumcraftApi.internalMethods.getActualWarp((EntityPlayer) event.getSource().getTrueSource()) > 50 && ((((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonPlateHelm) || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.crimsonRobeHelm || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ItemsTC.voidRobeHelm)
+                            && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonPlateChest || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.crimsonRobeChest || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ItemsTC.voidRobeChest)
+                            && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonPlateLegs || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonRobeLegs || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.voidRobeLegs)
+                            && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.crimsonBoots || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.voidBoots)
+                            && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == Items.IRON_SWORD || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == ItemsTC.voidSword)
+                            && (event.getSource().getTrueSource().getTags().contains("crimson_invite_0")
+                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_1")
+                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_2")
+                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_3")
+                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_4")
+                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1"))
+                            && !event.getSource().getTrueSource().getTags().contains("crimson_invite_final")
+                            && event.getEntityLiving() instanceof EntityVillager
+            ){
+                ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
+
+                if (stack.getTagCompound() != null)
+                ((EntityPlayer) event.getSource().getTrueSource()).addItemStackToInventory(stack);
+            }
         }
     }
 
@@ -879,6 +909,10 @@ public class LivingEvent {
         drops.add(new EntityItem(e.world, e.posX, e.posY, e.posZ, new ItemStack(ModItems.TaintCrawler, 1)));
     }
 
+    private void addDrop1(List<EntityItem> drops, Entity e, int min, int max) {
+        drops.add(new EntityItem(e.world, e.posX, e.posY, e.posZ, new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 1)));
+    }
+
     @SubscribeEvent
     public void onDrops(LivingDropsEvent event) {
         Entity e = event.getEntity();
@@ -889,16 +923,58 @@ public class LivingEvent {
                     addDrop(event.getDrops(), e, 1, 1);
                 }
         }
+        if (player instanceof EntityPlayer && e instanceof  EntityCultistLeader) {
+            if(player.getTags().contains("crimson_invite_4")){
+                addDrop1(event.getDrops(), e, 1, 1);
+            }
+        }
     }
 
     @SubscribeEvent
     public void CrimsonUpgrade(LivingDeathEvent event) {
-            if(event.getSource().getTrueSource() != null && event.getEntity() instanceof ThaumoobCaster && event.getSource().getTrueSource().getTags().contains("crimson_invite_3"))
+            if(event.getSource().getTrueSource() != null && event.getEntity() instanceof ThaumaturgeSpeller && event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1"))
             {
-                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_3_1")));
-                event.getSource().getTrueSource().removeTag("crimson_invite_3");
+                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_3_2")));
+                event.getSource().getTrueSource().removeTag("crimson_invite_3_1");
                 event.getSource().getTrueSource().addTag("crimson_invite_4");
             }
     }
 
+    @SubscribeEvent
+    public static void entityJoin(EntityJoinWorldEvent event) {
+        Entity entity = event.getEntity();
+
+        if (!entity.world.isRemote && event.getEntity() instanceof EntityMob && event.getWorld().rand.nextInt(100) == 1 && event.getEntity().isNonBoss()) {
+            EntityLiving living = (EntityLiving)entity;
+            EntityUtils.makeChampion((EntityMob) event.getEntity(), true);
+            }
+        }
+
+        @SubscribeEvent
+        public void summonthaumaturge(TickEvent.PlayerTickEvent e) {
+        if (!e.player.world.isRemote && e.player.getTags().contains("crimson_invite_3_1") && e.player.ticksExisted % 12000 == 0) {
+            e.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_3_1")));
+            ThaumaturgeSpeller thaumaturge = new ThaumaturgeSpeller(e.player.world);
+            boolean success = false;
+
+            for (int l = 0; l < 6; l++) {
+                int targetX = (int) e.player.posX + e.player.world.rand.nextInt(100) - e.player.world.rand.nextInt(100);
+                int targetY = (int) e.player.posY + e.player.world.rand.nextInt(4) - e.player.world.rand.nextInt(4);
+                int targetZ = (int) e.player.posZ + e.player.world.rand.nextInt(100) - e.player.world.rand.nextInt(100);
+                if (e.player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()
+                && !e.player.world.getBlockState(new BlockPos(targetX, targetY , targetZ)).isFullCube()
+                && !e.player.world.getBlockState(new BlockPos(targetX, targetY + 1, targetZ)).isFullCube()
+                ) {
+                    thaumaturge.setPosition((double) targetX, (double) targetY, (double) targetZ);
+                    thaumaturge.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 20000, 0));
+                    success = true;
+                    break;
+                }
+            }
+
+            if (success) {
+                e.player.world.spawnEntity(thaumaturge);
+            }
+        }
+    }
 }

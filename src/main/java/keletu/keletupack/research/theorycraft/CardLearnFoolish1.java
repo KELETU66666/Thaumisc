@@ -66,7 +66,7 @@ public class CardLearnFoolish1 extends TheorycraftCard {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_2_1")));
                 } else {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_2_2")));
-                    ThaumcraftApi.internalMethods.addWarpToPlayer(player, 5, IPlayerWarp.EnumWarpType.NORMAL);
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(player, 2, IPlayerWarp.EnumWarpType.NORMAL);
                 }
             }
             data.penaltyStart++;

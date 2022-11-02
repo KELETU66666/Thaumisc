@@ -25,6 +25,8 @@ public class debugstick extends ItemBase {
         player.removeTag("crimson_invite_1");
         player.removeTag("crimson_invite_2");
         player.removeTag("crimson_invite_3");
+        player.removeTag("crimson_invite_3_1");
+        player.removeTag("crimson_invite_4");
         player.removeTag("mission_1");
         player.removeTag("mission_2");
         player.removeTag("mission_3");
