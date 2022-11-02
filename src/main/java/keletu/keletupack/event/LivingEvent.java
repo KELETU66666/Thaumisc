@@ -833,6 +833,7 @@ public class LivingEvent {
                     && !event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1")
                     && !event.getSource().getTrueSource().getTags().contains("crimson_invite_final")
                     && event.getEntityLiving() instanceof EntityVillager
+                    && event.getSource().getTrueSource().world.rand.nextInt(10) == 0
             ){
                 event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
                 ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
@@ -859,7 +860,7 @@ public class LivingEvent {
                             && event.getEntityLiving() instanceof EntityVillager
             ){
                 ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
-
+                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_1")));
                 if (stack.getTagCompound() != null)
                 ((EntityPlayer) event.getSource().getTrueSource()).addItemStackToInventory(stack);
             }
