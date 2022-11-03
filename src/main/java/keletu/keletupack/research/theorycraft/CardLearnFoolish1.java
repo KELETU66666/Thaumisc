@@ -59,7 +59,7 @@ public class CardLearnFoolish1 extends TheorycraftCard {
             }
             ThaumcraftApi.internalMethods.addWarpToPlayer(player, tries / 10, IPlayerWarp.EnumWarpType.TEMPORARY);
             if(player.getTags().contains("crimson_invite_1")) {
-                if (player.world.rand.nextInt(10) > 3) {
+                if (player.world.rand.nextInt(10) < 2) {
                     player.addTag("crimson_invite_2");
                     player.removeTag("crimson_invite_1");
                     ThaumcraftApi.internalMethods.addWarpToPlayer(player, 3, IPlayerWarp.EnumWarpType.PERMANENT);

@@ -22,6 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.blocks.BlocksTC;
+import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 import thaumcraft.api.items.ItemsTC;
 
 import javax.annotation.Nullable;
@@ -67,7 +68,7 @@ public class ResourceCrimson extends ItemBase {
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         if (!world.isRemote) {
             ItemStack stack = player.getHeldItem(hand);
-            if (player.isSneaking() && ((player.getHeldItemOffhand().getMetadata() == 1 && player.getHeldItemMainhand().getMetadata() == 0) || (player.getHeldItemOffhand().getMetadata() == 0 && player.getHeldItemMainhand().getMetadata() == 1))) {
+            if (player.isSneaking() && ((player.getHeldItemOffhand().getMetadata() == 1 && player.getHeldItemMainhand().getMetadata() == 0))) {
                 NBTTagCompound nbtTagCompound = stack.getTagCompound();
 
                 if (nbtTagCompound == null) {
@@ -76,13 +77,12 @@ public class ResourceCrimson extends ItemBase {
                 }
 
                 if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == this && player.getHeldItemOffhand().getMetadata() == 1 && player.getHeldItemMainhand().getMetadata() == 0 && player.getTags().contains("crimson_invite_4")) {
-                    player.addItemStackToInventory(new ItemStack(this, 1 ,2));
                     player.getHeldItemMainhand().shrink(1);
                     player.getHeldItemOffhand().shrink(1);
+                    player.addItemStackToInventory(new ItemStack(this, 1 ,2));
                     player.removeTag("crimson_invite_4");
                     player.addTag("crimson_invite_final");
                 }
-                return new ActionResult<>(EnumActionResult.SUCCESS, stack);
             }
 
             if (!player.isSneaking() && stack.getMetadata() == 0) {
@@ -139,7 +139,12 @@ public class ResourceCrimson extends ItemBase {
                         player.removeTag("mission_3");
                     }
                 }
-            }
+                if(player.getHeldItemMainhand().getItem() == this && player.getHeldItemMainhand().getMetadata() == 2 && !ThaumcraftCapabilities.knowsResearch(player, new String[]{"m_invite_final"}) && player.getTags().contains("crimson_invite_final"))
+                {
+                ThaumcraftApi.internalMethods.completeResearch(player, "m_invite_final");
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_complete")));
+                }
+        }
         return new ActionResult<>(EnumActionResult.PASS, player.getHeldItem(hand));
     }
 }

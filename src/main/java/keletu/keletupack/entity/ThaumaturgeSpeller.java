@@ -35,7 +35,6 @@ import thaumcraft.common.items.casters.foci.*;
 import thaumcraft.common.lib.utils.EntityUtils;
 
 public class ThaumaturgeSpeller extends EntityMob implements IRangedAttackMob, IEntityAdditionalSpawnData {
-    public int rage = 0;
     public ThaumaturgeSpeller(World worldIn) {
         super(worldIn);
         this.experienceValue = 10;
@@ -70,6 +69,7 @@ public class ThaumaturgeSpeller extends EntityMob implements IRangedAttackMob, I
         this.tasks.addTask(8, (EntityAIBase)new EntityAIWatchClosest((EntityLiving)this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(8, (EntityAIBase)new EntityAILookIdle((EntityLiving)this));
         this.targetTasks.addTask(2, (EntityAIBase)new EntityAINearestAttackableTarget((EntityCreature)this, EntityCultist.class, true));
+        this.targetTasks.addTask(2, (EntityAIBase)new EntityAINearestAttackableTarget((EntityCreature)this, EntityPlayer.class, true));
     }
 
     public void readEntityFromNBT(NBTTagCompound nbt) {

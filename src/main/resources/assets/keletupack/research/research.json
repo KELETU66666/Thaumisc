@@ -951,6 +951,41 @@
             "recipes":["keletupack:arcane_disassembler"]
           }
         ]
+      },
+      {
+        "key": "CRIMSON_INVITE",
+        "name": "keletupack.research.crimson_invite.title",
+        "category": "BASICS",
+        "icons": [
+          "keletupack:resourcecrimson;1;0"
+        ],
+        "parents": [
+          "!CRIMSON_INVITE", "!CrimsonCultist", "THAUMISC"
+        ],"meta":["HIDDEN", "HEX", "REVERSE"],
+        "location": [
+          -6,
+          3
+        ],
+        "stages": [
+          {
+            "text": "keletupack.research.crimson_invite.text",
+            "required_knowledge": [
+              "THEORY;BASICS;1"
+            ],
+            "warp" : "1"
+          },
+          {
+            "text": "keletupack.research.crimson_invite.1.text",
+            "required_research": [
+              "m_invite_final"
+            ],
+            "warp" : "2"
+          },
+          {
+            "text": "keletupack.research.crimson_invite.complete.text",
+            "recipes": ["keletupack:crimson_caller"]
+          }
+        ]
       }
     ]
   }
