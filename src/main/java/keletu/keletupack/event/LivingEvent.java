@@ -510,58 +510,45 @@ public class LivingEvent {
                 if (eff <= ConfigKP.warpKP.SummonBat) {
                     summonbat(player, warp);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.1")), true);
-                }else if (eff <= ConfigKP.warpKP.BloodPoison)
-                {player.addPotionEffect(new PotionEffect(MobEffects.POISON, warp * 5, 0));
-                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.2")), true);}
-                else if (eff <= ConfigKP.warpKP.JumpBoostLesser)
-                {player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 400, 3));
-                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.3")), true);}
-                else if (eff <= ConfigKP.warpKP.ThunderAndRain)
-                {player.world.getWorldInfo().setRaining(true);
+                } else if (eff <= ConfigKP.warpKP.BloodPoison) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.POISON, warp * 5, 0));
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.2")), true);
+                } else if (eff <= ConfigKP.warpKP.JumpBoostLesser) {
+                    player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 400, 3));
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.3")), true);
+                } else if (eff <= ConfigKP.warpKP.ThunderAndRain) {
+                    player.world.getWorldInfo().setRaining(true);
                     player.world.getWorldInfo().setThundering(true);
-                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.4")), true);}
-                else if (eff <= ConfigKP.warpKP.Nausea) {
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.4")), true);
+                } else if (eff <= ConfigKP.warpKP.Nausea) {
                     player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, warp * 5, 0));
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.5")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.PassiveCreeper){
+                } else if (eff <= ConfigKP.warpKP.PassiveCreeper) {
                     summoncreeper(player, 1);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.6")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.ThunderNoRain) {
+                } else if (eff <= ConfigKP.warpKP.ThunderNoRain) {
                     player.addTag("lightning");
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.7")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.SummonFireBat) {
+                } else if (eff <= ConfigKP.warpKP.SummonFireBat) {
                     summonnetherbat(player, warp);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.1")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.SummonAnimal) {
+                } else if (eff <= ConfigKP.warpKP.SummonAnimal) {
                     summonanimal(player, warp);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.8")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.JumpBoostHigher) {
+                } else if (eff <= ConfigKP.warpKP.JumpBoostHigher) {
                     player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 400, 20));
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.9")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.Lighter) {
+                } else if (eff <= ConfigKP.warpKP.Lighter) {
                     player.addPotionEffect(new PotionEffect(MobEffects.SPEED, warp * 5, 10));
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.12")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.RandomTeleport) {
+                } else if (eff <= ConfigKP.warpKP.RandomTeleport) {
                     player.addTag("tmisc_teleport");
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.10")), true);
-                }
-                else if (eff <= ConfigKP.warpKP.SummonWither) {
+                } else if (eff <= ConfigKP.warpKP.SummonWither) {
                     summonwither(player, 1);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.11")), true);
                 }
             }
-                if (ConfigKP.warpKP.EnableForceEldritch && actualwarp > ConfigKP.warpKP.ForceEldritch && !ThaumcraftCapabilities.knowsResearch(player, new String[]{"BASEELDRITCH"}) && player.inventory.hasItemStack(new ItemStack(ItemsTC.thaumonomicon))) {
-                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warp.tip.1")), true);
-                    ThaumcraftApi.internalMethods.completeResearch(player, "BASEELDRITCH");
-                }
-
         }
 
     }
@@ -825,24 +812,12 @@ public class LivingEvent {
                     && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonPlateLegs || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.crimsonRobeLegs || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ItemsTC.voidRobeLegs)
                     && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.crimsonBoots || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ItemsTC.voidBoots)
                     && (((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == Items.IRON_SWORD || ((EntityPlayer) event.getSource().getTrueSource()).getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getItem() == ItemsTC.voidSword)
-                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_0")
-                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_1")
-                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_2")
-                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_3")
-                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_4")
-                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1")
-                    && !event.getSource().getTrueSource().getTags().contains("crimson_invite_final")
+                    && event.getSource().getTrueSource().getTags().contains("crimson_invite_0")
                     && event.getEntityLiving() instanceof EntityVillager
-                    && event.getSource().getTrueSource().world.rand.nextInt(10) == 0
             ){
-                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
-                ThaumcraftApi.internalMethods.completeResearch((EntityPlayer) event.getSource().getTrueSource(), "!CRIMSON_INVITE");
-                ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
-                if (stack.getTagCompound() != null)
-                    stack.getTagCompound().setInteger("invite_progress", 0);
-                ((EntityPlayer) event.getSource().getTrueSource()).addItemStackToInventory(stack);
-                event.getSource().getTrueSource().addTag("crimson_invite_0");
-
+                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1")));
+                event.getSource().getTrueSource().addTag("crimson_invite_0_1");
+                event.getSource().getTrueSource().removeTag("crimson_invite_0");
             }
 
             if (
@@ -856,9 +831,11 @@ public class LivingEvent {
                             || event.getSource().getTrueSource().getTags().contains("crimson_invite_2")
                             || event.getSource().getTrueSource().getTags().contains("crimson_invite_3")
                             || event.getSource().getTrueSource().getTags().contains("crimson_invite_4")
+                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_0_1")
                             || event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1"))
                             && !event.getSource().getTrueSource().getTags().contains("crimson_invite_final")
                             && event.getEntityLiving() instanceof EntityVillager
+                    &&!((EntityPlayer) event.getSource().getTrueSource()).inventory.hasItemStack(new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0))
             ){
                 ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
                 event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_1")));
@@ -973,6 +950,22 @@ public class LivingEvent {
             if (success) {
                 e.player.world.spawnEntity(thaumaturge);
             }
+        }
+        if(!e.player.world.isRemote && ThaumcraftApi.internalMethods.getActualWarp(e.player) > 30
+                && !e.player.getTags().contains("crimson_invite_0")
+                && !e.player.getTags().contains("crimson_invite_0_1")
+                && !e.player.getTags().contains("crimson_invite_1")
+                && !e.player.getTags().contains("crimson_invite_2")
+                && !e.player.getTags().contains("crimson_invite_3")
+                && !e.player.getTags().contains("crimson_invite_4")
+                && !e.player.getTags().contains("crimson_invite_3_1")
+                && !e.player.getTags().contains("crimson_invite_final")
+                && e.player.ticksExisted % 2000 == 0) {
+            e.player.addTag("crimson_invite_0");
+            e.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
+            ThaumcraftApi.internalMethods.completeResearch((EntityPlayer) e.player, "!CRIMSON_INVITE");
+            ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
+            e.player.addItemStackToInventory(stack);
         }
     }
 }

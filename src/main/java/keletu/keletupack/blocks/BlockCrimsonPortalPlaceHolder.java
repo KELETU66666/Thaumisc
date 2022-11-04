@@ -18,9 +18,11 @@ import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import thaumcraft.api.casters.IInteractWithCaster;
@@ -30,6 +32,9 @@ import thaumcraft.common.lib.SoundsTC;
 import java.util.Random;
 
 public class BlockCrimsonPortalPlaceHolder extends BlockContainer implements IHasModel, IInteractWithCaster {
+
+    protected static final AxisAlignedBB AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D);
+
     public BlockCrimsonPortalPlaceHolder(String name, Material materialIn) {
         super(materialIn);
         setUnlocalizedName(name).setRegistryName(name).setCreativeTab(keletupack.ITEM_TAB);
@@ -37,6 +42,11 @@ public class BlockCrimsonPortalPlaceHolder extends BlockContainer implements IHa
         setHardness(3.0F);
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return AABB;
     }
 
     public EnumBlockRenderType getRenderType(IBlockState state) {

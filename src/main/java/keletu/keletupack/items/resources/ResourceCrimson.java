@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import thaumcraft.Thaumcraft;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
@@ -86,8 +87,10 @@ public class ResourceCrimson extends ItemBase {
             }
 
             if (!player.isSneaking() && stack.getMetadata() == 0) {
-                if (!player.getTags().contains("mission_1") && !player.getTags().contains("mission_2") && !player.getTags().contains("mission_3") && player.getTags().contains("crimson_invite_0") && ThaumcraftApi.internalMethods.getActualWarp(player) > 35) {
-                    player.removeTag("crimson_invite_0");
+                if (player.getTags().contains("crimson_invite_0") && ThaumcraftApi.internalMethods.getActualWarp(player) > 30) {
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_1")));
+                }else if (!player.getTags().contains("mission_1") && !player.getTags().contains("mission_2") && !player.getTags().contains("mission_3") && player.getTags().contains("crimson_invite_0_1") && ThaumcraftApi.internalMethods.getActualWarp(player) > 35) {
+                    player.removeTag("crimson_invite_0_1");
                     if (player.world.rand.nextInt(3) == 1) {
                         player.addTag("mission_2");
                     } else if (player.world.rand.nextInt(3) == 2) {
@@ -143,6 +146,10 @@ public class ResourceCrimson extends ItemBase {
                 {
                 ThaumcraftApi.internalMethods.completeResearch(player, "m_invite_final");
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_complete")));
+                }
+                if(ThaumcraftApi.internalMethods.getActualWarp(player) < 30)
+                {
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_failed")));
                 }
         }
         return new ActionResult<>(EnumActionResult.PASS, player.getHeldItem(hand));

@@ -134,7 +134,7 @@ public class ConfigKP {
         @Config.Comment("Min warp for Summon Animals")
         @Config.RangeInt(min = 10)
         @Config.RequiresMcRestart
-        public int SummonAnimal = 64;
+        public int SummonAnimal = 70;
 
         @Config.LangKey("keletupack.warpkp.jumpboost20")
         @Config.Comment("Min warp for jump boots effect lvl20")
