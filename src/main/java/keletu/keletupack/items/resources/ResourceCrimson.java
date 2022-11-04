@@ -121,7 +121,7 @@ public class ResourceCrimson extends ItemBase {
                 else if(player.getTags().contains("crimson_invite_4") && ThaumcraftApi.internalMethods.getActualWarp(player) > 70)
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_5")));
             }
-                if (player.getTags().contains("mission_1")) {
+                if (player.getTags().contains("mission_1") && stack.getMetadata() == 0) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_3")));
                     if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == ItemsTC.bottleTaint && player.getHeldItemOffhand().getCount() >= 3) {
                         player.getHeldItemOffhand().shrink(8);
@@ -129,7 +129,7 @@ public class ResourceCrimson extends ItemBase {
                         player.removeTag("mission_1");
                     }
                 }
-                if (player.getTags().contains("mission_2")) {
+                if (player.getTags().contains("mission_2") && stack.getMetadata() == 0) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_1")));
                     if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == Items.ENDER_EYE && player.getHeldItemOffhand().getCount() >= 10) {
                         player.getHeldItemOffhand().shrink(16);
@@ -137,7 +137,7 @@ public class ResourceCrimson extends ItemBase {
                         player.removeTag("mission_2");
                     }
                 }
-                if (player.getTags().contains("mission_3")) {
+                if (player.getTags().contains("mission_3") && stack.getMetadata() == 0) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_2")));
                     if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == new ItemStack(BlocksTC.jarBrain).getItem()) {
                         player.getHeldItemOffhand().shrink(1);
