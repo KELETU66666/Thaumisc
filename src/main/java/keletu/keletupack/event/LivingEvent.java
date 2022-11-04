@@ -688,6 +688,7 @@ public class LivingEvent {
                 int targetZ = (int)player.posZ + player.world.rand.nextInt(4) - player.world.rand.nextInt(4);
                 if (player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()) {
                     wither.setPosition((double) targetX, (double) targetY, (double) targetZ);
+                    wither.setInvulTime(200);
                     success = true;
                     break;
                 }
@@ -815,7 +816,7 @@ public class LivingEvent {
                     && event.getSource().getTrueSource().getTags().contains("crimson_invite_0")
                     && event.getEntityLiving() instanceof EntityVillager
             ){
-                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1")));
+                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_1_1")));
                 event.getSource().getTrueSource().addTag("crimson_invite_0_1");
                 event.getSource().getTrueSource().removeTag("crimson_invite_0");
             }
@@ -838,7 +839,7 @@ public class LivingEvent {
                     &&!((EntityPlayer) event.getSource().getTrueSource()).inventory.hasItemStack(new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0))
             ){
                 ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
-                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_1")));
+                event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_2")));
                 if (stack.getTagCompound() != null)
                 ((EntityPlayer) event.getSource().getTrueSource()).addItemStackToInventory(stack);
             }
@@ -960,6 +961,9 @@ public class LivingEvent {
                 && !e.player.getTags().contains("crimson_invite_4")
                 && !e.player.getTags().contains("crimson_invite_3_1")
                 && !e.player.getTags().contains("crimson_invite_final")
+                && !e.player.getTags().contains("mission_1")
+                && !e.player.getTags().contains("mission_2")
+                && !e.player.getTags().contains("mission_3")
                 && e.player.ticksExisted % 2000 == 0) {
             e.player.addTag("crimson_invite_0");
             e.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));

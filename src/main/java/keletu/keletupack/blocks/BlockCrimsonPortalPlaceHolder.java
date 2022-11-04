@@ -70,7 +70,7 @@ public class BlockCrimsonPortalPlaceHolder extends BlockContainer implements IHa
         if (!world.isRemote && te instanceof TileEntityCrimsonPortalPlaceHolder && (player.getTags().contains("crimson_invite_4") || player.getTags().contains("crimson_invite_final"))) {
             if (((TileEntityCrimsonPortalPlaceHolder) te).checkLocation()) {
                 world.playSound(null, pos, SoundsTC.zap, SoundCategory.BLOCKS, 1.0F, 1.0F);
-
+                player.sendMessage(new TextComponentString(TextFormatting.DARK_RED + TextFormatting.BOLD.toString() + "[Success Open the Portal]"));
                 // Detonate
                 world.setBlockToAir(pos);
                 world.createExplosion(null, pos.getX() + 0.5D, pos.getY() + 1D, pos.getZ() + 0.5D, 2.0F, true);
@@ -81,7 +81,7 @@ public class BlockCrimsonPortalPlaceHolder extends BlockContainer implements IHa
                 world.spawnEntity(portal);
                 return true;
             } else {
-                player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_RED + TextFormatting.BOLD.toString() + "233"), true);
+                player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_RED + TextFormatting.BOLD.toString() + "[Altar is incomplete]"), true);
                 return false;
             }
         }return false;

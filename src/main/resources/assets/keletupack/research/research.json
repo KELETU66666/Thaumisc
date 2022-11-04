@@ -963,14 +963,14 @@
           "!CRIMSON_INVITE", "!CrimsonCultist", "THAUMISC"
         ],"meta":["HIDDEN", "HEX", "REVERSE"],
         "location": [
-          -6,
+          -8,
           3
         ],
         "stages": [
           {
             "text": "keletupack.research.crimson_invite.text",
             "required_knowledge": [
-              "THEORY;BASICS;1"
+              "OBSERVATION;ELDRITCH;1"
             ],
             "warp" : "1"
           },

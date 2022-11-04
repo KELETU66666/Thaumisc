@@ -21,17 +21,21 @@ public class debugstick extends ItemBase {
 
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         ItemStack stack = player.getHeldItem(hand);
-        player.removeTag("crimson_invite_0");
-        player.removeTag("crimson_invite_0_1");
-        player.removeTag("crimson_invite_1");
-        player.removeTag("crimson_invite_2");
-        player.removeTag("crimson_invite_3");
-        player.removeTag("crimson_invite_3_1");
-        player.removeTag("crimson_invite_4");
-        player.removeTag("crimson_invite_final");
-        player.removeTag("mission_1");
-        player.removeTag("mission_2");
-        player.removeTag("mission_3");
+        if(!player.isSneaking()) {
+            player.removeTag("crimson_invite_0");
+            player.removeTag("crimson_invite_0_1");
+            player.removeTag("crimson_invite_1");
+            player.removeTag("crimson_invite_2");
+            player.removeTag("crimson_invite_3");
+            player.removeTag("crimson_invite_3_1");
+            player.removeTag("crimson_invite_4");
+            player.removeTag("crimson_invite_final");
+            player.removeTag("mission_1");
+            player.removeTag("mission_2");
+            player.removeTag("mission_3");
+        }
+        if(player.isSneaking())
+            player.addTag("mission_3");
         return new ActionResult<>(EnumActionResult.SUCCESS, stack);
     }
 }

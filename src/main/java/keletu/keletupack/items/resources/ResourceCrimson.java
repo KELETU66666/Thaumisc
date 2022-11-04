@@ -4,6 +4,7 @@ import forestry.core.gui.elements.layouts.PaneLayout;
 import keletu.keletupack.init.ModItems;
 import keletu.keletupack.items.ItemBase;
 import keletu.keletupack.keletupack;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,6 +28,7 @@ import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 import thaumcraft.api.items.ItemsTC;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Objects;
 
 public class ResourceCrimson extends ItemBase {
@@ -90,6 +92,7 @@ public class ResourceCrimson extends ItemBase {
                 if (player.getTags().contains("crimson_invite_0") && ThaumcraftApi.internalMethods.getActualWarp(player) > 30) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_1")));
                 }else if (!player.getTags().contains("mission_1") && !player.getTags().contains("mission_2") && !player.getTags().contains("mission_3") && player.getTags().contains("crimson_invite_0_1") && ThaumcraftApi.internalMethods.getActualWarp(player) > 35) {
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1")));
                     player.removeTag("crimson_invite_0_1");
                     if (player.world.rand.nextInt(3) == 1) {
                         player.addTag("mission_2");
@@ -119,7 +122,7 @@ public class ResourceCrimson extends ItemBase {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_5")));
             }
                 if (player.getTags().contains("mission_1")) {
-                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1")));
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_3")));
                     if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == ItemsTC.bottleTaint && player.getHeldItemOffhand().getCount() >= 3) {
                         player.getHeldItemOffhand().shrink(8);
                         player.addTag("crimson_invite_1");
@@ -136,7 +139,7 @@ public class ResourceCrimson extends ItemBase {
                 }
                 if (player.getTags().contains("mission_3")) {
                     player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_1_2")));
-                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == new ItemStack(BlocksTC.jarBrain).getItem() && player.getHeldItemOffhand().getCount() >= 20) {
+                    if (player.getHeldItemMainhand().getItem() == this && player.getHeldItemOffhand().getItem() == new ItemStack(BlocksTC.jarBrain).getItem()) {
                         player.getHeldItemOffhand().shrink(1);
                         player.addTag("crimson_invite_1");
                         player.removeTag("mission_3");
@@ -153,5 +156,19 @@ public class ResourceCrimson extends ItemBase {
                 }
         }
         return new ActionResult<>(EnumActionResult.PASS, player.getHeldItem(hand));
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        if (stack.getMetadata() == 0){
+            tooltip.add(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC +
+                    I18n.translateToLocal("tip.resourcecrimson.name1"));}
+        if (stack.getMetadata() == 1){
+            tooltip.add(TextFormatting.DARK_RED.toString() + TextFormatting.BOLD +
+                    I18n.translateToLocal("tip.resourcecrimson.name2"));}
+        if (stack.getMetadata() == 2){
+            tooltip.add(TextFormatting.DARK_PURPLE +
+                    I18n.translateToLocal("tip.resourcecrimson.name3"));}
+        super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 }
