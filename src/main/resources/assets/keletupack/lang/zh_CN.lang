@@ -285,6 +285,7 @@ item.dirtytear.name=它少了些什么...
 item.puretear.name=咔咔作响
 item.something.name=没准能吃?
 item.cleansingamulet.name=净化扭曲
+
 #Compat
 
 item.loot_bag_crystal.name=水晶奖励袋
@@ -332,6 +333,7 @@ message.clearsuccessful.warp=你对此有一种糟糕的预感...
 message.clearfailed.warp=没有发生什么特别的事情
 
 #Tinkers Compat
+
 modifier.instantbreak.name=地心崩解
 modifier.instantbreak.desc=§o彻底粉碎！§r\n灵宝镐头做成的镐子无视硬度瞬间挖掘！
 modifier.writableadv.name=天地匠心
@@ -342,9 +344,9 @@ modifier.aurastrike.desc=§o灵气之怒！§r\n攻击释放vis，当vis足够�
 material.ichorium.name=灵宝
 fluid.molten_ichorium=熔融灵宝
 
-##血腥启示录
+#血腥启示录
 
-#items and blocks
+##Items and Blocks
 item.resourcecrimson.0.name=???
 item.resourcecrimson.1.name=被撕下的书页
 item.resourcecrimson.2.name=完整的笔记
@@ -352,20 +354,20 @@ item.taint_crawler.name=腐化魔蛛
 
 tile.portal_summoner.name=神秘祭坛
 
-#research pages
+##Research Pages
 keletupack.research.crimson_invite.title=一本诡异的笔记
 keletupack.research.crimson_invite.text=[WIP]
 keletupack.research.crimson_invite.1.text=[WIP]
 m_invite_final=跟随笔记的指引...
 keletupack.research.crimson_invite.complete.text=[WIP]
 
-#entities
+##Entities
 entity.ThaumaturgeSpeller.name=精英神秘使
 
-#inchantment
+##Inchantment
 enchantment.infusion.CRIMSONPOWER=主教神力
 
-#tips
+##Tips
 ci_information_0=似乎有什么东西被塞进了你的背包里
 ci_information_0_1=穿吾之战服，持吾之圣刃，屠戮顽固之愚民
 ci_information_0_2=拿走...这是属于你的...记住下次不要再弄丢了...
@@ -389,13 +391,12 @@ ci_information_5.2=[成功打开传送门的提示]
 ci_information_complete=[完成第二步研究（魔导手册）的提示]
 ci_information_failed=[扭曲不够的提示]
 
-#tooltips
-
+##Tooltips
 tip.resourcecrimson.name1=There seems to be bizarre writing constantly appearing on it
 tip.resourcecrimson.name2=This piece of paper was rudely removed from some note
 tip.resourcecrimson.name3=Seems like this note is finished
 
-#research table
+##Research Table
 card.learnwise.name=聆听深渊
 card.learnwise.text=[消耗玩家全部的研究进度，转换为邪术学进度]
 card.biblechanting.name=圣经咏唱
