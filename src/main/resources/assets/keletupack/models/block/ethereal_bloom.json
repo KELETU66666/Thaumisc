@@ -2,5 +2,6 @@
     "parent": "block/tallgrass",
     "textures": {
         "cross": "keletupack:blocks/ethereal_bloom"
+        "particle": "keletupack:blocks/ethereal_bloom"
     }
 }
