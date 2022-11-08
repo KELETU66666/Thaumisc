@@ -122,7 +122,7 @@ public class ConfigKP {
         @Config.Comment("Min warp for Summon Thunder")
         @Config.RangeInt(min = 10)
         @Config.RequiresMcRestart
-        public int ThunderNoRain = 60;
+        public int ThunderNoRain = 120;
 
         @Config.LangKey("keletupack.warpkp.summonbat")
         @Config.Comment("Min warp for summon bats")
