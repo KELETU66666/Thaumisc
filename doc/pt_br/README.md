@@ -107,7 +107,7 @@ Este mod requer o Thaumcraft 6
 61. Pérola Extremamente Primordial (requer Avaritia)
 62. Registro Akáshico (requer Avaritia)
 63. Varinha da Twilight Quebrada
-64. Arco da Twilight Qubrado
+64. Arco da Twilight Quebrado
 65. Cristal do Portal da Twilight
 
 ### Dimensões
