@@ -36,7 +36,10 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -83,8 +86,6 @@ import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class LivingEvent {
-    public static void register(ResourceLocation resourceLocation) {
-    }
 
     public final String NBTLastTarget = "TTEnchantLastTarget";
 
@@ -526,10 +527,7 @@ public class LivingEvent {
                 } else if (eff <= ConfigKP.warpKP.PassiveCreeper) {
                     summoncreeper(player, 1);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.6")), true);
-                } else if (eff <= ConfigKP.warpKP.ThunderNoRain) {
-                    player.addTag("lightning");
-                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.7")), true);
-                } else if (eff <= ConfigKP.warpKP.SummonFireBat) {
+                }  else if (eff <= ConfigKP.warpKP.SummonFireBat) {
                     summonnetherbat(player, warp);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.1")), true);
                 } else if (eff <= ConfigKP.warpKP.SummonAnimal) {
@@ -544,7 +542,10 @@ public class LivingEvent {
                 } else if (eff <= ConfigKP.warpKP.RandomTeleport) {
                     player.addTag("tmisc_teleport");
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.10")), true);
-                } else if (eff <= ConfigKP.warpKP.SummonWither) {
+                } else if (eff <= ConfigKP.warpKP.ThunderNoRain) {
+                    player.addTag("lightning");
+                    player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.7")), true);
+                }else if (eff <= ConfigKP.warpKP.SummonWither) {
                     summonwither(player, 1);
                     player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("warptheory.text.11")), true);
                 }
@@ -702,21 +703,22 @@ public class LivingEvent {
     @SubscribeEvent
     public static void summonlightning(TickEvent.PlayerTickEvent event)
     {
-            if (!event.player.world.isRemote && event.player.getTags().contains("lightning")) {
-                int lightning = ThaumcraftApi.internalMethods.getActualWarp(event.player);
-                int x = (int) event.player.posX + event.player.world.rand.nextInt(3) - event.player.world.rand.nextInt(3);
-                int y = (int) event.player.posY;
-                int z = (int) event.player.posZ + event.player.world.rand.nextInt(3) - event.player.world.rand.nextInt(3);
-                BlockPos pos = new BlockPos(x, y, z);
-                if (event.player.world.rand.nextInt(100) == 0 && event.player.world.canBlockSeeSky(pos)) {
-                    EntityLightningBolt bolt = new EntityLightningBolt(event.player.world, x, y, z, true);
-                    event.player.world.addWeatherEffect(bolt);
-                    if (event.player.getTags().contains("lightning"))
-                        --lightning;
-                    if (lightning <= 0)
-                        event.player.removeTag("lightning");
+        if (!event.player.world.isRemote && event.player.getTags().contains("lightning")) {
+            int lightning = ThaumcraftApi.internalMethods.getActualWarp(event.player);
+            int x = (int) event.player.posX + event.player.world.rand.nextInt(3) - event.player.world.rand.nextInt(3);
+            int y = (int) event.player.posY;
+            int z = (int) event.player.posZ + event.player.world.rand.nextInt(3) - event.player.world.rand.nextInt(3);
+            BlockPos pos = new BlockPos(x, y, z);
+            if (event.player.world.rand.nextInt(100) == 0 && event.player.world.canBlockSeeSky(pos)) {
+                EntityLightningBolt bolt = new EntityLightningBolt(event.player.world, x, y, z, false);
+                event.player.world.addWeatherEffect(bolt);
+            }
 
-                }
+            if (event.player.world.rand.nextInt(ThaumcraftApi.internalMethods.getActualWarp(event.player) * 10) == 0)
+                event.player.removeTag("lightning");
+
+            if(event.player.isDead)
+                event.player.removeTag("lightning");
         }
     }
 
@@ -769,7 +771,7 @@ public class LivingEvent {
     }
 
     @SubscribeEvent
-    public static void onTick(TickEvent.PlayerTickEvent event)
+    public void onTick(TickEvent.PlayerTickEvent event)
     {
         if (!event.player.world.isRemote && event.player.getTags().contains("tmisc_teleport")  && event.player.ticksExisted % 200 == 0)
         {
@@ -833,14 +835,17 @@ public class LivingEvent {
                             || event.getSource().getTrueSource().getTags().contains("crimson_invite_3")
                             || event.getSource().getTrueSource().getTags().contains("crimson_invite_4")
                             || event.getSource().getTrueSource().getTags().contains("crimson_invite_0_1")
-                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1"))
+                            || event.getSource().getTrueSource().getTags().contains("crimson_invite_3_1")
+                            || event.getSource().getTrueSource().getTags().contains("mission_1")
+                            || event.getSource().getTrueSource().getTags().contains("mission_2")
+                            || event.getSource().getTrueSource().getTags().contains("mission_3"))
                             && !event.getSource().getTrueSource().getTags().contains("crimson_invite_final")
+                            && ThaumcraftCapabilities.knowsResearch((EntityPlayer) event.getSource().getTrueSource(), "!CrimsonCultist")
                             && event.getEntityLiving() instanceof EntityVillager
                     &&!((EntityPlayer) event.getSource().getTrueSource()).inventory.hasItemStack(new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0))
             ){
                 ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
                 event.getSource().getTrueSource().sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0_2")));
-                if (stack.getTagCompound() != null)
                 ((EntityPlayer) event.getSource().getTrueSource()).addItemStackToInventory(stack);
             }
         }
@@ -917,7 +922,7 @@ public class LivingEvent {
     }
 
     @SubscribeEvent
-    public static void entityJoin(EntityJoinWorldEvent event) {
+    public void entityJoin(EntityJoinWorldEvent event) {
         Entity entity = event.getEntity();
 
         if (!entity.world.isRemote && event.getEntity() instanceof EntityMob && event.getWorld().rand.nextInt(100) == 1 && event.getEntity().isNonBoss()) {
@@ -928,48 +933,49 @@ public class LivingEvent {
 
         @SubscribeEvent
         public void summonthaumaturge(TickEvent.PlayerTickEvent e) {
-        if (!e.player.world.isRemote && e.player.getTags().contains("crimson_invite_3_1") && e.player.ticksExisted % 12000 == 0) {
-            e.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_3_1")));
-            ThaumaturgeSpeller thaumaturge = new ThaumaturgeSpeller(e.player.world);
-            boolean success = false;
+            if (!e.player.world.isRemote && e.player.getTags().contains("crimson_invite_3_1") && e.player.ticksExisted % 12000 == 0) {
+                e.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_3_1")));
+                ThaumaturgeSpeller thaumaturge = new ThaumaturgeSpeller(e.player.world);
+                boolean success = false;
 
-            for (int l = 0; l < 6; l++) {
-                int targetX = (int) e.player.posX + e.player.world.rand.nextInt(100) - e.player.world.rand.nextInt(100);
-                int targetY = (int) e.player.posY + e.player.world.rand.nextInt(4) - e.player.world.rand.nextInt(4);
-                int targetZ = (int) e.player.posZ + e.player.world.rand.nextInt(100) - e.player.world.rand.nextInt(100);
-                if (e.player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()
-                && !e.player.world.getBlockState(new BlockPos(targetX, targetY , targetZ)).isFullCube()
-                && !e.player.world.getBlockState(new BlockPos(targetX, targetY + 1, targetZ)).isFullCube()
-                ) {
-                    thaumaturge.setPosition((double) targetX, (double) targetY, (double) targetZ);
-                    thaumaturge.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 20000, 0));
-                    success = true;
-                    break;
+                for (int l = 0; l < 6; l++) {
+                    int targetX = (int) e.player.posX + e.player.world.rand.nextInt(100) - e.player.world.rand.nextInt(100);
+                    int targetY = (int) e.player.posY + e.player.world.rand.nextInt(4) - e.player.world.rand.nextInt(4);
+                    int targetZ = (int) e.player.posZ + e.player.world.rand.nextInt(100) - e.player.world.rand.nextInt(100);
+                    if (e.player.world.getBlockState(new BlockPos(targetX, targetY - 1, targetZ)).isFullCube()
+                            && !e.player.world.getBlockState(new BlockPos(targetX, targetY, targetZ)).isFullCube()
+                            && !e.player.world.getBlockState(new BlockPos(targetX, targetY + 1, targetZ)).isFullCube()
+                    ) {
+                        thaumaturge.setPosition((double) targetX, (double) targetY, (double) targetZ);
+                        thaumaturge.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 20000, 0));
+                        success = true;
+                        break;
+                    }
+                }
+
+                if (success) {
+                    e.player.world.spawnEntity(thaumaturge);
                 }
             }
-
-            if (success) {
-                e.player.world.spawnEntity(thaumaturge);
+            if (!e.player.world.isRemote && ThaumcraftApi.internalMethods.getActualWarp(e.player) > 30
+                    && !e.player.getTags().contains("crimson_invite_0")
+                    && !e.player.getTags().contains("crimson_invite_0_1")
+                    && !e.player.getTags().contains("crimson_invite_1")
+                    && !e.player.getTags().contains("crimson_invite_2")
+                    && !e.player.getTags().contains("crimson_invite_3")
+                    && !e.player.getTags().contains("crimson_invite_4")
+                    && !e.player.getTags().contains("crimson_invite_3_1")
+                    && !e.player.getTags().contains("crimson_invite_final")
+                    && !e.player.getTags().contains("mission_1")
+                    && !e.player.getTags().contains("mission_2")
+                    && !e.player.getTags().contains("mission_3")
+                    && e.player.ticksExisted % 2000 == 0
+                    && ThaumcraftCapabilities.knowsResearch(e.player, "!CrimsonCultist")) {
+                e.player.addTag("crimson_invite_0");
+                e.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
+                ThaumcraftApi.internalMethods.completeResearch((EntityPlayer) e.player, "!CRIMSON_INVITE");
+                ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
+                e.player.addItemStackToInventory(stack);
             }
         }
-        if(!e.player.world.isRemote && ThaumcraftApi.internalMethods.getActualWarp(e.player) > 30
-                && !e.player.getTags().contains("crimson_invite_0")
-                && !e.player.getTags().contains("crimson_invite_0_1")
-                && !e.player.getTags().contains("crimson_invite_1")
-                && !e.player.getTags().contains("crimson_invite_2")
-                && !e.player.getTags().contains("crimson_invite_3")
-                && !e.player.getTags().contains("crimson_invite_4")
-                && !e.player.getTags().contains("crimson_invite_3_1")
-                && !e.player.getTags().contains("crimson_invite_final")
-                && !e.player.getTags().contains("mission_1")
-                && !e.player.getTags().contains("mission_2")
-                && !e.player.getTags().contains("mission_3")
-                && e.player.ticksExisted % 2000 == 0) {
-            e.player.addTag("crimson_invite_0");
-            e.player.sendMessage(new TextComponentString(TextFormatting.DARK_PURPLE.toString() + TextFormatting.ITALIC + I18n.translateToLocal("ci_information_0")));
-            ThaumcraftApi.internalMethods.completeResearch((EntityPlayer) e.player, "!CRIMSON_INVITE");
-            ItemStack stack = new ItemStack(ItemsKP.RESOURCECRIMSON, 1, 0);
-            e.player.addItemStackToInventory(stack);
-        }
-    }
 }

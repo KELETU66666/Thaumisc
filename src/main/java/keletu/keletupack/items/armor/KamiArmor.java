@@ -224,7 +224,7 @@ public class KamiArmor extends IchorArmor implements IGoggles, IHasModel {
 
     public void setBlock(BlockPos pos, World world, EntityPlayer player) {
         ItemStack itemStack = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
-        if ((world.isAirBlock(pos) || world.getBlockState(pos).equals(ModBlocks.NITOR_VAPOR)) && !world.isRemote && itemStack.getItem() instanceof KamiArmor && itemStack.getItemDamage() != 1) {
+        if ((world.isAirBlock(pos) || world.getBlockState(pos).equals(ModBlocks.NITOR_VAPOR.getDefaultState())) && !world.isRemote && itemStack.getItem() instanceof KamiArmor && itemStack.getItemDamage() != 1) {
             world.setBlockState(pos, ModBlocks.NITOR_VAPOR.getDefaultState());
         }
     }

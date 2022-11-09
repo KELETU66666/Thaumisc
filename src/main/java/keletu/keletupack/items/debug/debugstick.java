@@ -35,7 +35,7 @@ public class debugstick extends ItemBase {
             player.removeTag("mission_3");
         }
         if(player.isSneaking())
-            player.addTag("mission_3");
+            player.addTag("lightning");
         return new ActionResult<>(EnumActionResult.SUCCESS, stack);
     }
 }

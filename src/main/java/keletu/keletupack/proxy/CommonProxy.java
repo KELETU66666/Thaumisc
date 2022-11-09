@@ -19,8 +19,6 @@ public class CommonProxy {
 
     public void preInit( FMLPreInitializationEvent event )
     {
-        LootTableList.register(new ResourceLocation("modid", "loot_table_name"));
-        LivingEvent.register(new ResourceLocation("modid", "can_fly"));
         EventHandler.registerEvents();
         GameRegistry.registerWorldGenerator(new OreClusterGenerator(), 3);
         ModDimensions.init();

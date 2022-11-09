@@ -1,6 +1,5 @@
 package keletu.keletupack.util;
 
-import forestry.mail.items.ItemStamps;
 import keletu.keletupack.ConfigKP;
 import keletu.keletupack.blocks.tiles.TileBedrockPortal;
 import keletu.keletupack.blocks.tiles.TileEntityCrimsonPortalPlaceHolder;
@@ -11,7 +10,6 @@ import keletu.keletupack.compat.thaumicwonders.LootBagCrystal;
 import keletu.keletupack.enchantments.EnchantmentsKP;
 import keletu.keletupack.init.ModBlocks;
 import keletu.keletupack.init.ModItems;
-import keletu.keletupack.items.*;
 import keletu.keletupack.items.baubles.*;
 import keletu.keletupack.items.cheat.AkashicRecord;
 import keletu.keletupack.items.cheat.BigPearl;
@@ -20,12 +18,12 @@ import keletu.keletupack.items.debug.debugstick;
 import keletu.keletupack.items.resources.ResourceCrimson;
 import keletu.keletupack.items.resources.ResourceKP;
 import keletu.keletupack.items.resources.ResourceTmisc;
+import keletu.keletupack.items.warppaper;
 import keletu.keletupack.keletupack;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSaddle;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -80,11 +78,6 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onModelRegister( ModelRegistryEvent event )
     {
-        for ( Item item : ModItems.ITEMS ) {
-            if (item instanceof IHasModel) {
-                ((IHasModel) item).registerModels();
-            }
-        }
         for ( Item item : ModItems.ITEMS ) {
             if (item instanceof IHasModel) {
                 ((IHasModel) item).registerModels();
