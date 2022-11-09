@@ -3,6 +3,7 @@ package keletu.keletupack.items;
 import keletu.keletupack.keletupack;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
@@ -29,6 +30,11 @@ public class warppaper extends ItemBase {
         IPlayerWarp warp = ThaumcraftCapabilities.getWarp(player);
         int[] totals = new int[]{warp.get(IPlayerWarp.EnumWarpType.PERMANENT), warp.get(IPlayerWarp.EnumWarpType.NORMAL), warp.get(IPlayerWarp.EnumWarpType.TEMPORARY)};
         return totals;
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.UNCOMMON;
     }
 
     @Override

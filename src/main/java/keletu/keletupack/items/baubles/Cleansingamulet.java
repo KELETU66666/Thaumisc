@@ -11,6 +11,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.TextFormatting;
@@ -30,6 +31,12 @@ public class Cleansingamulet extends ItemBase implements IBauble {
         super("cleansing_amulet", keletupack.ITEM_TAB);
         this.maxStackSize=1;
     }
+
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.UNCOMMON;
+    }
+
     @Override
     public BaubleType getBaubleType(ItemStack itemStack) {
         return BaubleType.AMULET;
@@ -69,7 +76,7 @@ public class Cleansingamulet extends ItemBase implements IBauble {
 
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-            tooltip.add(TextFormatting.GRAY.toString() + TextFormatting.ITALIC + I18n.translateToLocal("item.cleansingamulet.name"));
+            tooltip.add(TextFormatting.DARK_GRAY.toString() + TextFormatting.ITALIC + I18n.translateToLocal("item.cleansingamulet.name"));
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 }

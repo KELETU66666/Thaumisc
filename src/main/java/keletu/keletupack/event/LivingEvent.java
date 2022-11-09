@@ -65,6 +65,7 @@ import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.api.capabilities.ThaumcraftCapabilities;
 import thaumcraft.api.items.ItemsTC;
+import thaumcraft.api.research.ResearchStage;
 import thaumcraft.common.config.ModConfig;
 import thaumcraft.common.entities.monster.EntityFireBat;
 import thaumcraft.common.entities.monster.EntityMindSpider;
@@ -747,27 +748,61 @@ public class LivingEvent {
 
     @SubscribeEvent
     public void TickEvents(TickEvent.PlayerTickEvent event) {
+        int actwarp = ThaumcraftApi.internalMethods.getActualWarp(event.player) + ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.TEMPORARY);
+
         if (event.player.getTags().contains("puring") && event.player.ticksExisted % 20 == 0) {
             if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.TEMPORARY)> 2.5) {
                 ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, (int) -2.5, IPlayerWarp.EnumWarpType.TEMPORARY);
                 checkWarpEvent(event.player);
-                WarpEvents.checkWarpEvent(event.player);}else
+                }else
             {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.TEMPORARY);}
             if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.PERMANENT)  > 2.5) {
                 ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, (int) -2.5, IPlayerWarp.EnumWarpType.PERMANENT);
                 checkWarpEvent(event.player);
-                WarpEvents.checkWarpEvent(event.player);}else
+                }else
             {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.PERMANENT);}
             if(ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.NORMAL) > 2.5) {
                 ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, (int) -2.5, IPlayerWarp.EnumWarpType.NORMAL);
                 checkWarpEvent(event.player);
-                WarpEvents.checkWarpEvent(event.player);}else
+                }else
             {ThaumcraftApi.internalMethods.addWarpToPlayer(event.player, -1, IPlayerWarp.EnumWarpType.NORMAL);}
         }
         if((ThaumcraftApi.internalMethods.getActualWarp(event.player) + ThaumcraftCapabilities.getWarp(event.player).get(IPlayerWarp.EnumWarpType.TEMPORARY)) == 0)
         {
             event.player.removeTag("puring");
         }
+    }
+
+    public static void removeWarp(EntityPlayer player, int amount) {
+        if (amount <= 0)
+            return;
+        int wp = ThaumcraftCapabilities.getWarp(player).get(IPlayerWarp.EnumWarpType.PERMANENT);
+        int wn = ThaumcraftCapabilities.getWarp(player).get(IPlayerWarp.EnumWarpType.NORMAL);
+        int wt = ThaumcraftCapabilities.getWarp(player).get(IPlayerWarp.EnumWarpType.TEMPORARY);
+        // reset the warp counter so
+        // 1) if partial warp reduction, reset the counter so vanilla TC warp events would fire
+        //    the same behavior can be observed on TC sanitizing soap
+        // 2) if total warp reduction, the counter would be reduced to 0, so vanilla TC warp events would
+        //    no longer fire
+
+        if(wt >= amount)
+        ThaumcraftApi.internalMethods.addWarpToPlayer(player, -amount, IPlayerWarp.EnumWarpType.TEMPORARY);
+        else
+            ThaumcraftApi.internalMethods.addWarpToPlayer(player, -wt, IPlayerWarp.EnumWarpType.TEMPORARY);
+        amount -= wt;
+        if (amount <= 0)
+            return;
+
+        if(wn >= amount)
+        ThaumcraftApi.internalMethods.addWarpToPlayer(player, -amount, IPlayerWarp.EnumWarpType.NORMAL);
+        else
+            ThaumcraftApi.internalMethods.addWarpToPlayer(player, -wn, IPlayerWarp.EnumWarpType.NORMAL);
+        amount -= wn;
+        if (amount <= 0)
+            return;
+
+        amount = (int) Math.ceil(amount / 4);
+        ThaumcraftApi.internalMethods.addWarpToPlayer(player, -amount, IPlayerWarp.EnumWarpType.PERMANENT);
     }
 
     @SubscribeEvent

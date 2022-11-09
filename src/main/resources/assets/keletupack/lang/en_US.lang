@@ -90,7 +90,7 @@ item.resourcetmisc.5.name=Ichorium Nugget
 item.ichor_pouch.name=Ichorcloth Pouch
 
 item.item_cleanser.0.name=Pure Tear
-item.item_cleanser.1.name=Dirty Tear
+item.item_cleanser.1.name=Impure Tear
 item.cleansing_amulet.name=Cleansing Amulet
 
 item.runic_ring.name=Runic Ring
@@ -332,6 +332,7 @@ warptheory.text.11=You feel overwhelmed with dread...
 warptheory.text.12=Something seems faster...
 message.clearsuccessful.warp=You've got a bad feeling about this...
 message.clearfailed.warp=Nothing in particular happens
+message.clearsuccessfulminor.warp=You feel a little better
 
 #Tinkers Compat
 modifier.instantbreak.name=Geocentric Disintegration
