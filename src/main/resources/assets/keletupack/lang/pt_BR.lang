@@ -366,11 +366,11 @@ entity.ThaumaturgeSpeller.name=Taumaturgo Conjurador
 
 ##Inchantment
 enchantment.infusion.CRIMSONPOWER=Poder Carmesim
-######################################## THE LINES BELOW ARE NOT TRANSLATED YET ########################################
+
 ##Tips
-ci_information_0=Something seems to have been shoved into your backpack
-ci_information_0_1=Wire my suit, Catch my blade, Kill those Mortals
-ci_information_0_2=Take away... It belongs to you... Remember not to lose it next time...
+ci_information_0=Parece que algo foi enfiado na sua mochila
+ci_information_0_1=Vista minhas vestes, Pegue minha lâmina, Mate aqueles Mortais
+ci_information_0_2=Pode pegar... Isso pertence a você... Lembre-se de não perdê-la da próxima vez...
 ci_information_0_1_1=[Text after kill the villager, this is a placeholder]
 ci_information_1=[Prompt to submit items]
 ci_information_1_1=[required 16 endereyes]
@@ -380,7 +380,7 @@ ci_information_2=[Text after submit item, remind player go to research table]
 ci_information_2_1=[research Complete]
 ci_information_2_2=[research Failed]
 ci_information_3=[Prompt to Complete research，told player how to made “CRIMSON POWER” inchant，and kill 5 tainted crawlers by using this sword，and submit drops]
-ci_warning_1=The sword doesn't seem to be working well...[attacking worn target]
+ci_warning_1=A espada não parece estar funcionando direito...[attacking worn target]
 ci_information_4=[Prompt for Thaumaturge will be summoned]
 ci_information_4_1=[Prompt player to wait]
 ci_information_3_1=[Thaumaturge Summoned]
@@ -390,7 +390,7 @@ ci_information_5.1=[Altar is incomplete]
 ci_information_5.2=[Success Open the Portal]
 ci_information_complete=[Kill the Leader]
 ci_information_failed=[Warp don't enough]
-######################################## THE LINES ABOVE ARE NOT TRANSLATED YET ########################################
+
 ##Tooltips
 tip.resourcecrimson.name1=Parecem haver inscrições bizzaras aparecendo constantemente
 tip.resourcecrimson.name2=Esse pedaço de papel foi rasgado de alguma anotação
