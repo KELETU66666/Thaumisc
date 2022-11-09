@@ -343,30 +343,30 @@ modifier.aurastrike.desc=§oA Ira da Aura !§r\nAtaque para liberar Vis, quando 
 
 material.ichorium.name=Icório
 fluid.molten_ichorium=Icório Derretido
-######################################## THE LINES BELOW ARE NOT TRANSLATED YET ########################################
+
 #Crimson Apocalypse
 
 ##Items and Blocks
 item.resourcecrimson.0.name=???
-item.resourcecrimson.1.name=Torn Page
-item.resourcecrimson.2.name=Surreptitious Notes
-item.taint_crawler.name=Tainted Crawler
+item.resourcecrimson.1.name=Página Rasgada
+item.resourcecrimson.2.name=Notas Sub-reptícias
+item.taint_crawler.name=Rastejador Imaculado
 
-tile.portal_summoner.name=Eldritch Altar
+tile.portal_summoner.name=Altar do Eldritch
 
 ##Research Pages
-keletupack.research.crimson_invite.title=A Mystical Note
+keletupack.research.crimson_invite.title=Uma Nota Mística
 keletupack.research.crimson_invite.text=[WIP]
 keletupack.research.crimson_invite.1.text=[WIP]
-m_invite_final=Following the note
+m_invite_final=Seguindo a nota
 keletupack.research.crimson_invite.complete.text=[WIP]
 
 ##Entities
-entity.ThaumaturgeSpeller.name=Thaumaturge Speller
+entity.ThaumaturgeSpeller.name=Taumaturgo Conjurador
 
 ##Inchantment
-enchantment.infusion.CRIMSONPOWER=Crimson Power
-
+enchantment.infusion.CRIMSONPOWER=Poder Carmesim
+######################################## THE LINES BELOW ARE NOT TRANSLATED YET ########################################
 ##Tips
 ci_information_0=Something seems to have been shoved into your backpack
 ci_information_0_1=Wire my suit, Catch my blade, Kill those Mortals
@@ -390,14 +390,14 @@ ci_information_5.1=[Altar is incomplete]
 ci_information_5.2=[Success Open the Portal]
 ci_information_complete=[Kill the Leader]
 ci_information_failed=[Warp don't enough]
-
+######################################## THE LINES ABOVE ARE NOT TRANSLATED YET ########################################
 ##Tooltips
-tip.resourcecrimson.name1=There seems to be bizarre writing constantly appearing on it
-tip.resourcecrimson.name2=This piece of paper was rudely removed from some note
-tip.resourcecrimson.name3=Seems like this note is finished
+tip.resourcecrimson.name1=Parecem haver inscrições bizzaras aparecendo constantemente
+tip.resourcecrimson.name2=Esse pedaço de papel foi rasgado de alguma anotação
+tip.resourcecrimson.name3=Parece que essa nota está completa
 
 ##Research Table
-card.learnwise.name=Learning the Abyss
+card.learnwise.name=Aprendendo Sobre o Abismo
 card.learnwise.text=[placeholder]
-card.biblechanting.name="Bible" Chanting
+card.biblechanting.name="Biblicantamento"
 card.biblechanting.text=[placeholder]
