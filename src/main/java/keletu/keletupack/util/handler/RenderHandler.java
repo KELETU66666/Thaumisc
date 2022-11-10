@@ -18,7 +18,6 @@ public class RenderHandler {
         RenderingRegistry.registerEntityRenderingHandler(ThaumaturgeSpeller.class, new IRenderFactory<ThaumaturgeSpeller>()
         {
             @Override
-            @SideOnly(Side.CLIENT)
             public Render<? super ThaumaturgeSpeller> createRenderFor(RenderManager manager)
             {
                 return new EntityRender(manager) ;

@@ -8,13 +8,13 @@ import keletu.keletupack.compat.magicbees.InitResearchMB;
 import keletu.keletupack.compat.thaumicwonders.InitRecipeCompatTW;
 import keletu.keletupack.entity.PassiveCreeper;
 import keletu.keletupack.entity.ThaumaturgeSpeller;
-import keletu.keletupack.init.*;
+import keletu.keletupack.init.InitRecipes;
+import keletu.keletupack.init.InitResearch;
 import keletu.keletupack.loot.LootTableHandler;
 import keletu.keletupack.proxy.CommonProxy;
 import keletu.keletupack.research.theorycraft.CardLearnFoolish;
 import keletu.keletupack.research.theorycraft.CardLearnFoolish1;
 import keletu.keletupack.util.Reference;
-import keletu.keletupack.util.handler.RenderHandler;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -53,7 +53,6 @@ public class keletupack {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
-        RenderHandler.registerEntityRenders();
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + "passive_creeper"), PassiveCreeper.class, "creeperPassive", 0, this, 160, 4, true);
         //EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "ThaumKnight"), EntityCultistKnight.class, "CultistKnight", id++, Thaumcraft.instance, 64, 3, true, 9438728, 128);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" +  "thaumaturge_speller"), ThaumaturgeSpeller.class, "ThaumaturgeSpeller", 1, this, 64, 3, true, 9438728, 8388608);
