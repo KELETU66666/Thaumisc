@@ -942,15 +942,14 @@ public class LivingEvent {
     @SubscribeEvent
     public void onDrops(LivingDropsEvent event) {
         Entity e = event.getEntity();
-        EntityLivingBase player = (EntityLivingBase) event.getSource().getTrueSource();
-        if (player instanceof EntityPlayer) {
-            if (EnumInfusionEnchantmentKP.getInfusionEnchantmentLevel(player.getHeldItemMainhand(), EnumInfusionEnchantmentKP.CRIMSONPOWER) > 0)
+        if (event.getSource().getTrueSource() instanceof EntityPlayer) {
+            if (EnumInfusionEnchantmentKP.getInfusionEnchantmentLevel(((EntityPlayer) event.getSource().getTrueSource()).getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentKP.CRIMSONPOWER) > 0)
                 if (e instanceof EntityTaintCrawler) {
                     addDrop(event.getDrops(), e, 1, 1);
                 }
         }
-        if (player instanceof EntityPlayer && e instanceof  EntityCultistLeader) {
-            if(player.getTags().contains("crimson_invite_4")){
+        if (event.getSource().getTrueSource() instanceof EntityPlayer && e instanceof  EntityCultistLeader) {
+            if(event.getSource().getTrueSource().getTags().contains("crimson_invite_4")){
                 addDrop1(event.getDrops(), e, 1, 1);
             }
         }
