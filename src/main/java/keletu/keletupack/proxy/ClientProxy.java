@@ -2,6 +2,7 @@ package keletu.keletupack.proxy;
 
 import keletu.keletupack.blocks.tiles.TileEtherealBloom;
 import keletu.keletupack.blocks.tiles.TileEtherealBloomRenderer;
+import keletu.keletupack.util.handler.RenderHandler;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.Item;
@@ -30,6 +31,7 @@ public class ClientProxy extends CommonProxy {
     public void preInit( FMLPreInitializationEvent event )
     {
         super.preInit( event );
+        RenderHandler.registerEntityRenders();
     }
 
 

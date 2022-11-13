@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -26,6 +27,11 @@ public class TaintCrawlerItem extends ItemFood implements IHasModel {
         setAlwaysEdible();
         setPotionEffect(new PotionEffect(PotionFluxTaint.instance, 2000, 4, false, false), 1F);
         ModItems.ITEMS.add(this);
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.UNCOMMON;
     }
 
     @Override

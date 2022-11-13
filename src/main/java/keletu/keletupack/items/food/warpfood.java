@@ -6,6 +6,7 @@ import keletu.keletupack.util.IHasModel;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
@@ -36,13 +37,17 @@ public class warpfood extends ItemFood implements IHasModel {
         }
     }
     @Override
+    public EnumRarity getRarity(ItemStack itemstack) {
+        return EnumRarity.UNCOMMON;
+    }
+    @Override
     public void registerModels() {
         keletupack.proxy.registerItemRenderer(this, 0, "inventory");
     }
 
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(TextFormatting.GRAY.toString() + TextFormatting.ITALIC + I18n.translateToLocal("item.something.name"));
+        tooltip.add(TextFormatting.DARK_GRAY.toString() + TextFormatting.ITALIC + I18n.translateToLocal("item.something.name"));
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 }

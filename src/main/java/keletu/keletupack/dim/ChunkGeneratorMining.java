@@ -20,6 +20,7 @@ import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -86,23 +87,16 @@ public class ChunkGeneratorMining implements IChunkGenerator {
 
     @Override
     public void populate(int par2, int par3) {
-        int k = par2 * 16;
-        int l = par3 * 16;
-        this.rng.setSeed(this.world.getSeed());
-        long i1 = this.rng.nextLong() / 2L * 2L + 1L;
-        long j1 = this.rng.nextLong() / 2L * 2L + 1L;
-        this.rng.setSeed((long) par2 * i1 + (long) par3 * j1 ^ this.world.getSeed());
-        int k1;
-        int l1;
-        int i2;
+        if (this.rng != null && StringUtils.isNotEmpty(String.valueOf(this.rng.nextLong()))) {
+            this.rng.setSeed(this.world.getSeed());
+            long i1 = this.rng.nextLong() / 2L * 2L + 1L;
+            long j1 = this.rng.nextLong() / 2L * 2L + 1L;
+            this.rng.setSeed((long) par2 * i1 + (long) par3 * j1 ^ this.world.getSeed());
 
-        if (this.generator != null) {
-            l1 = k + this.rng.nextInt(16) + 8;
-            k1 = this.rng.nextInt(128);
-            i2 = l + this.rng.nextInt(16) + 8;
-            this.generator.generate(this.rng, par2, par3, this.world, this, world.getChunkProvider());
+            if (this.generator != null) {
+                this.generator.generate(this.rng, par2, par3, this.world, this, world.getChunkProvider());
+            }
         }
-
     }
 
     public boolean generateStructures
