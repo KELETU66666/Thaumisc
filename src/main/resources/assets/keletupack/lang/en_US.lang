@@ -208,7 +208,7 @@ keletupack.research.dirtytear.complete.text=You've dealt with warp long enough, 
 
 keletupack.research.puretear.title=Pure Tear
 keletupack.research.puretear.stage.1.text=[WIP]Magical Medicine
-keletupack.research.puretear.complete.text=combining the curative properties of Ghast Tears, the magical energy of Salis Mundus, and the stabilizing properties of crystals, you've discovered a means of purging negative magical energy from the body.<BR>The process is not without drawbacks, though, as all that energy has to go somewhere.
+keletupack.research.puretear.complete.text=Combining the curative properties of Ghast Tears, the magical energy of Salis Mundus, and the stabilizing properties of crystals, you've discovered a mean of purging negative magical energy from the body.<BR>The process is not without drawbacks, though, as all that energy has to go somewhere.
 
 keletupack.research.taintmeat.title=Tainted Amalgam
 keletupack.research.taintmeat.stage.1.text=Perhaps i should not reject the Warp, perhaps i should embrace it, perhaps... what forbidden secrets could it teach me?
@@ -286,7 +286,6 @@ item.puretear.name=Crunchy
 item.something.name=Probably edible...
 item.cleansingamulet.name=Purges Warps
 
-
 #Compat
 
 item.loot_bag_crystal.name=Crystal Treasure Bag
@@ -335,6 +334,7 @@ message.clearfailed.warp=Nothing in particular happens
 message.clearsuccessfulminor.warp=You feel a little better
 
 #Tinkers Compat
+
 modifier.instantbreak.name=Geocentric Disintegration
 modifier.instantbreak.desc=§oSabotage Maniacs !§r\nDigger made of this material can dig regardless of the hardness of the block.
 modifier.writableadv.name=World of Artisanship
@@ -345,9 +345,9 @@ modifier.aurastrike.desc=§oThe Wrath of Aura !§r\nAttack to release vis, when 
 material.ichorium.name=Ichorium
 fluid.molten_ichorium=Molten Ichorium
 
-##Crimson Apocalypse
+#Crimson Apocalypse
 
-#items and blocks
+##Items and Blocks
 item.resourcecrimson.0.name=???
 item.resourcecrimson.1.name=Torn Page
 item.resourcecrimson.2.name=Surreptitious Notes
@@ -355,20 +355,20 @@ item.taint_crawler.name=Tainted Crawler
 
 tile.portal_summoner.name=Eldritch Altar
 
-#research pages
+##Research Pages
 keletupack.research.crimson_invite.title=A Mystical Note
 keletupack.research.crimson_invite.text=[WIP]
 keletupack.research.crimson_invite.1.text=[WIP]
 m_invite_final=Following the note
 keletupack.research.crimson_invite.complete.text=[WIP]
 
-#entities
+##Entities
 entity.ThaumaturgeSpeller.name=Thaumaturge Speller
 
-#inchantment
+##Inchantment
 enchantment.infusion.CRIMSONPOWER=Crimson Power
 
-#tips
+##Tips
 ci_information_0=Something seems to have been shoved into your backpack
 ci_information_0_1=Wire my suit, Catch my blade, Kill those Mortals
 ci_information_0_2=Take away... It belongs to you... Remember not to lose it next time...
@@ -392,13 +392,12 @@ ci_information_5.2=[Success Open the Portal]
 ci_information_complete=[Kill the Leader]
 ci_information_failed=[Warp don't enough]
 
-#tooltips
-
+##Tooltips
 tip.resourcecrimson.name1=There seems to be bizarre writing constantly appearing on it
 tip.resourcecrimson.name2=This piece of paper was rudely removed from some note
 tip.resourcecrimson.name3=Seems like this note is finished
 
-#research table
+##Research Table
 card.learnwise.name=Learning the Abyss
 card.learnwise.text=[placeholder]
 card.biblechanting.name="Bible" Chanting

@@ -1,5 +1,5 @@
 # Special formatting codes:
-
+#
 # <BR> or <BR/>         Paragraph break (<BR/> is included for people using XML for their localization)
 # <LINE> or <LINE/>     Insert a fancy centered linebreak between sections of text.
 # <DIV> or <DIV/>     Insert a fancy left-justified linebreak between sections of text.
@@ -76,8 +76,9 @@ item.packresource.1.name=Moeda de Mago
 item.packresource.0.name=Moeda da Aventura
 item.packresource.3.name=Moeda Ensanguentada
 item.packresource.2.name=Moeda Mágica
-item.packresource.4.name=Varinha Quebrada da Twilight
-item.packresource.5.name=Arco Quebrado da Twilight
+item.packresource.4.name=Varinha da Twilight Quebrada
+item.packresource.5.name=Arco da Twilight Quebrado
+item.packresource.6.name=Cristal do Portal da Twilight
 
 item.resourcetmisc.0.name=Lasca do Ender
 item.resourcetmisc.1.name=Lasca do Nether
@@ -88,6 +89,8 @@ item.resourcetmisc.4.name=Tecido de Icor
 item.resourcetmisc.5.name=Pepita de Icório
 item.ichor_pouch.name=Pouxete de Tecido de Icor
 
+item.item_cleanser.0.name=Lágrima Pura
+item.item_cleanser.1.name=Lágrima Impura
 item.cleansing_amulet.name=Amuleto de Remoção
 
 item.runic_ring.name=Anel Rúnico
@@ -199,6 +202,14 @@ keletupack.research.warppaper.title=Papel Tornassol Arcano
 keletupack.research.warppaper.text=De vez em quando, um Checador de Sanidade é simplesmente impreciso demais, especialmente quando o meu nível de Warp são maiores do que os que ele foi desenvolvido para suportar, talvez eu possa inventar um dispositivo mais preciso?
 keletupack.research.warppaper.complete.text=Fazer algo que seja reutilizável para medir Warp em grandes quantidades me parece difícil, o Warp é uma força poderosa que pode superar todas coisas que foram feitas para trabalhar com ele, então parece que eu vou ter que fazeer uso de uma das minhas mais primitivas, e também mais disperdiçadoras soluções...<BR>Papel Tornassol Arcano, como decidi chamá-lo, é baseado nas escrituras de alguns Taumaturgos da Quarta Era, os quais supostamente o descobriram. Esse Papel, quando em contato com alguma parte apropriada do meu corpo, ele vai reagir dependendo de quanto Warp eu tenho, quanto mais violenta a reação maior a quantidade, levando até um ponto destrutivo do papel, graças a força arrasadora do Warp.<BR>Isso vai me garantir meios de medir Warp em grandes escalas, dependendo da violência da reação, talvez não seja a mais útil ao meu ver, mas quem sabe não é útil para as profundezas da minha mente...? Não, isso é absurdo.
 
+keletupack.research.dirtytear.title=Lágrima Impura
+keletupack.research.dirtytear.stage.1.text=[WIP]Medicina Não Muito Mágica
+keletupack.research.dirtytear.complete.text=Você já lidou com o Warp por tempo demais, é hora de tentar encontrar um meio de se livrar dele. You resolveu tentar misturar alguns tipos de itens que você encontrou.<BR>E você conseguiu, mas o efeito só funciona quando junta uma boa quantia deles, então você não pode se livrar de tudo. Mas pelo menos você pode evitar os piores efeitos, diferente do Bob que teve um Wither invocado que explodiu a base dele. Pobre Bob. (Você precisa de 50+ de Warp para isso funcionar, e isso remove 5 de Warp)<BR>Você suspeita que se você tivesse materiais melhores, você poderia fabricar uma versão melhor.
+
+keletupack.research.puretear.title=Lágrima Pura
+keletupack.research.puretear.stage.1.text=[WIP]Medicina Mágica
+keletupack.research.puretear.complete.text=Combinando as propriedades curativas das Lágrimas de Ghast, a energia mágica do Salis Mundus, e as propriedades estabilizadoras dos cristais, você descobriu um meio de purgar a energia mágica negativa do corpo.<BR>O processo não vem sem consequências, ainda que, no fim das contas toda aquela energia vá para algum outro lugar.
+
 keletupack.research.taintmeat.title=Amálgama de Mácula
 keletupack.research.taintmeat.stage.1.text=Talvez eu não devesse rejeitar o Warp, talvez eu devesse aceitá-lo, quem sabe... quais os segredos proibidos ele poderia me ensinar?
 keletupack.research.taintmeat.complete.text=Isso foi um erro, mergulhar Carne comum diretamente em Essência de Vitium corrompe e a transforma em uma substância incompreensível que é preciso ter estômago forte pra comer.<BR>Apesar disso, eu suponho que se eu estiver precisando de uma fonte de loucura, é pra esse negócio que eu devo me voltar...
@@ -215,6 +226,7 @@ keletupack.research.thaumisc_forbiddenmagic.complete.text=Algumas informações 
 keletupack.research.morph_tools.title=Ferramentas Camaleônicas
 keletupack.research.morph_tools.text=Resquícios de Pesquisas Proibidas da Quarta Era falam sobre Ferramentas que podem trocar entre Encantamentos de acordo com a vontade do usuário, deve ser possível replicar essas Ferramentas.
 keletupack.research.morph_tools.complete.text=Sucesso!... Quase. Não é uma réplica perfeita, seja lá quais materiais eram usados para Infundir as propiedades de Encanto-Variação no passado parecem não existir mais, mas Cristais de Permutatio parecem ser o suficiente para substituí-los.<BR>De qualquer maneira, as propriedades parecem refletir às daquelas Ferramentas que eu ouvi falar, então é o suficiente por agora.<BR>Elas podem conter até três formas de Encantamentos, as quais podem ser trocadas dando Shift + Botão Direito com a ferramenta na mão, providenciado pelo próprio Encantamento em si, a forma atual é indicada pela cor da Gema na ferramenta. Consome-se um pouco da Durabilidade para trocar de forma, mas é bem insignificante.
+keletupack.research.morph_tools.void=text
 
 keletupack.research.distortionpick.title=Picareta da Distorção
 keletupack.research.distortionpick.text=Resquícios de Pesquisas Proibidas da Quarta Era falam sobre uma Picareta que pode minerar o mais duro dos materiais in alguns momentos, quem sabe seja possível replicá-la?
@@ -268,9 +280,124 @@ tip.awakensword.name2=Modo Escudo
 tip.awakenarmor.name0=Despertada
 tip.awakenarmor.name1=Dormente
 
+item.warppaper.name=Reage com Warp
+item.dirtytear.name=Tá faltando alguma coisa...
+item.puretear.name=Crocante
+item.something.name=Provavelmente é consumível...
+item.cleansingamulet.name=Purga o Warp
+
 #Compat
 
 item.loot_bag_crystal.name=Bolsa de Tesouro de Crystal
-item.crystal_caster.name=Manopla de Neutrônio Cósmico com Botões Cristalinos
+item.crystal_caster.name=Manopla de Neutrônio Cósmico com Adornos Cristalinos
 item.akashic_record.name=Registro Akáshico
 item.big_pearl.name=Pérola Extremamente Primordial
+
+#Enchantment
+
+enchantment.voidtouched=Influência do Vácuo
+enchantment.wrath=Ira
+enchantment.educational=Educação
+enchantment.greedy=Ganancioso
+enchantment.consuming=Consumismo
+enchantment.ascentboost=Impulso de Ascenção
+enchantment.shockwave=Onda de Choque
+enchantment.slowfall=Queda Lenta
+enchantment.pounce=Impulso
+enchantment.finalstrike=Golpe Final
+enchantment.valiance=Valentia
+enchantment.vampirism=Vampirismo
+enchantment.desintegrate=Desintegrar
+enchantment.dispersedstrikes=Golpes Dispersos
+enchantment.focusedstrike=Golpe Concentrado
+enchantment.quickdraw=Saque Rápido
+enchantment.shatter=Despedaçar
+enchantment.tunnel=Tunelamento
+enchantment.autosmelt=Auto-Queima
+
+#Warps
+
+warptheory.text.1=Os sons de asas batendo ecoam no ar...
+warptheory.text.2=Suas veias pegam fogo...
+warptheory.text.3=Você se sente bem mais leve...
+warptheory.text.4=Você ouve rumores à distância...
+warptheory.text.5=Você sente uma dor de estômago...
+warptheory.text.6=Você se sente um pouco solitário...
+warptheory.text.7=Seu cabelo arrepia...
+warptheory.text.8=Você se sente um pouco faminto...
+warptheory.text.9=Você se sente bem mais leve...
+warptheory.text.10=Você se sente desorientado do nada...
+warptheory.text.11=Você sente uma crise de pavor...
+warptheory.text.12=Algo parece mais rápido...
+message.clearsuccessful.warp=Você tem tido um mal pressentimento sobre isso...
+message.clearfailed.warp=Nada em particular acontece
+		
+#Tinkers Compat
+
+modifier.instantbreak.name=Desintegração Geocêntrica
+modifier.instantbreak.desc=§oManíacos da Sabotagem !§r\nFerramentas de escavação feitas com esse material podem escavar independente da dureza do bloco.
+modifier.writableadv.name=Artesão
+modifier.writableadv.desc=§oArtesanato !§r\nVocê ganha 2 Modificadores extras!
+modifier.aurastrike.name=Golpe Aural
+modifier.aurastrike.desc=§oA Ira da Aura !§r\nAtaque para liberar Vis, quando o nível de Vis estiver alto o bastante, absorve o Vis para causar traumatismo no alvo e formar um escudo.
+
+material.ichorium.name=Icório
+fluid.molten_ichorium=Icório Derretido
+
+#Crimson Apocalypse
+
+##Items and Blocks
+item.resourcecrimson.0.name=???
+item.resourcecrimson.1.name=Página Rasgada
+item.resourcecrimson.2.name=Notas Sub-reptícias
+item.taint_crawler.name=Rastejador Imaculado
+
+tile.portal_summoner.name=Altar do Eldritch
+
+##Research Pages
+keletupack.research.crimson_invite.title=Uma Nota Mística
+keletupack.research.crimson_invite.text=[WIP]
+keletupack.research.crimson_invite.1.text=[WIP]
+m_invite_final=Seguindo a nota
+keletupack.research.crimson_invite.complete.text=[WIP]
+
+##Entities
+entity.ThaumaturgeSpeller.name=Taumaturgo Conjurador
+
+##Inchantment
+enchantment.infusion.CRIMSONPOWER=Poder Carmesim
+
+##Tips
+ci_information_0=Parece que algo foi enfiado na sua mochila
+ci_information_0_1=Vista minhas vestes, Pegue minha lâmina, Mate aqueles Mortais
+ci_information_0_2=Pode pegar... Isso pertence a você... Lembre-se de não perdê-la da próxima vez...
+ci_information_0_1_1=[Text after kill the villager, this is a placeholder]
+ci_information_1=[Prompt to submit items]
+ci_information_1_1=[required 16 endereyes]
+ci_information_1_2=[required 1 jar_brain]
+ci_information_1_3=[required 8 tainted bottle]
+ci_information_2=[Text after submit item, remind player go to research table]
+ci_information_2_1=[research Complete]
+ci_information_2_2=[research Failed]
+ci_information_3=[Prompt to Complete research，told player how to made “CRIMSON POWER” inchant，and kill 5 tainted crawlers by using this sword，and submit drops]
+ci_warning_1=A espada não parece estar funcionando direito...[attacking worn target]
+ci_information_4=[Prompt for Thaumaturge will be summoned]
+ci_information_4_1=[Prompt player to wait]
+ci_information_3_1=[Thaumaturge Summoned]
+ci_information_3_2=[Thaumaturge Killed]
+ci_information_5=[Prompt player assemble the altar, and throw a salismundus, if you don't konw what's meaning, pls contact with me]
+ci_information_5.1=[Altar is incomplete]
+ci_information_5.2=[Success Open the Portal]
+ci_information_complete=[Kill the Leader]
+ci_information_failed=[Warp don't enough]
+
+##Tooltips
+tip.resourcecrimson.name1=Parecem haver inscrições bizzaras aparecendo constantemente
+tip.resourcecrimson.name2=Esse pedaço de papel foi rasgado de alguma anotação
+tip.resourcecrimson.name3=Parece que essa nota está completa
+
+##Research Table
+card.learnwise.name=Aprendendo Sobre o Abismo
+card.learnwise.text=[placeholder]
+card.biblechanting.name="Biblicantamento"
+card.biblechanting.text=[placeholder]
